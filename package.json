@@ -1,0 +1,17 @@
+{
+  "name": "hammockai-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static landing page build pipeline.",
+  "main": "index.html",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify 2>&1",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify --watch 2>&1"
+  },
+  "keywords": ["hammock", "ai", "tailwind-cli", "vanilla-js", "static"],
+  "author": "Hammock AI",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "tailwindcss": "^3.3.0"
+  }
+}

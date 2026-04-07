@@ -1,0 +1,33 @@
+# Comandos manuales equivalentes para verificar el entorno de Hammock AI Site
+
+## Paso 1: Verificar package.json
+Comando: `ls -l package.json` (Linux/Mac) o `dir package.json` (Windows)
+Verifica que el archivo package.json exista en el directorio raíz
+
+## Paso 2: Instalar dependencias
+Comando: `npm install`
+Instala todas las dependencias listadas en package.json
+
+## Paso 3: Verificar contenido de node_modules
+Comando: `ls node_modules` (verifica contenido) o `Get-ChildItem node_modules` (Windows)
+Confirma que solo exista tailwindcss en node_modules (además de posibles dependencias internas)
+
+## Paso 4: Verificar devDependencies en package.json
+Comando: `node -p "console.log(Object.keys(require('./package.json').devDependencies))"`
+Valida que solo tailwindcss esté listado como devDependency
+
+## Paso 5: Ejecutar build
+Comando: `npm run build`
+Ejecuta el script de build definido en package.json
+
+## Paso 6: Verificar archivo generado
+Comando: `ls -l dist/output.css` (Linux/Mac) o `Get-Item dist\output.css` (Windows)
+Verifica que el archivo CSS haya sido generado correctamente
+
+## Paso 7: Verificar tamaño del archivo
+Comando: `stat -c %s dist/output.css` (Linux) o `wc -c < dist/output.css` (Mac/WSL) o `(Get-Item dist\output.css).Length` (Windows)
+Confirma que el archivo generado tenga contenido (> 0 bytes)
+
+## Paso 8: Buscar strings sospechosos
+Comando: `grep -i "@import url\|cdn\|googleapis\|unpkg" dist/output.css`
+Busca posibles inclusiones de recursos externos que violen la regla de CERO dependencias externas
