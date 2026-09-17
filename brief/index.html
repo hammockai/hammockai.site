@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Brief — Hammock AI</title>
+<meta name="description" content="Once preguntas, cinco minutos. Tu sitio empieza aquí.">
+<meta name="theme-color" content="#0A0A0A">
+<style>
+:root{--ink:#0A0A0A;--coal:#0E0E0E;--surface:#141414;--snow:#FAFAFA;--mist:rgba(250,250,250,.74);--dim:rgba(250,250,250,.56);--ember:#FF6B35;--hair:rgba(255,255,255,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--snow);font-family:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:42rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}a{color:var(--ember)}
+h1{font-size:2rem;line-height:1.15;margin:0 0 .5rem}.sub{color:var(--mist);margin:0 0 2rem}
+.f{border:1px solid var(--hair);border-radius:1rem;background:var(--surface);padding:1.1rem 1.25rem;margin-bottom:1rem}
+.q{font-weight:700;display:block;margin-bottom:.5rem}.req{color:var(--ember)}
+.hint{color:var(--dim);font-size:.85rem;display:block;margin:-.25rem 0 .5rem}
+input[type=text],textarea{width:100%;background:var(--coal);color:var(--snow);border:1px solid var(--hair);border-radius:.6rem;padding:.6rem .75rem;font:inherit}
+textarea{resize:vertical}.checks label{display:flex;gap:.5rem;align-items:center;margin:.35rem 0;color:var(--mist);font-size:.95rem}
+input[type=checkbox],input[type=radio]{accent-color:var(--ember);width:1rem;height:1rem}
+.sub-in{margin-top:.6rem}.sub-in span{color:var(--dim);font-size:.8rem;display:block}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}button{font:inherit;font-weight:700;border:0;border-radius:9999px;padding:.7rem 1.3rem;cursor:pointer}
+.primary{background:var(--ember);color:var(--ink)}.ghost{background:transparent;color:var(--mist);border:1px solid var(--hair)}
+.note{color:var(--dim);font-size:.85rem;margin-top:1.25rem}.miss{border-color:var(--ember)!important}
+#preciosWrap{display:none;margin-top:.6rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+<p><a href="../">← hammockai.site</a></p>
+<h1>El Brief</h1>
+<p class="sub">Once preguntas, cinco minutos. Con esto tu sitio deja de ser una idea y empieza a ser un plano. Nada de lo que escribas aquí viaja solo: el resumen se arma en tu dispositivo y tú eliges cómo enviarlo.</p>
+<form id="brief" novalidate>
+<div class="f"><label class="q" for="f1">1. Nombre de tu marca, exactamente como debe aparecer <span class="req">*</span></label><input type="text" id="f1"></div>
+<div class="f"><label class="q" for="f2">2. En una frase: ¿qué haces o vendes? <span class="req">*</span></label><span class="hint">ej.: "Mosaicos hechos a mano para personas que visten sus hogares." (no "una página bonita")</span><input type="text" id="f2"></div>
+<div class="f"><label class="q" for="f3">3. ¿Para quién es el sitio? Tu clienta o cliente ideal, en una frase</label><span class="hint">ej.: "Personas que valoran lo hecho a mano y buscan piezas con historia."</span><input type="text" id="f3"></div>
+<div class="f"><label class="q" for="f4">4. Ciudad y país <span class="req">*</span></label><input type="text" id="f4" placeholder="Pichilemu, Chile"><span class="q" style="margin-top:.75rem">Idioma del sitio <span class="req">*</span></span><div class="checks"><label><input type="radio" name="lang" value="Español" checked> Español</label><label><input type="radio" name="lang" value="Inglés"> Inglés</label><label><input type="radio" name="lang" value="Ambos"> Ambos</label></div></div>
+<div class="f"><label class="q" for="f5">5. Tres palabras que describen tu trabajo <span class="req">*</span></label><span class="hint">ej.: color, paciencia, memoria</span><input type="text" id="f5"></div>
+<div class="f"><span class="q">6. ¿Qué debe poder hacer quien visite tu sitio? (al menos una) <span class="req">*</span></span><div class="checks" id="g6"><label><input type="checkbox" value="Ver mi obra"> Ver mi obra</label><label><input type="checkbox" value="Escribirme por WhatsApp"> Escribirme por WhatsApp</label><label><input type="checkbox" value="Reservar"> Reservar</label><label><input type="checkbox" value="Comprar"> Comprar</label><label><input type="checkbox" value="Ver precios" id="ckPrecios"> Ver precios</label><label><input type="checkbox" value="Conocer mi historia"> Conocer mi historia</label><label><input type="checkbox" value="Otra"> Otra:</label><input type="text" id="f6o" placeholder="cuéntanos en pocas palabras"></div>
+<div id="preciosWrap"><span class="hint">Si marcaste "Ver precios":</span><div class="checks"><label><input type="radio" name="precios" value="precios visibles"> Precios visibles</label><label><input type="radio" name="precios" value="precios a conversación"> Precios a conversación</label></div></div></div>
+<div class="f"><span class="q">7. ¿Qué canales y materiales tienes hoy? (al menos uno) <span class="req">*</span></span><div class="checks" id="g7"><label><input type="checkbox" value="WhatsApp" id="ckWa"> WhatsApp</label><label><input type="checkbox" value="Email" id="ckMail"> Email</label><label><input type="checkbox" value="Instagram" id="ckIg"> Instagram</label><label><input type="checkbox" value="Facebook" id="ckFb"> Facebook</label><label><input type="checkbox" value="Fotos de tu obra"> Fotos de tu obra</label><label><input type="checkbox" value="Logo"> Logo</label><label><input type="checkbox" value="Aún nada (te guiamos)"> Aún nada (te guiamos)</label></div>
+<div class="sub-in"><span>Escribe solo los que marcaste arriba:</span>
+<input type="text" id="f7wa" class="miss-off" placeholder="WhatsApp: +56 9 …" style="margin-top:.4rem">
+<input type="text" id="f7mail" placeholder="Email: …" style="margin-top:.4rem">
+<input type="text" id="f7ig" placeholder="Instagram: @…" style="margin-top:.4rem">
+<input type="text" id="f7fb" placeholder="Facebook: https://…" style="margin-top:.4rem"></div></div>
+<div class="f"><label class="q" for="f8">8. Uno a tres sitios que te gusten, y una línea de por qué</label><span class="hint">máx. 3 sitios, una línea cada uno · ej.: https://… — me gusta porque…</span><textarea id="f8" rows="3"></textarea></div>
+<div class="f"><label class="q" for="f9">9. Qué NO debe ser o decir tu sitio, nunca</label><span class="hint">ej.: "nada de colores fríos, nada de lenguaje corporativo"</span><textarea id="f9" rows="2"></textarea></div>
+<div class="f"><label class="q" for="f10">10. Tu nombre y cómo te respondemos <span class="req">*</span></label><input type="text" id="f10" placeholder="Nombre + WhatsApp o email"></div>
+<div class="f"><label class="q" for="f11">11. Tu historia en tres líneas: cómo empezaste</label><span class="hint">ej.: "Después de años en el derecho, encontré en el mosaico mi otra voz…"</span><textarea id="f11" rows="3" maxlength="300"></textarea></div>
+</form>
+<div class="btns"><button type="button" class="primary" id="copy">Copiar mi brief</button><button type="button" class="ghost" id="mail">Enviar por email</button><button type="button" class="ghost" id="dl">Descargar .txt</button></div>
+<p class="note" id="status"></p>
+<p class="note">Cero telemetría, como todo lo que hacemos. © 2026 Hammock AI</p>
+</main>
+<script>
+(()=>{'use strict';const $=id=>document.getElementById(id);const status=$('status');
+const ticked=g=>Array.from(document.querySelectorAll('#'+g+' input[type=checkbox]:checked')).map(c=>c.value==='Otra'?($('f6o').value.trim()||'Otra'):c.value);
+$('ckPrecios').addEventListener('change',e=>{$('preciosWrap').style.display=e.target.checked?'block':'none';});
+const compose=()=>{const miss=[];const v=id=>$(id).value.trim();
+if(!v('f1'))miss.push('f1');if(!v('f2'))miss.push('f2');if(!v('f4'))miss.push('f4');
+const w5=v('f5').split(/\s+/).filter(Boolean);if(w5.length!==3){miss.push('f5');status.textContent='El campo 5 pide exactamente tres palabras 😉';}
+const a6=ticked('g6');if(!a6.length)miss.push('g6');
+let precios='';if($('ckPrecios').checked){const r=document.querySelector('input[name=precios]:checked');if(!r){miss.push('g6');status.textContent='Marcaste "Ver precios": elige visibles o a conversación.';}else precios=r.value;}
+const a7=ticked('g7');if(!a7.length)miss.push('g7');
+const chan=[];
+if($('ckWa').checked){if(!v('f7wa'))miss.push('f7wa');else chan.push('WhatsApp '+v('f7wa'));}
+if($('ckMail').checked){if(!v('f7mail'))miss.push('f7mail');else chan.push('Email '+v('f7mail'));}
+if($('ckIg').checked){if(!v('f7ig'))miss.push('f7ig');else chan.push('Instagram '+v('f7ig'));}
+if($('ckFb').checked){if(!v('f7fb'))miss.push('f7fb');else chan.push('Facebook '+v('f7fb'));}
+if(!v('f10'))miss.push('f10');
+document.querySelectorAll('.miss').forEach(e=>e.classList.remove('miss'));
+if(miss.length){miss.forEach(id=>$(id).classList.add('miss'));if(!status.textContent)status.textContent='Faltan los campos marcados en naranjo. Sin prisa, sin culpa.';return null;}
+const lang=document.querySelector('input[name=lang]:checked').value;
+const L=['BRIEF — '+v('f1'),'1 Marca: '+v('f1'),'2 Hace/vende: '+v('f2'),'3 Para quién: '+(v('f3')||'—'),'4 Lugar: '+v('f4')+' | Idioma: '+lang,'5 Palabras: '+w5.join(', '),'6 Debe permitir: '+a6.join(' · ')+(precios?' | Precios: '+precios:''),'7 Tiene hoy: '+a7.join(' · '),'7b Canales: '+(chan.join(' · ')||'—'),'8 Le gustan: '+(v('f8')||'—'),'9 Nunca: '+(v('f9')||'—'),'10 Responder a: '+v('f10'),'11 Historia: '+(v('f11')||'—')];
+status.textContent='';return L.join('\n');};
+$('copy').addEventListener('click',()=>{const b=compose();if(!b)return;navigator.clipboard.writeText(b).then(()=>status.textContent='¡Copiado! Pégalo donde quieras.');});
+$('mail').addEventListener('click',()=>{const b=compose();if(!b)return;location.href='mailto:hammockai@proton.me?subject='+encodeURIComponent('Brief — '+$('f1').value.trim())+'&body='+encodeURIComponent(b);});
+$('dl').addEventListener('click',()=>{const b=compose();if(!b)return;const slug=$('f1').value.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');const u=URL.createObjectURL(new Blob([b],{type:'text/plain'}));const a=document.createElement('a');a.href=u;a.download='brief-'+slug+'.txt';a.click();URL.revokeObjectURL(u);status.textContent='Descargado. Tu brief viaja contigo.');});
+})();
+</script>
+</body>
+</html>
