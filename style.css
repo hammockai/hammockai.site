@@ -190,6 +190,5 @@ svg{display:block}
 .hero-grid{grid-template-columns:minmax(0,11fr) minmax(0,9fr)}
 }
 @media (min-width:1024px){
-.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .lg\:text-7xl{font-size:4.5rem;line-height:1}
 }
