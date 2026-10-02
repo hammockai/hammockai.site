@@ -42,11 +42,14 @@ svg{display:block}
 .pill{border-radius:9999px;border:1px solid var(--pill-line);background:rgba(10,10,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 12px 32px rgba(0,0,0,.45),0 2px 8px rgba(0,0,0,.35);transition:background .3s ease,box-shadow .3s ease}
 .site-header.is-scrolled .pill{background:rgba(8,8,8,.9);box-shadow:0 16px 44px rgba(0,0,0,.55)}
 
-.nav-link{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);transition:color .2s ease}
+.nav-link{white-space:nowrap;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);transition:color .2s ease}
 .nav-link:hover{color:var(--snow)}
 .nav-link[aria-current="true"]{color:var(--ember)}
 
-.btn-cta{display:inline-flex;align-items:center;justify-content:center;padding:.72rem 1.45rem;border-radius:9999px;background:var(--ember);color:var(--ink);font-weight:700;font-size:.95rem;letter-spacing:.02em;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.lang-link{padding:.3rem .75rem;border:1px solid var(--pill-line);border-radius:9999px;font-size:.75rem;font-weight:700;letter-spacing:.14em;color:var(--mist);transition:color .2s ease,border-color .2s ease}
+.lang-link:hover{color:var(--ember);border-color:var(--ember)}
+
+.btn-cta{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;padding:.72rem 1.45rem;border-radius:9999px;background:var(--ember);color:var(--ink);font-weight:700;font-size:.95rem;letter-spacing:.02em;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
 .btn-cta:hover{background:#ff7f4b;transform:translateY(-1px);box-shadow:0 10px 26px rgba(255,107,53,.28)}
 .btn-cta:active{transform:translateY(0)}
 .btn-cta:focus-visible{outline:2px solid var(--snow);outline-offset:3px}
@@ -269,6 +272,7 @@ svg{display:block}
 @media (min-width:1024px){
 .lg\:text-7xl{font-size:4.5rem;line-height:1}
 .lg\:flex{display:flex}
+.lg\:ml-0{margin-left:0}
 .lg\:inline-flex{display:inline-flex}
 .lg\:hidden{display:none}
 .lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
