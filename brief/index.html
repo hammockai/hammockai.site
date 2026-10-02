@@ -7,6 +7,8 @@
 <meta name="description" content="Once preguntas, cinco minutos. Tu sitio empieza aquí.">
 <meta name="theme-color" content="#0A0A0A">
 <style>
+@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-bold.woff2") format("woff2");font-weight:700;font-display:swap}
 :root{--ink:#0A0A0A;--coal:#0E0E0E;--surface:#141414;--snow:#FAFAFA;--mist:rgba(250,250,250,.74);--dim:rgba(250,250,250,.56);--ember:#FF6B35;--hair:rgba(255,255,255,.08)}
 *{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--snow);font-family:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
 .wrap{max-width:42rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}a{color:var(--ember)}
@@ -26,7 +28,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--ember);width:1rem;heig
 </head>
 <body>
 <main class="wrap">
-<p><a href="../es/">← hammockai.site</a></p>
+<p><a href="../es/">← hammockai.site</a> · <a href="en/" hreflang="en" lang="en">English</a></p>
 <h1>El Brief</h1>
 <p class="sub">Once preguntas, cinco minutos. Con esto tu sitio deja de ser una idea y empieza a ser un plano. Nada de lo que escribas aquí viaja solo: el resumen se arma en tu dispositivo y tú eliges cómo enviarlo.</p>
 <form id="brief" novalidate>
@@ -56,7 +58,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--ember);width:1rem;heig
 (()=>{'use strict';const $=id=>document.getElementById(id);const status=$('status');
 const ticked=g=>Array.from(document.querySelectorAll('#'+g+' input[type=checkbox]:checked')).map(c=>c.value==='Otra'?($('f6o').value.trim()||'Otra'):c.value);
 $('ckPrecios').addEventListener('change',e=>{$('preciosWrap').style.display=e.target.checked?'block':'none';});
-const compose=()=>{const miss=[];const v=id=>$(id).value.trim();
+const compose=()=>{const miss=[];const v=id=>$(id).value.trim();status.textContent="";
 if(!v('f1'))miss.push('f1');if(!v('f2'))miss.push('f2');if(!v('f4'))miss.push('f4');
 const w5=v('f5').split(/\s+/).filter(Boolean);if(w5.length!==3){miss.push('f5');status.textContent='El campo 5 pide exactamente tres palabras 😉';}
 const a6=ticked('g6');if(!a6.length)miss.push('g6');

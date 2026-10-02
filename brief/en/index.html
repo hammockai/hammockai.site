@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Brief — Hammock AI</title>
+<meta name="description" content="Eleven questions, five minutes. Your website starts here.">
+<meta name="theme-color" content="#0A0A0A">
+<style>
+@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-bold.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{--ink:#0A0A0A;--coal:#0E0E0E;--surface:#141414;--snow:#FAFAFA;--mist:rgba(250,250,250,.74);--dim:rgba(250,250,250,.56);--ember:#FF6B35;--hair:rgba(255,255,255,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--snow);font-family:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:42rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}a{color:var(--ember)}
+h1{font-size:2rem;line-height:1.15;margin:0 0 .5rem}.sub{color:var(--mist);margin:0 0 2rem}
+.f{border:1px solid var(--hair);border-radius:1rem;background:var(--surface);padding:1.1rem 1.25rem;margin-bottom:1rem}
+.q{font-weight:700;display:block;margin-bottom:.5rem}.req{color:var(--ember)}
+.hint{color:var(--dim);font-size:.85rem;display:block;margin:-.25rem 0 .5rem}
+input[type=text],textarea{width:100%;background:var(--coal);color:var(--snow);border:1px solid var(--hair);border-radius:.6rem;padding:.6rem .75rem;font:inherit}
+textarea{resize:vertical}.checks label{display:flex;gap:.5rem;align-items:center;margin:.35rem 0;color:var(--mist);font-size:.95rem}
+input[type=checkbox],input[type=radio]{accent-color:var(--ember);width:1rem;height:1rem}
+.sub-in{margin-top:.6rem}.sub-in span{color:var(--dim);font-size:.8rem;display:block}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}button{font:inherit;font-weight:700;border:0;border-radius:9999px;padding:.7rem 1.3rem;cursor:pointer}
+.primary{background:var(--ember);color:var(--ink)}.ghost{background:transparent;color:var(--mist);border:1px solid var(--hair)}
+.note{color:var(--dim);font-size:.85rem;margin-top:1.25rem}.miss{border-color:var(--ember)!important}
+#preciosWrap{display:none;margin-top:.6rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+<p><a href="../../">← hammockai.site</a> · <a href="../" hreflang="es" lang="es">Español</a></p>
+<h1>The Brief</h1>
+<p class="sub">Eleven questions, five minutes. With this, your website stops being an idea and becomes a plan. Nothing you write here travels on its own: the summary is put together on your device, and you choose how to send it.</p>
+<form id="brief" novalidate>
+<div class="f"><label class="q" for="f1">1. Your brand name, exactly as it should appear <span class="req">*</span></label><input type="text" id="f1"></div>
+<div class="f"><label class="q" for="f2">2. In one sentence: what do you do or sell? <span class="req">*</span></label><span class="hint">e.g. "Handmade mosaics for people who want homes with character." (not "a nice website")</span><input type="text" id="f2"></div>
+<div class="f"><label class="q" for="f3">3. Who is the website for? Your ideal customer, in one sentence</label><span class="hint">e.g. "People who value handmade work and look for pieces with a story."</span><input type="text" id="f3"></div>
+<div class="f"><label class="q" for="f4">4. City and country <span class="req">*</span></label><input type="text" id="f4" placeholder="Pichilemu, Chile"><span class="q" style="margin-top:.75rem">Website language <span class="req">*</span></span><div class="checks"><label><input type="radio" name="lang" value="Spanish"> Spanish</label><label><input type="radio" name="lang" value="English" checked> English</label><label><input type="radio" name="lang" value="Both"> Both</label></div></div>
+<div class="f"><label class="q" for="f5">5. Three words that describe your work <span class="req">*</span></label><span class="hint">e.g. color, patience, memory</span><input type="text" id="f5"></div>
+<div class="f"><span class="q">6. What should visitors be able to do on your site? (at least one) <span class="req">*</span></span><div class="checks" id="g6"><label><input type="checkbox" value="See my work"> See my work</label><label><input type="checkbox" value="Message me on WhatsApp"> Message me on WhatsApp</label><label><input type="checkbox" value="Book"> Book</label><label><input type="checkbox" value="Buy"> Buy</label><label><input type="checkbox" value="See prices" id="ckPrecios"> See prices</label><label><input type="checkbox" value="Learn my story"> Learn my story</label><label><input type="checkbox" value="Other"> Other:</label><input type="text" id="f6o" placeholder="tell us in a few words"></div>
+<div id="preciosWrap"><span class="hint">If you ticked "See prices":</span><div class="checks"><label><input type="radio" name="precios" value="prices shown"> Prices shown</label><label><input type="radio" name="precios" value="prices on request"> Prices on request</label></div></div></div>
+<div class="f"><span class="q">7. Which channels and materials do you have today? (at least one) <span class="req">*</span></span><div class="checks" id="g7"><label><input type="checkbox" value="WhatsApp" id="ckWa"> WhatsApp</label><label><input type="checkbox" value="Email" id="ckMail"> Email</label><label><input type="checkbox" value="Instagram" id="ckIg"> Instagram</label><label><input type="checkbox" value="Facebook" id="ckFb"> Facebook</label><label><input type="checkbox" value="Photos of your work"> Photos of your work</label><label><input type="checkbox" value="Logo"> Logo</label><label><input type="checkbox" value="Nothing yet (we'll guide you)"> Nothing yet (we'll guide you)</label></div>
+<div class="sub-in"><span>Fill in only the ones you ticked above:</span>
+<input type="text" id="f7wa" placeholder="WhatsApp: +56 9 …" style="margin-top:.4rem">
+<input type="text" id="f7mail" placeholder="Email: …" style="margin-top:.4rem">
+<input type="text" id="f7ig" placeholder="Instagram: @…" style="margin-top:.4rem">
+<input type="text" id="f7fb" placeholder="Facebook: https://…" style="margin-top:.4rem"></div></div>
+<div class="f"><label class="q" for="f8">8. One to three websites you like, and one line on why</label><span class="hint">max. 3 sites, one line each · e.g. https://… — I like it because…</span><textarea id="f8" rows="3"></textarea></div>
+<div class="f"><label class="q" for="f9">9. What your website should NEVER be or say</label><span class="hint">e.g. "no cold colors, no corporate language"</span><textarea id="f9" rows="2"></textarea></div>
+<div class="f"><label class="q" for="f10">10. Your name and how we should reply <span class="req">*</span></label><input type="text" id="f10" placeholder="Name + WhatsApp or email"></div>
+<div class="f"><label class="q" for="f11">11. Your story in three lines: how you started</label><span class="hint">e.g. "After years in law, I found my other voice in mosaic…"</span><textarea id="f11" rows="3" maxlength="300"></textarea></div>
+</form>
+<div class="btns"><button type="button" class="primary" id="copy">Copy my brief</button><button type="button" class="ghost" id="mail">Send by email</button><button type="button" class="ghost" id="dl">Download .txt</button></div>
+<p class="note" id="status"></p>
+<p class="note">No analytics, no trackers, like everything we build. © 2026 Hammock AI</p>
+</main>
+<script>
+(()=>{'use strict';const $=id=>document.getElementById(id);const status=$('status');
+const ticked=g=>Array.from(document.querySelectorAll('#'+g+' input[type=checkbox]:checked')).map(c=>c.value==='Other'?($('f6o').value.trim()||'Other'):c.value);
+$('ckPrecios').addEventListener('change',e=>{$('preciosWrap').style.display=e.target.checked?'block':'none';});
+const compose=()=>{const miss=[];const v=id=>$(id).value.trim();status.textContent='';
+if(!v('f1'))miss.push('f1');if(!v('f2'))miss.push('f2');if(!v('f4'))miss.push('f4');
+const w5=v('f5').split(/\s+/).filter(Boolean);if(w5.length!==3){miss.push('f5');status.textContent='Field 5 asks for exactly three words 😉';}
+const a6=ticked('g6');if(!a6.length)miss.push('g6');
+let precios='';if($('ckPrecios').checked){const r=document.querySelector('input[name=precios]:checked');if(!r){miss.push('g6');status.textContent='You ticked "See prices": choose shown or on request.';}else precios=r.value;}
+const a7=ticked('g7');if(!a7.length)miss.push('g7');
+const chan=[];
+if($('ckWa').checked){if(!v('f7wa'))miss.push('f7wa');else chan.push('WhatsApp '+v('f7wa'));}
+if($('ckMail').checked){if(!v('f7mail'))miss.push('f7mail');else chan.push('Email '+v('f7mail'));}
+if($('ckIg').checked){if(!v('f7ig'))miss.push('f7ig');else chan.push('Instagram '+v('f7ig'));}
+if($('ckFb').checked){if(!v('f7fb'))miss.push('f7fb');else chan.push('Facebook '+v('f7fb'));}
+if(!v('f10'))miss.push('f10');
+document.querySelectorAll('.miss').forEach(e=>e.classList.remove('miss'));
+if(miss.length){miss.forEach(id=>$(id).classList.add('miss'));if(!status.textContent)status.textContent='The fields marked in orange are missing. No rush.';return null;}
+const lang=document.querySelector('input[name=lang]:checked').value;
+const L=['BRIEF — '+v('f1'),'1 Brand: '+v('f1'),'2 Does/sells: '+v('f2'),'3 For whom: '+(v('f3')||'—'),'4 Place: '+v('f4')+' | Language: '+lang,'5 Words: '+w5.join(', '),'6 Should allow: '+a6.join(' · ')+(precios?' | Prices: '+precios:''),'7 Has today: '+a7.join(' · '),'7b Channels: '+(chan.join(' · ')||'—'),'8 Likes: '+(v('f8')||'—'),'9 Never: '+(v('f9')||'—'),'10 Reply to: '+v('f10'),'11 Story: '+(v('f11')||'—')];
+return L.join('\n');};
+$('copy').addEventListener('click',()=>{const b=compose();if(!b)return;navigator.clipboard.writeText(b).then(()=>status.textContent='Copied! Paste it wherever you like.');});
+$('mail').addEventListener('click',()=>{const b=compose();if(!b)return;location.href='mailto:hammockai@proton.me?subject='+encodeURIComponent('Brief — '+$('f1').value.trim())+'&body='+encodeURIComponent(b);});
+$('dl').addEventListener('click',()=>{const b=compose();if(!b)return;const slug=$('f1').value.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');const u=URL.createObjectURL(new Blob([b],{type:'text/plain'}));const a=document.createElement('a');a.href=u;a.download='brief-'+slug+'.txt';a.click();URL.revokeObjectURL(u);status.textContent='Downloaded. Your brief travels with you.';});
+})();
+</script>
+</body>
+</html>
