@@ -84,6 +84,7 @@
 - `assets/images/`: logo and images.
 - `CNAME`: custom domain. **Do not edit or delete.**
 - `_config.yml`: tells GitHub Pages which repo files NOT to publish.
+- `LICENSE`: all rights reserved. The repo is public only for hosting; never add usage or "run it yourself" instructions.
 - `AGENTS.md`: This file. Lives at the Git root. Excluded from the published site.
 - **Rule:** Nothing goes in `main` that should not be public. Drafts and experiments go in a branch.
 
