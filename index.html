@@ -3,161 +3,438 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hammock AI — Sovereign Websites. Total Control. Zero Telemetry.</title>
-<meta name="description" content="Hammock AI builds sovereign, tracker-free websites and automations with a small AI crew. One developer, one crew, zero telemetry. Your data, your rules, your keys.">
+<title>Hammock AI — Fast, private websites and landing pages you own</title>
+<meta name="description" content="Hammock AI designs and builds simple, fast, SEO-ready websites and landing pages for independent professionals and small businesses. No trackers, no lock-in: you own the code, the domain and the docs.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hammock AI">
-<meta property="og:title" content="Hammock AI — Sovereign Websites. Total Control. Zero Telemetry.">
-<meta property="og:description" content="SEO-optimized, tracker-free, and 100% yours. Websites, automations and AI crews for solo dreamers and small businesses. Zero telemetry.">
+<meta property="og:title" content="Hammock AI — Fast, private websites and landing pages you own">
+<meta property="og:description" content="Simple, SEO-ready websites and landing pages for small businesses. No trackers, no lock-in, fair prices. Built by one developer and an AI crew, from Chile.">
 <meta property="og:url" content="https://hammockai.site/">
-<meta property="og:image" content="/img/og-cover.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://hammockai.site/">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 </head>
 <body class="bg-ink font-body text-snow antialiased">
-<a class="skip-link" href="#home">Skip to content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header fixed inset-x-0 top-0 z-50 px-4 pt-4">
   <nav aria-label="Primary" class="pill mx-auto flex w-full max-w-5xl items-center gap-6 px-5 py-3">
     <a class="flex shrink-0 items-center gap-3" href="#home" aria-label="Hammock AI — back to top">
-      <img class="h-9 w-9" style="border-radius:50%" src="assets/images/logo.svg" alt="Hammock AI mark: two palm trees with a hammock slung between them">
+      <img class="h-9 w-9 rounded-full" src="assets/images/logo.svg" alt="Hammock AI mark: two palm trees with a hammock slung between them">
       <span class="font-display text-lg tracking-tight">Hammock AI</span>
     </a>
-    <ul class="ml-auto hidden items-center gap-8 md:flex" role="list">
-      <li><a class="nav-link" href="#home">Home</a></li>
-      <li><a class="nav-link" href="#crew">AI Crew</a></li>
-      <li><a class="nav-link" href="#about">About us</a></li>
+    <ul class="ml-auto hidden items-center gap-7 lg:flex" role="list">
+      <li><a class="nav-link" href="#services">Services</a></li>
+      <li><a class="nav-link" href="#process">Process</a></li>
+      <li><a class="nav-link" href="#crew">How we work</a></li>
+      <li><a class="nav-link" href="#open">Open source</a></li>
+      <li><a class="nav-link" href="#about">About</a></li>
     </ul>
-    <a class="btn-cta hidden md:inline-flex" href="mailto:hammockai@proton.me">Contact us</a>
-    <button class="menu-btn ml-auto md:hidden" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+    <a class="btn-cta hidden lg:inline-flex" href="brief/">Start your brief</a>
+    <button class="menu-btn ml-auto lg:hidden" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
       <span class="sr-only">Menu</span>
       <span class="menu-bar" aria-hidden="true"></span>
       <span class="menu-bar" aria-hidden="true"></span>
       <span class="menu-bar" aria-hidden="true"></span>
     </button>
   </nav>
-  <div class="mobile-menu mx-auto w-full max-w-5xl md:hidden" id="mobile-menu" hidden>
-    <a class="mobile-link" href="#home">Home</a>
-    <a class="mobile-link" href="#crew">AI Crew</a>
-    <a class="mobile-link" href="#about">About us</a>
-    <a class="btn-cta mt-2 w-full" href="mailto:hammockai@proton.me">Contact us</a>
+  <div class="mobile-menu mx-auto w-full max-w-5xl lg:hidden" id="mobile-menu" hidden>
+    <a class="mobile-link" href="#services">Services</a>
+    <a class="mobile-link" href="#process">Process</a>
+    <a class="mobile-link" href="#crew">How we work</a>
+    <a class="mobile-link" href="#open">Open source</a>
+    <a class="mobile-link" href="#about">About</a>
+    <a class="btn-cta mt-2 w-full" href="brief/">Start your brief</a>
   </div>
 </header>
 
 <main id="main">
 
+  <!-- Hero: the offer in one screen -->
   <section id="home" class="scroll-mt-32 px-6 pb-20 pt-36 md:pb-28 md:pt-44">
-  <div class="hero-grid mx-auto grid w-full max-w-6xl items-center gap-14">
-    <div data-reveal>
-      <h1 class="font-display text-5xl leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
-        <span class="mb-6 block max-w-xl font-sans text-xl font-semibold leading-snug text-snow md:text-2xl">We build Websites for solo dreamers &amp; small businesses</span>
-        <span class="block">Found by your customers.</span>
-        <span class="block">Owned by you.</span>
-        <span class="block text-ember">Fast by design.</span>
-      </h1>
-      <p class="mt-6 max-w-xl text-lg text-mist md:text-xl">We design, build and hand over simple, SEO-ready, tracker-free websites for solo dreamers and small businesses. No lock-in, no telemetry, no surprises — our sovereign AI crew does the heavy lifting, and <strong class="font-bold text-snow">the time it saves us comes straight off your price.</strong></p>
-      <div class="mt-9 flex flex-wrap items-center gap-6">
-        <a class="btn-cta btn-lg" href="mailto:hammockai@proton.me">Get a fair quote</a>
-        <a class="text-sm text-mist underline-offset-4 transition hover:text-snow hover:underline" href="#ai-crew">Meet the AI crew →</a>
+    <div class="hero-grid mx-auto grid w-full max-w-6xl items-center gap-14">
+      <div data-reveal>
+        <p class="eyebrow">Websites &amp; landing pages · Made in Chile</p>
+        <h1 class="mt-6 font-display text-5xl leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+          <span class="block">Found by your customers.</span>
+          <span class="block">Owned by you.</span>
+          <span class="block text-ember">Fast by design.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-mist md:text-xl">We design, build and hand over simple, SEO-ready websites and landing pages for independent professionals and small businesses. No trackers, no lock-in, no surprises. Our AI-assisted workflow saves us time, and <strong class="font-bold text-snow">that saving comes straight off your price.</strong></p>
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a class="btn-cta btn-lg" href="brief/">Start your brief</a>
+          <a class="btn-ghost btn-lg" href="mailto:hammockai@proton.me?subject=Quote%20request">Get a fair quote</a>
+        </div>
+        <p class="mt-7 text-xs uppercase tracking-[0.2em] text-mist">No trackers · No lock-in · No surprises</p>
       </div>
-      <p class="mt-7 text-xs uppercase tracking-[0.2em] text-mist">No trackers · No lock-in · No surprises</p>
-    </div>
-    <div class="hero-art hidden md:block" id="pixel-art-slot" aria-hidden="true"></div>
-  </div>
-</section>
 
-  <section id="crew" class="scroll-mt-32 px-6 py-20 md:py-28">
+      <!-- Illustrative spec card, not a measurement of any client site -->
+      <div class="spec-card" data-reveal style="--d:120ms" aria-labelledby="spec-title">
+        <div class="spec-bar" aria-hidden="true">
+          <span class="spec-dot"></span><span class="spec-dot"></span><span class="spec-dot"></span>
+          <span class="spec-url">yourbusiness.cl</span>
+        </div>
+        <div class="p-6">
+          <h2 id="spec-title" class="text-xs uppercase tracking-[0.2em] text-mist">What ships with every site</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Tracking scripts</dt><dd class="text-ember">0</dd></div>
+            <div><dt>Third-party cookies</dt><dd class="text-ember">0</dd></div>
+            <div><dt>Frameworks to maintain</dt><dd class="text-ember">0</dd></div>
+            <div><dt>Code &amp; domain ownership</dt><dd>100% yours</dd></div>
+            <div><dt>Stack</dt><dd>HTML · CSS · JS</dd></div>
+            <div><dt>Documentation</dt><dd>Plain language</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services: the current MVP -->
+  <section id="services" class="band scroll-mt-32 px-6 py-20 md:py-28">
     <div class="mx-auto w-full max-w-6xl">
       <div class="max-w-2xl" data-reveal>
-        <h2 class="h2 font-display">The AI Crew</h2>
-        <p class="mt-4 text-lg text-mist">Three specialists, one watch. Each knows its job, stays in its lane, and reports back to the Captain.</p>
+        <p class="eyebrow">Services</p>
+        <h2 class="h2 mt-4 font-display">What we build</h2>
+        <p class="mt-4 text-lg text-mist">Small, focused sites that load fast, rank well and are easy to hand over. We keep the scope tight so the price stays fair.</p>
       </div>
-      <ul class="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3" role="list">
+      <ul class="mt-12 grid gap-5 md:grid-cols-3" role="list">
         <li class="card p-6" data-reveal style="--d:0ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">01</p>
-          <h3 class="mt-4 font-display text-xl">Contramaestre</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Keeps the wheel, the clock and the line.</p>
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">01 · CORE</p>
+          <h3 class="mt-4 font-display text-xl">Landing page</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">One page, one goal. For a launch, a single service or a campaign: a clear message, a clear call to action (WhatsApp, email or booking) and nothing that slows it down.</p>
+          <p class="mt-4 text-sm text-dim">Ideal for: launching a product, validating an idea, promoting one service.</p>
         </li>
         <li class="card p-6" data-reveal style="--d:70ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">02</p>
-          <h3 class="mt-4 font-display text-xl">Prompt Engineer</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Precise prompts, precise communication.</p>
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">02 · CORE</p>
+          <h3 class="mt-4 font-display text-xl">Simple website</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">A few pages for a small business or independent professional: who you are, what you offer, your work, and how to reach you.</p>
+          <p class="mt-4 text-sm text-dim">Ideal for: artisans, studios, local businesses, consultants.</p>
         </li>
-        <li class="card p-6" data-reveal style="--d:140ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">03</p>
-          <h3 class="mt-4 font-display text-xl">Guardian</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Boundaries and guardrails.</p>
+        <li class="card card-muted p-6" data-reveal style="--d:140ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-dim">03 · ON REQUEST</p>
+          <h3 class="mt-4 font-display text-xl">Automations &amp; AI agents</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Self-hosted workflows with n8n and custom AI crews built on the same principles. Our current focus is websites; tell us about your case and we'll be honest about fit.</p>
         </li>
       </ul>
+
+      <div class="mt-14 grid gap-10 md:grid-cols-2" data-reveal>
+        <div>
+          <h3 class="font-display text-2xl">Included in every project</h3>
+          <p class="mt-4 text-mist">No add-ons for the basics. Every site we deliver comes with the same foundations.</p>
+        </div>
+        <ul class="grid gap-3" role="list">
+          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Mobile-first, hand-written code.</strong> <span class="text-mist">HTML, CSS and JavaScript. No heavy frameworks, nothing you can't read.</span></span></li>
+          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>SEO foundations.</strong> <span class="text-mist">Semantic markup, titles and descriptions, social previews, fast loading.</span></span></li>
+          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Accessibility basics.</strong> <span class="text-mist">Readable type, keyboard navigation, reduced-motion support.</span></span></li>
+          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>No analytics or trackers by default.</strong> <span class="text-mist">Your visitors aren't followed around the web from your site.</span></span></li>
+          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Full handover.</strong> <span class="text-mist">Source files, domain in your name, and plain-language documentation.</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy: why low or zero telemetry is a business advantage -->
+  <section id="privacy" class="scroll-mt-32 px-6 py-20 md:py-28">
+    <div class="mx-auto w-full max-w-6xl">
+      <div class="max-w-2xl" data-reveal>
+        <p class="eyebrow">Privacy by default</p>
+        <h2 class="h2 mt-4 font-display">Low or zero telemetry, on purpose</h2>
+        <p class="mt-4 text-lg text-mist">Most small-business sites ship with analytics, pixels and embeds they don't need. Each one adds weight, third-party cookies and another company watching your visitors. We leave them out unless you have a clear reason to add them.</p>
+      </div>
+      <ul class="mt-12 grid gap-5 md:grid-cols-3" role="list">
+        <li class="card p-6" data-reveal style="--d:0ms">
+          <h3 class="font-display text-xl">Faster pages</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Fewer scripts means faster loads, especially on mobile data. Speed helps both your visitors and your search ranking.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:70ms">
+          <h3 class="font-display text-xl">More trust</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">People notice when a site respects them. No trackers means no one profiling your customers through your own website.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:140ms">
+          <h3 class="font-display text-xl">Less to manage</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">No tracking cookies means fewer consent banners, fewer policies to keep updated and fewer third parties to depend on.</p>
+        </li>
+      </ul>
+      <p class="callout mt-10" data-reveal><strong class="text-snow">Need numbers?</strong> We'll propose privacy-friendly, cookieless analytics and explain the trade-off before adding anything. Your data, your rules, your freedom.</p>
+    </div>
+  </section>
+
+  <!-- Process: from brief to handover -->
+  <section id="process" class="band scroll-mt-32 px-6 py-20 md:py-28">
+    <div class="mx-auto w-full max-w-6xl">
+      <div class="max-w-2xl" data-reveal>
+        <p class="eyebrow">Process</p>
+        <h2 class="h2 mt-4 font-display">From brief to handover</h2>
+        <p class="mt-4 text-lg text-mist">A clear path with no hidden steps. You know what's happening, what it costs and what you'll receive.</p>
+      </div>
+      <ol class="steps mt-12 grid gap-5 md:grid-cols-5" role="list">
+        <li class="step" data-reveal style="--d:0ms">
+          <span class="step-num">1</span>
+          <h3 class="mt-4 font-display text-lg">The brief</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Eleven questions, about five minutes. Your answers are assembled on your own device and you choose how to send them.</p>
+        </li>
+        <li class="step" data-reveal style="--d:60ms">
+          <span class="step-num">2</span>
+          <h3 class="mt-4 font-display text-lg">Fair quote</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Scope, what's included and a clear price, agreed before any work starts.</p>
+        </li>
+        <li class="step" data-reveal style="--d:120ms">
+          <span class="step-num">3</span>
+          <h3 class="mt-4 font-display text-lg">Build in small steps</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Short, verifiable chunks, so you see progress and can correct course early.</p>
+        </li>
+        <li class="step" data-reveal style="--d:180ms">
+          <span class="step-num">4</span>
+          <h3 class="mt-4 font-display text-lg">Human review</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Every change is reviewed by a person and checked against our principles before it goes live.</p>
+        </li>
+        <li class="step" data-reveal style="--d:240ms">
+          <span class="step-num">5</span>
+          <h3 class="mt-4 font-display text-lg">Handover</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Files, domain and documentation are yours. Move your site anywhere, anytime.</p>
+        </li>
+      </ol>
       <p class="mt-10" data-reveal>
-        <a class="link-arrow" href="https://github.com/hammockai/aiCrew" target="_blank" rel="noopener noreferrer">See our prompts and crew docs, in the open <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+        <a class="link-arrow" href="brief/">Start with the brief <span class="link-arrow-icon" aria-hidden="true">→</span></a>
       </p>
     </div>
   </section>
 
-  <section id="powered" class="band scroll-mt-32 px-6 py-20 md:py-28">
-    <div class="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-2">
-      <div data-reveal>
-        <h2 class="h2 font-display">Powered by</h2>
-        <p class="mt-4 text-lg font-bold text-snow">One developer. One AI crew.</p>
-        <p class="mt-4 text-mist">Human in the loop, always: the Captain decides, the crew executes. Nothing ships without a hand on the wheel.</p>
-        <h3 class="mt-8 text-xs uppercase tracking-[0.2em] text-mist">Models</h3>
-        <ul class="mt-3 flex flex-wrap gap-2" role="list">
-          <li class="chip">Qwen</li>
-          <li class="chip">DeepSeek</li>
-          <li class="chip">Kimi</li>
-        </ul>
-        <h3 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">Automation</h3>
-        <ul class="mt-3 flex flex-wrap gap-2" role="list">
-          <li class="chip">n8n</li>
-        </ul>
+  <!-- Crew: one developer, three AI agents -->
+  <section id="crew" class="scroll-mt-32 px-6 py-20 md:py-28">
+    <div class="mx-auto w-full max-w-6xl">
+      <div class="max-w-2xl" data-reveal>
+        <p class="eyebrow">How we work</p>
+        <h2 class="h2 mt-4 font-display">One developer. An AI crew. A human at the wheel.</h2>
+        <p class="mt-4 text-lg text-mist">Hammock AI is a one-person studio backed by three AI agents with clearly defined roles. The developer, the Captain, sets the goal and has the final say. Nothing ships without human review.</p>
       </div>
-      <div data-reveal style="--d:80ms">
-        <ul class="grid gap-4" role="list">
-          <li class="check-item">
-            <svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>No telemetry</span>
-          </li>
-          <li class="check-item">
-            <svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>SEO ready</span>
-          </li>
-          <li class="check-item">
-            <svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>AI-powered design</span>
-          </li>
-          <li class="check-item">
-            <svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Minimal stack: HTML, CSS, JavaScript</span>
-          </li>
-        </ul>
-        <p class="mt-8 text-mist">That's our stack — small on purpose, auditable by design, and free of anything we can't read.</p>
+      <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" role="list">
+        <li class="card card-lead p-6" data-reveal style="--d:0ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">CAPTAIN · HUMAN</p>
+          <h3 class="mt-4 font-display text-xl">The Developer</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Defines the goal and the boundaries, makes every decision and holds the final veto.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:70ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">FIRST MATE · AI</p>
+          <h3 class="mt-4 font-display text-xl">Contramaestre</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Challenges assumptions, maps the route and keeps the rhythm. Acts as a senior full-stack reviewer and mentor.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:140ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">NAVIGATOR · AI</p>
+          <h3 class="mt-4 font-display text-xl">Prompt Engineer</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Turns ideas into precise instructions for AI tools and keeps every message, prompt and line of copy clear.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:210ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">COMPASS · AI</p>
+          <h3 class="mt-4 font-display text-xl">Guardian</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Reviews the work against the Six Pillars before deployment, names hidden risks and proposes practical fixes.</p>
+        </li>
+      </ul>
+
+      <div class="mt-14 grid gap-12 md:grid-cols-2">
+        <div data-reveal>
+          <h3 class="font-display text-2xl">The workflow</h3>
+          <ol class="flow mt-6" role="list">
+            <li><strong>The Captain</strong> defines the goal and the boundary.</li>
+            <li><strong>The Contramaestre</strong> checks for flaws and maps the route.</li>
+            <li><strong>The Prompt Engineer</strong> crafts a precise instruction.</li>
+            <li><strong>An AI coding tool</strong> executes it in small, verifiable chunks.</li>
+            <li><strong>The Guardian</strong> reviews the result against the Six Pillars.</li>
+            <li><strong>The Captain</strong> decides, and the crew keeps building.</li>
+          </ol>
+          <p class="mt-6 text-sm text-dim">We also tested a separate engineering agent and retired it: direct collaboration between the developer, the Contramaestre and focused coding tools proved faster and better aligned.</p>
+        </div>
+        <div data-reveal style="--d:80ms">
+          <h3 class="font-display text-2xl">Tools &amp; stack</h3>
+          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">The hull · code</h4>
+          <ul class="mt-3 flex flex-wrap gap-2" role="list">
+            <li class="chip">HTML</li><li class="chip">CSS</li><li class="chip">Tailwind</li><li class="chip">JavaScript</li><li class="chip">Git</li>
+          </ul>
+          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">The minds · AI models</h4>
+          <ul class="mt-3 flex flex-wrap gap-2" role="list">
+            <li class="chip">Qwen</li><li class="chip">DeepSeek</li><li class="chip">Kimi</li>
+          </ul>
+          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">The hands · AI tools</h4>
+          <ul class="mt-3 flex flex-wrap gap-2" role="list">
+            <li class="chip">Qoder in VSCodium</li><li class="chip">n8n, self-hosted</li>
+          </ul>
+          <p class="mt-6 text-mist">Models chosen for their open-source ethos and affordability. A small stack on purpose: portable, auditable and free of anything we can't read.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="scroll-mt-32 px-6 py-20 md:py-28">
+  <!-- Principles: the Six Pillars, in client terms -->
+  <section id="principles" class="band scroll-mt-32 px-6 py-20 md:py-28">
     <div class="mx-auto w-full max-w-6xl">
       <div class="max-w-2xl" data-reveal>
-        <h2 class="h2 font-display">About us</h2>
-        <p class="mt-4 text-lg text-mist">A fleet and a philosophy, sailing under one flag.</p>
+        <p class="eyebrow">Principles</p>
+        <h2 class="h2 mt-4 font-display">The Six Pillars</h2>
+        <p class="mt-4 text-lg text-mist">Every decision, prompt and line of code is filtered through six principles. Here's what they mean for you as a client.</p>
       </div>
-      <div class="mt-12 grid gap-10 md:grid-cols-3">
-        <article data-reveal style="--d:0ms">
-          <h3 class="font-display text-xl">What Hammock AI is</h3>
-          <p class="mt-4 text-mist">Websites, automations and AI crews for solo dreamers and small businesses. One point of contact, a whole crew of capability.</p>
+      <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" role="list">
+        <li class="card p-6" data-reveal style="--d:0ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">01</p>
+          <h3 class="mt-4 font-display text-xl">Balanced Sea</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Deals that benefit both sides. Fair prices, mutual benefit over individual advantage, no zero-sum thinking.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:60ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">02</p>
+          <h3 class="mt-4 font-display text-xl">The Booger Rule</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Be the friend who points out the booger and hands a tissue. If something won't work, we say so early, and bring the fix.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:120ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">03</p>
+          <h3 class="mt-4 font-display text-xl">Challenge Assumptions</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">We make assumptions explicit and verify them before building on top of them.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:0ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">04</p>
+          <h3 class="mt-4 font-display text-xl">Accessibility First</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Plain-language docs and interfaces that don't intimidate. We explain the how and the why.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:60ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">05</p>
+          <h3 class="mt-4 font-display text-xl">Open-Source Ethos</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Knowledge should be free and improvable. We publish our prompts and workflows, and favor auditable solutions.</p>
+        </li>
+        <li class="card p-6" data-reveal style="--d:120ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">06</p>
+          <h3 class="mt-4 font-display text-xl">Sovereign Ship</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Your data, your rules, your freedom. You own your work and can migrate anytime without losing what matters.</p>
+        </li>
+      </ul>
+      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-4" data-reveal>
+        <a class="link-arrow" href="https://github.com/hammockai" target="_blank" rel="noopener noreferrer">Read the full manifesto <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+        <a class="link-arrow" href="https://github.com/hammockai/aiCrew/blob/main/logbook/pillars.md" target="_blank" rel="noopener noreferrer">How the pillars were born <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Open source: everything published on GitHub -->
+  <section id="open" class="scroll-mt-32 px-6 py-20 md:py-28">
+    <div class="mx-auto w-full max-w-6xl">
+      <div class="max-w-2xl" data-reveal>
+        <p class="eyebrow">Open source</p>
+        <h2 class="h2 mt-4 font-display">Built in the open</h2>
+        <p class="mt-4 text-lg text-mist">The system prompts that run our crew are public. Read them, adapt them and build your own crew. It's also the most direct way to see how we work before you hire us.</p>
+      </div>
+
+      <div class="mt-12 grid gap-5 md:grid-cols-2">
+        <article class="card p-6 md:p-8" data-reveal style="--d:0ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">REPOSITORY · CC BY-SA 4.0</p>
+          <h3 class="mt-4 font-display text-2xl">AI Crew library</h3>
+          <p class="mt-3 text-mist">The full system prompts of the three official agents, in English and Spanish, plus the chain of command and hard boundaries for each role. Works with any capable LLM.</p>
+          <ul class="agent-links mt-6" role="list">
+            <li><span>Contramaestre</span><a href="https://github.com/hammockai/aiCrew/blob/main/agents/en/contramaestre.md" target="_blank" rel="noopener noreferrer" hreflang="en">EN</a><a href="https://github.com/hammockai/aiCrew/blob/main/agents/es/contramaestre.md" target="_blank" rel="noopener noreferrer" hreflang="es">ES</a></li>
+            <li><span>Prompt Engineer</span><a href="https://github.com/hammockai/aiCrew/blob/main/agents/en/prompt-engineer.md" target="_blank" rel="noopener noreferrer" hreflang="en">EN</a><a href="https://github.com/hammockai/aiCrew/blob/main/agents/es/prompt-engineer.md" target="_blank" rel="noopener noreferrer" hreflang="es">ES</a></li>
+            <li><span>Guardian</span><a href="https://github.com/hammockai/aiCrew/blob/main/agents/en/guardian.md" target="_blank" rel="noopener noreferrer" hreflang="en">EN</a><a href="https://github.com/hammockai/aiCrew/blob/main/agents/es/guardian.md" target="_blank" rel="noopener noreferrer" hreflang="es">ES</a></li>
+          </ul>
+          <p class="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+            <a class="link-arrow" href="https://github.com/hammockai/aiCrew" target="_blank" rel="noopener noreferrer">Browse aiCrew <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="https://github.com/hammockai/aiCrew/blob/main/CREW.md" target="_blank" rel="noopener noreferrer">Chain of command <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+          </p>
         </article>
-        <article data-reveal style="--d:80ms">
-          <h3 class="font-display text-xl">What we seek</h3>
-          <p class="mt-4 text-mist">AI that respects people, their data and their rest. We build for balance between work and life — tools that finish their watch so you can log off.</p>
+
+        <article class="card p-6 md:p-8" data-reveal style="--d:80ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">LOGBOOK · SINCE OCT 2025</p>
+          <h3 class="mt-4 font-display text-2xl">A year of work, documented</h3>
+          <p class="mt-3 text-mist">Dozens of versions across Claude, Kimi and Qwen. Early and retired agents (El Escribano, The Artist, Cipher, El Ingeniero, El Maestro…) are published as they were, with what worked and what didn't.</p>
+          <ol class="timeline mt-6" role="list">
+            <li><span class="timeline-date">Oct – Dec 2025</span><span><strong>Claude.</strong> The crew is born: first agents and first policies.</span></li>
+            <li><span class="timeline-date">Dec 2025 – Feb 2026</span><span><strong>Claude → Qwen.</strong> Last Claude prompts run in Kimi; new agents rewritten with Qwen.</span></li>
+            <li><span class="timeline-date">2026</span><span><strong>Qwen.</strong> Site factory, Spanish-language agents and rules for coding agents. DeepSeek trials.</span></li>
+            <li><span class="timeline-date">Oct 2026</span><span><strong>Crew v2.1.</strong> Contramaestre, Prompt Engineer and Guardian: the current crew.</span></li>
+          </ol>
+          <p class="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+            <a class="link-arrow" href="https://github.com/hammockai/aiCrew/blob/main/logbook/README.md" target="_blank" rel="noopener noreferrer">Open the logbook <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="https://github.com/hammockai/aiCrew/blob/main/logbook/pillars.md" target="_blank" rel="noopener noreferrer">4 → 7 → 6 pillars <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+          </p>
         </article>
-        <article data-reveal style="--d:160ms">
-          <h3 class="font-display text-xl">How it was born</h3>
-          <p class="mt-4 text-mist">A surfer in Pichilemu watched AI promise freedom and deliver complexity. The ocean taught him that systems which flow with nature thrive — so he built a crew, not a product.</p>
-        </article>
+      </div>
+
+      <div class="table-wrap mt-10" data-reveal>
+        <table class="repo-table">
+          <caption class="sr-only">Hammock AI public repositories</caption>
+          <thead>
+            <tr><th scope="col">Repository</th><th scope="col">What's inside</th><th scope="col">License</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><a href="https://github.com/hammockai/aiCrew" target="_blank" rel="noopener noreferrer">aiCrew</a></th><td>The crew's system prompts (EN · ES), the logbook and the history of the pillars.</td><td>CC BY-SA 4.0</td></tr>
+            <tr><th scope="row"><a href="https://github.com/hammockai" target="_blank" rel="noopener noreferrer">Manifesto</a></th><td>Origin, the crew, the Six Pillars, tools and workflow.</td><td>CC BY-ND 4.0</td></tr>
+            <tr><th scope="row"><a href="https://github.com/hammockai/hammockai.site" target="_blank" rel="noopener noreferrer">hammockai.site</a></th><td>Source of this website. Public for hosting only.</td><td>All rights reserved</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-dim">The <em>Hammock AI</em> name and logo are not covered by these licenses.</p>
+    </div>
+  </section>
+
+  <!-- About: origin story -->
+  <section id="about" class="band scroll-mt-32 px-6 py-20 md:py-28">
+    <div class="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-2">
+      <div data-reveal>
+        <p class="eyebrow">About</p>
+        <h2 class="h2 mt-4 font-display">Why “Hammock”?</h2>
+        <p class="mt-4 text-lg text-mist">A hammock isn't about laziness; it's about sovereignty. It's the symbol of working smart enough to reclaim your time.</p>
+        <p class="mt-4 text-mist">Hammock AI exists to help independent professionals and small teams build that same freedom, using AI not to replace people, but to give them their time back. A self-taught studio from Santiago &amp; Pichilemu, Chile.</p>
+      </div>
+      <figure class="quote" data-reveal style="--d:80ms">
+        <blockquote>
+          <p>“Before code, I was a firefighter, a construction manager, a hostel manager, a hardware store manager and a surfboard shaper apprentice. I know the physical grind. When the pandemic hit, I pivoted to web development. Then AI arrived, and I realized that with these new ‘brains’ you can automate the heavy lifting and build your own digital crew.”</p>
+        </blockquote>
+        <figcaption class="mt-5 text-sm text-dim">Founder, Hammock AI</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="scroll-mt-32 px-6 py-20 md:py-28">
+    <div class="mx-auto w-full max-w-3xl">
+      <div data-reveal>
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h2 mt-4 font-display">Questions, answered</h2>
+      </div>
+      <div class="faq mt-10" data-reveal>
+        <details>
+          <summary>How much does a website cost?</summary>
+          <p>It depends on scope. Send the brief and you'll get a clear, fair quote before any work begins. The time our AI-assisted workflow saves comes off your price.</p>
+        </details>
+        <details>
+          <summary>Who owns the website?</summary>
+          <p>You do. The source files, the domain and the content are yours, and we hand everything over with plain-language documentation.</p>
+        </details>
+        <details>
+          <summary>Can I move my site to another provider later?</summary>
+          <p>Yes. Plain HTML, CSS and JavaScript run on almost any hosting. No proprietary builder, no lock-in.</p>
+        </details>
+        <details>
+          <summary>Will my site have analytics?</summary>
+          <p>Not by default. If you need visitor numbers, we'll propose privacy-friendly, cookieless options and explain the trade-off before adding anything.</p>
+        </details>
+        <details>
+          <summary>Is AI building my site unsupervised?</summary>
+          <p>No. AI tools do the heavy lifting in small, verifiable steps, and a human reviews every change before it goes live.</p>
+        </details>
+        <details>
+          <summary>Do you work in Spanish?</summary>
+          <p>Yes, in Spanish and English. The brief is in Spanish, and your site can be in Spanish, English or both.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final call to action -->
+  <section id="contact" class="scroll-mt-32 px-6 pb-24 md:pb-32">
+    <div class="cta-panel mx-auto w-full max-w-6xl" data-reveal>
+      <h2 class="h2 font-display">Ready when you are.</h2>
+      <p class="mt-4 max-w-xl text-lg text-mist">Start with the brief: eleven questions, five minutes, and nothing stored on our side. Or write to us directly.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a class="btn-cta btn-lg" href="brief/">Start your brief</a>
+        <a class="btn-ghost btn-lg" href="mailto:hammockai@proton.me">hammockai@proton.me</a>
       </div>
     </div>
   </section>
@@ -168,15 +445,18 @@
   <div class="mx-auto flex w-full max-w-6xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
     <p class="font-display text-lg">Hammock AI</p>
     <ul class="flex flex-wrap gap-x-7 gap-y-3" role="list">
-      <li><a class="foot-link" href="https://www.tiktok.com/@hammockai" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+      <li><a class="foot-link" href="brief/">Brief</a></li>
       <li><a class="foot-link" href="https://github.com/hammockai" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a class="foot-link" href="https://github.com/hammockai/aiCrew" target="_blank" rel="noopener noreferrer">AI Crew</a></li>
+      <li><a class="foot-link" href="https://github.com/hammockai/aiCrew/blob/main/logbook/README.md" target="_blank" rel="noopener noreferrer">Logbook</a></li>
       <li><a class="foot-link" href="https://github.com/hammockai/.github/blob/main/profile/README.md" target="_blank" rel="noopener noreferrer">Manifesto</a></li>
+      <li><a class="foot-link" href="https://www.tiktok.com/@hammockai" target="_blank" rel="noopener noreferrer">TikTok</a></li>
       <li><a class="foot-link" href="mailto:hammockai@proton.me">Contact</a></li>
     </ul>
   </div>
   <div class="mx-auto mt-10 w-full max-w-6xl">
-    <p class="text-mist">Zero telemetry. Zero trackers. Your data, your rules, your keys.</p>
-    <p class="mt-3 text-sm text-dim">© 2026 Hammock AI</p>
+    <p class="text-mist">No analytics. No trackers. Your data, your rules, your keys.</p>
+    <p class="mt-3 text-sm text-dim">© 2026 Hammock AI · Santiago &amp; Pichilemu, Chile</p>
   </div>
 </footer>
 
