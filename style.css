@@ -89,15 +89,18 @@ svg{display:block}
 .card-muted{background:var(--coal)}
 .card-lead{border-color:rgba(255,107,53,.45)}
 
-/* Hero spec card: illustrative "what ships" panel */
-.spec-card{border:1px solid var(--pill-line);border-radius:1.4rem;background:var(--surface);box-shadow:0 24px 60px rgba(0,0,0,.5);overflow:hidden}
-.spec-bar{display:flex;align-items:center;gap:.4rem;padding:.8rem 1.1rem;border-bottom:1px solid var(--hair);background:var(--coal)}
-.spec-dot{width:.6rem;height:.6rem;border-radius:9999px;background:var(--pill-line)}
-.spec-url{margin-left:.6rem;padding:.2rem .8rem;border-radius:9999px;background:rgba(255,255,255,.05);font-size:.8rem;color:var(--dim)}
-.spec-list>div{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--hair)}
-.spec-list>div:last-child{border-bottom:0}
-.spec-list dt{color:var(--mist)}
-.spec-list dd{font-weight:700;text-align:right}
+/* Hero: pixel-art scene behind the message (drawn in script.js) */
+.hero{position:relative;overflow:hidden;display:flex;flex-direction:column}
+.hero-content{position:relative;z-index:2}
+.hero-kicker{font-family:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-weight:700;letter-spacing:0}
+.hero-link{text-underline-offset:4px;transition:color .2s ease}
+.hero-link:hover{color:var(--snow);text-decoration:underline}
+.hero-scene{display:block;order:2;align-self:flex-start;margin:2.5rem -1.5rem 0;height:300px;image-rendering:pixelated;image-rendering:crisp-edges;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%,#000 80%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%,#000 80%,transparent 100%)}
+@media (min-width:768px){
+  .hero{display:block;min-height:min(100svh,940px);padding-bottom:8rem}
+  .hero-scene{position:absolute;top:0;left:0;margin:0;z-index:0;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 84%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 84%,transparent 100%)}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.72) 36%,rgba(10,10,10,0) 62%)}
+}
 
 .callout{padding:1.1rem 1.4rem;border-left:3px solid var(--ember);border-radius:0 1rem 1rem 0;background:var(--coal);color:var(--mist)}
 
@@ -252,6 +255,7 @@ svg{display:block}
 .md\:block{display:block}
 .md\:flex{display:flex}
 .md\:inline-flex{display:inline-flex}
+.md\:ml-0{margin-left:0}
 .md\:hidden{display:none}
 .md\:flex-row{flex-direction:row}
 .md\:items-center{align-items:center}

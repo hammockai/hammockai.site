@@ -29,69 +29,47 @@
       <img class="h-9 w-9 rounded-full" src="assets/images/logo.svg" alt="Hammock AI mark: two palm trees with a hammock slung between them">
       <span class="font-display text-lg tracking-tight">Hammock AI</span>
     </a>
-    <ul class="ml-auto hidden items-center gap-7 lg:flex" role="list">
-      <li><a class="nav-link" href="#services">Services</a></li>
-      <li><a class="nav-link" href="#process">Process</a></li>
-      <li><a class="nav-link" href="#crew">How we work</a></li>
-      <li><a class="nav-link" href="#open">Open source</a></li>
-      <li><a class="nav-link" href="#about">About</a></li>
+    <ul class="ml-auto hidden items-center gap-8 md:flex" role="list">
+      <li><a class="nav-link" href="#home">Home</a></li>
+      <li><a class="nav-link" href="#crew">AI Crew</a></li>
+      <li><a class="nav-link" href="#about">About us</a></li>
     </ul>
-    <a class="lang-link ml-auto lg:ml-0" href="es/" hreflang="es" lang="es" aria-label="Ver en español">ES</a>
-    <a class="btn-cta hidden lg:inline-flex" href="brief/en/">Start your brief</a>
-    <button class="menu-btn lg:hidden" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+    <a class="lang-link ml-auto md:ml-0" href="es/" hreflang="es" lang="es" aria-label="Ver en español">ES</a>
+    <a class="btn-cta hidden md:inline-flex" href="mailto:hammockai@proton.me">Contact us</a>
+    <button class="menu-btn md:hidden" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
       <span class="sr-only">Menu</span>
       <span class="menu-bar" aria-hidden="true"></span>
       <span class="menu-bar" aria-hidden="true"></span>
       <span class="menu-bar" aria-hidden="true"></span>
     </button>
   </nav>
-  <div class="mobile-menu mx-auto w-full max-w-5xl lg:hidden" id="mobile-menu" hidden>
-    <a class="mobile-link" href="#services">Services</a>
-    <a class="mobile-link" href="#process">Process</a>
-    <a class="mobile-link" href="#crew">How we work</a>
-    <a class="mobile-link" href="#open">Open source</a>
-    <a class="mobile-link" href="#about">About</a>
-    <a class="btn-cta mt-2 w-full" href="brief/en/">Start your brief</a>
+  <div class="mobile-menu mx-auto w-full max-w-5xl md:hidden" id="mobile-menu" hidden>
+    <a class="mobile-link" href="#home">Home</a>
+    <a class="mobile-link" href="#crew">AI Crew</a>
+    <a class="mobile-link" href="#about">About us</a>
+    <a class="btn-cta mt-2 w-full" href="mailto:hammockai@proton.me">Contact us</a>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- Hero: the offer in one screen -->
-  <section id="home" class="scroll-mt-32 px-6 pb-20 pt-36 md:pb-28 md:pt-44">
-    <div class="hero-grid mx-auto grid w-full max-w-6xl items-center gap-14">
+  <!-- Hero: message on the left, pixel-art island scene drawn behind (see script.js) -->
+  <section id="home" class="hero scroll-mt-32 px-6 pt-36 md:pt-44">
+    <canvas class="hero-scene" id="hero-scene" aria-hidden="true"></canvas>
+    <div class="hero-grid hero-content mx-auto grid w-full max-w-6xl items-center gap-14">
       <div data-reveal>
-        <p class="eyebrow">Websites &amp; landing pages · Made in Chile</p>
-        <h1 class="mt-6 font-display text-5xl leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+        <h1 class="font-display text-5xl leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+          <span class="hero-kicker mb-6 block max-w-xl text-xl leading-snug text-snow md:text-2xl">We build Websites for solo dreamers &amp; small businesses</span>
           <span class="block">Found by your customers.</span>
           <span class="block">Owned by you.</span>
           <span class="block text-ember">Fast by design.</span>
         </h1>
-        <p class="mt-6 max-w-xl text-lg text-mist md:text-xl">We design, build and hand over simple, SEO-ready websites and landing pages for independent professionals and small businesses. No trackers, no lock-in, no surprises. Our AI-assisted workflow saves us time, and <strong class="font-bold text-snow">that saving comes straight off your price.</strong></p>
-        <div class="mt-9 flex flex-wrap items-center gap-4">
-          <a class="btn-cta btn-lg" href="brief/en/">Start your brief</a>
-          <a class="btn-ghost btn-lg" href="mailto:hammockai@proton.me?subject=Quote%20request">Get a fair quote</a>
+        <p class="mt-6 max-w-xl text-lg text-mist md:text-xl">We design, build and hand over simple, SEO-ready, tracker-free websites for solo dreamers and small businesses. No lock-in, no trackers, no surprises — our sovereign AI crew does the heavy lifting, and <strong class="font-bold text-snow">the time it saves us comes straight off your price.</strong></p>
+        <div class="mt-9 flex flex-wrap items-center gap-6">
+          <a class="btn-cta btn-lg" href="mailto:hammockai@proton.me">Get a fair quote</a>
+          <a class="hero-link text-sm text-mist" href="#crew">Meet the AI crew →</a>
         </div>
         <p class="mt-7 text-xs uppercase tracking-[0.2em] text-mist">No trackers · No lock-in · No surprises</p>
-      </div>
-
-      <!-- Illustrative spec card, not a measurement of any client site -->
-      <div class="spec-card" data-reveal style="--d:120ms" aria-labelledby="spec-title">
-        <div class="spec-bar" aria-hidden="true">
-          <span class="spec-dot"></span><span class="spec-dot"></span><span class="spec-dot"></span>
-          <span class="spec-url">yourbusiness.cl</span>
-        </div>
-        <div class="p-6">
-          <h2 id="spec-title" class="text-xs uppercase tracking-[0.2em] text-mist">What ships with every site</h2>
-          <dl class="spec-list mt-4">
-            <div><dt>Tracking scripts</dt><dd class="text-ember">0</dd></div>
-            <div><dt>Third-party cookies</dt><dd class="text-ember">0</dd></div>
-            <div><dt>Frameworks to maintain</dt><dd class="text-ember">0</dd></div>
-            <div><dt>Code &amp; domain ownership</dt><dd>100% yours</dd></div>
-            <div><dt>Stack</dt><dd>HTML · CSS · JS</dd></div>
-            <div><dt>Documentation</dt><dd>Plain language</dd></div>
-          </dl>
-        </div>
       </div>
     </div>
   </section>
