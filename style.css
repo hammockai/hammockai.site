@@ -145,6 +145,15 @@ svg{display:block}
 .repo-table td:last-child{white-space:nowrap}
 .repo-table tbody th a{color:var(--ember);text-decoration:underline;text-underline-offset:4px}
 
+/* Pixel scenes (drawn in script.js) */
+.pixel-frame{position:relative;overflow:hidden;width:100%}
+.pixel-frame canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+.pixel-crew{height:130px;margin-bottom:1.1rem;border-radius:.8rem;background:var(--coal)}
+.pixel-route{height:150px;border:1px solid var(--hair);border-radius:1.1rem}
+.pixel-shield{height:260px}
+.pixel-sunset{height:200px;border:1px solid var(--hair);border-radius:1.1rem}
+@media (max-width:767px){.pixel-route{height:120px}.pixel-shield{height:200px}.pixel-sunset{height:180px}}
+
 /* About quote */
 .quote{padding:2rem;border:1px solid var(--hair);border-radius:1.4rem;background:var(--surface)}
 .quote blockquote p{font-size:1.1rem;line-height:1.7;color:var(--snow)}

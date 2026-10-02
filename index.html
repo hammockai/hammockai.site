@@ -55,7 +55,7 @@
 
   <!-- Hero: message on the left, pixel-art island scene drawn behind (see script.js) -->
   <section id="home" class="hero scroll-mt-32 px-6 pt-36">
-    <canvas class="hero-scene" id="hero-scene" aria-hidden="true"></canvas>
+    <canvas class="hero-scene" id="hero-scene" data-scene="hero" aria-hidden="true"></canvas>
     <div class="hero-grid hero-content mx-auto grid w-full max-w-6xl items-center gap-14">
       <div data-reveal>
         <h1 class="hero-title font-display text-5xl leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
@@ -121,10 +121,13 @@
   <!-- Privacy: why low or zero telemetry is a business advantage -->
   <section id="privacy" class="scroll-mt-32 px-6 py-20 md:py-28">
     <div class="mx-auto w-full max-w-6xl">
-      <div class="max-w-2xl" data-reveal>
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <div data-reveal>
         <p class="eyebrow">Privacy by default</p>
         <h2 class="h2 mt-4 font-display">Low or zero telemetry, on purpose</h2>
         <p class="mt-4 text-lg text-mist">Most small-business sites ship with analytics, pixels and embeds they don't need. Each one adds weight, third-party cookies and another company watching your visitors. We leave them out unless you have a clear reason to add them.</p>
+      </div>
+        <div class="pixel-frame pixel-shield" data-scene="shield" aria-hidden="true"></div>
       </div>
       <ul class="mt-12 grid gap-5 md:grid-cols-3" role="list">
         <li class="card p-6" data-reveal style="--d:0ms">
@@ -152,7 +155,8 @@
         <h2 class="h2 mt-4 font-display">From brief to handover</h2>
         <p class="mt-4 text-lg text-mist">A clear path with no hidden steps. You know what's happening, what it costs and what you'll receive.</p>
       </div>
-      <ol class="steps mt-12 grid gap-5 md:grid-cols-5" role="list">
+            <div class="pixel-frame pixel-route mt-12" data-scene="route" aria-hidden="true"></div>
+      <ol class="steps mt-6 grid gap-5 md:grid-cols-5" role="list">
         <li class="step" data-reveal style="--d:0ms">
           <span class="step-num">1</span>
           <h3 class="mt-4 font-display text-lg">The brief</h3>
@@ -195,21 +199,25 @@
       </div>
       <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" role="list">
         <li class="card card-lead p-6" data-reveal style="--d:0ms">
+          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="captain" aria-hidden="true"></div>
           <p class="text-xs font-bold tracking-[0.2em] text-ember">CAPTAIN · HUMAN</p>
           <h3 class="mt-4 font-display text-xl">The Developer</h3>
           <p class="mt-3 text-sm leading-relaxed text-mist">Defines the goal and the boundaries, makes every decision and holds the final veto.</p>
         </li>
         <li class="card p-6" data-reveal style="--d:70ms">
+          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="first" aria-hidden="true"></div>
           <p class="text-xs font-bold tracking-[0.2em] text-ember">FIRST MATE · AI</p>
           <h3 class="mt-4 font-display text-xl">Contramaestre</h3>
           <p class="mt-3 text-sm leading-relaxed text-mist">Challenges assumptions, maps the route and keeps the rhythm. Acts as a senior full-stack reviewer and mentor.</p>
         </li>
         <li class="card p-6" data-reveal style="--d:140ms">
+          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="prompt" aria-hidden="true"></div>
           <p class="text-xs font-bold tracking-[0.2em] text-ember">NAVIGATOR · AI</p>
           <h3 class="mt-4 font-display text-xl">Prompt Engineer</h3>
           <p class="mt-3 text-sm leading-relaxed text-mist">Turns ideas into precise instructions for AI tools and keeps every message, prompt and line of copy clear.</p>
         </li>
         <li class="card p-6" data-reveal style="--d:210ms">
+          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="guardian" aria-hidden="true"></div>
           <p class="text-xs font-bold tracking-[0.2em] text-ember">COMPASS · AI</p>
           <h3 class="mt-4 font-display text-xl">Guardian</h3>
           <p class="mt-3 text-sm leading-relaxed text-mist">Reviews the work against the Six Pillars before deployment, names hidden risks and proposes practical fixes.</p>
@@ -363,6 +371,7 @@
         <h2 class="h2 mt-4 font-display">Why “Hammock”?</h2>
         <p class="mt-4 text-lg text-mist">A hammock isn't about laziness; it's about sovereignty. It's the symbol of working smart enough to reclaim your time.</p>
         <p class="mt-4 text-mist">Hammock AI exists to help independent professionals and small teams build that same freedom, using AI not to replace people, but to give them their time back. A self-taught studio from Santiago &amp; Pichilemu, Chile.</p>
+        <div class="pixel-frame pixel-sunset mt-8" data-scene="sunset" aria-hidden="true"></div>
       </div>
       <figure class="quote" data-reveal style="--d:80ms">
         <blockquote>

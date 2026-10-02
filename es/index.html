@@ -56,7 +56,7 @@
 
   <!-- Hero: mensaje a la izquierda, escena pixel art de la isla dibujada detrás (ver script.js) -->
   <section id="home" class="hero scroll-mt-32 px-6 pt-36">
-    <canvas class="hero-scene" id="hero-scene" aria-hidden="true"></canvas>
+    <canvas class="hero-scene" id="hero-scene" data-scene="hero" aria-hidden="true"></canvas>
     <div class="hero-grid hero-content mx-auto grid w-full max-w-6xl items-center gap-14">
       <div data-reveal>
         <h1 class="hero-title font-display text-5xl leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
@@ -122,10 +122,13 @@
   <!-- Privacidad: por qué poca o nula telemetría es una ventaja -->
   <section id="privacy" class="scroll-mt-32 px-6 py-20 md:py-28">
     <div class="mx-auto w-full max-w-6xl">
-      <div class="max-w-2xl" data-reveal>
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <div data-reveal>
         <p class="eyebrow">Privacidad por defecto</p>
         <h2 class="h2 mt-4 font-display">Poca o nula telemetría, a propósito</h2>
         <p class="mt-4 text-lg text-mist">La mayoría de los sitios de pequeños negocios vienen con analítica, píxeles y widgets que no necesitan. Cada uno suma peso, cookies de terceros y otra empresa mirando a tus visitantes. Los dejamos fuera, salvo que tengas una razón clara para agregarlos.</p>
+      </div>
+        <div class="pixel-frame pixel-shield" data-scene="shield" aria-hidden="true"></div>
       </div>
       <ul class="mt-12 grid gap-5 md:grid-cols-3" role="list">
         <li class="card p-6" data-reveal style="--d:0ms">
@@ -153,7 +156,8 @@
         <h2 class="h2 mt-4 font-display">Del brief a la entrega</h2>
         <p class="mt-4 text-lg text-mist">Un camino claro, sin pasos ocultos. Sabes qué está pasando, cuánto cuesta y qué vas a recibir.</p>
       </div>
-      <ol class="steps mt-12 grid gap-5 md:grid-cols-5" role="list">
+            <div class="pixel-frame pixel-route mt-12" data-scene="route" aria-hidden="true"></div>
+      <ol class="steps mt-6 grid gap-5 md:grid-cols-5" role="list">
         <li class="step" data-reveal style="--d:0ms">
           <span class="step-num">1</span>
           <h3 class="mt-4 font-display text-lg">El brief</h3>
@@ -196,21 +200,25 @@
       </div>
       <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" role="list">
         <li class="card card-lead p-6" data-reveal style="--d:0ms">
+          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="captain" aria-hidden="true"></div>
           <p class="text-xs font-bold tracking-[0.2em] text-ember">CAPITÁN · HUMANO</p>
           <h3 class="mt-4 font-display text-xl">El Desarrollador</h3>
           <p class="mt-3 text-sm leading-relaxed text-mist">Define el objetivo y los límites, toma cada decisión y tiene el veto final.</p>
         </li>
         <li class="card p-6" data-reveal style="--d:70ms">
+          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="first" aria-hidden="true"></div>
           <p class="text-xs font-bold tracking-[0.2em] text-ember">PRIMER OFICIAL · IA</p>
           <h3 class="mt-4 font-display text-xl">Contramaestre</h3>
           <p class="mt-3 text-sm leading-relaxed text-mist">Cuestiona supuestos, traza la ruta y mantiene el ritmo. Actúa como revisor y mentor full-stack senior.</p>
         </li>
         <li class="card p-6" data-reveal style="--d:140ms">
+          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="prompt" aria-hidden="true"></div>
           <p class="text-xs font-bold tracking-[0.2em] text-ember">NAVEGANTE · IA</p>
           <h3 class="mt-4 font-display text-xl">Ingeniero de Prompts</h3>
           <p class="mt-3 text-sm leading-relaxed text-mist">Convierte ideas en instrucciones precisas para las herramientas de IA y cuida que cada mensaje, prompt y texto sea claro.</p>
         </li>
         <li class="card p-6" data-reveal style="--d:210ms">
+          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="guardian" aria-hidden="true"></div>
           <p class="text-xs font-bold tracking-[0.2em] text-ember">BRÚJULA · IA</p>
           <h3 class="mt-4 font-display text-xl">Guardián</h3>
           <p class="mt-3 text-sm leading-relaxed text-mist">Revisa el trabajo frente a los Seis Pilares antes de publicar, nombra los riesgos ocultos y propone soluciones prácticas.</p>
@@ -364,6 +372,7 @@
         <h2 class="h2 mt-4 font-display">¿Por qué “Hammock”?</h2>
         <p class="mt-4 text-lg text-mist">Una hamaca no tiene que ver con flojera; tiene que ver con soberanía. Es el símbolo de trabajar con la inteligencia suficiente para recuperar tu tiempo.</p>
         <p class="mt-4 text-mist">Hammock AI existe para ayudar a emprendedores, pequeños negocios y pymes a construir esa misma libertad, usando la IA no para reemplazar a las personas, sino para devolverles su tiempo. Un estudio autodidacta de Santiago y Pichilemu, Chile.</p>
+        <div class="pixel-frame pixel-sunset mt-8" data-scene="sunset" aria-hidden="true"></div>
       </div>
       <figure class="quote" data-reveal style="--d:80ms">
         <blockquote>
