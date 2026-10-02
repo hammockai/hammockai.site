@@ -167,15 +167,17 @@
       scene.style.height = H * PX + 'px';
       ctx.imageSmoothingEnabled = false;
 
-      const horizon = Math.round(H * (wide ? 0.56 : 0.4));
+      // On desktop, place things inside the first screenful so the island is always in view
+      const frameH = wide ? Math.min(H, Math.ceil(window.innerHeight / PX)) : H;
+      const horizon = Math.round(frameH * (wide ? 0.5 : 0.4));
       const seaH = H - horizon;
+      const islandY = wide ? Math.round(frameH * 0.8) : horizon + Math.round(seaH * 0.48);
       L = {
-        wide, horizon,
+        wide, horizon, islandY,
         islandX: Math.round(W * (wide ? 0.76 : 0.5)),
-        islandY: horizon + Math.round(seaH * (wide ? 0.4 : 0.48)),
-        lane: horizon + Math.round(seaH * (wide ? 0.2 : 0.2)),
+        lane: horizon + Math.round((islandY - horizon) * 0.4),
         moonX: Math.round(W * (wide ? 0.6 : 0.18)),
-        moonY: Math.round(horizon * (wide ? 0.32 : 0.36))
+        moonY: Math.round(horizon * (wide ? 0.48 : 0.36))
       };
 
       const rand = rng(1979);
@@ -340,8 +342,11 @@
     /* One palm: a curved trunk and drooping fronds. dir = -1 leans left, 1 leans right */
     const drawPalm = (bx, by, dir, t) => {
       const th = L.wide ? 40 : 30;
-      const lean = 7;
-      const trunkX = (i) => bx + dir * Math.round(Math.pow(i / th, 2) * lean);
+      // Like the logo: the trunk bows outward and the crown leans back toward the hammock
+      const trunkX = (i) => {
+        const u = i / th;
+        return bx + dir * Math.round(4 * Math.sin(Math.PI * u * 0.85) - 4 * u * u);
+      };
       for (let i = 0; i < th; i += 1) {
         rect(ctx, trunkX(i), by - i, 2, 1, i % 3 === 0 ? C.trunkDark : C.trunk);
       }
@@ -370,7 +375,7 @@
     const drawIsland = (t) => {
       const cx = L.islandX;
       const cy = L.islandY;
-      const rx = L.wide ? 40 : 30;
+      const rx = L.wide ? 46 : 34;
       // foam ring breathing around the shore
       const pulse = Math.sin(t * 1.4) > 0 ? 1 : 0;
       for (let dy = -2; dy <= 3; dy += 1) {
@@ -391,7 +396,7 @@
         if (dy < -3) rect(ctx, cx - Math.round(half * 0.7), cy + dy, Math.round(half * 0.5), 1, C.sandHi);
       }
       // palms and the black hammock slung between them
-      const gap = L.wide ? 16 : 12;
+      const gap = L.wide ? 23 : 17;
       const left = drawPalm(cx - gap, cy - 5, -1, t);
       const right = drawPalm(cx + gap - 1, cy - 5, 1, t + 1);
       const hy = L.wide ? 16 : 13;
