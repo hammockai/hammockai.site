@@ -768,12 +768,13 @@
       drawGlints(ctx, glints, W, t, [C.glintFar, C.glint, C.glintHi]);
       const ship = shipPos(t);
       // the route: dim ahead, gold where the ship has already sailed
-      for (let x = xs[0]; x <= xs[4]; x += 3) {
-        rect(ctx, x, routeY(x) + 8, 1, 1, x <= ship.x ? C.gold : C.starDim);
+      const stepDots = desktop.matches ? 3 : 2;
+      for (let x = xs[0]; x <= xs[4]; x += stepDots) {
+        rect(ctx, x, routeY(x) + 8, 1, 1, x <= ship.x ? C.gold : '#8a7a4a');
       }
       xs.forEach((ix, i) => {
-        drawSand(ctx, ix, y, t + i, desktop.matches ? 9 : 7);
-        if (i < 4) drawPalm(ctx, ix + 1, y - 2, i % 2 ? 1 : -1, t + i, desktop.matches ? 11 : 9);
+        drawSand(ctx, ix, y, t + i, desktop.matches ? 9 : 5);
+        if (i < 4) drawPalm(ctx, ix + 1, y - 2, i % 2 ? 1 : -1, t + i, desktop.matches ? 11 : 8);
       });
       // X marks the spot, and the chest opens when the ship arrives
       const tx = xs[4], ty = y - 2;
