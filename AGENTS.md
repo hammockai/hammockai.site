@@ -1,4 +1,4 @@
-# 🏴‍☠️ HAMMOCK AI — AGENT PROTOCOL (v4.0 CANONICAL)
+# 🏴‍☠️ HAMMOCK AI — AGENT PROTOCOL (v4.1 CANONICAL)
 *Operational directives for the coding agent (Qoder CN, formerly Lingma) in VSCodium — Infused with the Hammock Essence*
 
 ---
@@ -71,34 +71,37 @@
 
 ### 2.2 TECHNICAL STACK
 - **HTML:** HTML5 (Strictly semantic).
-- **CSS:** Tailwind CSS (CLI version only). No Tailwind CDN.
-- **JavaScript:** Vanilla ES6+.
-- **Build Tools:** Node.js, npm, Tailwind CLI, http-server.
-- **Version Control:** Git (Codeberg).
+- **CSS:** Hand-written `style.css`: design tokens in `:root` + a small Tailwind-style utility layer. **No build step.** If a utility class does not exist in `style.css`, add it there (or use a component class); never assume Tailwind is available.
+- **JavaScript:** Vanilla ES6+ (`script.js`).
+- **Build Tools:** None. Optional local preview: `npx http-server . -p 8080`.
+- **Hosting:** GitHub Pages from `main` (root). Custom domain via `CNAME`.
+- **Version Control:** Git (GitHub: `hammockai/hammockai.site`).
+- **History:** The previous Tailwind CLI pipeline (`src/` → `dist/`) is archived in the branch `archive/tailwind-pipeline`. Not deployed.
 
 ### 2.3 FILE STRUCTURE
-- `src/`: Raw source code (`index.html`, `input.css`, `main.js`). Editable.
-- `dist/`: Compiled build artifacts (`output.css`, `index.html`). **NEVER commit.**
-- `node_modules/`: **NEVER commit.**
-- `AGENTS.md`: This file. Lives at the Git root.
-
-### 2.4 COMMANDS (EXACT)
-- Watch build: `npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch`
-- One-shot build: `npx tailwindcss -i ./src/input.css -o ./dist/output.css`
-- Copy HTML: `Copy-Item src\index.html dist\index.html`
-- Local server: `npx http-server dist -p 8080`
+- `index.html`, `style.css`, `script.js`: the live site. Every file in `main` is publicly served.
+- `brief/index.html`: client brief form (self-contained, data never leaves the visitor's device).
+- `assets/images/`: logo and images.
+- `CNAME`: custom domain. **Do not edit or delete.**
+- `_config.yml`: tells GitHub Pages which repo files NOT to publish.
+- `AGENTS.md`: This file. Lives at the Git root. Excluded from the published site.
+- **Rule:** Nothing goes in `main` that should not be public. Drafts and experiments go in a branch.
 
 ---
 
 ## 3. VISUAL IDENTITY & LAYOUT (LAW)
-- **Theme:** Dark mode, minimalist, brutalist, high-contrast.
-- **Palette (exact):**
-  - Background: `#000000` (Tailwind `bg-black`)
-  - Text: `#ffffff` (Tailwind `text-white`)
-  - Accent: `#06b6d4` (Tailwind `cyan-500`, hover `cyan-400`)
-  - Grays: `#9ca3af` (`gray-400`), `#4b5563` (`gray-600`)
-- **Typography:** System sans-serif. Headings: `tracking-tight`. Buttons/nav: uppercase, `text-sm`, `tracking-wider`.
-- **Layout (exact):** Mobile-first. Container: `max-w-6xl mx-auto`. Sections: `py-20 px-4`. Buttons: `px-6 py-3 rounded-none`. Generous whitespace. No other colors or radii unless the Captain approves.
+- **Theme:** Dark mode, minimalist, high-contrast, warm accent.
+- **Palette (exact, tokens in `style.css` `:root`):**
+  - `--ink` `#0A0A0A`: page background (`bg-ink`). `--coal` `#0E0E0E` / `--surface` `#141414`: cards and fields.
+  - `--snow` `#FAFAFA`: main text (`text-snow`).
+  - `--mist` (74% snow) / `--dim` (56% snow): secondary and tertiary text (`text-mist`, `text-dim`).
+  - `--ember` `#FF6B35`: the ONLY accent: CTAs, highlights, focus ring (`text-ember`).
+  - `--hair` (8% white) / `--pill-line` (15% white): borders.
+  - Always use the tokens, never raw hex values in new code.
+- **Typography:** Display: "Archivo Black" (`font-display`). Body: "Atkinson Hyperlegible" (`font-body`), system sans-serif fallback. Fonts self-hosted in `/fonts/` (no CDN). Headings: `tracking-tight`.
+- **Shapes:** Pills (`9999px`) for header, buttons and chips. Rounded cards (`1rem`–`1.4rem`). No square buttons.
+- **Layout (exact):** Mobile-first. Breakpoints: 640 / 768 / 1024px. Container: `max-w-6xl mx-auto` (header `max-w-5xl`). Sections: `py-20 px-4`/`px-6`. Generous whitespace. No other colors or radii unless the Captain approves.
+- **Accessibility:** Skip link, visible `:focus-visible` ring in ember, `prefers-reduced-motion` respected. Keep all three.
 
 ---
 
@@ -133,7 +136,7 @@
 ### 4.5 GIT PROTOCOL (REPO HYGIENE)
 - After each approved task, the agent MUST propose a commit using conventional format: `type: short description` (types: feat, fix, docs, chore, style).
 - The agent MUST show the exact git commands and wait for Captain approval before executing them.
-- NEVER commit: `dist/`, `node_modules/`, `AGENTS.local.md`, or secrets.
+- NEVER commit: `node_modules/`, `AGENTS.local.md`, `.env*`, drafts, or secrets.
 - NEVER push to remote without explicit Captain approval.
 - One source of truth per concern. No stray files.
 
@@ -146,17 +149,17 @@
 - `AGENTS.local.md` (NEVER commit): machine-private instructions (local ports, test data).
 - `.qoder/rules/**/*.md` (commit): split topic rules here if this file grows bloated.
 
-### 5.2 SOVEREIGNTY GUARDRAILS (Pillar 1.5)
+### 5.2 SOVEREIGNTY GUARDRAILS (Pillar 1.6)
 - Qoder CN processes code in Alibaba Cloud and builds autonomous memory. Assume every prompt leaves the machine.
 - NEVER place secrets, keys, or credentials in the repo or `AGENTS.local.md`.
 - Disable telemetry/memory options in settings where available.
 - Quest/Repowiki consume credits; factor into fair pricing estimates (Pillar 1.1).
 
-### 5.3 SECRETS PROTOCOL (PILLAR 1.5)
+### 5.3 SECRETS PROTOCOL (PILLAR 1.6)
 - Local secrets live ONLY in `.env.local` (keys/tokens) and `AGENTS.local.md` (machine-specific notes). Both are gitignored.
 - NEVER write actual secret values into committed files, code, comments, logs, or chat responses.
 - Reference secrets by NAME only (e.g., "the token stored in .env.local").
-- Client-side code is public by definition: anything inside `src/` ships to the browser. No secrets there, ever.
+- Client-side code is public by definition: every file in `main` is published on hammockai.site. No secrets there, ever.
 - If a task seems to require embedding a secret in the website, STOP and propose a compliant alternative (Booger Rule).
 
 ### 5.4 SOURCES (verified 2026-08-14)

@@ -1,0 +1,5 @@
+# GitHub Pages (Jekyll): publish only the website, not the repo docs.
+exclude:
+  - AGENTS.md
+  - AGENTS.local.md
+  - README.md
