@@ -80,5 +80,7 @@ $('mail').addEventListener('click',()=>{const b=compose();if(!b)return;location.
 $('dl').addEventListener('click',()=>{const b=compose();if(!b)return;const slug=$('f1').value.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');const u=URL.createObjectURL(new Blob([b],{type:'text/plain'}));const a=document.createElement('a');a.href=u;a.download='brief-'+slug+'.txt';a.click();URL.revokeObjectURL(u);status.textContent='Downloaded. Your brief travels with you.';});
 })();
 </script>
+<!-- GoatCounter: cuenta visitas sin cookies ni datos personales. Cambiar "hammockai" si el código de la cuenta es otro. -->
+<script data-goatcounter="https://hammockai.goatcounter.com/count" async src="/assets/js/count.js"></script>
 </body>
 </html>
