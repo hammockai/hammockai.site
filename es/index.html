@@ -68,6 +68,7 @@
         <p class="hero-lead mt-6 max-w-xl text-lg text-mist md:text-xl">Diseñamos, construimos y entregamos sitios web simples y listos para SEO, para emprendedores, pequeños negocios y pymes. Sin amarras, sin trackers, sin sorpresas: nuestra crew soberana de IA hace el trabajo pesado, y <strong class="font-bold text-snow">el tiempo que nos ahorra se descuenta directo de tu precio.</strong></p>
         <div class="hero-actions mt-9 flex flex-wrap items-center gap-6">
           <a class="btn-cta btn-lg" href="mailto:hammockai@proton.me">Pide una cotización justa</a>
+          <a class="hero-link text-sm text-mist" href="#portfolio">Ver sitios de ejemplo →</a>
           <a class="hero-link text-sm text-mist" href="#crew">Conoce a la crew →</a>
         </div>
         <p class="hero-tagline mt-7 text-xs uppercase tracking-[0.2em] text-mist">Sin trackers · Sin amarras · Sin sorpresas</p>
@@ -75,33 +76,157 @@
     </div>
   </section>
 
-  <!-- Servicios: el MVP actual -->
+  <!-- Portafolio: sitios de ejemplo con negocios ficticios (cada uno vive en /portafolio/<demo>/, noindex) -->
+  <section id="portfolio" class="scroll-mt-32 px-6 py-20 md:py-28">
+    <div class="mx-auto w-full max-w-6xl">
+      <div class="max-w-2xl" data-reveal>
+        <p class="eyebrow">Portafolio</p>
+        <h2 class="h2 mt-4 font-display">Sitios de ejemplo</h2>
+        <p class="mt-4 text-lg text-mist">Cinco sitios que hicimos para mostrar lo que recibes. Los negocios son ficticios: nombres, precios y botones de contacto son de ejemplo, y cada sitio lo dice arriba. Ábrelos en tu celular: ahí es donde tus clientes van a ver el tuyo.</p>
+      </div>
+      <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" role="list">
+        <li class="card demo-card p-6" data-reveal style="--d:0ms">
+          <img class="demo-thumb" src="../portafolio/contratista/img/hero.svg" alt="" width="640" height="520" loading="lazy">
+          <p class="mt-5 text-xs font-bold tracking-[0.2em] text-ember">CONTRATISTA · EJEMPLO</p>
+          <h3 class="mt-3 font-display text-xl">Plomada, remodelaciones</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Servicios, antes y después, cómo se trabaja paso a paso, preguntas frecuentes y botones de contacto.</p>
+          <a class="link-arrow" href="../portafolio/contratista/">Ver ejemplo<span class="sr-only">: Plomada, negocio ficticio</span> <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+        </li>
+        <li class="card demo-card p-6" data-reveal style="--d:70ms">
+          <img class="demo-thumb" src="../portafolio/gimnasio/img/portada.svg" alt="" width="640" height="560" loading="lazy">
+          <p class="mt-5 text-xs font-bold tracking-[0.2em] text-ember">GIMNASIO · EJEMPLO</p>
+          <h3 class="mt-3 font-display text-xl">Zancada, entrenamiento en grupos chicos</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Clases, un horario semanal que se lee bien en el celular, planes, clase de prueba, equipo y cómo llegar.</p>
+          <a class="link-arrow" href="../portafolio/gimnasio/">Ver ejemplo<span class="sr-only">: Zancada, negocio ficticio</span> <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+        </li>
+        <li class="card demo-card p-6" data-reveal style="--d:140ms">
+          <img class="demo-thumb" src="../portafolio/psicologa/img/hero.svg" alt="" width="640" height="520" loading="lazy">
+          <p class="mt-5 text-xs font-bold tracking-[0.2em] text-ember">PSICÓLOGA · EJEMPLO</p>
+          <h3 class="mt-3 font-display text-xl">Remanso, consulta de psicología</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Atención online o presencial, cómo es la primera sesión, valores de ejemplo y preguntas frecuentes. Sin opiniones de pacientes, a propósito.</p>
+          <a class="link-arrow" href="../portafolio/psicologa/">Ver ejemplo<span class="sr-only">: Remanso, negocio ficticio</span> <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+        </li>
+        <li class="card demo-card p-6" data-reveal style="--d:0ms">
+          <img class="demo-thumb" src="../portafolio/mosaicos/img/portada.svg" alt="" width="480" height="480" loading="lazy">
+          <p class="mt-5 text-xs font-bold tracking-[0.2em] text-ember">MOSAICOS · EJEMPLO</p>
+          <h3 class="mt-3 font-display text-xl">Tesela Lunar, mosaicos hechos a mano</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Catálogo de piezas con precios de ejemplo, encargos, talleres, envíos y preguntas frecuentes.</p>
+          <a class="link-arrow" href="../portafolio/mosaicos/">Ver ejemplo<span class="sr-only">: Tesela Lunar, negocio ficticio</span> <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+        </li>
+        <li class="card demo-card p-6" data-reveal style="--d:70ms">
+          <img class="demo-thumb" src="../portafolio/bolsas-llavero/img/hero.svg" alt="" width="640" height="560" loading="lazy">
+          <p class="mt-5 text-xs font-bold tracking-[0.2em] text-ember">ROPA RECICLADA · EJEMPLO</p>
+          <h3 class="mt-3 font-display text-xl">Plic Plac, bolsas llavero</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Cómo se pliega la bolsa, materiales, colores y modelos, cómo pedir y venta a tiendas y empresas.</p>
+          <a class="link-arrow" href="../portafolio/bolsas-llavero/">Ver ejemplo<span class="sr-only">: Plic Plac, negocio ficticio</span> <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Servicios: paquetes, automatizaciones y mantención -->
+  <!-- PRECIOS PROPUESTOS POR QUINTERO: el Capitán los aprueba antes de publicar -->
   <section id="services" class="band scroll-mt-32 px-6 py-20 md:py-28">
     <div class="mx-auto w-full max-w-6xl">
       <div class="max-w-2xl" data-reveal>
         <p class="eyebrow">Servicios</p>
         <h2 class="h2 mt-4 font-display">Qué construimos</h2>
-        <p class="mt-4 text-lg text-mist">Sitios pequeños y enfocados, que cargan rápido, posicionan bien y son fáciles de entregar. Mantenemos el alcance acotado para que el precio sea justo.</p>
+        <p class="mt-4 text-lg text-mist">Sitios pequeños y enfocados, que cargan rápido, posicionan bien y son fáciles de entregar. Mantenemos el alcance acotado para que el precio sea justo: antes de empezar sabes qué incluye, qué no y cuánto demora.</p>
       </div>
       <ul class="mt-12 grid gap-5 md:grid-cols-3" role="list">
-        <li class="card p-6" data-reveal style="--d:0ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">01 · PRINCIPAL</p>
+        <li class="card plan p-6" data-reveal style="--d:0ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">P1 · PLANTILLA</p>
           <h3 class="mt-4 font-display text-xl">Landing page</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Una página, un objetivo. Para un lanzamiento, un servicio o una campaña: un mensaje claro, una llamada a la acción clara (WhatsApp, email o reserva) y nada que la haga lenta.</p>
-          <p class="mt-4 text-sm text-dim">Ideal para: lanzar un producto, validar una idea, promocionar un servicio.</p>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Una página, un objetivo: un mensaje claro y una forma clara de contactarte. Sobre una de nuestras plantillas, adaptada a tus colores y tu logo.</p>
+          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$150.000</span> <span class="text-sm text-dim">CLP</span></p>
+          <p class="mt-1 text-sm text-dim">Plazo: 5 días hábiles*</p>
+          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">Incluye</h4>
+          <ul class="plan-list mt-3" role="list">
+            <li>1 página con hasta 6 secciones: portada, servicios, sobre ti, galería (hasta 8 fotos), preguntas frecuentes y contacto</li>
+            <li>Botones de WhatsApp y correo</li>
+            <li>Tú envías textos y fotos con una guía simple; nosotros los ordenamos y pulimos</li>
+            <li>1 ronda de cambios</li>
+          </ul>
+          <h4 class="mt-5 text-xs uppercase tracking-[0.2em] text-mist">No incluye</h4>
+          <ul class="plan-list plan-list-no mt-3" role="list">
+            <li>Formulario de contacto que envía (eso es A1, más abajo)</li>
+            <li>Páginas extra ni redacción desde cero</li>
+          </ul>
         </li>
-        <li class="card p-6" data-reveal style="--d:70ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">02 · PRINCIPAL</p>
+        <li class="card plan p-6" data-reveal style="--d:70ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">P2 · PLANTILLA</p>
           <h3 class="mt-4 font-display text-xl">Sitio web simple</h3>
           <p class="mt-3 text-sm leading-relaxed text-mist">Unas pocas páginas para un emprendimiento, un pequeño negocio o una pyme: quién eres, qué ofreces, tu trabajo y cómo contactarte.</p>
-          <p class="mt-4 text-sm text-dim">Ideal para: artesanos, estudios, negocios locales, consultores.</p>
+          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$290.000</span> <span class="text-sm text-dim">CLP</span></p>
+          <p class="mt-1 text-sm text-dim">Plazo: 10 días hábiles*</p>
+          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">Incluye</h4>
+          <ul class="plan-list mt-3" role="list">
+            <li>Hasta 5 páginas: inicio, servicios o precios, trabajos o galería (hasta 20 fotos), preguntas frecuentes y contacto</li>
+            <li>A1 incluida: formulario de contacto que llega a tu correo y a tu planilla</li>
+            <li>Tu ubicación como enlace al mapa, sin un mapa incrustado que siga a tus visitas</li>
+            <li>2 rondas de cambios</li>
+          </ul>
+          <h4 class="mt-5 text-xs uppercase tracking-[0.2em] text-mist">No incluye</h4>
+          <ul class="plan-list plan-list-no mt-3" role="list">
+            <li>Diseño ni redacción desde cero</li>
+            <li>Agenda en línea ni catálogo en planilla (A2 y A3, se suman aparte)</li>
+          </ul>
         </li>
-        <li class="card card-muted p-6" data-reveal style="--d:140ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-dim">03 · A PEDIDO</p>
-          <h3 class="mt-4 font-display text-xl">Automatizaciones y agentes IA</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Automatizaciones y tripulaciones de IA a medida, con los mismos principios. Hoy nuestro foco son los sitios web; cuéntanos tu caso y te diremos con honestidad si encaja.</p>
+        <li class="card plan p-6" data-reveal style="--d:140ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">P3 · A MEDIDA</p>
+          <h3 class="mt-4 font-display text-xl">Sitio a medida</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Diseño propio, sin plantilla, para un negocio que necesita más espacio. El precio final se fija después del brief.</p>
+          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$590.000</span> <span class="text-sm text-dim">CLP</span></p>
+          <p class="mt-1 text-sm text-dim">Plazo: 15 a 20 días hábiles*</p>
+          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">Incluye</h4>
+          <ul class="plan-list mt-3" role="list">
+            <li>Hasta 8 páginas</li>
+            <li>Textos escritos contigo, a partir de una entrevista de 45 minutos</li>
+            <li>A1, más A2 o A3</li>
+            <li>3 rondas de cambios</li>
+            <li>Entrega guiada de 30 minutos por videollamada</li>
+          </ul>
+          <h4 class="mt-5 text-xs uppercase tracking-[0.2em] text-mist">No incluye</h4>
+          <ul class="plan-list plan-list-no mt-3" role="list">
+            <li>Tienda con pagos en línea</li>
+            <li>Más de un idioma ni más de 8 páginas (se cotizan después del brief)</li>
+          </ul>
         </li>
       </ul>
+
+      <div class="mt-16 max-w-2xl" data-reveal>
+        <h3 class="font-display text-2xl">Automatizaciones para sumar</h3>
+        <p class="mt-4 text-mist">Pago único. Funcionan en cuentas gratis a tu nombre: con la opción que te recomendamos, no pagas nada al mes.</p>
+      </div>
+      <ul class="mt-8 grid gap-5 md:grid-cols-3" role="list">
+        <li class="card plan p-6" data-reveal style="--d:0ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">A1</p>
+          <h4 class="mt-3 font-display text-lg">Formulario que llega a tu correo y a tu planilla</h4>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Cada consulta del sitio te llega al correo y queda anotada en tu propia planilla. No pierdes ninguna.</p>
+          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$45.000</span> <span class="text-sm text-dim">CLP</span></p>
+          <p class="mt-1 text-sm text-dim">Plazo: 2 días hábiles*</p>
+        </li>
+        <li class="card plan p-6" data-reveal style="--d:70ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">A2</p>
+          <h4 class="mt-3 font-display text-lg">Agenda de horas en línea con recordatorio por correo</h4>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Tus clientes reservan hora solos desde el sitio y les llega un recordatorio por correo. ¿Necesitas recordatorios por WhatsApp, cobros o fichas de clientes? Un sistema de agenda pagado puede servirte más, y te lo diremos.</p>
+          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$60.000</span> <span class="text-sm text-dim">CLP</span></p>
+          <p class="mt-1 text-sm text-dim">Plazo: 3 días hábiles*</p>
+        </li>
+        <li class="card plan p-6" data-reveal style="--d:140ms">
+          <p class="text-xs font-bold tracking-[0.2em] text-ember">A3</p>
+          <h4 class="mt-3 font-display text-lg">Catálogo que editas en una planilla</h4>
+          <p class="mt-3 text-sm leading-relaxed text-mist">Cambias productos y precios en una planilla y el sitio se actualiza solo. Cada producto tiene su botón "Pedir por WhatsApp" con el mensaje ya escrito.</p>
+          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$110.000</span> <span class="text-sm text-dim">CLP</span></p>
+          <p class="mt-1 text-sm text-dim">Hasta 20 productos con foto; $20.000 por cada 10 más. Plazo: 5 días hábiles*</p>
+        </li>
+      </ul>
+      <p class="mt-6 text-sm text-dim" data-reveal>¿Necesitas algo más grande, como una automatización a medida o un agente de IA? Cuéntanos tu caso y te diremos con honestidad si encaja.</p>
+
+      <div class="callout mt-10" data-reveal>
+        <p><strong class="text-snow">Mantención opcional · $12.000 al mes o $120.000 al año.</strong> Una revisión mensual de que tu sitio y tu formulario funcionan, hasta 30 minutos de cambios chicos al mes (textos, fotos, precios, horario), un aviso 30 días antes de que venza tu dominio y un respaldo de tus archivos.</p>
+        <p class="mt-3">Si no la tomas o la cancelas, tu sitio sigue en línea: el hosting es gratis, y los archivos y el dominio son tuyos.</p>
+      </div>
 
       <div class="mt-14 grid gap-10 md:grid-cols-2" data-reveal>
         <div>
@@ -113,8 +238,16 @@
           <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Bases de SEO.</strong> <span class="text-mist">HTML semántico, títulos y descripciones, vista previa para redes, carga rápida.</span></span></li>
           <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Accesibilidad básica.</strong> <span class="text-mist">Tipografía legible, navegación con teclado, respeto por la preferencia de movimiento reducido.</span></span></li>
           <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Sin analítica ni trackers por defecto.</strong> <span class="text-mist">Nadie sigue a tus visitantes por internet a través de tu sitio.</span></span></li>
+          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Hosting gratis, a tu nombre.</strong> <span class="text-mist">Lo dejamos listo y conectamos tu dominio. Solo pagas el dominio, directo a quien lo registra (un .cl cuesta $9.990 al año).</span></span></li>
+          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Revisión de seguridad antes de entregar.</strong> <span class="text-mist">Revisamos tu sitio antes de publicarlo; lo que toque tus cuentas, solo con tu permiso por escrito.</span></span></li>
           <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Entrega completa.</strong> <span class="text-mist">Archivos fuente, dominio a tu nombre y documentación en lenguaje simple.</span></span></li>
         </ul>
+      </div>
+
+      <p class="mt-10 text-sm text-dim" data-reveal><strong class="text-mist">Ningún paquete incluye:</strong> logo o identidad visual, sesión de fotos, tienda con pagos en línea, blog, correo con tu propio dominio, publicidad o manejo de redes, ni el costo del dominio. Nadie puede garantizar con honestidad el primer lugar en Google, así que no lo prometemos.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4" data-reveal>
+        <a class="btn-cta" href="../brief/">Empieza con el brief</a>
+        <p class="max-w-xl text-sm text-dim">*Días hábiles, contados desde que nos envías textos y fotos. Cada proyecto parte con una cotización por escrito: qué incluye, qué no y el precio final.</p>
       </div>
     </div>
   </section>
@@ -395,7 +528,7 @@
       <div class="faq mt-10" data-reveal>
         <details>
           <summary>¿Cuánto cuesta un sitio web?</summary>
-          <p>Depende del alcance. Envía el brief y recibirás una cotización clara y justa antes de empezar. El tiempo que nos ahorra el flujo con IA se descuenta de tu precio.</p>
+          <p>Una landing page parte en $150.000 y un sitio simple en $290.000. Un sitio a medida parte en $590.000 y se cotiza después del brief. Envía el brief y recibirás una cotización por escrito, con qué incluye y qué no, antes de empezar. El tiempo que nos ahorra el flujo con IA se descuenta de tu precio.</p>
         </details>
         <details>
           <summary>¿De quién es el sitio?</summary>

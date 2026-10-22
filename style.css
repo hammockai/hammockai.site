@@ -167,6 +167,21 @@ svg{display:block}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{padding:0 0 1.2rem;color:var(--mist)}
 
+/* Portfolio: example sites (fictional businesses, in /portafolio/) */
+.demo-card{display:flex;flex-direction:column}
+.demo-thumb{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;padding:.75rem;border:1px solid var(--hair);border-radius:.8rem;background:var(--coal)}
+.demo-card .link-arrow{margin-top:auto;padding-top:1.25rem;align-self:flex-start}
+
+/* Services: packages, add-ons and "from" prices */
+.plan{display:flex;flex-direction:column}
+.plan-price{font-family:"Archivo Black",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:1.6rem;line-height:1.1;letter-spacing:-.01em;color:var(--snow)}
+.plan-list{display:grid;gap:.45rem}
+.plan-list li{position:relative;padding-left:1.1rem;font-size:.875rem;line-height:1.55;color:var(--mist)}
+.plan-list li::before{content:"";position:absolute;left:0;top:.6em;width:.4rem;height:.4rem;border-radius:9999px;background:var(--ember)}
+.plan-list-no li::before{background:transparent;border:1px solid var(--dim)}
+.mt-1{margin-top:.25rem}
+.mt-16{margin-top:4rem}
+
 .cta-panel{padding:2.5rem 1.75rem;border:1px solid rgba(255,107,53,.35);border-radius:1.4rem;background:radial-gradient(40rem 20rem at 85% 0,rgba(255,107,53,.12),transparent 70%),var(--surface)}
 
 .band{background:var(--coal);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
