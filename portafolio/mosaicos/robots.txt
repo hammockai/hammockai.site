@@ -1,0 +1,12 @@
+# robots.txt · demo "Tesela Lunar" (negocio ficticio)
+# Se deja revisar todo A PROPÓSITO: la orden de no indexar va en cada página
+# (<meta name="robots" content="noindex">) y en _headers (X-Robots-Tag).
+# Si aquí se bloqueara la revisión (Disallow), Google no podría leer esa
+# orden y podría mostrar la dirección igual (Google Search Central, "Block
+# Search indexing with noindex", consultada 2026-10-21:
+# https://developers.google.com/search/docs/crawling-indexing/block-indexing).
+# Sin sitemap: no hay nada que deba aparecer en buscadores. Si la demo vive
+# dentro de otro dominio (ej. hammockai.site), el sitemap.xml de ese dominio
+# tampoco la lista.
+User-agent: *
+Allow: /

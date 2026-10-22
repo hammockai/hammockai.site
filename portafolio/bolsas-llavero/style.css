@@ -1,0 +1,1421 @@
+/* ==========================================================================
+   style.css · Demo "Plic Plac" (bolsas llavero, NEGOCIO FICTICIO) · Hammock AI
+   --------------------------------------------------------------------------
+   DE DÓNDE SALE
+   Es el style.css de base/ con tres cambios:
+   1. Otros valores en los tokens de :root (el "tema"): colores, letra de
+      títulos, radios y una sombra dura tipo sticker.
+   2. En la sección 5, el menú completo aparece desde 64em (no 48em): con
+      seis enlaces y el botón "Pedir la mía" no cabe antes en una fila.
+   3. Al final, la sección 7 "Extras de esta demo": aviso de sitio de
+      ejemplo, botones con borde de sticker, pasos ilustrados, ficha,
+      modelos, datos en tiza y banda de empresas.
+   Sin fuentes descargadas ni imágenes de otros sitios: la identidad sale de
+   los tokens y de las ilustraciones SVG propias de img/.
+
+   CÓMO ESTÁ ORDENADO
+   1. Tokens (:root): colores, letras, espacios y radios. Para cambiar el
+      "tema" del sitio se tocan SOLO estas variables (ver demos/ para ejemplos).
+   2. Reset y base: parejo entre navegadores, letra legible, foco visible.
+   3. Estructura: contenedor y secciones.
+   4. Componentes: cabecera y menú, botones, tarjetas, galería, preguntas,
+      contacto y pie.
+   5. Pantallas más grandes (@media min-width).
+   6. Movimiento reducido, colores forzados e impresión.
+   7. Extras de esta demo.
+
+   POR QUÉ "PRIMERO EL CELULAR"
+   Todo lo que está fuera de un @media es para una pantalla de unos 360 px.
+   Las pantallas grandes solo AGREGAN reglas con @media (min-width: …).
+   Así el celular (la mayoría de las visitas) descarga y aplica lo mínimo.
+
+   POR QUÉ NO HAY style="" EN EL HTML
+   La política de seguridad (CSP) del sitio solo acepta estilos de este
+   archivo. Un style="" en el HTML se ignora: todo el estilo vive aquí.
+   ========================================================================== */
+
+
+/* 1. TOKENS ================================================================
+   Una variable CSS (--nombre) guarda un valor que se reutiliza en todo el
+   archivo. Si cambias --color-marca aquí, cambian todos los botones,
+   enlaces y detalles a la vez.
+
+   CONTRASTE (WCAG 2.2 AA): si cambias un color, revisa que el texto quede
+   con contraste de al menos 4,5:1 sobre su fondo (3:1 en títulos grandes,
+   bordes de botones y el anillo de foco). Pares que hay que revisar:
+   texto/fondo, texto-suave/fondo, sobre-marca/marca, sobre-boton/boton,
+   pie-texto/pie-fondo y foco/fondo.
+   TEMA "PLIC PLAC": amarillo girasol + violeta + tinta ciruela, con
+   detalles coral y menta (solo en dibujos y decoración).
+   Contraste medido el 2026-10-21 (mínimo AA: 4,5:1 texto; 3:1 foco y
+   texto grande): texto/fondo 16,0 · texto-suave/fondo 8,0 ·
+   texto-suave/fondo-alt 7,6 · blanco/violeta 8,5 · tinta/amarillo 11,5 ·
+   texto-suave de portada/amarillo 8,3 · amarillo/violeta (banda) 5,9 ·
+   lila claro/violeta 6,8 · tinta/coral (sticker) 5,9 · pie 14,7 ·
+   foco/fondo 5,0 · foco/fondo-alt 4,7 · foco tinta/amarillo 11,5. */
+:root {
+  /* --- Color --- */
+  --color-fondo: #fffaf0;            /* crema */
+  --color-fondo-alt: #e8f8f1;        /* menta pálido: secciones alternas */
+  --color-superficie: #ffffff;       /* tarjetas y paneles */
+  --color-texto: #241640;            /* tinta ciruela */
+  --color-texto-suave: #514a66;      /* texto secundario */
+  --color-borde: #ddd3ea;            /* líneas finas (decorativas) */
+  --color-marca: #5b2bb5;            /* violeta: enlaces y botones */
+  --color-marca-oscuro: #45208c;     /* violeta al pasar el mouse */
+  --color-sobre-marca: #ffffff;
+  --color-acento: #ffd23f;           /* amarillo girasol */
+  --color-sobre-acento: #241640;
+  --color-enlace: var(--color-marca);
+  --color-boton: var(--color-marca);
+  --color-boton-hover: var(--color-marca-oscuro);
+  --color-sobre-boton: var(--color-sobre-marca);
+  --color-foco: #c2410c;             /* anillo de foco del teclado */
+  --color-cabecera-fondo: var(--color-fondo);
+  --color-hero-fondo: var(--color-acento);
+  --color-hero-texto: var(--color-texto);
+  --color-hero-texto-suave: #3d2f57;
+  --color-hero-foco: var(--color-texto);
+  --color-pie-fondo: #241640;
+  --color-pie-texto: #f4effc;
+  --color-pie-foco: var(--color-acento);
+  /* Colores propios de esta demo (sección 7). --color-tinta no cambia
+     dentro de la banda oscura, a diferencia de --color-texto. */
+  --color-tinta: #241640;
+  --color-coral: #ff6b57;
+  --color-coral-claro: #ff8a7a;
+  --color-banda-fondo: var(--color-marca);
+  --color-banda-texto-suave: #e9e1fb;
+
+  /* --- Tipografía ---
+     Fuentes del sistema: no se descargan (0 KB) y no consultan a otro
+     dominio. Títulos con letra redondeada si el equipo la tiene
+     (ui-rounded en Apple; Arial Rounded en Windows con Office); si no,
+     la del sistema en su peso más grueso. */
+  --fuente-texto: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --fuente-titulos: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Varela Round", "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --peso-titulos: 800;
+  --espaciado-titulos: -0.015em;
+  --texto-chico: 0.9375rem;          /* 15 px */
+  --texto-base: 1.0625rem;           /* 17 px */
+  --texto-grande: 1.1875rem;         /* 19 px */
+  /* clamp(mínimo, ideal, máximo): el título crece con la pantalla pero
+     nunca baja del mínimo ni pasa del máximo. Al usar rem, también crece
+     si la persona agranda la letra del navegador. */
+  --titulo-1: clamp(2.375rem, 1.5rem + 4.2vw, 4rem);
+  --titulo-2: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  --titulo-3: 1.25rem;
+  --interlineado: 1.6;
+  --interlineado-titulos: 1.08;
+
+  /* --- Espacio --- (escala fija: usar siempre estos pasos da orden visual) */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+  --esp-7: 3rem;
+  --esp-8: 4.5rem;
+  --seccion-espacio: clamp(3rem, 2rem + 4vw, 5.5rem);
+  --margen-lateral: 1rem;            /* 16 px a cada lado en celular */
+  --ancho-max: 72rem;
+  --ancho-texto: 42rem;              /* líneas de ~70 letras: se leen mejor */
+  --alto-cabecera: 4rem;
+
+  /* --- Forma: esquinas redondas y sombra dura "de sticker" --- */
+  --radio-chico: 8px;
+  --radio: 18px;
+  --radio-grande: 28px;
+  --radio-boton: 999px;              /* 999px = píldora; 6px = rectangular */
+  --sombra: 4px 4px 0 var(--color-tinta);
+  --sombra-alta: 6px 6px 0 var(--color-tinta);
+  --borde-sticker: 3px solid var(--color-tinta);
+}
+
+
+/* 2. RESET Y BASE ========================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* el ancho incluye el relleno y el borde */
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* La cabecera queda pegada arriba (sticky). Esto evita que tape el
+     título de la sección al saltar desde el menú, o el elemento que
+     recibe el foco con el teclado. */
+  scroll-padding-top: calc(var(--alto-cabecera) + var(--esp-4));
+}
+
+/* El desplazamiento suave solo para quien NO pidió reducir el movimiento
+   en su sistema (algunas personas se marean con animaciones). */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-base);
+  line-height: var(--interlineado);
+  overflow-wrap: break-word; /* palabras largas (correos) no rompen el ancho */
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* El atributo hidden siempre gana, aunque otra regla diga display. */
+[hidden] {
+  display: none !important;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--esp-4);
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-titulos);
+  line-height: var(--interlineado-titulos);
+  letter-spacing: var(--espaciado-titulos);
+  text-wrap: balance; /* reparte el texto del título en líneas parejas */
+}
+
+h1 { font-size: var(--titulo-1); }
+h2 { font-size: var(--titulo-2); }
+h3 { font-size: var(--titulo-3); }
+
+p,
+ul,
+ol,
+dl,
+figure {
+  margin: 0 0 var(--esp-4);
+}
+
+:where(p, ul, ol, dl, figure):last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--color-enlace);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+/* FOCO VISIBLE: quien navega con teclado tiene que ver dónde está.
+   :focus-visible lo muestra con teclado y no al hacer clic con el mouse.
+   Nunca uses "outline: none" sin poner otro indicador en su lugar. */
+:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-acento);
+  color: var(--color-sobre-acento);
+}
+
+/* Fuente propia (opcional)
+   1. Copia el .woff2 a fonts/ junto con su licencia (solo licencias que
+      permitan uso comercial, como la OFL) y anótala en CREDITOS.md.
+   2. Descomenta y ajusta:
+   @font-face {
+     font-family: "Mi Fuente";
+     src: url("fonts/mi-fuente.woff2") format("woff2");
+     font-weight: 400;
+     font-display: swap;   (muestra el texto con la fuente del sistema mientras carga)
+   }
+   3. En :root: --fuente-texto: "Mi Fuente", system-ui, sans-serif; */
+
+
+/* Utilidad: oculta un texto a la vista pero lo deja para lectores de
+   pantalla (por ejemplo, "se abre en una pestaña nueva"). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Enlace "Saltar al contenido": es lo primero que encuentra el teclado.
+   Está fuera de la pantalla y aparece solo cuando recibe el foco. */
+.saltar {
+  position: absolute;
+  top: var(--esp-2);
+  left: var(--esp-2);
+  z-index: 100;
+  padding: var(--esp-3) var(--esp-4);
+  border-radius: var(--radio-chico);
+  background: var(--color-texto);
+  color: var(--color-fondo);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.saltar:focus {
+  transform: none;
+}
+
+
+/* 3. ESTRUCTURA ============================================================ */
+
+/* Contenedor: ancho máximo y 16 px de margen a cada lado en celular. */
+.contenedor {
+  width: min(100% - 2 * var(--margen-lateral), var(--ancho-max));
+  margin-inline: auto;
+}
+
+.seccion {
+  padding-block: var(--seccion-espacio);
+}
+
+.seccion--alt {
+  background: var(--color-fondo-alt);
+}
+
+.seccion__intro {
+  max-width: var(--ancho-texto);
+  margin-bottom: var(--esp-6);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-grande);
+}
+
+/* main recibe el foco desde "Saltar al contenido" (tabindex="-1");
+   no necesita anillo porque no es un control. */
+main:focus {
+  outline: none;
+}
+
+
+/* 4. COMPONENTES =========================================================== */
+
+/* --- Cabecera y menú ---
+   Sin JavaScript: los enlaces del menú se ven siempre, en una o dos filas.
+   Con JavaScript: en celular se esconden detrás del botón "Menú".
+
+   @media (scripting: enabled) es verdadero cuando el navegador ejecuta JS.
+   Así el CSS esconde el menú desde el primer dibujo de la página, sin
+   esperar a main.js (evita que la página "salte" al cargar). Navegadores
+   antiguos que no la entienden muestran el menú abierto: sigue usable. */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-cabecera-fondo);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.cabecera__fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 var(--esp-4);
+  min-height: var(--alto-cabecera);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  min-height: 44px; /* área táctil cómoda */
+  color: var(--color-texto);
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-titulos); /* mismo peso que los títulos (evita "negrita falsa") */
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+
+.marca__logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.menu {
+  flex-basis: 100%; /* sin JS: el menú baja a su propia fila */
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--esp-1);
+  margin: 0;
+  padding: 0 0 var(--esp-2);
+  list-style: none;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--esp-2);
+  border-radius: var(--radio-chico);
+  color: var(--color-texto);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background: var(--color-fondo-alt);
+}
+
+.boton-menu {
+  display: none; /* sin JS no sirve, así que no se muestra */
+  align-items: center;
+  gap: var(--esp-2);
+  min-height: 44px;
+  padding: 0 var(--esp-4);
+  border: 1px solid var(--color-texto-suave);
+  border-radius: var(--radio-boton);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Ícono de tres líneas dibujado con CSS (no es una imagen). */
+.boton-menu__icono,
+.boton-menu__icono::before,
+.boton-menu__icono::after {
+  display: block;
+  width: 1.125rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.boton-menu__icono {
+  position: relative;
+}
+
+.boton-menu__icono::before,
+.boton-menu__icono::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.boton-menu__icono::before { top: -6px; }
+.boton-menu__icono::after { top: 6px; }
+
+/* Abierto: las tres líneas forman una X. main.js solo cambia
+   aria-expanded; el CSS lee ese atributo. Una sola fuente de verdad:
+   lo que ve la persona y lo que anuncia el lector de pantalla coinciden. */
+.boton-menu[aria-expanded="true"] .boton-menu__icono {
+  background: transparent;
+}
+
+.boton-menu[aria-expanded="true"] .boton-menu__icono::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.boton-menu[aria-expanded="true"] .boton-menu__icono::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (scripting: enabled) {
+  .boton-menu {
+    display: inline-flex;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  /* "+" = el elemento que viene justo después del botón (el nav). */
+  .boton-menu[aria-expanded="true"] + .menu {
+    display: block;
+  }
+
+  .menu li {
+    flex-basis: 100%; /* en celular, un enlace por fila: fácil con el pulgar */
+    border-top: 1px solid var(--color-borde);
+  }
+}
+
+/* --- Botones ---
+   Son enlaces con forma de botón (llevan a WhatsApp, al teléfono, etc.).
+   Alto mínimo 48 px: se tocan bien con el pulgar. */
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-3);
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-2);
+  min-height: 48px;
+  padding: var(--esp-3) var(--esp-5);
+  border: 2px solid transparent; /* en modo de alto contraste se vuelve visible */
+  border-radius: var(--radio-boton);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.boton svg {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.boton--principal {
+  background: var(--color-boton);
+  color: var(--color-sobre-boton);
+}
+
+.boton--principal:hover {
+  background: var(--color-boton-hover);
+  color: var(--color-sobre-boton);
+}
+
+.boton--secundario {
+  border-color: currentColor;
+  background: transparent;
+  color: var(--color-texto);
+}
+
+/* color-mix: un velo del mismo color del texto. Funciona sobre fondo claro
+   u oscuro sin tocar nada. Navegadores antiguos: sin velo (sigue usable). */
+.boton--secundario:hover {
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  color: var(--color-texto);
+}
+
+.boton--ancho {
+  width: 100%;
+}
+
+.etiqueta {
+  display: inline-block;
+  margin-bottom: var(--esp-4);
+  padding: var(--esp-1) var(--esp-3);
+  border-radius: var(--radio-chico);
+  background: var(--color-acento);
+  color: var(--color-sobre-acento);
+  font-size: var(--texto-chico);
+  font-weight: 700;
+}
+
+/* --- Portada (hero) --- */
+.hero {
+  /* Dentro de la portada, "texto" y "foco" toman los colores de la portada.
+     Así, si la portada es oscura, el botón secundario y el anillo de foco
+     se ven bien sin escribir reglas nuevas: basta cambiar los tokens. */
+  --color-texto: var(--color-hero-texto);
+  --color-foco: var(--color-hero-foco);
+  padding-block: var(--esp-7) var(--seccion-espacio);
+  background: var(--color-hero-fondo);
+  color: var(--color-hero-texto);
+}
+
+.hero__grilla {
+  display: grid;
+  gap: var(--esp-6);
+  align-items: center;
+}
+
+.hero__bajada {
+  max-width: 36rem;
+  margin-bottom: var(--esp-6);
+  color: var(--color-hero-texto-suave);
+  font-size: var(--texto-grande);
+}
+
+.hero__imagen {
+  width: 100%;
+  border-radius: var(--radio-grande);
+}
+
+/* --- Tarjetas (servicios) ---
+   repeat(auto-fit, minmax(…)): tantas columnas como quepan de al menos
+   16rem. En celular cabe una; en escritorio, tres. Sin @media. */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--esp-4);
+  padding: 0;
+  list-style: none;
+}
+
+.tarjeta {
+  padding: var(--esp-5);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.tarjeta h3 {
+  margin-bottom: var(--esp-2);
+}
+
+/* --- Galería (trabajos) --- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: var(--esp-4);
+  padding: 0;
+  list-style: none;
+}
+
+.galeria figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+}
+
+.galeria img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover; /* recorta la foto para que todas midan igual */
+}
+
+.galeria figcaption {
+  padding: var(--esp-3) var(--esp-4);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-chico);
+}
+
+/* --- Sobre nosotros --- */
+.dos-columnas {
+  display: grid;
+  gap: var(--esp-6);
+}
+
+.texto-largo {
+  max-width: var(--ancho-texto);
+}
+
+.lista-check {
+  display: grid;
+  gap: var(--esp-3);
+  padding: 0;
+  list-style: none;
+}
+
+.lista-check li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* Visto bueno dibujado con bordes: es decoración, el texto dice lo importante. */
+.lista-check li::before {
+  content: "";
+  position: absolute;
+  top: 0.3em;
+  left: 0.35rem;
+  width: 0.5rem;
+  height: 0.85rem;
+  border: solid var(--color-marca);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* --- Preguntas frecuentes (<details>) ---
+   <details> abre y cierra sin JavaScript, funciona con teclado (Enter o
+   Espacio) y el lector de pantalla anuncia si está abierta o cerrada. */
+.preguntas {
+  max-width: var(--ancho-texto);
+}
+
+.pregunta {
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.pregunta summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-4);
+  min-height: 44px;
+  padding-block: var(--esp-4);
+  font-weight: 700;
+  list-style: none; /* quita el triángulo por defecto… */
+  cursor: pointer;
+}
+
+.pregunta summary::-webkit-details-marker {
+  display: none; /* …también en Safari */
+}
+
+/* Signo + y − dibujados con dos líneas de fondo (no con texto, para que
+   el lector de pantalla no lea "más"). */
+.pregunta summary::after {
+  content: "";
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat;
+}
+
+.pregunta[open] summary::after {
+  background: linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat;
+}
+
+.pregunta__respuesta {
+  padding-bottom: var(--esp-4);
+  color: var(--color-texto-suave);
+}
+
+/* --- Contacto --- */
+.contacto {
+  display: grid;
+  gap: var(--esp-6);
+}
+
+.contacto__acciones {
+  display: grid;
+  gap: var(--esp-3);
+  max-width: 26rem;
+  margin-top: var(--esp-5);
+  padding: 0;
+  list-style: none;
+}
+
+.panel {
+  padding: var(--esp-5);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+}
+
+.panel h3 {
+  margin-bottom: var(--esp-3);
+}
+
+.panel h3:not(:first-child) {
+  margin-top: var(--esp-6);
+}
+
+.horario div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 var(--esp-4);
+  padding-block: var(--esp-2);
+  border-bottom: 1px dashed var(--color-borde);
+}
+
+.horario dt {
+  font-weight: 600;
+}
+
+.horario dd {
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+/* --- Pie de página --- */
+.pie {
+  --color-foco: var(--color-pie-foco); /* el foco también se ve sobre fondo oscuro */
+  padding-block: var(--esp-7) var(--esp-6);
+  background: var(--color-pie-fondo);
+  color: var(--color-pie-texto);
+}
+
+.pie a {
+  color: inherit;
+}
+
+.pie__grilla {
+  display: grid;
+  gap: var(--esp-6);
+}
+
+.pie__nombre {
+  margin-bottom: var(--esp-2);
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-titulos);
+  font-size: 1.25rem;
+}
+
+.pie ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--esp-4);
+  padding: 0;
+  list-style: none;
+}
+
+.pie nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.pie__legal {
+  padding-top: var(--esp-5);
+  border-top: 1px solid rgb(255 255 255 / 0.2);
+  font-size: var(--texto-chico);
+}
+
+/* --- Página 404 --- */
+.error {
+  max-width: var(--ancho-texto);
+  padding-block: var(--seccion-espacio);
+}
+
+
+/* 5. PANTALLAS MÁS GRANDES ================================================= */
+
+/* Desde 64em (1024 px) en esta demo (en base/ es 48em): el menú se ve
+   siempre en la cabecera y el botón "Menú" desaparece. Con seis enlaces y
+   el botón "Pedir la mía", antes de 64em no caben en una fila. */
+@media (min-width: 64em) {
+  .boton-menu {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    flex-basis: auto;
+  }
+
+  .menu ul {
+    padding-bottom: 0;
+  }
+
+  .menu li {
+    flex-basis: auto;
+    border-top: 0;
+  }
+}
+
+/* Desde 48em (768 px, tablet vertical): contacto y pie a dos columnas. */
+@media (min-width: 48em) {
+  .contacto {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .pie__grilla {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+
+  .pie__legal {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desde 60em (960 px, escritorio): portada y "nosotros" a dos columnas. */
+@media (min-width: 60em) {
+  .hero__grilla {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .dos-columnas {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
+}
+
+
+/* 6. PREFERENCIAS DE LA PERSONA E IMPRESIÓN ================================ */
+
+/* Quien pidió menos movimiento en su sistema: sin animaciones. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Modo de colores forzados (alto contraste de Windows): los fondos de
+   color desaparecen, así que el ícono del menú usa el color del texto. */
+@media (forced-colors: active) {
+  .boton-menu__icono,
+  .boton-menu__icono::before,
+  .boton-menu__icono::after {
+    background: CanvasText;
+  }
+
+  .boton-menu[aria-expanded="true"] .boton-menu__icono {
+    background: transparent;
+  }
+}
+
+@media print {
+  .cabecera,
+  .saltar,
+  .boton-menu {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
+
+
+/* 7. EXTRAS DE ESTA DEMO ==================================================== */
+
+/* Títulos gruesos y redondeados: font-synthesis: none evita una "negrita
+   falsa" (borrosa) si la letra redondeada del equipo ya es gruesa. */
+h1,
+h2,
+h3,
+.marca,
+.pie__nombre {
+  font-synthesis: none;
+}
+
+/* --- Aviso "sitio de ejemplo" ---
+   Obligatorio en toda demo: nadie debe creer que es un negocio real. */
+.aviso-demo {
+  --color-foco: var(--color-acento); /* anillo amarillo sobre fondo tinta */
+  padding: var(--esp-2) var(--margen-lateral);
+  background: var(--color-tinta);
+  color: #ffffff;
+  font-size: var(--texto-chico);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.aviso-demo p {
+  margin: 0;
+}
+
+.aviso-demo a {
+  color: var(--color-acento);
+}
+
+/* --- Cabecera: línea gruesa y marca con dos líneas (nombre y rubro) --- */
+.cabecera {
+  border-bottom: var(--borde-sticker);
+}
+
+.marca {
+  gap: var(--esp-3);
+  font-size: 1.3125rem;
+  line-height: 1.05;
+}
+
+.marca__logo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.marca__rubro {
+  display: block;
+  color: var(--color-texto-suave);
+  font-family: var(--fuente-texto);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.boton-menu {
+  border: var(--borde-sticker);
+}
+
+/* "Pedir la mía" en la cabecera: solo cuando el menú completo está a la
+   vista (en el celular no compite con el botón "Menú"). */
+.cabecera__cta {
+  display: none;
+}
+
+/* --- Botones con borde y sombra de sticker ---
+   Al pasar el mouse se "levantan"; al presionarlos se "aplastan". Quien
+   pidió menos movimiento no ve la transición (regla de la sección 6). */
+.boton {
+  border: var(--borde-sticker);
+  box-shadow: var(--sombra);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.boton:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--sombra-alta);
+}
+
+.boton:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--color-tinta);
+}
+
+.boton--secundario {
+  border-color: var(--color-tinta);
+  background: var(--color-superficie);
+  color: var(--color-tinta);
+}
+
+.boton--secundario:hover {
+  background: var(--color-fondo-alt);
+  color: var(--color-tinta);
+}
+
+/* Botón de demo: la línea de abajo dice a dónde lleva de verdad
+   (hammockai.site). En un sitio real se borra esa línea y el enlace pasa
+   a ser wa.me o tel: (ver comentario en index.html). */
+.boton--demo {
+  flex-direction: column;
+  gap: var(--esp-1);
+}
+
+.boton__linea {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+}
+
+.boton__demo {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* --- Portada: amarillo con lunares (un degradado, sin imágenes) --- */
+.hero {
+  background-image: radial-gradient(rgb(36 22 64 / 0.1) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+.hero .etiqueta {
+  margin-bottom: var(--esp-5);
+  background: var(--color-tinta);
+  color: var(--color-acento);
+}
+
+/* Subrayado de marcador detrás de la palabra (el texto sigue en tinta). */
+.resaltado {
+  padding-inline: 0.06em;
+  background: linear-gradient(transparent 58%, var(--color-coral-claro) 58%, var(--color-coral-claro) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hero__puntos {
+  display: grid;
+  gap: var(--esp-2);
+  margin: var(--esp-6) 0 0;
+  padding: 0;
+  color: var(--color-hero-texto-suave);
+  font-weight: 600;
+  list-style: none;
+}
+
+.hero__puntos li {
+  display: flex;
+  gap: var(--esp-2);
+  align-items: flex-start;
+}
+
+.hero__puntos svg {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.2em;
+  color: var(--color-marca);
+}
+
+.hero__visual {
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.hero__imagen {
+  border-radius: 0;
+}
+
+/* Sticker redondo sobre la ilustración. Se menea 3 veces al cargar
+   (menos de 3 segundos en total) y solo si la persona no pidió reducir
+   el movimiento. */
+.sticker {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: clamp(6.5rem, 5rem + 4vw, 8.5rem);
+  aspect-ratio: 1;
+  margin: 0;
+  padding: var(--esp-2);
+  border: var(--borde-sticker);
+  border-radius: 50%;
+  background: var(--color-coral);
+  box-shadow: var(--sombra);
+  color: var(--color-tinta);
+  font-family: var(--fuente-titulos);
+  font-size: clamp(0.875rem, 0.75rem + 0.5vw, 1.125rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+  transform: rotate(-10deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sticker {
+    animation: menear 0.8s ease-in-out 0.4s 3;
+  }
+}
+
+@keyframes menear {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+/* --- Cómo se pliega: 3 tarjetas con dibujo y número en un círculo ---
+   El número lo dibuja CSS con un contador; la lista <ol> ya anuncia el
+   orden a los lectores de pantalla. */
+.plegado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--esp-6) var(--esp-5);
+  padding: 0;
+  list-style: none;
+  counter-reset: pliegue;
+}
+
+.plegado__paso {
+  position: relative;
+  padding: var(--esp-3) var(--esp-3) var(--esp-5);
+  border: var(--borde-sticker);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.plegado__paso::before {
+  content: counter(pliegue);
+  counter-increment: pliegue;
+  position: absolute;
+  top: -0.75rem;
+  left: -0.75rem;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: var(--borde-sticker);
+  border-radius: 50%;
+  background: var(--color-acento);
+  color: var(--color-tinta);
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.plegado__paso img {
+  width: 100%;
+  margin-bottom: var(--esp-4);
+  border-radius: calc(var(--radio) - 6px);
+}
+
+.plegado__paso h3,
+.plegado__paso p {
+  padding-inline: var(--esp-2);
+}
+
+.plegado__paso h3 {
+  margin-bottom: var(--esp-2);
+}
+
+.plegado__paso p {
+  color: var(--color-texto-suave);
+}
+
+/* --- Materiales: ficha técnica y datos en tiza --- */
+.ficha {
+  border: var(--borde-sticker);
+  box-shadow: var(--sombra);
+}
+
+.ficha__datos {
+  margin: 0;
+}
+
+.ficha__datos div {
+  display: grid;
+  gap: var(--esp-1);
+  padding-block: var(--esp-3);
+  border-bottom: 2px dashed var(--color-borde);
+}
+
+.ficha__datos div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.ficha__datos dt {
+  font-weight: 700;
+}
+
+.ficha__datos dd {
+  margin: 0;
+  color: var(--color-texto-suave);
+}
+
+/* Dato en tiza: lo que el negocio todavía tiene que confirmar. Borde de
+   rayas y letra de máquina para que se note que es un hueco, no un dato.
+   currentColor: se ve igual de bien sobre fondo claro u oscuro. */
+.tiza {
+  padding: 0.05em 0.4em;
+  border: 2px dashed currentColor;
+  border-radius: var(--radio-chico);
+  background: color-mix(in srgb, currentColor 7%, transparent);
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Consolas, "Liberation Mono", monospace;
+  font-size: 0.875em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Aviso honesto sobre los datos en tiza. */
+.nota {
+  max-width: var(--ancho-texto);
+  margin-top: var(--esp-5);
+  padding: var(--esp-4) var(--esp-5);
+  border: 2px dashed var(--color-texto-suave);
+  border-radius: var(--radio-chico);
+  background: var(--color-superficie);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-chico);
+}
+
+/* --- Colores y modelos ---
+   Dos columnas desde ~330 px (como vitrina de tienda en el celular),
+   cuatro en escritorio. Sin @media: auto-fit decide cuántas caben. */
+.modelos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
+  gap: var(--esp-4);
+  padding: 0;
+  list-style: none;
+}
+
+.modelo {
+  display: flex;
+  flex-direction: column;
+  padding: var(--esp-3);
+  border: var(--borde-sticker);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.modelo img {
+  width: 100%;
+  margin-bottom: var(--esp-3);
+  border-radius: calc(var(--radio) - 8px);
+}
+
+.modelo h3 {
+  margin-bottom: var(--esp-1);
+}
+
+.modelo p {
+  color: var(--color-texto-suave);
+  font-size: var(--texto-chico);
+}
+
+/* margin-top: auto empuja el precio al fondo: quedan alineados. */
+.modelo .precio {
+  margin-top: auto;
+  padding-top: var(--esp-3);
+  color: var(--color-texto);
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+/* En su propia línea y sin "nowrap": en el celular (dos columnas, ~126 px
+   de ancho útil) "precio de ejemplo" puede pasar a dos líneas sin salirse
+   de la tarjeta. */
+.precio__nota {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: var(--esp-1);
+  padding: 0.1em 0.55em;
+  border-radius: var(--radio-chico);
+  background: var(--color-acento);
+  color: var(--color-tinta);
+  font-family: var(--fuente-texto);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.modelos__siguiente {
+  margin-top: var(--esp-5);
+}
+
+.modelos__siguiente a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--texto-grande);
+  font-weight: 700;
+}
+
+/* --- Cómo pedir: pasos numerados --- */
+.pasos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: var(--esp-4);
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.paso {
+  position: relative;
+  padding: var(--esp-5) var(--esp-5) var(--esp-5) 4.5rem;
+  border: var(--borde-sticker);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+}
+
+.paso::before {
+  content: counter(paso);
+  counter-increment: paso;
+  position: absolute;
+  top: var(--esp-5);
+  left: var(--esp-4);
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--color-marca);
+  color: #ffffff;
+  font-family: var(--fuente-titulos);
+  font-size: 1.0625rem;
+  font-weight: 800;
+}
+
+.paso h3 {
+  margin-bottom: var(--esp-2);
+}
+
+.paso p {
+  color: var(--color-texto-suave);
+}
+
+.pedir__accion {
+  margin-top: var(--esp-6);
+}
+
+.pedir__accion .boton {
+  width: 100%;
+  max-width: 26rem;
+}
+
+/* --- Banda de empresas: violeta con rayas suaves ---
+   Dentro de la banda, "texto", "foco", "marca" y "botón" toman colores que
+   se leen sobre el violeta (botón amarillo con texto tinta). */
+.banda {
+  --color-texto: #ffffff;
+  --color-texto-suave: var(--color-banda-texto-suave);
+  --color-foco: var(--color-acento);
+  --color-marca: var(--color-acento);      /* visto bueno amarillo */
+  --color-boton: var(--color-acento);
+  --color-boton-hover: #ffe27a;
+  --color-sobre-boton: var(--color-tinta);
+  padding-block: var(--seccion-espacio);
+  background-color: var(--color-banda-fondo);
+  background-image: repeating-linear-gradient(45deg, rgb(255 255 255 / 0.06) 0 12px, transparent 12px 24px);
+  color: #ffffff;
+}
+
+.banda__fila {
+  display: grid;
+  gap: var(--esp-6);
+  align-items: center;
+}
+
+.banda h2 {
+  margin-bottom: var(--esp-3);
+}
+
+.banda p {
+  max-width: var(--ancho-texto);
+  color: var(--color-texto-suave);
+}
+
+.banda .lista-check {
+  margin-top: var(--esp-5);
+}
+
+.banda .boton {
+  width: 100%;
+  max-width: 26rem;
+}
+
+/* --- Contacto y pie --- */
+.contacto .panel {
+  border: var(--borde-sticker);
+  box-shadow: var(--sombra);
+}
+
+.pie__aviso {
+  font-weight: 700;
+}
+
+@media (min-width: 60em) {
+  .banda__fila {
+    grid-template-columns: 1fr auto;
+  }
+
+  .banda .boton {
+    width: auto;
+  }
+}
+
+@media (min-width: 64em) {
+  .cabecera__cta {
+    display: inline-flex;
+    min-height: 44px;
+    padding-block: var(--esp-2);
+  }
+}

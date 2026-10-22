@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Ilustración propia de Hammock AI para la demo: baño ANTES. -->
+  <defs>
+    <pattern id="cuadros" width="25" height="25" patternUnits="userSpaceOnUse">
+      <rect width="25" height="25" fill="#b7bfb2"/>
+      <path d="M0 .5h25M.5 0v25" stroke="#9aa295"/>
+    </pattern>
+    <pattern id="baldosin" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#8f877b"/>
+      <path d="M0 .5h16M.5 0v16" stroke="#7a7266"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="240" fill="url(#cuadros)"/>
+  <rect x="100" y="75" width="25" height="25" fill="#8b9386"/>
+  <path d="M210 30l10 16-6 12 12 18M60 120l14 8 4 16" fill="none" stroke="#6d7568" stroke-width="2"/>
+  <g fill="#6d7568" opacity=".6">
+    <circle cx="40" cy="178" r="3"/><circle cx="52" cy="172" r="2"/><circle cx="46" cy="186" r="2.5"/>
+    <circle cx="250" cy="182" r="3"/><circle cx="262" cy="176" r="2"/>
+  </g>
+  <!-- cañería a la vista -->
+  <path d="M384 0v128h-26" fill="none" stroke="#8d8679" stroke-width="6"/>
+  <!-- ampolleta -->
+  <path d="M170 0v26" stroke="#6f675b" stroke-width="2"/>
+  <circle cx="170" cy="34" r="8" fill="#e6dfcc"/>
+  <!-- tina antigua con mancha -->
+  <path d="M24 190h236v28a22 22 0 0 1-22 22H46a22 22 0 0 1-22-22z" fill="#d8d2c4" stroke="#a8a191" stroke-width="3"/>
+  <path d="M40 204h204" stroke="#c4b48f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M60 166v24M60 166h14" fill="none" stroke="#8d8679" stroke-width="4"/>
+  <!-- espejo manchado -->
+  <rect x="292" y="52" width="62" height="72" fill="#a9b2b4" stroke="#8d8679" stroke-width="5"/>
+  <circle cx="312" cy="80" r="6" fill="#8f989a"/><circle cx="336" cy="104" r="4" fill="#8f989a"/>
+  <!-- lavamanos de pedestal -->
+  <rect x="284" y="150" width="80" height="18" rx="6" fill="#d8d2c4" stroke="#a8a191" stroke-width="3"/>
+  <rect x="311" y="168" width="26" height="72" fill="#cfc8b9" stroke="#a8a191" stroke-width="3"/>
+  <!-- piso -->
+  <rect y="240" width="400" height="60" fill="url(#baldosin)"/>
+  <path d="M120 260l20 4 6 14" fill="none" stroke="#5f584e" stroke-width="2"/>
+</svg>

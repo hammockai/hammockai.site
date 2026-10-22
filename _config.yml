@@ -4,3 +4,11 @@ exclude:
   - AGENTS.local.md
   - README.md
   - LICENSE
+  # Portfolio demos: their CREDITOS.md is a working note that travels with
+  # each demo folder. Without this, GitHub Pages would turn it into an
+  # HTML page with no "noindex".
+  - portafolio/contratista/CREDITOS.md
+  - portafolio/psicologa/CREDITOS.md
+  - portafolio/mosaicos/CREDITOS.md
+  - portafolio/bolsas-llavero/CREDITOS.md
+  - portafolio/gimnasio/CREDITOS.md

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="640" height="520">
+  <!-- Ilustración de portada · demo "Remanso". Dibujo propio de Hammock AI:
+       un sillón junto a una ventana, una planta y una taza. Sin personas
+       (no se sugiere a ningún paciente). Solo formas: sin estilos ni scripts. -->
+  <rect width="640" height="520" fill="#f6efe6"/>
+  <rect y="404" width="640" height="116" fill="#eadfd2"/>
+  <ellipse cx="290" cy="458" rx="236" ry="34" fill="#e2cdb8"/>
+  <!-- cuadro en el muro: agua quieta -->
+  <rect x="150" y="92" width="124" height="92" rx="6" fill="#fffaf3" stroke="#d8c6b3" stroke-width="6"/>
+  <circle cx="236" cy="124" r="13" fill="#f2dcc8"/>
+  <path d="M162 156c14-9 28-9 42 0s28 9 42 0 18-7 22-5v28h-106z" fill="#c5d8cf"/>
+  <!-- ventana con luz de tarde -->
+  <path d="M352 52c14 40-10 80 4 120s-6 86 6 128h-22V52z" fill="#f2dcc8"/>
+  <rect x="380" y="60" width="200" height="232" rx="14" fill="#fffaf3" stroke="#d8c6b3" stroke-width="8"/>
+  <rect x="390" y="70" width="180" height="212" rx="6" fill="#dce8e6"/>
+  <circle cx="520" cy="124" r="30" fill="#f4d7b5"/>
+  <path d="M390 236c40-26 80-30 120-14s46 6 60-2v62H390z" fill="#c5d8cf"/>
+  <path d="M480 70v212M390 176h180" stroke="#fffaf3" stroke-width="7"/>
+  <rect x="368" y="288" width="224" height="14" rx="5" fill="#e9dccd"/>
+  <!-- sillón -->
+  <rect x="112" y="232" width="226" height="150" rx="42" fill="#6f9a8f"/>
+  <rect x="150" y="270" width="92" height="70" rx="22" fill="#efd2b8"/>
+  <rect x="102" y="330" width="246" height="62" rx="24" fill="#7fa89c"/>
+  <rect x="80" y="300" width="52" height="100" rx="24" fill="#5d877c"/>
+  <rect x="318" y="300" width="52" height="100" rx="24" fill="#5d877c"/>
+  <rect x="112" y="396" width="12" height="24" rx="4" fill="#8a6a4f"/>
+  <rect x="326" y="396" width="12" height="24" rx="4" fill="#8a6a4f"/>
+  <!-- mesa con taza -->
+  <rect x="436" y="352" width="9" height="66" fill="#a07a5a"/>
+  <ellipse cx="440" cy="420" rx="30" ry="6" fill="#a07a5a"/>
+  <ellipse cx="440" cy="350" rx="56" ry="11" fill="#b98d6a"/>
+  <rect x="446" y="318" width="26" height="28" rx="6" fill="#fffaf3" stroke="#d8c6b3" stroke-width="3"/>
+  <path d="M472 325c10 0 10 14 0 14" fill="none" stroke="#d8c6b3" stroke-width="3"/>
+  <path d="M454 310c-5-7 5-11 0-18M465 310c-5-7 5-11 0-18" fill="none" stroke="#c9b8a6" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- planta -->
+  <path d="M530 236c-26 30-30 70-6 120M548 232c10 40 6 82-6 124M560 262c26 26 30 62 12 94" fill="none" stroke="#5d877c" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="520" cy="270" rx="13" ry="30" transform="rotate(-24 520 270)" fill="#6f9a8f"/>
+  <ellipse cx="549" cy="252" rx="12" ry="30" transform="rotate(8 549 252)" fill="#8fb3a7"/>
+  <ellipse cx="576" cy="288" rx="12" ry="28" transform="rotate(32 576 288)" fill="#6f9a8f"/>
+  <ellipse cx="516" cy="318" rx="11" ry="24" transform="rotate(-40 516 318)" fill="#8fb3a7"/>
+  <ellipse cx="572" cy="330" rx="11" ry="24" transform="rotate(40 572 330)" fill="#8fb3a7"/>
+  <path d="M516 356h64l-8 64h-48z" fill="#c98b62"/>
+  <rect x="512" y="350" width="72" height="12" rx="4" fill="#b67650"/>
+</svg>

@@ -1,0 +1,1578 @@
+/* ==========================================================================
+   style.css · Demo "Zancada" (estudio de entrenamiento, NEGOCIO FICTICIO)
+   Hammock AI
+   --------------------------------------------------------------------------
+   DE DÓNDE SALE
+   Es el mismo style.css de base/ con dos cambios:
+   1. Otros valores en los tokens de :root (el "tema"): colores, fuentes y
+      radios. Ningún componente de base se reescribió para cambiar el aspecto.
+   2. Al final, la sección 7 "Extras de esta demo": aviso de sitio de
+      ejemplo, botones de demo, secciones oscuras y verdes, franja, clases,
+      tabla de horario, planes, clase de prueba, equipo en tiza y mapa.
+   Si un cliente parte de esta demo, cambia los tokens y reutiliza los extras.
+
+   CÓMO ESTÁ ORDENADO
+   1. Tokens · 2. Reset y base · 3. Estructura · 4. Componentes ·
+   5. Pantallas más grandes · 6. Preferencias e impresión · 7. Extras.
+
+   POR QUÉ "PRIMERO EL CELULAR"
+   Todo lo que está fuera de un @media es para una pantalla de unos 360 px.
+   Las pantallas grandes solo AGREGAN reglas con @media (min-width: …).
+   Así el celular (la mayoría de las visitas) descarga y aplica lo mínimo.
+
+   POR QUÉ NO HAY style="" EN EL HTML
+   La política de seguridad (CSP) del sitio solo acepta estilos de este
+   archivo. Un style="" en el HTML se ignora: todo el estilo vive aquí.
+   ========================================================================== */
+
+
+/* 1. TOKENS (tema "Zancada") ===============================================
+   Negro tinta + verde "voltio" + papel claro, con tres colores de apoyo
+   (coral, cielo y lila) que solo marcan el tipo de clase. Alto contraste a
+   propósito: se lee bien en un celular al sol y en un video grabado de la
+   pantalla.
+
+   CONTRASTE (WCAG 2.2 AA), medido el 2026-10-21 (mínimo 4,5:1 en texto;
+   3:1 en texto grande, controles y foco):
+   tinta/papel 17,0 · tinta/papel-alt 15,3 · texto-suave/papel 7,6 ·
+   texto-suave/papel-alt 6,8 · voltio/tinta 14,6 (botón y texto verde sobre
+   negro) · blanco/tinta 18,7 · gris claro/tinta 9,9 · gris claro/tinta-2
+   8,9 · verde oscuro (enlaces y vistos buenos)/papel 6,4 · tinta/coral 6,6
+   · tinta/cielo 10,0 · tinta/lila 9,1 · verde muy oscuro/voltio 9,6 ·
+   pie 13,2.
+   El voltio sobre papel mide 1,2:1: por eso en fondo claro los botones son
+   negros con letra verde (14,6) y el verde nunca va como texto sobre claro. */
+:root {
+  /* --- Paleta de esta demo (los demás colores salen de aquí) --- */
+  --tinta: #111216;                  /* casi negro */
+  --tinta-2: #1c1e23;                /* tarjetas sobre fondo negro */
+  --papel: #f4f4ef;                  /* fondo claro */
+  --papel-alt: #e8e9e1;              /* fondo claro alterno */
+  --voltio: #c6f432;                 /* verde de la marca */
+  --voltio-claro: #d8ff5c;           /* verde al pasar el mouse */
+  --coral: #ff6b4a;                  /* clase Fuerza y marcas "de ejemplo" */
+  --cielo: #5ec8ff;                  /* clase Circuito */
+  --lila: #c4a6ff;                   /* clase Movilidad */
+
+  /* --- Color --- */
+  --color-fondo: var(--papel);
+  --color-fondo-alt: var(--papel-alt);
+  --color-superficie: #ffffff;
+  --color-texto: var(--tinta);
+  --color-texto-suave: #4a4e57;
+  --color-borde: #cfd1c6;
+  --color-marca: #3f6212;            /* verde oscuro: enlaces y vistos buenos sobre claro */
+  --color-marca-oscuro: #2c4510;
+  --color-sobre-marca: #ffffff;
+  --color-acento: var(--voltio);
+  --color-sobre-acento: var(--tinta);
+  --color-enlace: var(--color-marca);
+  --color-boton: var(--tinta);       /* en fondo claro: botón negro… */
+  --color-boton-hover: #2a2c33;
+  --color-sobre-boton: var(--voltio); /* …con letra verde */
+  --color-foco: var(--tinta);
+  --color-cabecera-fondo: var(--tinta);
+  --color-hero-fondo: var(--tinta);
+  --color-hero-texto: #ffffff;
+  --color-hero-texto-suave: #b9bdc6;
+  --color-hero-foco: var(--voltio);
+  --color-pie-fondo: #0b0c0e;
+  --color-pie-texto: #d1d4db;
+  --color-pie-foco: var(--voltio);
+
+  /* --- Tipografía ---
+     Fuentes del sistema: 0 KB y nada de otro dominio. Los títulos usan la
+     letra angosta que traiga cada equipo: Bahnschrift (Windows), Avenir
+     Next Condensed (iPhone y Mac), Roboto Condensed (Android, con el nombre
+     "sans-serif-condensed") o Arial Narrow. SUPUESTO: probado en Windows;
+     en Android e iPhone hay que mirarlo en un teléfono real. Si no hay
+     ninguna, sale la letra normal del sistema en negrita: se ve más ancha,
+     pero igual de legible. */
+  --fuente-texto: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --fuente-titulos: "Bahnschrift", "Avenir Next Condensed", "Roboto Condensed", "sans-serif-condensed", "Arial Narrow", system-ui, sans-serif;
+  --ancho-titulos: condensed;        /* font-stretch: angosta si la fuente lo permite */
+  --peso-titulos: 700;
+  --espaciado-titulos: 0.01em;
+  --texto-chico: 0.9375rem;          /* 15 px */
+  --texto-base: 1rem;                /* 16 px: mínimo cómodo en celular */
+  --texto-grande: 1.125rem;          /* 18 px */
+  /* Títulos grandes y en mayúsculas (las pone el CSS: el lector de
+     pantalla lee el texto tal como está escrito en el HTML). */
+  --titulo-1: clamp(2.75rem, 1.5rem + 5.6vw, 5rem);
+  --titulo-2: clamp(2.125rem, 1.5rem + 2.8vw, 3.25rem);
+  --titulo-3: 1.375rem;
+  --interlineado: 1.6;
+  --interlineado-titulos: 1.02;
+
+  /* --- Espacio --- (escala fija: usar siempre estos pasos da orden visual) */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+  --esp-7: 3rem;
+  --esp-8: 4.5rem;
+  --seccion-espacio: clamp(3rem, 2rem + 4vw, 5.5rem);
+  --margen-lateral: 1rem;            /* 16 px a cada lado en celular */
+  --ancho-max: 72rem;
+  --ancho-texto: 42rem;              /* líneas de ~70 letras: se leen mejor */
+  --alto-cabecera: 4rem;
+
+  /* --- Forma: esquinas casi rectas y sombra "dura" (sin difuminar) --- */
+  --radio-chico: 4px;
+  --radio: 8px;
+  --radio-grande: 12px;
+  --radio-boton: 6px;
+  --sombra: 5px 5px 0 var(--tinta);
+}
+
+
+/* 2. RESET Y BASE ========================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* el ancho incluye el relleno y el borde */
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* La cabecera queda pegada arriba (sticky). Esto evita que tape el
+     título de la sección al saltar desde el menú, o el elemento que
+     recibe el foco con el teclado. */
+  scroll-padding-top: calc(var(--alto-cabecera) + var(--esp-4));
+}
+
+/* El desplazamiento suave solo para quien NO pidió reducir el movimiento
+   en su sistema (algunas personas se marean con animaciones). */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-base);
+  line-height: var(--interlineado);
+  overflow-wrap: break-word; /* palabras largas (correos) no rompen el ancho */
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* El atributo hidden siempre gana, aunque otra regla diga display. */
+[hidden] {
+  display: none !important;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--esp-4);
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-titulos);
+  line-height: var(--interlineado-titulos);
+  letter-spacing: var(--espaciado-titulos);
+  text-wrap: balance; /* reparte el texto del título en líneas parejas */
+}
+
+h1 { font-size: var(--titulo-1); }
+h2 { font-size: var(--titulo-2); }
+h3 { font-size: var(--titulo-3); }
+
+p,
+ul,
+ol,
+dl,
+figure {
+  margin: 0 0 var(--esp-4);
+}
+
+:where(p, ul, ol, dl, figure):last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--color-enlace);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+/* FOCO VISIBLE: quien navega con teclado tiene que ver dónde está.
+   :focus-visible lo muestra con teclado y no al hacer clic con el mouse.
+   Nunca uses "outline: none" sin poner otro indicador en su lugar. */
+:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-acento);
+  color: var(--color-sobre-acento);
+}
+
+/* Fuente propia (opcional)
+   1. Copia el .woff2 a fonts/ junto con su licencia (solo licencias que
+      permitan uso comercial, como la OFL) y anótala en CREDITOS.md.
+   2. Descomenta y ajusta:
+   @font-face {
+     font-family: "Mi Fuente";
+     src: url("fonts/mi-fuente.woff2") format("woff2");
+     font-weight: 400;
+     font-display: swap;   (muestra el texto con la fuente del sistema mientras carga)
+   }
+   3. En :root: --fuente-texto: "Mi Fuente", system-ui, sans-serif; */
+
+
+/* Utilidad: oculta un texto a la vista pero lo deja para lectores de
+   pantalla (por ejemplo, "se abre en una pestaña nueva"). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Enlace "Saltar al contenido": es lo primero que encuentra el teclado.
+   Está fuera de la pantalla y aparece solo cuando recibe el foco. */
+.saltar {
+  position: absolute;
+  top: var(--esp-2);
+  left: var(--esp-2);
+  z-index: 100;
+  padding: var(--esp-3) var(--esp-4);
+  border-radius: var(--radio-chico);
+  background: var(--color-texto);
+  color: var(--color-fondo);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.saltar:focus {
+  transform: none;
+}
+
+
+/* 3. ESTRUCTURA ============================================================ */
+
+/* Contenedor: ancho máximo y 16 px de margen a cada lado en celular. */
+.contenedor {
+  width: min(100% - 2 * var(--margen-lateral), var(--ancho-max));
+  margin-inline: auto;
+}
+
+.seccion {
+  padding-block: var(--seccion-espacio);
+}
+
+.seccion--alt {
+  background: var(--color-fondo-alt);
+}
+
+.seccion__intro {
+  max-width: var(--ancho-texto);
+  margin-bottom: var(--esp-6);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-grande);
+}
+
+/* main recibe el foco desde "Saltar al contenido" (tabindex="-1");
+   no necesita anillo porque no es un control. */
+main:focus {
+  outline: none;
+}
+
+
+/* 4. COMPONENTES =========================================================== */
+
+/* --- Cabecera y menú ---
+   Sin JavaScript: los enlaces del menú se ven siempre, en una o dos filas.
+   Con JavaScript: en celular se esconden detrás del botón "Menú".
+
+   @media (scripting: enabled) es verdadero cuando el navegador ejecuta JS.
+   Así el CSS esconde el menú desde el primer dibujo de la página, sin
+   esperar a main.js (evita que la página "salte" al cargar). Navegadores
+   antiguos que no la entienden muestran el menú abierto: sigue usable. */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-cabecera-fondo);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.cabecera__fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 var(--esp-4);
+  min-height: var(--alto-cabecera);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  min-height: 44px; /* área táctil cómoda */
+  color: var(--color-texto);
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-titulos); /* mismo peso que los títulos (evita "negrita falsa") */
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+
+.marca__logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.menu {
+  flex-basis: 100%; /* sin JS: el menú baja a su propia fila */
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--esp-1);
+  margin: 0;
+  padding: 0 0 var(--esp-2);
+  list-style: none;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--esp-2);
+  border-radius: var(--radio-chico);
+  color: var(--color-texto);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background: var(--color-fondo-alt);
+}
+
+.boton-menu {
+  display: none; /* sin JS no sirve, así que no se muestra */
+  align-items: center;
+  gap: var(--esp-2);
+  min-height: 44px;
+  padding: 0 var(--esp-4);
+  border: 1px solid var(--color-texto-suave);
+  border-radius: var(--radio-boton);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Ícono de tres líneas dibujado con CSS (no es una imagen). */
+.boton-menu__icono,
+.boton-menu__icono::before,
+.boton-menu__icono::after {
+  display: block;
+  width: 1.125rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.boton-menu__icono {
+  position: relative;
+}
+
+.boton-menu__icono::before,
+.boton-menu__icono::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.boton-menu__icono::before { top: -6px; }
+.boton-menu__icono::after { top: 6px; }
+
+/* Abierto: las tres líneas forman una X. main.js solo cambia
+   aria-expanded; el CSS lee ese atributo. Una sola fuente de verdad:
+   lo que ve la persona y lo que anuncia el lector de pantalla coinciden. */
+.boton-menu[aria-expanded="true"] .boton-menu__icono {
+  background: transparent;
+}
+
+.boton-menu[aria-expanded="true"] .boton-menu__icono::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.boton-menu[aria-expanded="true"] .boton-menu__icono::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (scripting: enabled) {
+  .boton-menu {
+    display: inline-flex;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  /* "+" = el elemento que viene justo después del botón (el nav). */
+  .boton-menu[aria-expanded="true"] + .menu {
+    display: block;
+  }
+
+  .menu li {
+    flex-basis: 100%; /* en celular, un enlace por fila: fácil con el pulgar */
+    border-top: 1px solid var(--color-borde);
+  }
+}
+
+/* --- Botones ---
+   Son enlaces con forma de botón (llevan a WhatsApp, al teléfono, etc.).
+   Alto mínimo 48 px: se tocan bien con el pulgar. */
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-3);
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-2);
+  min-height: 48px;
+  padding: var(--esp-3) var(--esp-5);
+  border: 2px solid transparent; /* en modo de alto contraste se vuelve visible */
+  border-radius: var(--radio-boton);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.boton svg {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.boton--principal {
+  background: var(--color-boton);
+  color: var(--color-sobre-boton);
+}
+
+.boton--principal:hover {
+  background: var(--color-boton-hover);
+  color: var(--color-sobre-boton);
+}
+
+.boton--secundario {
+  border-color: currentColor;
+  background: transparent;
+  color: var(--color-texto);
+}
+
+/* color-mix: un velo del mismo color del texto. Funciona sobre fondo claro
+   u oscuro sin tocar nada. Navegadores antiguos: sin velo (sigue usable). */
+.boton--secundario:hover {
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  color: var(--color-texto);
+}
+
+.boton--ancho {
+  width: 100%;
+}
+
+.etiqueta {
+  display: inline-block;
+  margin-bottom: var(--esp-4);
+  padding: var(--esp-1) var(--esp-3);
+  border-radius: var(--radio-chico);
+  background: var(--color-acento);
+  color: var(--color-sobre-acento);
+  font-size: var(--texto-chico);
+  font-weight: 700;
+}
+
+/* --- Portada (hero) --- */
+.hero {
+  /* Dentro de la portada, "texto" y "foco" toman los colores de la portada.
+     Así, si la portada es oscura, el botón secundario y el anillo de foco
+     se ven bien sin escribir reglas nuevas: basta cambiar los tokens. */
+  --color-texto: var(--color-hero-texto);
+  --color-foco: var(--color-hero-foco);
+  padding-block: var(--esp-7) var(--seccion-espacio);
+  background: var(--color-hero-fondo);
+  color: var(--color-hero-texto);
+}
+
+.hero__grilla {
+  display: grid;
+  gap: var(--esp-6);
+  align-items: center;
+}
+
+.hero__bajada {
+  max-width: 36rem;
+  margin-bottom: var(--esp-6);
+  color: var(--color-hero-texto-suave);
+  font-size: var(--texto-grande);
+}
+
+.hero__imagen {
+  width: 100%;
+  border-radius: var(--radio-grande);
+}
+
+/* --- Tarjetas (servicios) ---
+   repeat(auto-fit, minmax(…)): tantas columnas como quepan de al menos
+   16rem. En celular cabe una; en escritorio, tres. Sin @media. */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--esp-4);
+  padding: 0;
+  list-style: none;
+}
+
+.tarjeta {
+  padding: var(--esp-5);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.tarjeta h3 {
+  margin-bottom: var(--esp-2);
+}
+
+/* --- Galería (trabajos) --- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: var(--esp-4);
+  padding: 0;
+  list-style: none;
+}
+
+.galeria figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+}
+
+.galeria img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover; /* recorta la foto para que todas midan igual */
+}
+
+.galeria figcaption {
+  padding: var(--esp-3) var(--esp-4);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-chico);
+}
+
+/* --- Sobre nosotros --- */
+.dos-columnas {
+  display: grid;
+  gap: var(--esp-6);
+}
+
+.texto-largo {
+  max-width: var(--ancho-texto);
+}
+
+.lista-check {
+  display: grid;
+  gap: var(--esp-3);
+  padding: 0;
+  list-style: none;
+}
+
+.lista-check li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* Visto bueno dibujado con bordes: es decoración, el texto dice lo importante. */
+.lista-check li::before {
+  content: "";
+  position: absolute;
+  top: 0.3em;
+  left: 0.35rem;
+  width: 0.5rem;
+  height: 0.85rem;
+  border: solid var(--color-marca);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* --- Preguntas frecuentes (<details>) ---
+   <details> abre y cierra sin JavaScript, funciona con teclado (Enter o
+   Espacio) y el lector de pantalla anuncia si está abierta o cerrada. */
+.preguntas {
+  max-width: var(--ancho-texto);
+}
+
+.pregunta {
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.pregunta summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-4);
+  min-height: 44px;
+  padding-block: var(--esp-4);
+  font-weight: 700;
+  list-style: none; /* quita el triángulo por defecto… */
+  cursor: pointer;
+}
+
+.pregunta summary::-webkit-details-marker {
+  display: none; /* …también en Safari */
+}
+
+/* Signo + y − dibujados con dos líneas de fondo (no con texto, para que
+   el lector de pantalla no lea "más"). */
+.pregunta summary::after {
+  content: "";
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat;
+}
+
+.pregunta[open] summary::after {
+  background: linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat;
+}
+
+.pregunta__respuesta {
+  padding-bottom: var(--esp-4);
+  color: var(--color-texto-suave);
+}
+
+/* --- Contacto --- */
+.contacto {
+  display: grid;
+  gap: var(--esp-6);
+}
+
+.contacto__acciones {
+  display: grid;
+  gap: var(--esp-3);
+  max-width: 26rem;
+  margin-top: var(--esp-5);
+  padding: 0;
+  list-style: none;
+}
+
+.panel {
+  padding: var(--esp-5);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+}
+
+.panel h3 {
+  margin-bottom: var(--esp-3);
+}
+
+.panel h3:not(:first-child) {
+  margin-top: var(--esp-6);
+}
+
+.horario div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 var(--esp-4);
+  padding-block: var(--esp-2);
+  border-bottom: 1px dashed var(--color-borde);
+}
+
+.horario dt {
+  font-weight: 600;
+}
+
+.horario dd {
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+/* --- Pie de página --- */
+.pie {
+  --color-foco: var(--color-pie-foco); /* el foco también se ve sobre fondo oscuro */
+  padding-block: var(--esp-7) var(--esp-6);
+  background: var(--color-pie-fondo);
+  color: var(--color-pie-texto);
+}
+
+.pie a {
+  color: inherit;
+}
+
+.pie__grilla {
+  display: grid;
+  gap: var(--esp-6);
+}
+
+.pie__nombre {
+  margin-bottom: var(--esp-2);
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-titulos);
+  font-size: 1.25rem;
+}
+
+.pie ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--esp-4);
+  padding: 0;
+  list-style: none;
+}
+
+.pie nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.pie__legal {
+  padding-top: var(--esp-5);
+  border-top: 1px solid rgb(255 255 255 / 0.2);
+  font-size: var(--texto-chico);
+}
+
+/* --- Página 404 --- */
+.error {
+  max-width: var(--ancho-texto);
+  padding-block: var(--seccion-espacio);
+}
+
+
+/* 5. PANTALLAS MÁS GRANDES ================================================= */
+
+/* Desde 48em (768 px, tablet vertical): el menú se ve siempre en la
+   cabecera y el botón "Menú" desaparece. */
+@media (min-width: 48em) {
+  .boton-menu {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    flex-basis: auto;
+  }
+
+  .menu ul {
+    padding-bottom: 0;
+  }
+
+  .menu li {
+    flex-basis: auto;
+    border-top: 0;
+  }
+
+  .contacto {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .pie__grilla {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+
+  .pie__legal {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desde 60em (960 px, escritorio): portada y "nosotros" a dos columnas. */
+@media (min-width: 60em) {
+  .hero__grilla {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .dos-columnas {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
+}
+
+
+/* 6. PREFERENCIAS DE LA PERSONA E IMPRESIÓN ================================ */
+
+/* Quien pidió menos movimiento en su sistema: sin animaciones. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Modo de colores forzados (alto contraste de Windows): los fondos de
+   color desaparecen, así que el ícono del menú usa el color del texto. */
+@media (forced-colors: active) {
+  .boton-menu__icono,
+  .boton-menu__icono::before,
+  .boton-menu__icono::after {
+    background: CanvasText;
+  }
+
+  .boton-menu[aria-expanded="true"] .boton-menu__icono {
+    background: transparent;
+  }
+}
+
+@media print {
+  .cabecera,
+  .saltar,
+  .boton-menu {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
+
+
+/* 7. EXTRAS DE ESTA DEMO ==================================================== */
+
+/* --- Títulos: angostos, en mayúsculas y grandes ---
+   text-transform cambia solo cómo se ve: el lector de pantalla lee el
+   texto como está escrito en el HTML. */
+h1,
+h2,
+h3,
+.marca,
+.pie__nombre {
+  font-stretch: var(--ancho-titulos);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-style: italic; /* inclinado = movimiento (solo el título principal) */
+}
+
+/* Rayita bajo cada título de sección. Decoración: el color no dice nada. */
+.seccion h2::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 0.375rem;
+  margin-top: var(--esp-3);
+  background: var(--color-subrayado, var(--coral));
+  transform: skewX(-20deg);
+}
+
+/* --- Aviso "sitio de ejemplo" ---
+   Obligatorio en toda demo: nadie debe creer que es un negocio real.
+   La franja de rayas (como una cinta de aviso) marca lo que es "de la
+   demo" y no del negocio: aparece aquí y en el cierre de la página. */
+.aviso-demo {
+  --color-foco: var(--tinta);
+  padding: var(--esp-2) var(--margen-lateral) calc(var(--esp-2) + 6px);
+  background:
+    repeating-linear-gradient(-45deg, var(--tinta) 0 8px, var(--voltio) 8px 16px) bottom / 100% 6px no-repeat,
+    var(--papel);
+  color: var(--tinta);
+  font-size: var(--texto-chico);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.aviso-demo a {
+  color: inherit;
+}
+
+/* --- Botones de demo ---
+   En una demo, WhatsApp, teléfono, correo y mapa NUNCA llevan a un dato
+   inventado (podría ser de una persona real): llevan a hammockai.site y
+   lo dicen en una segunda línea dentro del mismo botón. */
+.boton--demo {
+  justify-content: flex-start;
+  padding-inline: var(--esp-4);
+  text-align: left;
+}
+
+.boton__textos {
+  display: grid;
+  gap: 0.125rem;
+}
+
+/* Marca "ejemplo": coral, el mismo color de los precios de ejemplo. */
+.boton__marca {
+  display: inline-block;
+  margin-left: 0.25rem;
+  padding: 0 0.375rem;
+  border-radius: var(--radio-chico);
+  background: var(--coral);
+  color: var(--tinta);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  vertical-align: 0.1em;
+}
+
+.boton__destino {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* --- Zonas oscuras: cabecera, portada y secciones negras ---
+   Solo se cambian los tokens; los componentes de base se adaptan solos. */
+.cabecera,
+.hero,
+.seccion--oscura {
+  --color-texto: #ffffff;
+  --color-texto-suave: #b9bdc6;
+  --color-borde: #34373f;
+  --color-superficie: var(--tinta-2);
+  --color-fondo-alt: #26282e;
+  --color-marca: var(--voltio);
+  --color-enlace: var(--voltio);
+  --color-boton: var(--voltio);
+  --color-boton-hover: var(--voltio-claro);
+  --color-sobre-boton: var(--tinta);
+  --color-foco: var(--voltio);
+  --color-subrayado: var(--voltio);
+  --sombra: none;
+  color: var(--color-texto);
+}
+
+.seccion--oscura {
+  background-color: var(--tinta);
+}
+
+/* --- Sección verde (clase de prueba) --- */
+.seccion--voltio {
+  --color-texto: var(--tinta);
+  --color-texto-suave: #2b3a00;
+  --color-borde: rgb(17 18 22 / 0.3);
+  --color-marca: var(--tinta);
+  --color-enlace: var(--tinta);
+  --color-boton: var(--tinta);
+  --color-boton-hover: #2a2c33;
+  --color-sobre-boton: var(--voltio);
+  --color-foco: var(--tinta);
+  --color-subrayado: var(--tinta);
+  background: var(--voltio);
+  color: var(--tinta);
+}
+
+/* --- Marca con dos líneas: nombre y rubro --- */
+.marca {
+  gap: var(--esp-3);
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.marca__logo {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.marca__rubro {
+  display: block;
+  margin-top: 0.125rem;
+  color: var(--color-texto-suave);
+  font-family: var(--fuente-texto);
+  font-size: 0.75rem;
+  font-stretch: normal;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Botón de la cabecera: solo en escritorio (en el celular, la clase de
+   prueba ya está en el menú y en la portada). */
+.cabecera__cta {
+  display: none;
+}
+
+/* --- Portada --- */
+.hero {
+  padding-bottom: calc(var(--seccion-espacio) + 1.5rem); /* espacio para la franja */
+  background-image: repeating-linear-gradient(-60deg, rgb(255 255 255 / 0.035) 0 2px, transparent 2px 24px);
+}
+
+.hero .etiqueta {
+  margin-bottom: var(--esp-5);
+}
+
+.resaltado {
+  color: var(--voltio);
+}
+
+.hero .botones .boton {
+  width: 100%; /* en el celular, botones de lado a lado: fáciles con el pulgar */
+}
+
+.hero__puntos {
+  display: grid;
+  gap: var(--esp-2);
+  margin: var(--esp-6) 0 0;
+  padding: 0;
+  color: var(--color-hero-texto-suave);
+  list-style: none;
+}
+
+.hero__puntos li {
+  display: flex;
+  gap: var(--esp-2);
+  align-items: flex-start;
+}
+
+.hero__puntos svg {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.2em;
+  color: var(--voltio);
+}
+
+.hero__imagen {
+  max-width: 32rem; /* en tablet (una columna) no se hace gigante */
+  margin-inline: auto;
+  border-radius: 0;
+}
+
+/* --- Franja verde con los nombres de las clases ---
+   Bordes inclinados con clip-path (sin imágenes). Se monta un poco sobre
+   la portada. El texto que no cabe se corta: es decoración. */
+.franja {
+  position: relative;
+  z-index: 1;
+  margin-top: -1.75rem;
+  padding-block: 1.375rem;
+  overflow: hidden;
+  background: var(--voltio);
+  color: var(--tinta);
+  clip-path: polygon(0 1.125rem, 100% 0, 100% calc(100% - 1.125rem), 0 100%);
+}
+
+.franja p {
+  margin: 0;
+  padding-inline: var(--margen-lateral);
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-stretch: var(--ancho-titulos);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* --- Colores de cada clase ---
+   Mismo color en la tarjeta y en el horario. Cada clase dice su nombre:
+   el color solo ayuda a reconocerla de un vistazo. */
+.clase--base,
+.tarjeta--base { --color-clase: #ffffff; }
+.clase--funcional,
+.tarjeta--funcional { --color-clase: var(--voltio); }
+.clase--fuerza,
+.tarjeta--fuerza { --color-clase: var(--coral); }
+.clase--circuito,
+.tarjeta--circuito { --color-clase: var(--cielo); }
+.clase--movilidad,
+.tarjeta--movilidad { --color-clase: var(--lila); }
+
+/* --- Tarjetas de clases: ícono al lado del nombre (más corto en celular) --- */
+.tarjeta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 var(--esp-4);
+  align-items: center;
+  border: 2px solid var(--tinta);
+}
+
+.tarjeta > p {
+  grid-column: 1 / -1;
+}
+
+.tarjeta h3 {
+  margin: 0 0 var(--esp-4);
+}
+
+.tarjeta__icono {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--esp-4);
+  border: 2px solid var(--tinta);
+  border-radius: var(--radio);
+  background: var(--color-clase);
+  color: var(--tinta);
+}
+
+.tarjeta__icono svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.tarjeta__nivel {
+  margin-top: var(--esp-3);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-chico);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* --- Horario semanal (tabla) ---
+   En el celular la tabla es más ancha que la pantalla: se desliza dentro
+   de su caja (.tabla-scroll) y la columna de la hora queda fija a la
+   izquierda (position: sticky) para no perderla al deslizar. */
+.tabla-pista {
+  display: flex;
+  gap: var(--esp-2);
+  align-items: center;
+  margin-bottom: var(--esp-3);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-chico);
+  font-weight: 600;
+}
+
+.tabla-pista svg {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--voltio);
+}
+
+.tabla-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+}
+
+.horario-semanal {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+/* El <caption> da el nombre a la tabla para el lector de pantalla; a la
+   vista ya lo dicen el título y la bajada de la sección. */
+.horario-semanal caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.horario-semanal th,
+.horario-semanal td {
+  padding: var(--esp-2);
+  border-top: 1px solid var(--color-borde);
+  text-align: center;
+}
+
+.horario-semanal thead th {
+  border-top: 0;
+  padding-block: var(--esp-3);
+  font-family: var(--fuente-titulos);
+  font-size: 1.0625rem;
+  font-stretch: var(--ancho-titulos);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.horario-semanal th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  padding-inline: var(--esp-3);
+  border-right: 1px solid var(--color-borde);
+  background: var(--color-superficie);
+  text-align: left;
+}
+
+.horario-semanal tbody th {
+  font-weight: 700;
+}
+
+.clase {
+  display: block;
+  padding: 0.375rem 0.25rem;
+  border-radius: var(--radio-chico);
+  background: var(--color-clase);
+  color: var(--tinta);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Celda sin clase: una rayita dibujada (no es texto, así el lector de
+   pantalla solo lee "Sin clase", que está oculto a la vista). */
+.sin-clase::before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 2px;
+  margin-inline: auto;
+  background: var(--color-borde);
+}
+
+/* --- Planes ---
+   Las tres tarjetas se ven iguales a propósito: no se empuja a nadie
+   hacia un plan con trucos de diseño. */
+.planes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--esp-5);
+  padding: 0;
+  list-style: none;
+}
+
+.plan {
+  padding: var(--esp-5);
+  border: 2px solid var(--tinta);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.plan h3 {
+  margin-bottom: var(--esp-3);
+}
+
+.plan__precio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--esp-2);
+  align-items: baseline;
+  margin-bottom: var(--esp-2);
+}
+
+.plan__monto {
+  font-family: var(--fuente-titulos);
+  font-size: 2.75rem;
+  font-stretch: var(--ancho-titulos);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.plan__periodo {
+  color: var(--color-texto-suave);
+  font-weight: 600;
+}
+
+/* Marca "de ejemplo" (precios y condiciones inventados para la demo). */
+.plan__ejemplo {
+  display: inline-block;
+  margin-bottom: var(--esp-4);
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radio-chico);
+  background: var(--coral);
+  color: var(--tinta);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Aviso honesto (precios de ejemplo, sección en tiza, botones de demo). */
+.nota {
+  max-width: var(--ancho-texto);
+  margin-top: var(--esp-6);
+  padding: var(--esp-4) var(--esp-5);
+  border-left: 4px solid var(--coral);
+  border-radius: var(--radio-chico);
+  background: var(--color-superficie);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-chico);
+}
+
+/* --- Clase de prueba --- */
+.prueba {
+  display: grid;
+  gap: var(--esp-6);
+}
+
+.prueba__bajada {
+  max-width: var(--ancho-texto);
+  margin-bottom: var(--esp-6);
+  font-size: var(--texto-grande);
+}
+
+.prueba__bajada .plan__ejemplo {
+  margin: 0;
+}
+
+/* Pasos numerados: es una <ol> (el orden importa). El número lo dibuja
+   CSS con un contador; la lista ya dice "1 de 3" al lector de pantalla. */
+.pasos {
+  display: grid;
+  gap: var(--esp-3);
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.paso {
+  position: relative;
+  padding: var(--esp-4) var(--esp-4) var(--esp-4) 4.25rem;
+  border: 2px solid var(--tinta);
+  border-radius: var(--radio);
+  background: var(--papel);
+}
+
+.paso::before {
+  content: counter(paso);
+  counter-increment: paso;
+  position: absolute;
+  top: var(--esp-4);
+  left: var(--esp-4);
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--tinta);
+  color: var(--voltio);
+  font-family: var(--fuente-titulos);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.paso h3 {
+  margin-bottom: var(--esp-1);
+  font-size: 1.25rem;
+}
+
+.paso p {
+  color: var(--color-texto-suave);
+}
+
+.prueba__panel {
+  border: 2px solid var(--tinta);
+  box-shadow: 5px 5px 0 var(--tinta);
+}
+
+.prueba__panel h3 {
+  font-size: 1.25rem;
+}
+
+.prueba__panel .boton {
+  margin-top: var(--esp-5);
+}
+
+/* --- Equipo "en tiza" ---
+   Foto chica al lado del nombre y el resto debajo, a todo el ancho: en el
+   celular la lista no se hace eterna. */
+.equipo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--esp-5);
+  padding: 0;
+  list-style: none;
+}
+
+.coach {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: var(--esp-2) var(--esp-3);
+  align-content: start;
+  align-items: center;
+  padding: var(--esp-4);
+  border: 2px solid var(--tinta);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.coach__foto {
+  width: 3.5rem;
+  border-radius: var(--radio-chico);
+}
+
+.coach p {
+  grid-column: 1 / -1;
+}
+
+.coach h3,
+.coach p {
+  margin: 0;
+}
+
+.coach__rol {
+  font-weight: 600;
+}
+
+/* Hueco que completa el cliente: se ve a propósito como "tiza". */
+.tiza {
+  display: inline-block;
+  padding: 0.125rem 0.25rem;
+  border: 2px dashed #8a8d84;
+  border-radius: var(--radio-chico);
+  background: var(--papel-alt);
+  color: #3a3d44;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+  font-size: 0.8125rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-transform: none;
+}
+
+/* --- Cómo llegar --- */
+.llegar {
+  display: grid;
+  gap: var(--esp-6);
+  align-items: start;
+}
+
+.llegar__direccion {
+  font-size: var(--texto-grande);
+  font-weight: 700;
+}
+
+.llegar__aviso {
+  margin-bottom: var(--esp-5);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-chico);
+}
+
+.llegar__lista {
+  display: grid;
+  gap: var(--esp-2);
+  margin-bottom: var(--esp-5);
+  padding: 0;
+  list-style: none;
+}
+
+.llegar__mapa {
+  width: 100%;
+  border: 2px solid var(--tinta);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.llegar__subtitulo {
+  margin-top: var(--esp-6);
+}
+
+/* --- Cierre de la demo (invita a Hammock AI) --- */
+.banda-hammock {
+  --color-foco: var(--tinta);
+  padding-block: calc(var(--esp-7) + 8px) var(--esp-7);
+  background:
+    repeating-linear-gradient(-45deg, var(--tinta) 0 10px, var(--voltio) 10px 20px) top / 100% 8px no-repeat,
+    var(--papel);
+  color: var(--tinta);
+}
+
+.banda-hammock__fila {
+  display: grid;
+  gap: var(--esp-5);
+  align-items: center;
+}
+
+.banda-hammock h2 {
+  margin-bottom: var(--esp-2);
+  font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+}
+
+.banda-hammock p {
+  max-width: var(--ancho-texto);
+  color: var(--color-texto-suave);
+}
+
+/* --- Pie: aviso de demo --- */
+.pie__aviso {
+  font-weight: 700;
+}
+
+.pie__legal p + p {
+  margin-top: var(--esp-2);
+}
+
+/* --- Pantallas más grandes (extras) --- */
+@media (min-width: 36em) {
+  .hero .botones .boton {
+    width: auto;
+  }
+}
+
+@media (min-width: 48em) {
+  .tabla-pista {
+    display: none; /* la tabla ya cabe entera */
+  }
+
+  .llegar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 60em) {
+  .cabecera__cta {
+    display: inline-flex;
+    min-height: 44px;
+    padding-block: var(--esp-2);
+  }
+
+  .prueba {
+    grid-template-columns: 1.25fr 1fr;
+    align-items: start;
+  }
+
+  .banda-hammock__fila {
+    grid-template-columns: 1fr auto;
+  }
+}

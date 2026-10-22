@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Ilustración propia de Hammock AI para la demo: cocina ANTES. -->
+  <defs>
+    <pattern id="azulejo" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#bab19f"/>
+      <path d="M0 .5h20M.5 0v20" stroke="#9c9381"/>
+    </pattern>
+    <pattern id="linoleo" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#8a8173"/>
+      <path d="M0 0h20v20H0zM20 20h20v20H20z" fill="#7d7467"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="#c7bfb1"/>
+  <ellipse cx="340" cy="14" rx="40" ry="14" fill="#b3aa98"/>
+  <!-- muebles altos, uno chueco -->
+  <rect x="28" y="28" width="96" height="76" fill="#a59c8c" stroke="#877e6f" stroke-width="3"/>
+  <rect x="132" y="28" width="96" height="76" fill="#a59c8c" stroke="#877e6f" stroke-width="3" transform="rotate(5 180 66)"/>
+  <rect x="108" y="58" width="6" height="18" fill="#776e61"/>
+  <!-- ampolleta sin lámpara -->
+  <path d="M264 0v48" stroke="#6f675b" stroke-width="2"/>
+  <circle cx="264" cy="56" r="9" fill="#e6dfcc"/>
+  <!-- ventana opaca -->
+  <rect x="296" y="34" width="80" height="74" fill="#aab2b3" stroke="#877e6f" stroke-width="6"/>
+  <path d="M336 34v74" stroke="#877e6f" stroke-width="4"/>
+  <!-- azulejos con trizaduras -->
+  <rect y="120" width="400" height="60" fill="url(#azulejo)"/>
+  <rect x="80" y="140" width="20" height="20" fill="#8f8775"/>
+  <path d="M190 122l8 14-6 10 9 16M300 150l12 6 6 14" fill="none" stroke="#6b6357" stroke-width="2"/>
+  <!-- cubierta y muebles bajos, una puerta descolgada -->
+  <rect y="178" width="400" height="12" fill="#8d8474"/>
+  <rect y="190" width="400" height="72" fill="#9d9484"/>
+  <path d="M80 190v72M160 190v72M240 190v72M320 190v72" stroke="#847b6c" stroke-width="3"/>
+  <path d="M160 190l-12 4v68l12-2z" fill="#6f675b"/>
+  <rect x="64" y="204" width="5" height="16" fill="#776e61"/>
+  <rect x="228" y="204" width="5" height="16" fill="#776e61"/>
+  <!-- llave que gotea -->
+  <path d="M262 178v-22h16v6" fill="none" stroke="#776e61" stroke-width="4"/>
+  <ellipse cx="278" cy="170" rx="2.5" ry="4" fill="#9fb1b8"/>
+  <!-- piso de linóleo levantado -->
+  <rect y="262" width="400" height="38" fill="url(#linoleo)"/>
+  <path d="M330 300l30-22 40 10v12z" fill="#6f675b"/>
+</svg>

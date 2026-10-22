@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="640" height="520">
+  <!-- Ilustración propia de Hammock AI para la demo (sin fotos de terceros):
+       una pieza a medio remodelar. A la izquierda, lo viejo; a la derecha, lo nuevo. -->
+  <defs>
+    <clipPath id="marco"><rect width="640" height="520" rx="28"/></clipPath>
+    <pattern id="tablas" width="200" height="36" patternUnits="userSpaceOnUse">
+      <rect width="200" height="36" fill="#d9a46f"/>
+      <path d="M0 17h200M0 35h200M140 0v18M50 18v18" stroke="#b07a47" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <g clip-path="url(#marco)">
+    <!-- muro viejo -->
+    <rect width="640" height="380" fill="#c9c1b2"/>
+    <path d="M70 70l12 26-9 20 15 26-7 22" fill="none" stroke="#9a9182" stroke-width="3" stroke-linecap="round"/>
+    <path d="M40 210q14-10 26 0t20 14q-16 12-30 4t-16-18z" fill="#b6ad9d"/>
+    <path d="M230 40q10-6 20 2t6 16q-14 6-22-2t-4-16z" fill="#b6ad9d"/>
+    <!-- muro nuevo, con el borde de la pintura -->
+    <path d="M300 380C290 340 314 310 302 270S314 190 303 150 312 60 305 0H640V380Z" fill="#e3ecf5"/>
+    <!-- cota (medida) sobre el muro nuevo -->
+    <g stroke="#1f3b63" stroke-width="2" fill="none" stroke-linecap="round">
+      <path d="M340 34h272M340 26v16M612 26v16"/>
+      <path d="M350 28l-10 6 10 6M602 28l10 6-10 6"/>
+    </g>
+    <!-- ventana -->
+    <rect x="446" y="78" width="132" height="164" rx="6" fill="#cfe3f5" stroke="#1f3b63" stroke-width="10"/>
+    <path d="M512 78v164M446 160h132" stroke="#1f3b63" stroke-width="6"/>
+    <path d="M462 130l34-38M470 150l18-20" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+    <rect x="432" y="240" width="160" height="12" rx="3" fill="#ffffff"/>
+    <!-- destellos -->
+    <path d="M396 120l5 13 13 5-13 5-5 13-5-13-13-5 13-5z" fill="#f5a524"/>
+    <path d="M606 290l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#f5a524"/>
+    <!-- piso viejo -->
+    <rect y="380" width="640" height="140" fill="#9f9686"/>
+    <ellipse cx="120" cy="450" rx="46" ry="12" fill="#8f8676"/>
+    <ellipse cx="236" cy="492" rx="30" ry="8" fill="#8f8676"/>
+    <!-- piso nuevo de madera -->
+    <path d="M372 380H640V520H312Z" fill="url(#tablas)"/>
+    <rect x="304" y="372" width="336" height="10" fill="#ffffff"/>
+    <!-- plomada colgando de su hilo -->
+    <path d="M206 0v214" stroke="#142a47" stroke-width="2.5"/>
+    <rect x="197" y="212" width="18" height="9" rx="2" fill="#142a47"/>
+    <path d="M194 222h24l-2.6 11L206 258l-9.4-25z" fill="#f5a524" stroke="#142a47" stroke-width="3" stroke-linejoin="round"/>
+    <!-- escalera -->
+    <g stroke="#f5a524" stroke-linecap="round">
+      <path d="M86 486l44-250M150 486l44-250" stroke-width="10"/>
+      <path d="M93 446h63M100 404h63M108 362h63M115 320h63M123 278h63" stroke-width="7"/>
+    </g>
+    <!-- tarro de pintura -->
+    <path d="M222 436h52l-4 50h-44z" fill="#e3ecf5" stroke="#142a47" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M220 436h56" stroke="#142a47" stroke-width="6" stroke-linecap="round"/>
+    <path d="M226 446h44v10q-6 8-10 0-6 10-12 0-6 8-10 0-6 6-12 0z" fill="#9fbfe0"/>
+    <!-- rodillo -->
+    <path d="M276 470L316 186" stroke="#f5a524" stroke-width="10" stroke-linecap="round"/>
+    <path d="M316 186v-16h44v-44h-14" fill="none" stroke="#142a47" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="262" y="104" width="92" height="32" rx="12" fill="#c4d8ec" stroke="#142a47" stroke-width="4"/>
+    <!-- planta -->
+    <path d="M540 520l6-62h60l6 62z" fill="#c9733d"/>
+    <path d="M576 458c-30-20-40-60-30-90 22 18 34 52 30 90z" fill="#3f7d5c"/>
+    <path d="M576 458c10-36 34-62 62-66-4 32-28 56-62 66z" fill="#6aa37f"/>
+    <path d="M576 458c-4-40 6-80 22-104 10 34 4 74-22 104z" fill="#4f9470"/>
+  </g>
+</svg>

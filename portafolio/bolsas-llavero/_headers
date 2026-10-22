@@ -1,0 +1,17 @@
+# _headers · demo "Plic Plac" (negocio ficticio) · Cloudflare Pages
+# -----------------------------------------------------------------------------
+# Igual que base/_headers (ahí está explicada cada cabecera), más
+# X-Robots-Tag: noindex en TODO el sitio: una demo con un negocio que no
+# existe no debe aparecer en buscadores. Por eso tampoco hay sitemap.xml.
+# Fuente: https://developers.cloudflare.com/pages/configuration/headers/
+# (consultada 2026-10-21).
+# -----------------------------------------------------------------------------
+
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  X-Robots-Tag: noindex

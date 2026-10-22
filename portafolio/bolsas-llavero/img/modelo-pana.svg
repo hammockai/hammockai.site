@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320">
+  <!-- Modelo "Pana": bolsa violeta con las líneas en relieve de la pana
+       (corderoy), una etiqueta amarilla y su bolsita llavero.
+       Dibujo propio de Hammock AI (demo ficticia). -->
+  <defs>
+    <clipPath id="cuerpo">
+      <path d="M66 118H254L242 270A16 16 0 0 1 226 285H94A16 16 0 0 1 78 270Z"/>
+    </clipPath>
+  </defs>
+  <rect width="320" height="320" rx="28" fill="#efe8fc"/>
+  <ellipse cx="160" cy="296" rx="100" ry="9" fill="#241640" opacity="0.12"/>
+  <path d="M128 120C128 50 220 50 220 120" fill="none" stroke="#241640" stroke-width="20" stroke-linecap="round"/>
+  <path d="M128 120C128 50 220 50 220 120" fill="none" stroke="#5b2bb5" stroke-width="10" stroke-linecap="round"/>
+  <path d="M100 124C100 54 192 54 192 124" fill="none" stroke="#241640" stroke-width="20" stroke-linecap="round"/>
+  <path d="M100 124C100 54 192 54 192 124" fill="none" stroke="#a07ce6" stroke-width="10" stroke-linecap="round"/>
+  <g clip-path="url(#cuerpo)">
+    <rect x="60" y="110" width="200" height="200" fill="#7a4fd0"/>
+    <path d="M76 142V290M88 142V290M100 142V290M112 142V290M124 142V290M136 142V290M148 142V290M160 142V290M172 142V290M184 142V290M196 142V290M208 142V290M220 142V290M232 142V290M244 142V290" fill="none" stroke="#6a40c2" stroke-width="4"/>
+    <rect x="60" y="110" width="200" height="32" fill="#5b2bb5"/>
+  </g>
+  <path d="M84 154H236" fill="none" stroke="#ffd23f" stroke-width="3" stroke-dasharray="8 6"/>
+  <rect x="190" y="236" width="36" height="22" rx="3" fill="#ffd23f" stroke="#241640" stroke-width="2.5"/>
+  <path d="M66 118H254L242 270A16 16 0 0 1 226 285H94A16 16 0 0 1 78 270Z" fill="none" stroke="#241640" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="236" y="140" width="32" height="36" rx="8" fill="#5b2bb5" stroke="#241640" stroke-width="4"/>
+  <path d="M236 154Q252 162 268 154V148A8 8 0 0 0 260 140H244A8 8 0 0 0 236 148Z" fill="#a07ce6" stroke="#241640" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="252" cy="158" r="3.5" fill="#ffd23f" stroke="#241640" stroke-width="2"/>
+  <circle cx="252" cy="128" r="11" fill="none" stroke="#241640" stroke-width="6"/>
+  <circle cx="252" cy="128" r="11" fill="none" stroke="#b8bfcc" stroke-width="3"/>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" width="640" height="560">
+  <!-- Portada "Plic Plac" (demo, negocio ficticio): la bolsa abierta y la
+       misma bolsa plegada en su bolsillito, colgando de un llavero.
+       Dibujo propio de Hammock AI. Solo formas y colores. -->
+  <path d="M330 36C470 30 600 120 604 270C608 420 500 530 320 528C150 526 36 430 38 280C40 130 180 42 330 36Z" fill="#fffaf0"/>
+  <ellipse cx="250" cy="505" rx="150" ry="16" fill="#241640" opacity="0.12"/>
+
+  <!-- Bolsa abierta (retazos sobre mezclilla) -->
+  <g transform="rotate(-6 250 340)">
+    <path d="M200 215C200 110 330 110 330 215" fill="none" stroke="#241640" stroke-width="26" stroke-linecap="round"/>
+    <path d="M200 215C200 110 330 110 330 215" fill="none" stroke="#2a4785" stroke-width="14" stroke-linecap="round"/>
+    <path d="M170 222C170 120 300 120 300 222" fill="none" stroke="#241640" stroke-width="26" stroke-linecap="round"/>
+    <path d="M170 222C170 120 300 120 300 222" fill="none" stroke="#5b84d6" stroke-width="14" stroke-linecap="round"/>
+    <path d="M120 212H380L366 462A20 20 0 0 1 346 481H154A20 20 0 0 1 134 462Z" fill="#3a62b0"/>
+    <path d="M121 212H379L377.3 244H122.7Z" fill="#2a4785"/>
+    <path d="M136 258H364" fill="none" stroke="#ffd23f" stroke-width="3" stroke-dasharray="10 8"/>
+    <g transform="rotate(-5 205 325)">
+      <rect x="160" y="285" width="90" height="78" rx="8" fill="#ff6b57" stroke="#241640" stroke-width="4"/>
+      <rect x="168" y="293" width="74" height="62" rx="5" fill="none" stroke="#fffaf0" stroke-width="2.5" stroke-dasharray="7 6"/>
+    </g>
+    <g transform="rotate(6 310 395)">
+      <rect x="272" y="350" width="78" height="90" rx="8" fill="#2ec4a0" stroke="#241640" stroke-width="4"/>
+      <rect x="280" y="358" width="62" height="74" rx="5" fill="none" stroke="#241640" stroke-width="2" stroke-dasharray="7 6"/>
+    </g>
+    <path d="M168 392H238V436L203 454L168 436Z" fill="none" stroke="#ffd23f" stroke-width="3" stroke-dasharray="8 6" stroke-linejoin="round"/>
+    <path d="M120 212H380L366 462A20 20 0 0 1 346 481H154A20 20 0 0 1 134 462Z" fill="none" stroke="#241640" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Llavero: dos llaves, la correa y la bolsa plegada en su bolsillito -->
+  <g transform="rotate(50 500 118)">
+    <circle cx="500" cy="176" r="20" fill="#ff6b57" stroke="#241640" stroke-width="5"/>
+    <circle cx="500" cy="170" r="6" fill="#fffaf0" stroke="#241640" stroke-width="3"/>
+    <rect x="493" y="194" width="14" height="78" rx="4" fill="#b8bfcc" stroke="#241640" stroke-width="5"/>
+    <rect x="507" y="240" width="12" height="9" fill="#b8bfcc" stroke="#241640" stroke-width="4"/>
+    <rect x="507" y="256" width="9" height="9" fill="#b8bfcc" stroke="#241640" stroke-width="4"/>
+  </g>
+  <g transform="rotate(-48 500 118)">
+    <circle cx="500" cy="176" r="18" fill="#2ec4a0" stroke="#241640" stroke-width="5"/>
+    <circle cx="500" cy="171" r="5" fill="#fffaf0" stroke="#241640" stroke-width="3"/>
+    <rect x="494" y="192" width="12" height="64" rx="4" fill="#b8bfcc" stroke="#241640" stroke-width="5"/>
+    <rect x="482" y="232" width="12" height="8" fill="#b8bfcc" stroke="#241640" stroke-width="4"/>
+  </g>
+  <rect x="490" y="140" width="20" height="62" rx="6" fill="#7a4fd0" stroke="#241640" stroke-width="5"/>
+  <rect x="446" y="196" width="108" height="118" rx="22" fill="#5b2bb5" stroke="#241640" stroke-width="6"/>
+  <rect x="458" y="208" width="84" height="94" rx="14" fill="none" stroke="#c9b6f2" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <path d="M446 244Q500 274 554 244V218A22 22 0 0 0 532 196H468A22 22 0 0 0 446 218Z" fill="#7a4fd0" stroke="#241640" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="500" cy="256" r="10" fill="#ffd23f" stroke="#241640" stroke-width="4"/>
+  <circle cx="500" cy="118" r="34" fill="none" stroke="#241640" stroke-width="13"/>
+  <circle cx="500" cy="118" r="34" fill="none" stroke="#b8bfcc" stroke-width="6"/>
+
+  <!-- Flecha de puntos: de plegada a abierta -->
+  <path d="M502 336C506 388 470 410 402 404" fill="none" stroke="#241640" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 14"/>
+  <path d="M418 390L400 404L418 418" fill="none" stroke="#241640" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Chispas y confeti -->
+  <path transform="translate(420 78) scale(1.2)" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z" fill="#ff6b57" stroke="#241640" stroke-width="2.5" stroke-linejoin="round"/>
+  <path transform="translate(606 330) scale(0.9)" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z" fill="#2ec4a0" stroke="#241640" stroke-width="3" stroke-linejoin="round"/>
+  <path transform="translate(92 138)" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z" fill="#5b2bb5" stroke="#241640" stroke-width="2.5" stroke-linejoin="round"/>
+  <path transform="translate(566 470) scale(0.75)" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z" fill="#ff6b57" stroke="#241640" stroke-width="3.5" stroke-linejoin="round"/>
+  <path transform="translate(96 420) scale(0.8)" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z" fill="#2ec4a0" stroke="#241640" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="160" cy="84" r="6" fill="#ff6b57"/>
+  <circle cx="618" cy="410" r="5" fill="#5b2bb5"/>
+  <circle cx="58" cy="300" r="5" fill="#3a62b0"/>
+  <circle cx="440" cy="500" r="6" fill="#2ec4a0"/>
+</svg>

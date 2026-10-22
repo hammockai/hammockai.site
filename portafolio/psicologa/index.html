@@ -1,0 +1,411 @@
+<!doctype html>
+<!--
+  ============================================================================
+  index.html · DEMO "Remanso" · consulta de psicología independiente · Hammock AI
+  ----------------------------------------------------------------------------
+  NEGOCIO FICTICIO. "Remanso" es un nombre inventado y la profesional no
+  existe: su nombre va como marcador visible ("Ps. [Nombre Apellido]").
+  No hay teléfono, correo ni dirección: los botones de contacto llevan a
+  hammockai.site ("¿Quieres un sitio así?"), nunca a un dato inventado
+  (podría ser de una persona real). El aviso "Sitio de ejemplo" es
+  obligatorio y no se quita mientras sea una demo.
+
+  DE DÓNDE SALE: la plantilla base/ con otro tema (tokens en style.css) y
+  secciones propias de una consulta de salud.
+
+  REGLAS DE SALUD (valen igual con un cliente real):
+  - Sin opiniones ni testimonios de pacientes, ni siquiera de ejemplo:
+    exponen datos de salud de terceros y la ética profesional suele
+    restringirlos.
+  - Sin promesas de resultados ni tratamientos que la profesional no haya
+    confirmado por escrito.
+  - Ningún campo ni mensaje prellenado pide el motivo de consulta. El
+    mensaje de WhatsApp dice solo "Hola, quiero agendar una hora."
+  - [dato del cliente: …] = lo completa la profesional. En salud no se
+    inventan títulos, enfoques ni registros.
+
+  AVISO DE URGENCIAS (sección "urgencias", preguntas y pie). Números
+  verificados el 2026-10-21 en fuentes oficiales:
+  - *4141, Línea de prevención del suicidio del Ministerio de Salud:
+    gratuita, 24 horas, desde celulares de cualquier compañía.
+    https://www.minsal.cl/linea-de-atencion-4141-no-estas-solo-no-estas-sola/
+  - 131, SAMU (urgencias médicas):
+    https://www.minsal.cl/samu-instala-base-en-alto-hospicio-y-llama-a-utilizar-responsablemente-el-131/
+    https://www.consulado.gob.cl/emergencias-en-chile
+  VUELVE A VERIFICARLOS antes de entregar el sitio de un cliente real.
+  El *4141 va como texto y no como enlace tel:, porque el iPhone no marca
+  desde un enlace un número que lleva * (Apple, "Phone Links").
+
+  POR QUÉ NO TIENE canonical, sitemap NI datos estructurados (JSON-LD):
+  un negocio que no existe no debe aparecer en Google como si existiera.
+  Por eso lleva noindex (aquí y en _headers).
+
+  SI UNA PROFESIONAL REAL PARTE DE ESTA DEMO: ver docs/entrega.md, "Si
+  partiste de una demo". Además: cambiar cada botón de hammockai.site por
+  su enlace real (está comentado junto a cada botón), borrar las notas
+  con borde punteado (.nota-demo) y reemplazar cada [dato del cliente: …].
+  ============================================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSP: la misma de base/ (explicada allí). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+  <title>Remanso · Consulta de psicología · Sitio de ejemplo</title>
+  <meta name="description" content="Sitio de ejemplo hecho por Hammock AI para una consulta de psicología ficticia: atención online y presencial, cómo es la primera sesión, valores y preguntas frecuentes.">
+  <!-- Demo: que los buscadores no la indexen. -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#3d6b63">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+
+  <!-- Vista previa al compartir el enlace. Copia en hammockai.site: og:image y
+       og:url llevan la dirección completa (varias redes no leen rutas relativas). -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hammockai.site/portafolio/psicologa/">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="Sitio de ejemplo · Remanso, consulta de psicología">
+  <meta property="og:description" content="Demo de Hammock AI: sitio para una consulta de psicología ficticia, con atención online y presencial.">
+  <meta property="og:image" content="https://hammockai.site/portafolio/psicologa/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Remanso, consulta de psicología: ilustración de un sillón junto a una ventana y la franja Sitio de ejemplo, negocio ficticio, hecho por Hammock AI.">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Aviso obligatorio de demo. <aside> = contenido aparte del principal;
+       con nombre propio para que el lector de pantalla lo anuncie. -->
+  <aside class="aviso-demo" aria-label="Aviso">
+    <p>Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a></p>
+  </aside>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="#inicio">
+        <img class="marca__logo" src="favicon.svg" alt="" width="36" height="36">
+        <span>Remanso <span class="marca__rubro">Psicología</span></span>
+      </a>
+      <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="boton-menu__icono" aria-hidden="true"></span>
+        Menú
+      </button>
+      <nav class="menu" id="menu-principal" aria-label="Principal">
+        <ul>
+          <li><a href="#a-quien">A quién atiendo</a></li>
+          <li><a href="#modalidades">Modalidades</a></li>
+          <li><a href="#primera-sesion">Primera sesión</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#valores">Valores</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <section class="hero" id="inicio" aria-labelledby="titulo-inicio">
+      <div class="contenedor hero__grilla">
+        <div>
+          <p class="etiqueta">Psicología para personas adultas · online y presencial</p>
+          <h1 id="titulo-inicio">Un espacio tranquilo para conversar lo que te está pasando.</h1>
+          <p class="hero__bajada">Soy Ps. <span class="tiza">[Nombre Apellido]</span>, psicóloga. Atiendo por videollamada y en consulta, a tu ritmo y con tiempo para escucharte.</p>
+          <div class="botones">
+            <!-- DEMO: en un sitio real este botón va a
+                 https://wa.me/<número solo dígitos>?text=Hola%2C%20quiero%20agendar%20una%20hora.
+                 Mensaje neutro: nunca pide ni sugiere el motivo de consulta. -->
+            <a class="boton boton--principal boton--demo" href="https://hammockai.site">
+              <span class="boton__fila">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+                Agendar por WhatsApp
+              </span>
+              <span class="boton__destino">¿Quieres un sitio así? Ir a hammockai.site</span>
+            </a>
+            <a class="boton boton--secundario" href="#primera-sesion">Cómo es la primera sesión</a>
+          </div>
+          <ul class="lista-check hero__puntos" role="list">
+            <li>Para agendar no necesitas contar el motivo de consulta</li>
+            <li>Online o presencial, como te acomode</li>
+            <li>Valores a la vista antes de agendar</li>
+          </ul>
+        </div>
+        <!-- Primera imagen visible: SIN loading="lazy". -->
+        <img class="hero__imagen" src="img/hero.svg" alt="Ilustración: un sillón junto a una ventana con luz de tarde, una planta y una taza sobre una mesa pequeña." width="640" height="520">
+      </div>
+    </section>
+
+    <!-- AVISO DE URGENCIAS: arriba, para quien llega en un mal momento.
+         Fuentes y fecha de verificación en el comentario del inicio. -->
+    <aside class="urgencias" id="urgencias" aria-labelledby="titulo-urgencias">
+      <div class="contenedor">
+        <div class="urgencias__caja">
+          <h2 class="urgencias__titulo" id="titulo-urgencias">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5"/><path d="M12 16.5h.01"/></svg>
+            Este sitio no atiende urgencias
+          </h2>
+          <p>Si estás en una crisis o tienes pensamientos de hacerte daño, no esperes la respuesta a un mensaje. Pide ayuda ahora:</p>
+          <ul class="urgencias__lista" role="list">
+            <li>
+              <span class="urgencias__numero">*4141</span>
+              <span>Línea de prevención del suicidio del Ministerio de Salud. Gratuita, confidencial y las 24 horas. Márcalo desde cualquier celular.</span>
+            </li>
+            <li>
+              <a class="urgencias__numero" href="tel:131"><span class="sr-only">Llamar al </span>131</a>
+              <span>SAMU, urgencias médicas: si tu vida o la de otra persona corre peligro ahora.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <section class="seccion" id="a-quien" aria-labelledby="titulo-a-quien">
+      <div class="contenedor">
+        <h2 id="titulo-a-quien">A quién atiendo</h2>
+        <p class="seccion__intro">A personas adultas que quieren un espacio propio para pensar lo que les pasa, con alguien que escucha sin juzgar. Algunos temas por los que se suele consultar:</p>
+        <ul class="tarjetas" role="list">
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13"/><path d="M14 4.5 17.5 8 14 11.5"/><path d="M20 16H7"/><path d="M10 12.5 6.5 16 10 19.5"/></svg></span>
+            <h3>Momentos de cambio</h3>
+            <p>Un trabajo nuevo o que se termina, una mudanza, una separación, la llegada de un hijo.</p>
+          </li>
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span>
+            <h3>Estrés y cansancio</h3>
+            <p>Cuando la cabeza no para, cuesta descansar o todo parece demasiado.</p>
+          </li>
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-7-6.5-7-10.5a7 7 0 0 1 14 0C19 14.5 16 18 12 21z"/><path d="M12 8v6"/></svg></span>
+            <h3>Duelos y pérdidas</h3>
+            <p>La muerte de alguien cercano, el fin de una relación o de un proyecto importante.</p>
+          </li>
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8" r="3"/><circle cx="16" cy="9.5" r="2.5"/><path d="M3 19c.5-3.5 2.8-5.5 5.5-5.5S13.5 15.5 14 19"/><path d="M14.5 14.2c.5-.2 1-.3 1.5-.3 2.3 0 4.2 1.7 4.6 4.6"/></svg></span>
+            <h3>Relaciones</h3>
+            <p>Con la pareja, la familia o en el trabajo: lo que se repite y cuesta conversar.</p>
+          </li>
+        </ul>
+        <p class="nota">Son temas de ejemplo: <span class="tiza">[dato del cliente: los temas que atiende, desde qué edad y si atiende adolescentes o parejas]</span>. Si lo que necesitas requiere otro tipo de apoyo, te lo digo con claridad en la primera sesión y te oriento sobre dónde consultar.</p>
+      </div>
+    </section>
+
+    <section class="seccion seccion--alt" id="modalidades" aria-labelledby="titulo-modalidades">
+      <div class="contenedor">
+        <h2 id="titulo-modalidades">Online o presencial</h2>
+        <p class="seccion__intro">Elige la modalidad que te acomode. Cada sesión dura <span class="tiza">[dato del cliente: minutos]</span>, en las dos.</p>
+        <ul class="tarjetas" role="list">
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="2"/><path d="M8.5 15a3.5 3.5 0 0 1 7 0"/></svg></span>
+            <h3>Online</h3>
+            <p>Por videollamada, desde donde estés. Necesitas conexión a internet y un lugar donde puedas hablar con privacidad. El enlace te llega al confirmar la hora.</p>
+            <p class="tarjeta__dato">Plataforma: <span class="tiza">[dato del cliente: plataforma de videollamada]</span></p>
+          </li>
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4.5A1.5 1.5 0 0 1 7.5 3h9A1.5 1.5 0 0 1 18 4.5V21"/><path d="M3 21h18"/><path d="M14.5 12.5h.01"/></svg></span>
+            <h3>Presencial</h3>
+            <p>En consulta, en un espacio privado y tranquilo. La dirección exacta te llega al confirmar la hora.</p>
+            <p class="tarjeta__dato">Dónde: <span class="tiza">[dato del cliente: comuna o barrio]</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion" id="primera-sesion" aria-labelledby="titulo-primera">
+      <div class="contenedor">
+        <h2 id="titulo-primera">Cómo es la primera sesión</h2>
+        <p class="seccion__intro">Es para conocernos. No tienes que llegar con nada preparado.</p>
+        <ol class="pasos">
+          <li class="paso">
+            <h3>Escribes para agendar</h3>
+            <p>Basta con «Hola, quiero agendar una hora». No necesitas contar el motivo por mensaje.</p>
+          </li>
+          <li class="paso">
+            <h3>Coordinamos día y modalidad</h3>
+            <p>Te propongo horarios disponibles y eliges online o presencial. Te llega la confirmación con el enlace o la dirección.</p>
+          </li>
+          <li class="paso">
+            <h3>Conversamos</h3>
+            <p>Me cuentas lo que quieras contar, a tu ritmo. Te explico cómo trabajo y cómo cuido la confidencialidad, y resolvemos tus dudas.</p>
+          </li>
+          <li class="paso">
+            <h3>Decides si seguir</h3>
+            <p>Al final vemos juntos si te hace sentido continuar y con qué frecuencia. No hay compromiso de seguir.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="seccion seccion--alt" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+      <div class="contenedor dos-columnas">
+        <div class="texto-largo">
+          <h2 id="titulo-sobre-mi">Sobre mí</h2>
+          <p>Soy Ps. <span class="tiza">[Nombre Apellido]</span>. <span class="tiza">[dato del cliente: 2 o 3 frases sobre quién es y cómo llegó a la psicología]</span></p>
+          <h3>Mi enfoque</h3>
+          <p><span class="tiza">[dato del cliente: enfoque terapéutico, por ejemplo cognitivo-conductual, sistémico, humanista o integrativo]</span></p>
+          <p><span class="tiza">[dato del cliente: cómo es trabajar con ella, en palabras simples y sin promesas de resultados]</span></p>
+        </div>
+        <div class="panel">
+          <h3>Formación y registro</h3>
+          <dl class="ficha">
+            <div><dt>Título</dt><dd><span class="tiza">[dato del cliente: título y universidad]</span></dd></div>
+            <div><dt>Especialización</dt><dd><span class="tiza">[dato del cliente: postítulo o magíster, si tiene]</span></dd></div>
+            <div><dt>Registro profesional</dt><dd><span class="tiza">[dato del cliente: dónde está inscrita y con qué número, para que cualquiera lo pueda verificar]</span></dd></div>
+          </dl>
+          <p class="nota">Lo que está entre corchetes lo completa la profesional con sus datos reales. En un sitio de salud no se inventan títulos, enfoques ni registros.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="valores" aria-labelledby="titulo-valores">
+      <div class="contenedor">
+        <h2 id="titulo-valores">Valores</h2>
+        <p class="seccion__intro">Para que sepas cuánto cuesta antes de agendar.</p>
+        <div class="panel valores">
+          <p class="etiqueta">Valores de ejemplo</p>
+          <dl class="precios">
+            <div><dt>Sesión individual online</dt><dd>$00.000 <span class="precios__ejemplo">(ejemplo)</span></dd></div>
+            <div><dt>Sesión individual presencial</dt><dd>$00.000 <span class="precios__ejemplo">(ejemplo)</span></dd></div>
+          </dl>
+          <p>Formas de pago: <span class="tiza">[dato del cliente: transferencia, tarjeta u otras]</span>.</p>
+          <p>Documento que entrego: <span class="tiza">[dato del cliente: boleta u otro documento]</span>.</p>
+          <p class="nota">Los valores de esta demo son de ejemplo: cada profesional pone los suyos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion--alt" id="preguntas" aria-labelledby="titulo-preguntas">
+      <div class="contenedor">
+        <h2 id="titulo-preguntas">Preguntas frecuentes</h2>
+        <div class="preguntas">
+          <details class="pregunta">
+            <summary>¿Lo que converse en sesión es confidencial?</summary>
+            <div class="pregunta__respuesta">
+              <p>Sí. Lo que conversamos en sesión es confidencial. Las excepciones son muy acotadas, como un riesgo grave para tu vida o la de otra persona, y te las explico en la primera sesión. <span class="tiza">[dato del cliente: confirmar este texto según su código de ética]</span></p>
+              <p>Este sitio no tiene formularios ni herramientas de rastreo: cuando escribes por WhatsApp o por correo, el mensaje llega directo a la consulta.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Tengo que contar el motivo de consulta para agendar?</summary>
+            <div class="pregunta__respuesta">
+              <p>No. Para agendar basta con tu nombre y el horario que prefieres. El motivo lo conversamos en la sesión, en un espacio privado.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Puedo pedir reembolso en mi isapre o en Fonasa?</summary>
+            <div class="pregunta__respuesta">
+              <p><span class="tiza">[dato del cliente: qué documento entrega para pedir reembolso y si sirve en isapres, Fonasa o seguros complementarios]</span></p>
+              <p>Cada plan es distinto: te recomiendo preguntar en tu isapre, en Fonasa o en tu seguro qué necesitas presentar.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Cómo me preparo para una sesión online?</summary>
+            <div class="pregunta__respuesta">
+              <p>Busca un lugar donde nadie te escuche y conéctate unos minutos antes. Con audífonos se conversa más cómodo. El enlace te llega al confirmar la hora.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Qué pasa si necesito cancelar o cambiar la hora?</summary>
+            <div class="pregunta__respuesta">
+              <p><span class="tiza">[dato del cliente: con cuánta anticipación avisar y qué pasa con una sesión no avisada]</span></p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Atiendes urgencias?</summary>
+            <div class="pregunta__respuesta">
+              <p>No. Si estás en una crisis, llama al *4141 desde un celular (Línea de prevención del suicidio del Ministerio de Salud, gratuita y las 24 horas) o al 131 (SAMU) si hay riesgo para tu vida o la de otra persona.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="contenedor contacto">
+        <div>
+          <h2 id="titulo-contacto">Agenda una hora</h2>
+          <p>Escríbeme por WhatsApp o por correo, o llámame en horario de atención. Te respondo con los horarios disponibles.</p>
+          <p class="nota-demo">En esta demo, los botones llevan a hammockai.site. En el sitio real, WhatsApp se abre con el mensaje «Hola, quiero agendar una hora.» ya escrito: no hace falta contar más.</p>
+          <ul class="contacto__acciones" role="list">
+            <li>
+              <!-- DEMO. Sitio real:
+                   https://wa.me/<número solo dígitos>?text=Hola%2C%20quiero%20agendar%20una%20hora. -->
+              <a class="boton boton--principal boton--ancho boton--demo" href="https://hammockai.site">
+                <span class="boton__fila">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+                  Agendar por WhatsApp
+                </span>
+                <span class="boton__destino">¿Quieres un sitio así? Ir a hammockai.site</span>
+              </a>
+            </li>
+            <li>
+              <!-- DEMO. Sitio real: tel:+<código de país y número, sin espacios> -->
+              <a class="boton boton--secundario boton--ancho boton--demo" href="https://hammockai.site">
+                <span class="boton__fila">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+                  Llamar a la consulta
+                </span>
+                <span class="boton__destino">¿Quieres un sitio así? Ir a hammockai.site</span>
+              </a>
+            </li>
+            <li>
+              <!-- DEMO. Sitio real: mailto:<correo>?subject=Agendar%20una%20hora
+                   (asunto neutro: nunca el motivo de consulta). -->
+              <a class="boton boton--secundario boton--ancho boton--demo" href="https://hammockai.site">
+                <span class="boton__fila">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                  Escribir un correo
+                </span>
+                <span class="boton__destino">¿Quieres un sitio así? Ir a hammockai.site</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Horario de atención</h3>
+          <p><span class="tiza">[dato del cliente: días y horas de atención]</span></p>
+
+          <h3>Cuándo respondo mensajes</h3>
+          <p><span class="tiza">[dato del cliente: por ejemplo, de lunes a viernes en horario de oficina]</span></p>
+
+          <h3>Dónde atiendo</h3>
+          <!-- Sin mapa: la dirección exacta se envía al confirmar la hora.
+               Si la profesional quiere mostrarla, usar el enlace de mapa de base/. -->
+          <p>Online, y en consulta en <span class="tiza">[dato del cliente: comuna]</span>.</p>
+
+          <p class="nota">Los mensajes no se responden al instante. Si es una urgencia, llama al *4141 desde un celular o al 131 (<a href="#urgencias">ver aviso de urgencias</a>).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__grilla">
+      <div>
+        <p class="pie__nombre">Remanso</p>
+        <p>Consulta de psicología · online y presencial.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="#a-quien">A quién atiendo</a></li>
+          <li><a href="#modalidades">Modalidades</a></li>
+          <li><a href="#primera-sesion">Primera sesión</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#valores">Valores</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="pie__legal">
+        <p class="pie__urgencias"><strong>Este sitio no atiende urgencias.</strong> En crisis: *4141 desde un celular (Ministerio de Salud, gratuita, 24 horas). Si hay riesgo para la vida: 131 (SAMU).</p>
+        <p class="pie__aviso">Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a>. La consulta y la profesional no existen.</p>
+        <p>© <span data-anio>2026</span> Hammock AI. Este sitio no usa cookies ni herramientas de rastreo.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<!--
+  ============================================================================
+  index.html · DEMO "Zancada" · estudio de entrenamiento · Hammock AI
+  ----------------------------------------------------------------------------
+  NEGOCIO FICTICIO. Nombre, horario, planes, precios y dirección son
+  inventados para esta demo. El equipo queda "en tiza" ([dato del cliente]):
+  nombres, fotos y formación nunca se inventan. Las imágenes son
+  ilustraciones propias, no fotos. El aviso "Sitio de ejemplo" es
+  obligatorio y no se quita mientras sea una demo.
+
+  BOTONES DE CONTACTO: en una demo NUNCA llevan a un número inventado
+  (podría ser de una persona real). WhatsApp, teléfono, correo y mapa
+  llevan a https://hammockai.site y lo dicen en el mismo botón (marca
+  "ejemplo" y "¿Quieres un sitio así? → Hammock AI"). En el sitio de un cliente cada uno
+  vuelve a ser wa.me, tel:, mailto: o el enlace del mapa (ver
+  base/index.html y docs/entrega.md, "Si partiste de una demo").
+
+  SIN PROMESAS DE RESULTADOS: el texto describe qué se hace en cada clase,
+  nunca qué le va a pasar al cuerpo de nadie ("baja X kg", "tonifica").
+  Tampoco hay testimonios: una demo no muestra opiniones inventadas.
+
+  DE DÓNDE SALE: la plantilla base/ con otro tema (tokens en style.css) y
+  secciones extra: horario en tabla, planes, clase de prueba y equipo.
+
+  POR QUÉ NO TIENE canonical, sitemap NI datos estructurados (JSON-LD):
+  un negocio que no existe no debe aparecer en Google como si existiera.
+  Por eso lleva noindex (aquí y en _headers).
+  ============================================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSP: la misma de base/ (explicada allí). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+  <title>Zancada · Estudio de entrenamiento · Sitio de ejemplo</title>
+  <meta name="description" content="Sitio de ejemplo hecho por Hammock AI para un estudio de entrenamiento ficticio: clases en grupos chicos, horario semanal, planes y clase de prueba.">
+  <!-- Demo: que los buscadores no la indexen. -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#111216">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+
+  <!-- Vista previa al compartir el enlace. Copia en hammockai.site: og:image y
+       og:url llevan la dirección completa (varias redes no leen rutas relativas). -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hammockai.site/portafolio/gimnasio/">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:title" content="Sitio de ejemplo · Zancada, estudio de entrenamiento (negocio ficticio)">
+  <meta property="og:description" content="Sitio de ejemplo hecho por Hammock AI para un estudio de entrenamiento ficticio.">
+  <meta property="og:image" content="https://hammockai.site/portafolio/gimnasio/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Zancada, estudio de entrenamiento: pictograma de una persona haciendo una zancada sobre un panel verde, y la franja Sitio de ejemplo, negocio ficticio, hecho por Hammock AI.">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Aviso obligatorio de demo. <aside> = contenido aparte del principal;
+       con nombre propio para que el lector de pantalla lo anuncie. -->
+  <aside class="aviso-demo" aria-label="Aviso">
+    <p>Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a></p>
+  </aside>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="#inicio">
+        <img class="marca__logo" src="favicon.svg" alt="" width="36" height="36">
+        <span>Zancada <span class="marca__rubro">Entrenamiento</span></span>
+      </a>
+      <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="boton-menu__icono" aria-hidden="true"></span>
+        Menú
+      </button>
+      <nav class="menu" id="menu-principal" aria-label="Principal">
+        <ul>
+          <li><a href="#clases">Clases</a></li>
+          <li><a href="#horario">Horario</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#prueba">Clase de prueba</a></li>
+          <li><a href="#como-llegar">Cómo llegar</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <!-- Solo en escritorio: lleva a la sección de la clase de prueba
+           (enlace interno, no sale del sitio). -->
+      <a class="boton boton--principal cabecera__cta" href="#prueba">Agendar clase de prueba</a>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <section class="hero" id="inicio" aria-labelledby="titulo-inicio">
+      <div class="contenedor hero__grilla">
+        <div>
+          <p class="etiqueta">Estudio de entrenamiento · grupos chicos</p>
+          <h1 id="titulo-inicio">Entrena con técnica, <span class="resaltado">a tu ritmo.</span></h1>
+          <p class="hero__bajada">Clases de funcional, fuerza, circuito y movilidad en grupos de hasta 10 personas. Si nunca has entrenado, partes por la clase Base.</p>
+          <div class="botones">
+            <!-- Botón de demo: lleva a Hammock AI y lo dice. En el sitio de un
+                 cliente: href="https://wa.me/<número>?text=Hola%2C%20quiero%20agendar%20mi%20clase%20de%20prueba."
+                 y se borran <span class="boton__marca"> y <span class="boton__destino">. -->
+            <a class="boton boton--principal boton--demo" href="https://hammockai.site">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+              <span class="boton__textos">
+                <span>Agendar por WhatsApp <span class="boton__marca">ejemplo</span></span>
+                <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+              </span>
+            </a>
+            <a class="boton boton--secundario" href="#horario">Ver horario</a>
+          </div>
+          <ul class="hero__puntos" role="list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Grupos de hasta 10 personas</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Alguien mira y corrige tu técnica en cada clase</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Primera clase de prueba</li>
+          </ul>
+        </div>
+        <img class="hero__imagen" src="img/portada.svg" alt="Ilustración: pictograma de una persona haciendo una zancada, con los brazos en movimiento, sobre un panel verde inclinado." width="640" height="560">
+      </div>
+    </section>
+
+    <!-- Franja decorativa: repite los nombres de las clases (ya están en la
+         sección siguiente), por eso aria-hidden. No se mueve: un texto que
+         se desplaza solo necesitaría un botón de pausa (WCAG 2.2.2). -->
+    <div class="franja" aria-hidden="true">
+      <p>Base · Funcional · Fuerza · Circuito · Movilidad · Base · Funcional · Fuerza · Circuito · Movilidad</p>
+    </div>
+
+    <section class="seccion" id="clases" aria-labelledby="titulo-clases">
+      <div class="contenedor">
+        <h2 id="titulo-clases">Clases</h2>
+        <p class="seccion__intro">Todas duran 50 minutos, parten con calentamiento y terminan con estiramiento. Quien guía la clase ajusta cada ejercicio a tu nivel.</p>
+        <ul class="tarjetas" role="list">
+          <li class="tarjeta tarjeta--base">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h5v-4.5h5V11h5V6.5h3"/></svg></span>
+            <h3>Base</h3>
+            <p>Para empezar desde cero: aprendes los movimientos básicos y cómo usar cada implemento, sin apuro.</p>
+            <p class="tarjeta__nivel">Nivel: inicial</p>
+          </li>
+          <li class="tarjeta tarjeta--funcional">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14.5" r="6"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"/></svg></span>
+            <h3>Funcional</h3>
+            <p>Estaciones con el peso del cuerpo, kettlebells, balones y bandas elásticas.</p>
+            <p class="tarjeta__nivel">Nivel: todos</p>
+          </li>
+          <li class="tarjeta tarjeta--fuerza">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+            <h3>Fuerza</h3>
+            <p>Técnica de sentadilla, peso muerto y press con barra y mancuernas. La carga la eliges con quien guía la clase.</p>
+            <p class="tarjeta__nivel">Nivel: todos</p>
+          </li>
+          <li class="tarjeta tarjeta--circuito">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9.5M9.5 2.5h5M12 2.5V6M18.5 6.5 20 5"/></svg></span>
+            <h3>Circuito</h3>
+            <p>Bloques de trabajo y pausa con cronómetro. Tú decides la intensidad de cada bloque.</p>
+            <p class="tarjeta__nivel">Nivel: todos</p>
+          </li>
+          <li class="tarjeta tarjeta--movilidad">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><path d="M5 8.5c2.5 1 4.5 1.5 7 1.5s4.5-.5 7-1.5M12 10v5M12 15l-4 6M12 15l4 6"/></svg></span>
+            <h3>Movilidad</h3>
+            <p>Ejercicios para mover las articulaciones y estirar, a ritmo tranquilo.</p>
+            <p class="tarjeta__nivel">Nivel: todos</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HORARIO: una tabla de verdad (filas = horas, columnas = días), así
+         el lector de pantalla dice "martes, 18:30: Funcional".
+         En el celular la tabla se desliza hacia el lado dentro de su caja;
+         la caja recibe el foco (tabindex="0") para poder moverla con las
+         flechas del teclado, y su nombre lo da el <caption>.
+         Cada clase dice su nombre: el color solo acompaña. -->
+    <section class="seccion seccion--oscura" id="horario" aria-labelledby="titulo-horario">
+      <div class="contenedor">
+        <h2 id="titulo-horario">Horario semanal</h2>
+        <p class="seccion__intro">De lunes a sábado. Domingo y festivos, cerrado. Reserva tu cupo por WhatsApp.</p>
+        <p class="tabla-pista">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 7l5 5-5 5"/></svg>
+          Desliza la tabla hacia el lado para ver todos los días.
+        </p>
+        <div class="tabla-scroll" role="region" aria-labelledby="leyenda-horario" tabindex="0">
+          <table class="horario-semanal">
+            <caption id="leyenda-horario">Horario de clases de lunes a sábado (horario de ejemplo)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Hora</th>
+                <th scope="col"><span aria-hidden="true">Lun</span><span class="sr-only">Lunes</span></th>
+                <th scope="col"><span aria-hidden="true">Mar</span><span class="sr-only">Martes</span></th>
+                <th scope="col"><span aria-hidden="true">Mié</span><span class="sr-only">Miércoles</span></th>
+                <th scope="col"><span aria-hidden="true">Jue</span><span class="sr-only">Jueves</span></th>
+                <th scope="col"><span aria-hidden="true">Vie</span><span class="sr-only">Viernes</span></th>
+                <th scope="col"><span aria-hidden="true">Sáb</span><span class="sr-only">Sábado</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">07:00</th>
+                <td><span class="clase clase--funcional">Funcional</span></td>
+                <td><span class="clase clase--fuerza">Fuerza</span></td>
+                <td><span class="clase clase--funcional">Funcional</span></td>
+                <td><span class="clase clase--fuerza">Fuerza</span></td>
+                <td><span class="clase clase--circuito">Circuito</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+              </tr>
+              <tr>
+                <th scope="row">09:00</th>
+                <td><span class="clase clase--movilidad">Movilidad</span></td>
+                <td><span class="clase clase--base">Base</span></td>
+                <td><span class="clase clase--movilidad">Movilidad</span></td>
+                <td><span class="clase clase--base">Base</span></td>
+                <td><span class="clase clase--movilidad">Movilidad</span></td>
+                <td><span class="clase clase--funcional">Funcional</span></td>
+              </tr>
+              <tr>
+                <th scope="row">10:30</th>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+                <td><span class="clase clase--base">Base</span></td>
+              </tr>
+              <tr>
+                <th scope="row">13:00</th>
+                <td><span class="clase clase--circuito">Circuito</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+                <td><span class="clase clase--circuito">Circuito</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+                <td><span class="clase clase--circuito">Circuito</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+              </tr>
+              <tr>
+                <th scope="row">18:30</th>
+                <td><span class="clase clase--fuerza">Fuerza</span></td>
+                <td><span class="clase clase--funcional">Funcional</span></td>
+                <td><span class="clase clase--fuerza">Fuerza</span></td>
+                <td><span class="clase clase--funcional">Funcional</span></td>
+                <td><span class="clase clase--base">Base</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+              </tr>
+              <tr>
+                <th scope="row">19:45</th>
+                <td><span class="clase clase--base">Base</span></td>
+                <td><span class="clase clase--circuito">Circuito</span></td>
+                <td><span class="clase clase--funcional">Funcional</span></td>
+                <td><span class="clase clase--circuito">Circuito</span></td>
+                <td><span class="clase clase--movilidad">Movilidad</span></td>
+                <td class="sin-clase"><span class="sr-only">Sin clase</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES: los precios son de ejemplo y lo dicen junto a cada precio.
+         En el sitio de un cliente, los planes y precios los confirma él. -->
+    <section class="seccion" id="planes" aria-labelledby="titulo-planes">
+      <div class="contenedor">
+        <h2 id="titulo-planes">Planes</h2>
+        <p class="seccion__intro">Elige según cuántas veces quieres venir. Con cualquier plan puedes tomar todas las clases del horario.</p>
+        <ul class="planes" role="list">
+          <li class="plan">
+            <h3>Clase suelta</h3>
+            <p class="plan__precio"><span class="plan__monto">$ 8.000</span> <span class="plan__periodo">por clase</span></p>
+            <p class="plan__ejemplo">Precio de ejemplo</p>
+            <ul class="lista-check" role="list">
+              <li>La clase que elijas</li>
+              <li>Reserva tu cupo por WhatsApp</li>
+            </ul>
+          </li>
+          <li class="plan">
+            <h3>8 clases al mes</h3>
+            <p class="plan__precio"><span class="plan__monto">$ 38.000</span> <span class="plan__periodo">al mes</span></p>
+            <p class="plan__ejemplo">Precio de ejemplo</p>
+            <ul class="lista-check" role="list">
+              <li>Unas 2 clases por semana</li>
+              <li>Válido por 30 días</li>
+              <li>Cualquier clase del horario</li>
+            </ul>
+          </li>
+          <li class="plan">
+            <h3>Libre</h3>
+            <p class="plan__precio"><span class="plan__monto">$ 52.000</span> <span class="plan__periodo">al mes</span></p>
+            <p class="plan__ejemplo">Precio de ejemplo</p>
+            <ul class="lista-check" role="list">
+              <li>Todas las clases que quieras</li>
+              <li>Válido por 30 días</li>
+              <li>Cualquier clase del horario</li>
+            </ul>
+          </li>
+        </ul>
+        <p class="nota"><strong>Precios de ejemplo.</strong> Esta demo es un negocio ficticio: en el sitio de un estudio real, los planes y precios los define el estudio.</p>
+      </div>
+    </section>
+
+    <section class="seccion seccion--voltio" id="prueba" aria-labelledby="titulo-prueba">
+      <div class="contenedor prueba">
+        <div>
+          <h2 id="titulo-prueba">Tu primera clase es de prueba</h2>
+          <p class="prueba__bajada">Ven a conocer el estudio y a quien guía la clase. Después decides si quieres seguir, sin apuro. <span class="plan__ejemplo">Condición de ejemplo</span></p>
+          <ol class="pasos">
+            <li class="paso">
+              <h3>Escríbenos y elige un horario</h3>
+              <p>Por WhatsApp. Te confirmamos el cupo en horario de recepción.</p>
+            </li>
+            <li class="paso">
+              <h3>Llega 10 minutos antes</h3>
+              <p>Te mostramos el estudio y conversamos qué te gustaría trabajar.</p>
+            </li>
+            <li class="paso">
+              <h3>Haz la clase a tu ritmo</h3>
+              <p>Quien la guía te muestra cada ejercicio y lo ajusta a tu nivel.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="panel prueba__panel">
+          <h3>Qué traer</h3>
+          <ul class="lista-check" role="list">
+            <li>Ropa cómoda y zapatillas</li>
+            <li>Una botella de agua</li>
+            <li>Una toalla chica</li>
+          </ul>
+          <h3>Si tienes una lesión o una condición de salud</h3>
+          <p>Consulta antes con tu médico y cuéntale a quien guía la clase cuando llegues. No hace falta que lo escribas por mensaje.</p>
+          <a class="boton boton--principal boton--ancho boton--demo" href="https://hammockai.site">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+            <span class="boton__textos">
+              <span>Agendar por WhatsApp <span class="boton__marca">ejemplo</span></span>
+              <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPO: queda EN TIZA a propósito. Nombres, fotos, formación y
+         certificaciones los entrega el estudio; nunca se inventan. -->
+    <section class="seccion" id="equipo" aria-labelledby="titulo-equipo">
+      <div class="contenedor">
+        <h2 id="titulo-equipo">Equipo</h2>
+        <p class="seccion__intro">Las personas que guían las clases y corrigen tu técnica.</p>
+        <ul class="equipo" role="list">
+          <li class="coach">
+            <img class="coach__foto" src="img/coach.svg" alt="" width="400" height="400" loading="lazy">
+            <h3><span class="tiza">[dato del cliente: nombre]</span></h3>
+            <p class="coach__rol">Guía: <span class="tiza">[dato del cliente: clases]</span></p>
+            <p><span class="tiza">[dato del cliente: formación]</span></p>
+          </li>
+          <li class="coach">
+            <img class="coach__foto" src="img/coach.svg" alt="" width="400" height="400" loading="lazy">
+            <h3><span class="tiza">[dato del cliente: nombre]</span></h3>
+            <p class="coach__rol">Guía: <span class="tiza">[dato del cliente: clases]</span></p>
+            <p><span class="tiza">[dato del cliente: formación]</span></p>
+          </li>
+          <li class="coach">
+            <img class="coach__foto" src="img/coach.svg" alt="" width="400" height="400" loading="lazy">
+            <h3><span class="tiza">[dato del cliente: nombre]</span></h3>
+            <p class="coach__rol">Guía: <span class="tiza">[dato del cliente: clases]</span></p>
+            <p><span class="tiza">[dato del cliente: formación]</span></p>
+          </li>
+        </ul>
+        <p class="nota"><strong>Sección en tiza.</strong> Los nombres, las fotos y la formación de cada persona los entrega el estudio. No inventamos títulos, años de experiencia ni opiniones de clientes.</p>
+      </div>
+    </section>
+
+    <section class="seccion seccion--alt" id="preguntas" aria-labelledby="titulo-preguntas">
+      <div class="contenedor">
+        <h2 id="titulo-preguntas">Preguntas frecuentes</h2>
+        <div class="preguntas">
+          <details class="pregunta">
+            <summary>¿Necesito experiencia para empezar?</summary>
+            <div class="pregunta__respuesta">
+              <p>No. Si nunca has entrenado, te recomendamos partir por la clase Base: ahí aprendes los movimientos y cómo usar cada implemento.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Cuántas personas hay por clase?</summary>
+            <div class="pregunta__respuesta">
+              <p>Hasta 10. Así quien guía la clase puede mirar a cada persona y corregir su técnica.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Cómo reservo mi cupo?</summary>
+            <div class="pregunta__respuesta">
+              <p>Por WhatsApp, con el día y la hora de la clase. Te confirmamos el cupo en horario de recepción.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Qué tengo que llevar?</summary>
+            <div class="pregunta__respuesta">
+              <p>Ropa cómoda, zapatillas, una botella de agua y una toalla chica. Los implementos los pone el estudio.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>Tengo una lesión o una condición de salud. ¿Puedo entrenar?</summary>
+            <div class="pregunta__respuesta">
+              <p>Consulta primero con tu médico. Cuando llegues, cuéntale a quien guía la clase para ajustar los ejercicios. No hace falta que lo escribas por mensaje.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Cómo puedo pagar?</summary>
+            <div class="pregunta__respuesta">
+              <p>En recepción, con efectivo, transferencia o tarjeta.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO LLEGAR: el mapa es un ENLACE, no un mapa incrustado (un iframe
+         carga scripts y cookies de terceros en cada visita). En esta demo el
+         enlace lleva a Hammock AI porque la dirección es inventada. En el
+         sitio de un cliente:
+         https://www.google.com/maps/search/?api=1&amp;query=<dirección>
+         con target="_blank" rel="noopener noreferrer" y el aviso
+         "(se abre en una pestaña nueva)", como en base/index.html. -->
+    <section class="seccion" id="como-llegar" aria-labelledby="titulo-llegar">
+      <div class="contenedor llegar">
+        <div>
+          <h2 id="titulo-llegar">Cómo llegar</h2>
+          <address class="llegar__direccion">Calle Ejemplo 1234, Barrio Centro</address>
+          <p class="llegar__aviso">Dirección inventada para esta demo.</p>
+          <ul class="llegar__lista" role="list">
+            <li><strong>En transporte público:</strong> a dos cuadras de la estación Centro.</li>
+            <li><strong>En bicicleta:</strong> hay estacionamiento para bicicletas en la entrada.</li>
+            <li><strong>Acceso:</strong> a nivel de la calle, sin escalones.</li>
+          </ul>
+          <a class="boton boton--secundario boton--demo" href="https://hammockai.site">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <span class="boton__textos">
+              <span>Abrir en el mapa <span class="boton__marca">ejemplo</span></span>
+              <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+            </span>
+          </a>
+        </div>
+        <div>
+          <!-- Mapa ilustrado: decoración (alt=""); la dirección va escrita. -->
+          <img class="llegar__mapa" src="img/mapa.svg" alt="" width="640" height="400" loading="lazy">
+          <h3 class="llegar__subtitulo">Horario de recepción</h3>
+          <dl class="horario">
+            <div><dt>Lunes a viernes</dt><dd>6:30 a 21:00</dd></div>
+            <div><dt>Sábado</dt><dd>8:30 a 12:30</dd></div>
+            <div><dt>Domingo y festivos</dt><dd>Cerrado</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion--oscura" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="contenedor">
+        <h2 id="titulo-contacto">Contacto</h2>
+        <p class="seccion__intro">Escríbenos para reservar tu clase de prueba o preguntar por los planes. Respondemos en horario de recepción.</p>
+        <ul class="contacto__acciones" role="list">
+          <li>
+            <a class="boton boton--principal boton--ancho boton--demo" href="https://hammockai.site">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+              <span class="boton__textos">
+                <span>Escribir por WhatsApp <span class="boton__marca">ejemplo</span></span>
+                <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="boton boton--secundario boton--ancho boton--demo" href="https://hammockai.site">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+              <span class="boton__textos">
+                <span>Llamar por teléfono <span class="boton__marca">ejemplo</span></span>
+                <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="boton boton--secundario boton--ancho boton--demo" href="https://hammockai.site">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <span class="boton__textos">
+                <span>Escribir un correo <span class="boton__marca">ejemplo</span></span>
+                <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <p class="nota">Estos botones son de ejemplo: llevan al sitio de Hammock AI. En el sitio de un estudio real abren su WhatsApp, su teléfono y su correo.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cierre de la demo: dice qué es este sitio e invita a Hammock AI. -->
+  <aside class="banda-hammock" aria-labelledby="titulo-hammock">
+    <div class="contenedor banda-hammock__fila">
+      <div>
+        <h2 id="titulo-hammock">Este sitio es un ejemplo</h2>
+        <p>Zancada no existe: es una demo de Hammock AI. Armamos sitios así, simples y rápidos en el celular, para estudios, gimnasios y otros negocios chicos.</p>
+      </div>
+      <a class="boton boton--principal" href="https://hammockai.site">¿Quieres un sitio así? Conoce Hammock AI</a>
+    </div>
+  </aside>
+
+  <footer class="pie">
+    <div class="contenedor pie__grilla">
+      <div>
+        <p class="pie__nombre">Zancada</p>
+        <p>Estudio de entrenamiento en grupos chicos.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="#clases">Clases</a></li>
+          <li><a href="#horario">Horario</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#prueba">Clase de prueba</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#como-llegar">Cómo llegar</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="pie__legal">
+        <p class="pie__aviso">Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a>. Nombre, horario, precios y dirección son inventados, y los botones de contacto son de ejemplo.</p>
+        <p>© <span data-anio>2026</span> Hammock AI. Este sitio no usa cookies ni herramientas de rastreo.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

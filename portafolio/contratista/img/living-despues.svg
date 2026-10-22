@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Ilustración propia de Hammock AI para la demo: living DESPUÉS. -->
+  <defs>
+    <pattern id="madera" width="180" height="22" patternUnits="userSpaceOnUse">
+      <rect width="180" height="22" fill="#d9a46f"/>
+      <path d="M0 10.5h180M0 21.5h180M120 0v11M40 11v11" stroke="#b07a47"/>
+    </pattern>
+  </defs>
+  <rect width="250" height="300" fill="#f7f4ef"/>
+  <!-- muro de color -->
+  <rect x="250" width="150" height="300" fill="#1f3b63"/>
+  <!-- cuadro y repisa -->
+  <rect x="282" y="44" width="84" height="64" rx="3" fill="#f7f4ef"/>
+  <circle cx="314" cy="80" r="16" fill="#f5a524"/>
+  <path d="M292 100l26-24 18 16 14-10 8 18z" fill="#3c5d8a"/>
+  <rect x="276" y="140" width="100" height="6" rx="2" fill="#c98b55"/>
+  <rect x="288" y="118" width="8" height="22" fill="#f5a524"/>
+  <rect x="298" y="122" width="8" height="18" fill="#f7f4ef"/>
+  <rect x="308" y="116" width="8" height="24" fill="#8d96a3"/>
+  <circle cx="356" cy="132" r="8" fill="#6aa37f"/>
+  <!-- ventana -->
+  <rect x="50" y="40" width="120" height="104" rx="3" fill="#cfe3f5" stroke="#1f3b63" stroke-width="7"/>
+  <path d="M110 40v104M50 92h120" stroke="#1f3b63" stroke-width="5"/>
+  <path d="M64 80l24-28M70 128l14-16" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+  <!-- sillón nuevo con cojines -->
+  <rect x="48" y="160" width="146" height="34" rx="12" fill="#3c5d8a"/>
+  <rect x="40" y="184" width="162" height="42" rx="12" fill="#2f4d78"/>
+  <rect x="58" y="168" width="34" height="24" rx="6" fill="#f5a524"/>
+  <rect x="150" y="168" width="34" height="24" rx="6" fill="#f7f4ef"/>
+  <!-- lámpara de pie -->
+  <circle cx="226" cy="120" r="30" fill="#fcd581" opacity=".35"/>
+  <path d="M226 126v100" stroke="#142a47" stroke-width="4"/>
+  <path d="M210 126l6-26h20l6 26z" fill="#f5a524"/>
+  <!-- guardapolvo nuevo y piso de madera -->
+  <rect y="226" width="400" height="8" fill="#ffffff"/>
+  <rect y="234" width="400" height="66" fill="url(#madera)"/>
+  <!-- alfombra -->
+  <path d="M60 300l24-40h170l24 40z" fill="#f5a524" opacity=".85"/>
+  <path d="M96 276h162" stroke="#f7f4ef" stroke-width="3" opacity=".7"/>
+  <!-- planta -->
+  <path d="M352 300l4-34h34l4 34z" fill="#c9733d"/>
+  <path d="M372 266c-18-12-22-34-14-50 14 12 18 30 14 50zM372 266c6-20 20-32 34-34-2 18-16 30-34 34z" fill="#6aa37f"/>
+</svg>

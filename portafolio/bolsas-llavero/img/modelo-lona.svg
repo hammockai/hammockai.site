@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320">
+  <!-- Modelo "Lona": bolsa color arena con un bolsillo con tapa y dos broches,
+       y su bolsita llavero. Dibujo propio de Hammock AI (demo ficticia). -->
+  <rect width="320" height="320" rx="28" fill="#f6ead3"/>
+  <ellipse cx="160" cy="296" rx="100" ry="9" fill="#241640" opacity="0.12"/>
+  <path d="M128 120C128 50 220 50 220 120" fill="none" stroke="#241640" stroke-width="20" stroke-linecap="round"/>
+  <path d="M128 120C128 50 220 50 220 120" fill="none" stroke="#a57a33" stroke-width="10" stroke-linecap="round"/>
+  <path d="M100 124C100 54 192 54 192 124" fill="none" stroke="#241640" stroke-width="20" stroke-linecap="round"/>
+  <path d="M100 124C100 54 192 54 192 124" fill="none" stroke="#e2bd78" stroke-width="10" stroke-linecap="round"/>
+  <path d="M66 118H254L242 270A16 16 0 0 1 226 285H94A16 16 0 0 1 78 270Z" fill="#c99a4a"/>
+  <path d="M67 118H253L251.4 142H68.6Z" fill="#a57a33"/>
+  <path d="M84 154H236M92 262H228" fill="none" stroke="#fffaf0" stroke-width="3" stroke-dasharray="8 6"/>
+  <rect x="100" y="180" width="120" height="70" rx="6" fill="#b8893d" stroke="#241640" stroke-width="3"/>
+  <path d="M108 240H212" fill="none" stroke="#fffaf0" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <path d="M100 180H220V204Q160 214 100 204Z" fill="#a57a33" stroke="#241640" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="130" cy="198" r="4.5" fill="#b8bfcc" stroke="#241640" stroke-width="2"/>
+  <circle cx="190" cy="198" r="4.5" fill="#b8bfcc" stroke="#241640" stroke-width="2"/>
+  <path d="M66 118H254L242 270A16 16 0 0 1 226 285H94A16 16 0 0 1 78 270Z" fill="none" stroke="#241640" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="236" y="140" width="32" height="36" rx="8" fill="#a57a33" stroke="#241640" stroke-width="4"/>
+  <path d="M236 154Q252 162 268 154V148A8 8 0 0 0 260 140H244A8 8 0 0 0 236 148Z" fill="#e2bd78" stroke="#241640" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="252" cy="158" r="3.5" fill="#ffd23f" stroke="#241640" stroke-width="2"/>
+  <circle cx="252" cy="128" r="11" fill="none" stroke="#241640" stroke-width="6"/>
+  <circle cx="252" cy="128" r="11" fill="none" stroke="#b8bfcc" stroke-width="3"/>
+</svg>

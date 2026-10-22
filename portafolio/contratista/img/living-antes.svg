@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Ilustración propia de Hammock AI para la demo: living ANTES. -->
+  <rect width="400" height="300" fill="#c4bcae"/>
+  <!-- mancha de humedad y pintura soltándose -->
+  <path d="M330 0c10 20 50 26 70 18V0z" fill="#ada392"/>
+  <path d="M232 70q12-8 24 0t18 14q-14 12-28 6t-14-20zM300 140q8-6 18 0t10 12q-12 8-20 4t-8-16zM210 160q6-4 12 2t4 10q-10 4-14-2t-2-10z" fill="#d6cfc2" stroke="#a49a89" stroke-width="2"/>
+  <path d="M190 20l8 18-6 14 10 20" fill="none" stroke="#958b7b" stroke-width="2.5"/>
+  <!-- ampolleta -->
+  <path d="M290 0v30" stroke="#6f675b" stroke-width="2"/>
+  <circle cx="290" cy="38" r="8" fill="#e6dfcc"/>
+  <!-- ventana vieja -->
+  <rect x="50" y="46" width="120" height="104" fill="#aab2b3" stroke="#8b8273" stroke-width="7"/>
+  <path d="M110 46v104M50 98h120" stroke="#8b8273" stroke-width="5"/>
+  <!-- sillón gastado -->
+  <rect x="48" y="166" width="140" height="30" rx="8" fill="#8a8173"/>
+  <rect x="40" y="186" width="156" height="42" rx="8" fill="#968d7e"/>
+  <path d="M84 196l14 6M150 204l10-6" stroke="#776e61" stroke-width="3" stroke-linecap="round"/>
+  <!-- guardapolvo roto -->
+  <rect y="226" width="400" height="8" fill="#a29a8b"/>
+  <path d="M250 226h40v8h-40z" fill="#c4bcae"/>
+  <!-- alfombra con manchas -->
+  <rect y="234" width="400" height="66" fill="#9b9283"/>
+  <ellipse cx="120" cy="266" rx="40" ry="10" fill="#8a8173"/>
+  <ellipse cx="300" cy="280" rx="56" ry="12" fill="#8a8173"/>
+  <ellipse cx="230" cy="252" rx="18" ry="5" fill="#857c6e"/>
+</svg>

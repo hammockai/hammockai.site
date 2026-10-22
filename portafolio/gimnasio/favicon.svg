@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Logo de la demo "Zancada" (negocio ficticio): una Z inclinada, como
+       un paso largo, con una línea de velocidad. Dibujo propio de Hammock AI.
+       Solo formas, sin estilos ni scripts. -->
+  <rect width="32" height="32" rx="8" fill="#111216"/>
+  <path d="M11.5 9h13L9.5 23h13" fill="none" stroke="#c6f432" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M4 16h6" stroke="#ff6b4a" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

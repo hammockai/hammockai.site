@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Ilustración propia de Hammock AI para la demo: cocina DESPUÉS. -->
+  <defs>
+    <pattern id="metro" width="40" height="20" patternUnits="userSpaceOnUse">
+      <rect width="40" height="20" fill="#ffffff"/>
+      <path d="M0 .5h40M0 10.5h40M.5 0v10M20.5 10v10" stroke="#e2dbcf"/>
+    </pattern>
+    <pattern id="roble" width="160" height="26" patternUnits="userSpaceOnUse">
+      <rect width="160" height="26" fill="#e2c49c"/>
+      <path d="M0 12.5h160M0 25.5h160M110 0v13M40 13v13" stroke="#c9a676"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="#f7f4ef"/>
+  <!-- repisas con frascos -->
+  <rect x="30" y="40" width="18" height="20" rx="3" fill="#1f3b63"/>
+  <rect x="54" y="44" width="14" height="16" rx="3" fill="#f5a524"/>
+  <rect x="74" y="38" width="16" height="22" rx="3" fill="#8d96a3"/>
+  <rect x="24" y="60" width="180" height="8" rx="2" fill="#c98b55"/>
+  <path d="M40 98a14 6 0 0 0 28 0zM44 92a10 4 0 0 0 20 0z" fill="#ffffff" stroke="#d6d0c4"/>
+  <path d="M160 100l4-18h20l4 18z" fill="#c9733d"/>
+  <path d="M174 82c-10-8-12-20-8-28 8 6 10 16 8 28zM174 82c4-10 12-16 20-16-2 8-10 14-20 16z" fill="#3f7d5c"/>
+  <rect x="24" y="100" width="180" height="8" rx="2" fill="#c98b55"/>
+  <!-- lámparas colgantes -->
+  <circle cx="238" cy="66" r="26" fill="#fcd581" opacity=".35"/>
+  <path d="M238 0v46M274 0v46" stroke="#1f3b63" stroke-width="2"/>
+  <path d="M222 62a16 16 0 0 1 32 0z" fill="#f5a524"/>
+  <circle cx="274" cy="66" r="26" fill="#fcd581" opacity=".35"/>
+  <path d="M258 62a16 16 0 0 1 32 0z" fill="#f5a524"/>
+  <!-- ventana -->
+  <rect x="306" y="26" width="74" height="82" rx="3" fill="#cfe3f5" stroke="#1f3b63" stroke-width="6"/>
+  <path d="M343 26v82" stroke="#1f3b63" stroke-width="4"/>
+  <path d="M316 70l18-20M320 84l10-11" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <!-- revestimiento de muro -->
+  <rect y="120" width="400" height="58" fill="url(#metro)"/>
+  <!-- cubierta de madera y muebles azules -->
+  <rect y="176" width="400" height="12" fill="#c98b55"/>
+  <rect y="186" width="400" height="3" fill="#a86b3c"/>
+  <rect y="189" width="400" height="73" fill="#1f3b63"/>
+  <path d="M80 189v73M160 189v73M240 189v73M320 189v73" stroke="#142a47" stroke-width="3"/>
+  <path d="M66 200v20M94 200v20M226 200v20M254 200v20M306 200v20M334 200v20M146 200v20M174 200v20" stroke="#f5a524" stroke-width="4" stroke-linecap="round"/>
+  <!-- grifería -->
+  <path d="M262 176v-24a8 8 0 0 1 16 0v4" fill="none" stroke="#3a4656" stroke-width="4" stroke-linecap="round"/>
+  <!-- piso de madera clara -->
+  <rect y="262" width="400" height="38" fill="url(#roble)"/>
+  <!-- destellos -->
+  <path d="M214 132l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#f5a524"/>
+  <path d="M382 140l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#f5a524"/>
+</svg>

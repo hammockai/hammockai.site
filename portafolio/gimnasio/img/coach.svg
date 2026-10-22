@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Marcador "en tiza" para la foto de cada coach (demo "Zancada",
+       negocio ficticio). En el sitio real va la foto que entregue el
+       estudio, con permiso de la persona. Dibujo propio de Hammock AI. -->
+  <rect width="400" height="400" fill="#e8e9e1"/>
+  <rect x="14" y="14" width="372" height="372" rx="18" fill="none" stroke="#8a8d84" stroke-width="5" stroke-dasharray="20 14"/>
+  <circle cx="200" cy="158" r="62" fill="#c9cbc1"/>
+  <path d="M84 352c10-74 56-114 116-114s106 40 116 114z" fill="#c9cbc1"/>
+  <path d="M300 64h36v24h-36z" fill="#c6f432"/>
+</svg>

@@ -1,0 +1,457 @@
+<!doctype html>
+<!--
+  ============================================================================
+  index.html · DEMO "Tesela Lunar" · taller de mosaicos · Hammock AI
+  ----------------------------------------------------------------------------
+  NEGOCIO FICTICIO. Nombre, piezas y precios inventados; sin teléfono, correo
+  ni dirección. Las piezas son ilustraciones propias en SVG (teselas dibujadas
+  por código), no fotos de obras reales. El aviso "Sitio de ejemplo" es
+  obligatorio y no se quita mientras sea una demo.
+
+  BOTONES DE CONTACTO: llevan a https://hammockai.site ("¿Quieres un sitio
+  así?"), nunca a un número inventado (podría ser de una persona real).
+  En el sitio de una artista real, "Consultar por esta pieza" va a WhatsApp
+  con el nombre de la pieza ya escrito, por ejemplo:
+  https://wa.me/<número solo dígitos>?text=Hola%2C%20me%20interesa%20la%20pieza%20%22Luna%20de%20agua%22
+
+  TEXTO EN TIZA: lo que va en <p class="tiza"> con "[dato del cliente: …]"
+  lo entrega la artista (plazos, su historia, envíos). No se inventa.
+
+  DE DÓNDE SALE: plantilla base/ con otro tema (tokens en style.css) y
+  secciones propias: piezas, encargos, talleres, envíos.
+
+  POR QUÉ NO TIENE canonical, sitemap NI datos estructurados (JSON-LD): un
+  negocio que no existe no debe aparecer en buscadores. Lleva noindex aquí y
+  en _headers. SI UNA CLIENTA PARTE DE ESTA DEMO: docs/entrega.md, "Si
+  partiste de una demo".
+  ============================================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSP: la misma de base/ (explicada allí). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+  <title>Tesela Lunar · Mosaicos hechos a mano · Sitio de ejemplo</title>
+  <meta name="description" content="Sitio de ejemplo hecho por Hammock AI para un taller de mosaicos ficticio: catálogo de piezas, encargos a pedido y talleres.">
+  <!-- Demo: que los buscadores no la indexen. -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1b2347">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+
+  <!-- Vista previa al compartir el enlace. Copia en hammockai.site: og:image y
+       og:url llevan la dirección completa (varias redes no leen rutas relativas). -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hammockai.site/portafolio/mosaicos/">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:title" content="Tesela Lunar · Mosaicos hechos a mano (Sitio de ejemplo)">
+  <meta property="og:description" content="Demo de Hammock AI: sitio para un taller de mosaicos ficticio, con piezas, encargos y talleres.">
+  <meta property="og:image" content="https://hammockai.site/portafolio/mosaicos/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tesela Lunar, mosaicos hechos a mano: una luna creciente de mosaico y la franja Sitio de ejemplo, negocio ficticio, hecho por Hammock AI.">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Aviso obligatorio de demo. -->
+  <aside class="aviso-demo" aria-label="Aviso">
+    <p>Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a></p>
+  </aside>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="#inicio">
+        <img class="marca__logo" src="favicon.svg" alt="" width="36" height="36">
+        <span>Tesela Lunar <span class="marca__rubro">Mosaicos hechos a mano</span></span>
+      </a>
+      <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="boton-menu__icono" aria-hidden="true"></span>
+        Menú
+      </button>
+      <nav class="menu" id="menu-principal" aria-label="Principal">
+        <ul>
+          <li><a href="#piezas">Piezas</a></li>
+          <li><a href="#encargos">Encargos</a></li>
+          <li><a href="#talleres">Talleres</a></li>
+          <li><a href="#artista">La artista</a></li>
+          <li><a href="#envios">Envíos</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <section class="hero" id="inicio" aria-labelledby="titulo-inicio">
+      <div class="contenedor hero__grilla">
+        <div>
+          <p class="etiqueta">Taller de mosaicos</p>
+          <h1 id="titulo-inicio">Mosaicos hechos a mano, <span class="resaltado">tesela por tesela</span>.</h1>
+          <p class="hero__bajada">Espejos, cuadros, macetas y mesas de vidrio y cerámica, cortados y pegados a mano. También hago piezas por encargo y talleres para aprender.</p>
+          <div class="botones">
+            <a class="boton boton--principal" href="#piezas">Ver piezas disponibles</a>
+            <a class="boton boton--secundario" href="#encargos">Pedir un encargo</a>
+          </div>
+        </div>
+        <!-- Primera imagen visible: sin loading="lazy". -->
+        <img class="hero__imagen" src="img/portada.svg" alt="Ilustración de un mosaico: una luna creciente dorada y estrellas sobre un cielo azul, con las teselas en círculos." width="480" height="480">
+      </div>
+    </section>
+
+    <!-- PIEZAS: para agregar una, copia un <li class="pieza"> completo.
+         Estado: "Disponible" o "Vendida" (texto, no solo color). Una pieza
+         vendida no lleva botón de consulta: invita a pedir una parecida. -->
+    <section class="seccion" id="piezas" aria-labelledby="titulo-piezas">
+      <div class="contenedor">
+        <h2 id="titulo-piezas">Piezas</h2>
+        <p class="seccion__intro">Cada pieza es única. Las disponibles se pueden retirar o enviar; si una ya se vendió, puedo hacerte una parecida por encargo.</p>
+        <ul class="piezas" role="list">
+          <li class="pieza">
+            <img class="pieza__imagen" src="img/espejo-luna-de-agua.svg" alt="Ilustración de un espejo redondo con marco de mosaico en anillos dorados, turquesa y azul añil." width="400" height="400" loading="lazy">
+            <div class="pieza__cuerpo">
+              <h3 class="pieza__nombre">Luna de agua</h3>
+              <p class="estado estado--disponible">Disponible</p>
+              <p class="pieza__tipo">Espejo redondo</p>
+              <dl class="pieza__datos">
+                <div><dt>Medidas</dt><dd>60 cm de diámetro</dd></div>
+                <div><dt>Técnica</dt><dd>Vidrio y espejo sobre madera, fragua gris</dd></div>
+                <div><dt>Precio de ejemplo</dt><dd>$85.000</dd></div>
+              </dl>
+              <a class="boton boton--principal boton--ancho boton--demo" href="https://hammockai.site">
+                <span class="boton__textos">
+                  <span>Consultar por esta pieza<span class="sr-only">: Luna de agua</span></span>
+                  <span class="boton__demo">¿Quieres un sitio así?<span class="sr-only"> Botón de ejemplo: lleva a hammockai.site.</span></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="pieza">
+            <img class="pieza__imagen" src="img/cuadro-ola-chica.svg" alt="Ilustración de un cuadro de mosaico con olas turquesa y azules y un sol naranja sobre un cielo crema." width="400" height="400" loading="lazy">
+            <div class="pieza__cuerpo">
+              <h3 class="pieza__nombre">Ola chica</h3>
+              <p class="estado estado--disponible">Disponible</p>
+              <p class="pieza__tipo">Cuadro</p>
+              <dl class="pieza__datos">
+                <div><dt>Medidas</dt><dd>40 × 40 cm</dd></div>
+                <div><dt>Técnica</dt><dd>Azulejo partido (trencadís) sobre madera</dd></div>
+                <div><dt>Precio de ejemplo</dt><dd>$52.000</dd></div>
+              </dl>
+              <a class="boton boton--principal boton--ancho boton--demo" href="https://hammockai.site">
+                <span class="boton__textos">
+                  <span>Consultar por esta pieza<span class="sr-only">: Ola chica</span></span>
+                  <span class="boton__demo">¿Quieres un sitio así?<span class="sr-only"> Botón de ejemplo: lleva a hammockai.site.</span></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="pieza pieza--vendida">
+            <img class="pieza__imagen" src="img/cuadro-pez-de-colores.svg" alt="Ilustración de un cuadro de mosaico con un pez naranja de aletas doradas sobre un fondo azul y turquesa." width="400" height="400" loading="lazy">
+            <div class="pieza__cuerpo">
+              <h3 class="pieza__nombre">Pez de colores</h3>
+              <p class="estado estado--vendida">Vendida</p>
+              <p class="pieza__tipo">Cuadro</p>
+              <dl class="pieza__datos">
+                <div><dt>Medidas</dt><dd>40 × 40 cm</dd></div>
+                <div><dt>Técnica</dt><dd>Vidrio y cerámica esmaltada sobre madera</dd></div>
+                <div><dt>Precio de ejemplo</dt><dd>$58.000</dd></div>
+              </dl>
+              <a class="boton boton--secundario boton--ancho" href="#encargos">Pedir una parecida por encargo</a>
+            </div>
+          </li>
+          <li class="pieza">
+            <img class="pieza__imagen" src="img/maceta-sol.svg" alt="Ilustración de una maceta cubierta de trozos de azulejo, con un sol naranja y dorado al centro y una planta." width="400" height="400" loading="lazy">
+            <div class="pieza__cuerpo">
+              <h3 class="pieza__nombre">Maceta Sol</h3>
+              <p class="estado estado--disponible">Disponible</p>
+              <p class="pieza__tipo">Maceta</p>
+              <dl class="pieza__datos">
+                <div><dt>Medidas</dt><dd>22 cm de alto</dd></div>
+                <div><dt>Técnica</dt><dd>Trencadís sobre maceta de barro, fragua blanca</dd></div>
+                <div><dt>Precio de ejemplo</dt><dd>$28.000</dd></div>
+              </dl>
+              <a class="boton boton--principal boton--ancho boton--demo" href="https://hammockai.site">
+                <span class="boton__textos">
+                  <span>Consultar por esta pieza<span class="sr-only">: Maceta Sol</span></span>
+                  <span class="boton__demo">¿Quieres un sitio así?<span class="sr-only"> Botón de ejemplo: lleva a hammockai.site.</span></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="pieza">
+            <img class="pieza__imagen" src="img/posavasos-huerta.svg" alt="Ilustración de cuatro posavasos de mosaico: una flor, franjas verdes, un damero azul y un sol." width="400" height="400" loading="lazy">
+            <div class="pieza__cuerpo">
+              <h3 class="pieza__nombre">Posavasos Huerta</h3>
+              <p class="estado estado--disponible">Disponible</p>
+              <p class="pieza__tipo">Set de 4 posavasos</p>
+              <dl class="pieza__datos">
+                <div><dt>Medidas</dt><dd>10 × 10 cm cada uno</dd></div>
+                <div><dt>Técnica</dt><dd>Cerámica esmaltada sobre madera, base de corcho</dd></div>
+                <div><dt>Precio de ejemplo</dt><dd>$18.000 el set</dd></div>
+              </dl>
+              <a class="boton boton--principal boton--ancho boton--demo" href="https://hammockai.site">
+                <span class="boton__textos">
+                  <span>Consultar por esta pieza<span class="sr-only">: Posavasos Huerta</span></span>
+                  <span class="boton__demo">¿Quieres un sitio así?<span class="sr-only"> Botón de ejemplo: lleva a hammockai.site.</span></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="pieza pieza--vendida">
+            <img class="pieza__imagen" src="img/mesa-mandala.svg" alt="Ilustración de una cubierta de mesa redonda con un mandala de mosaico en terracota, dorado, turquesa y añil." width="400" height="400" loading="lazy">
+            <div class="pieza__cuerpo">
+              <h3 class="pieza__nombre">Mandala terracota</h3>
+              <p class="estado estado--vendida">Vendida</p>
+              <p class="pieza__tipo">Mesa lateral</p>
+              <dl class="pieza__datos">
+                <div><dt>Medidas</dt><dd>Cubierta de 45 cm de diámetro</dd></div>
+                <div><dt>Técnica</dt><dd>Cerámica y vidrio sobre madera, patas de hierro</dd></div>
+                <div><dt>Precio de ejemplo</dt><dd>$140.000</dd></div>
+              </dl>
+              <a class="boton boton--secundario boton--ancho" href="#encargos">Pedir una parecida por encargo</a>
+            </div>
+          </li>
+        </ul>
+        <p class="nota"><strong>Ilustraciones y precios de ejemplo.</strong> En el sitio de una artista real, aquí van fotos de sus piezas y sus precios, y «Consultar por esta pieza» abre WhatsApp con el nombre de la pieza ya escrito. En esta demo, los botones llevan a hammockai.site.</p>
+      </div>
+    </section>
+
+    <section class="seccion seccion--alt" id="encargos" aria-labelledby="titulo-encargos">
+      <div class="contenedor">
+        <h2 id="titulo-encargos">Encargos a pedido</h2>
+        <p class="seccion__intro">¿Quieres un mosaico para un lugar de tu casa, con tus colores o tus medidas? Lo diseñamos juntos, paso a paso.</p>
+        <ol class="pasos" role="list">
+          <li class="paso">
+            <h3>Cuéntame tu idea</h3>
+            <p>Dónde va la pieza, medidas aproximadas, colores que te gustan y, si puedes, una foto del lugar.</p>
+          </li>
+          <li class="paso">
+            <h3>Boceto y presupuesto</h3>
+            <p>Te envío un boceto con los colores y el presupuesto por escrito. Empiezo cuando lo apruebas.</p>
+          </li>
+          <li class="paso">
+            <h3>Tesela por tesela</h3>
+            <p>Corto y pego cada pedazo a mano, y te muestro fotos del avance.</p>
+          </li>
+          <li class="paso">
+            <h3>Entrega</h3>
+            <p>La retiras en el taller o te la envío. Mira <a href="#envios">envíos y retiro</a>.</p>
+          </li>
+        </ol>
+        <div class="grilla-paneles">
+          <div class="panel">
+            <h3>Plazos</h3>
+            <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: plazo habitual de un encargo, por ejemplo «de 3 a 5 semanas según el tamaño»]</p>
+          </div>
+          <div class="panel">
+            <h3>Para empezar</h3>
+            <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: si pides un abono al aprobar el boceto, y de cuánto]</p>
+          </div>
+        </div>
+        <div class="botones seccion__accion">
+          <a class="boton boton--principal boton--demo" href="https://hammockai.site">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+            <span class="boton__textos">
+              <span>Pedir un encargo por WhatsApp</span>
+              <span class="boton__demo">¿Quieres un sitio así?<span class="sr-only"> Botón de ejemplo: lleva a hammockai.site.</span></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="talleres" aria-labelledby="titulo-talleres">
+      <div class="contenedor">
+        <h2 id="titulo-talleres">Talleres y clases</h2>
+        <p class="seccion__intro">Para aprender a cortar, pegar y fraguar tu propio mosaico. No necesitas experiencia.</p>
+        <ul class="tarjetas" role="list">
+          <li class="tarjeta">
+            <span class="teselas" aria-hidden="true"></span>
+            <h3>Taller de iniciación</h3>
+            <p>Una sesión para probar: aprendes lo básico y te llevas un posavasos hecho por ti.</p>
+            <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: duración, fechas y valor]</p>
+          </li>
+          <li class="tarjeta">
+            <span class="teselas teselas--2" aria-hidden="true"></span>
+            <h3>Curso de mosaico</h3>
+            <p>Varias sesiones para hacer una pieza más grande a tu ritmo: un espejo, una maceta o un cuadro.</p>
+            <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: número de sesiones, horario y valor]</p>
+          </li>
+          <li class="tarjeta">
+            <span class="teselas teselas--3" aria-hidden="true"></span>
+            <h3>Taller para grupos</h3>
+            <p>Para cumpleaños, equipos de trabajo o amigos que quieren hacer algo con las manos.</p>
+            <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: cupo, lugar y valor]</p>
+          </li>
+        </ul>
+        <div class="botones seccion__accion">
+          <a class="boton boton--principal boton--demo" href="https://hammockai.site">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+            <span class="boton__textos">
+              <span>Preguntar por el próximo taller</span>
+              <span class="boton__demo">¿Quieres un sitio así?<span class="sr-only"> Botón de ejemplo: lleva a hammockai.site.</span></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE LA ARTISTA: su historia la escribe ella (o se la pide el
+         Prompt Engineer en base a lo que cuente). Nada de años, premios ni
+         estudios que no haya confirmado por escrito. -->
+    <section class="seccion seccion--alt" id="artista" aria-labelledby="titulo-artista">
+      <div class="contenedor dos-columnas">
+        <div class="texto-largo">
+          <h2 id="titulo-artista">Sobre la artista</h2>
+          <p>Tesela Lunar es un taller chico: cada pieza se diseña, se corta y se pega a mano, una por una.</p>
+          <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: tu nombre y cómo llegaste al mosaico, en 2 o 3 frases]</p>
+          <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: dónde está tu taller y con qué materiales te gusta trabajar]</p>
+          <p>Una <em>tesela</em> es cada uno de los pedacitos que forman un mosaico.</p>
+        </div>
+        <figure class="artista__figura">
+          <img src="img/taller.svg" alt="Ilustración: una mesa de trabajo con un mosaico de un sol a medio pegar y teselas de colores sueltas." width="480" height="360" loading="lazy">
+          <figcaption>Ilustración de ejemplo. En el sitio real va una foto de la artista o de su taller.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="seccion" id="envios" aria-labelledby="titulo-envios">
+      <div class="contenedor">
+        <h2 id="titulo-envios">Envíos y retiro</h2>
+        <p class="seccion__intro">Puedes retirar tu pieza en el taller o recibirla en tu casa.</p>
+        <div class="grilla-paneles">
+          <div class="panel">
+            <h3>Retiro en el taller</h3>
+            <p>Coordinamos el día por mensaje.</p>
+            <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: barrio o comuna del taller, y días y horario de retiro]</p>
+          </div>
+          <div class="panel">
+            <h3>Envíos</h3>
+            <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: a qué ciudades envías, con qué empresa y quién paga el envío]</p>
+          </div>
+          <div class="panel">
+            <h3>Embalaje</h3>
+            <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: cómo embalas las piezas, sobre todo los espejos y las piezas grandes]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion--alt" id="preguntas" aria-labelledby="titulo-preguntas">
+      <div class="contenedor">
+        <h2 id="titulo-preguntas">Preguntas frecuentes</h2>
+        <div class="preguntas">
+          <details class="pregunta">
+            <summary>¿Cada pieza es única?</summary>
+            <div class="pregunta__respuesta">
+              <p>Sí. Cada pieza se hace a mano, tesela por tesela. Si una ya se vendió, puedo hacerte una parecida por encargo, pero nunca queda idéntica.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Puedo pedir una pieza con mis colores o medidas?</summary>
+            <div class="pregunta__respuesta">
+              <p>Sí, para eso están los <a href="#encargos">encargos</a>. Cuéntame la idea y te digo si se puede hacer en mosaico y cómo.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Los mosaicos se pueden poner afuera?</summary>
+            <div class="pregunta__respuesta">
+              <p>Depende de los materiales de cada pieza. Pregúntame por la que te interesa y te digo si va mejor adentro o afuera.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Cómo se limpia un mosaico?</summary>
+            <div class="pregunta__respuesta">
+              <p>Con un paño suave apenas húmedo. Evita productos abrasivos o ácidos: pueden dañar la fragua, que es el material entre las teselas.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Cómo se paga?</summary>
+            <div class="pregunta__respuesta">
+              <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: medios de pago que aceptas]</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="contenedor contacto">
+        <div>
+          <h2 id="titulo-contacto">¿Te gustó una pieza o tienes una idea?</h2>
+          <p>Escríbeme con el nombre de la pieza o una foto de lo que imaginas, y te respondo.</p>
+          <!-- En el sitio real: wa.me con mensaje ("Hola, vi tu sitio y
+               quiero hacer una consulta"), tel: y mailto: de la artista. -->
+          <ul class="contacto__acciones" role="list">
+            <li>
+              <a class="boton boton--principal boton--ancho boton--demo" href="https://hammockai.site">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+                <span class="boton__textos">
+                  <span>Escribir por WhatsApp</span>
+                  <span class="boton__demo">¿Quieres un sitio así?<span class="sr-only"> Botón de ejemplo: lleva a hammockai.site.</span></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="boton boton--secundario boton--ancho boton--demo" href="https://hammockai.site">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+                <span class="boton__textos">
+                  <span>Llamar al taller</span>
+                  <span class="boton__demo">¿Quieres un sitio así?<span class="sr-only"> Botón de ejemplo: lleva a hammockai.site.</span></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="boton boton--secundario boton--ancho boton--demo" href="https://hammockai.site">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span class="boton__textos">
+                  <span>Escribir un correo</span>
+                  <span class="boton__demo">¿Quieres un sitio así?<span class="sr-only"> Botón de ejemplo: lleva a hammockai.site.</span></span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="nota">Botones de ejemplo: en el sitio real llevan al WhatsApp, al teléfono y al correo de la artista. Aquí llevan a hammockai.site.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Cuándo respondo</h3>
+          <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: días y horario en que respondes mensajes]</p>
+          <h3>Dónde está el taller</h3>
+          <!-- Mapa como enlace, nunca incrustado (ver base/index.html). -->
+          <p class="tiza"><span class="tiza__etiqueta">Lo completa la artista</span> [dato del cliente: barrio o comuna; la dirección exacta, solo si recibes visitas]</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__grilla">
+      <div>
+        <p class="pie__nombre">Tesela Lunar</p>
+        <p>Mosaicos hechos a mano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="#piezas">Piezas</a></li>
+          <li><a href="#encargos">Encargos</a></li>
+          <li><a href="#talleres">Talleres</a></li>
+          <li><a href="#artista">La artista</a></li>
+          <li><a href="#envios">Envíos</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="pie__legal">
+        <p class="pie__aviso">Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a>. El taller, sus piezas y sus precios son inventados. <a href="https://hammockai.site">¿Quieres un sitio así?</a></p>
+        <p>© <span data-anio>2026</span> Hammock AI. Esta página no usa cookies ni herramientas de rastreo.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

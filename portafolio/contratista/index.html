@@ -1,0 +1,389 @@
+<!doctype html>
+<!--
+  ============================================================================
+  index.html · DEMO "Plomada" · contratista de remodelaciones · Hammock AI
+  ----------------------------------------------------------------------------
+  NEGOCIO FICTICIO. Nombre inventado y sin dirección, teléfono ni correo.
+  Los botones de WhatsApp, teléfono y correo llevan a https://hammockai.site
+  y lo dicen en el mismo botón (marca "ejemplo" y "¿Quieres un sitio así?
+  → Hammock AI"): un número inventado puede ser de una persona real. Las
+  imágenes son ilustraciones propias, no fotos de obras reales. El aviso
+  "Sitio de ejemplo" es obligatorio y no se quita mientras sea una demo.
+
+  DE DÓNDE SALE: es la plantilla base/ con otro tema (tokens en style.css)
+  y secciones extra: antes/después y "Así trabajamos" (en vez de
+  testimonios: una demo no muestra opiniones inventadas).
+
+  POR QUÉ NO TIENE canonical, sitemap NI datos estructurados (JSON-LD):
+  un negocio que no existe no debe aparecer en Google como si existiera.
+  Por eso lleva noindex (aquí y en _headers).
+
+  SI UN CLIENTE PARTE DE ESTA DEMO: ver docs/entrega.md, "Si partiste de
+  una demo" (quitar noindex y avisos, agregar canonical, JSON-LD y sitemap).
+  ============================================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSP: la misma de base/ (explicada allí). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+  <title>Plomada · Remodelaciones de interiores · Sitio de ejemplo</title>
+  <meta name="description" content="Sitio de ejemplo hecho por Hammock AI para un negocio ficticio de remodelaciones: cocinas, baños, pisos y terminaciones.">
+  <!-- Demo: que los buscadores no la indexen. -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1f3b63">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+
+  <!-- Vista previa al compartir el enlace. Copia en hammockai.site: og:image y
+       og:url llevan la dirección completa (varias redes no leen rutas relativas). -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hammockai.site/portafolio/contratista/">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:title" content="Sitio de ejemplo · Plomada, remodelaciones (negocio ficticio)">
+  <meta property="og:description" content="Sitio de ejemplo hecho por Hammock AI para un negocio ficticio de remodelaciones de interiores.">
+  <meta property="og:image" content="https://hammockai.site/portafolio/contratista/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Plomada, remodelaciones de interiores: ilustración de una pieza a medio remodelar y la franja Sitio de ejemplo, negocio ficticio, hecho por Hammock AI.">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Aviso obligatorio de demo. <aside> = contenido aparte del principal;
+       con nombre propio para que el lector de pantalla lo anuncie. -->
+  <aside class="aviso-demo" aria-label="Aviso">
+    <p>Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a></p>
+  </aside>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="#inicio">
+        <img class="marca__logo" src="favicon.svg" alt="" width="36" height="36">
+        <span>Plomada <span class="marca__rubro">Remodelaciones</span></span>
+      </a>
+      <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="boton-menu__icono" aria-hidden="true"></span>
+        Menú
+      </button>
+      <nav class="menu" id="menu-principal" aria-label="Principal">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#trabajos">Antes y después</a></li>
+          <li><a href="#como-trabajamos">Cómo trabajamos</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="boton boton--principal cabecera__cta" href="https://hammockai.site">¿Quieres un sitio así?</a>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <section class="hero" id="inicio" aria-labelledby="titulo-inicio">
+      <div class="contenedor hero__grilla">
+        <div>
+          <p class="etiqueta">Remodelaciones para casas y departamentos</p>
+          <h1 id="titulo-inicio">Tu remodelación, <span class="resaltado">clara</span> de principio a fin.</h1>
+          <p class="hero__bajada">Cocinas, baños, pisos y terminaciones. Vamos a ver tu espacio, te entregamos un presupuesto por escrito y te mostramos el avance de la obra.</p>
+          <div class="botones">
+            <!-- Botón de demo: lleva a Hammock AI y lo dice (una demo nunca lleva
+                 a un número inventado: podría ser de una persona real). En el
+                 sitio de un cliente: href="https://wa.me/<número>?text=Hola%2C%20quiero%20pedir%20una%20visita."
+                 (ver base/index.html) y se borran <span class="boton__marca"> y
+                 <span class="boton__destino">. -->
+            <a class="boton boton--principal boton--demo" href="https://hammockai.site">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+              <span class="boton__textos">
+                <span>Pedir visita por WhatsApp <span class="boton__marca">ejemplo</span></span>
+                <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+              </span>
+            </a>
+            <a class="boton boton--secundario" href="#trabajos">Ver antes y después</a>
+          </div>
+          <ul class="hero__puntos" role="list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Presupuesto por escrito: qué incluye y qué no</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fotos del avance durante la obra</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Una persona a cargo de tu obra</li>
+          </ul>
+        </div>
+        <img class="hero__imagen" src="img/hero.svg" alt="Ilustración: una pieza a medio remodelar, con el muro viejo a un lado y el muro recién pintado y el piso de madera nuevo al otro." width="640" height="520">
+      </div>
+    </section>
+
+    <section class="seccion" id="servicios" aria-labelledby="titulo-servicios">
+      <div class="contenedor">
+        <h2 id="titulo-servicios">Qué hacemos</h2>
+        <p class="seccion__intro">Remodelaciones del interior de tu casa o departamento. Si no ves lo que necesitas, pregúntanos.</p>
+        <ul class="tarjetas" role="list">
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M2 10h20M9 6.5V4M12 6.5V3M15 6.5V4"/></svg></span>
+            <h3>Cocinas</h3>
+            <p>Muebles, cubiertas, revestimientos de muro e iluminación. Partimos por medir y ver cómo usas tu cocina.</p>
+          </li>
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>
+            <h3>Baños</h3>
+            <p>Cambio de revestimientos, ducha o tina, mueble de lavamanos y grifería.</p>
+          </li>
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+            <h3>Pisos y revestimientos</h3>
+            <p>Piso flotante, cerámica o porcelanato, con nivelación previa cuando hace falta.</p>
+          </li>
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="6" rx="1.5"/><path d="M17 6h3v5h-8v3"/><rect x="10.5" y="14" width="3" height="7" rx="1"/></svg></span>
+            <h3>Pintura y terminaciones</h3>
+            <p>Reparación de grietas, preparación de muros, pintura y molduras.</p>
+          </li>
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9.3h18M3 14.6h18M9 4v5.3M15 9.3v5.3M9 14.6V20"/></svg></span>
+            <h3>Tabiques y cielos rasos</h3>
+            <p>Divisiones livianas para ganar un espacio, e instalación o reparación de cielos rasos.</p>
+          </li>
+          <li class="tarjeta">
+            <span class="tarjeta__icono"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V5h6v3M3 13h18M11 13v2h2v-2"/></svg></span>
+            <h3>Reparaciones del hogar</h3>
+            <p>Puertas que no cierran, cerámicas sueltas, sellos de ducha y otros arreglos puntuales.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion seccion--alt" id="trabajos" aria-labelledby="titulo-trabajos">
+      <div class="contenedor">
+        <h2 id="titulo-trabajos">Antes y después</h2>
+        <p class="seccion__intro">Tres tipos de obra que hacemos seguido, y lo que incluye cada una.</p>
+        <ul class="obras" role="list">
+          <li class="obra">
+            <h3>Cocina de departamento</h3>
+            <div class="obra__par">
+              <figure class="obra__foto">
+                <img src="img/cocina-antes.svg" alt="Ilustración de la cocina antes: muebles gastados, una puerta descolgada, azulejos trizados y piso levantado." width="400" height="300" loading="lazy">
+                <figcaption>Antes</figcaption>
+              </figure>
+              <figure class="obra__foto obra__foto--despues">
+                <img src="img/cocina-despues.svg" alt="Ilustración de la cocina después: muebles azules, cubierta de madera, revestimiento blanco, lámparas colgantes y piso claro." width="400" height="300" loading="lazy">
+                <figcaption>Después</figcaption>
+              </figure>
+            </div>
+            <p>Muebles, cubierta y revestimiento de muro nuevos, e iluminación sobre la cubierta.</p>
+          </li>
+          <li class="obra">
+            <h3>Baño completo</h3>
+            <div class="obra__par">
+              <figure class="obra__foto">
+                <img src="img/bano-antes.svg" alt="Ilustración del baño antes: tina manchada, azulejos con trizaduras y humedad, y cañería a la vista." width="400" height="300" loading="lazy">
+                <figcaption>Antes</figcaption>
+              </figure>
+              <figure class="obra__foto obra__foto--despues">
+                <img src="img/bano-despues.svg" alt="Ilustración del baño después: ducha con mampara de vidrio, mueble flotante de madera y espejo redondo iluminado." width="400" height="300" loading="lazy">
+                <figcaption>Después</figcaption>
+              </figure>
+            </div>
+            <p>La tina se cambió por una ducha, con revestimientos, mueble de lavamanos y espejo nuevos.</p>
+          </li>
+          <li class="obra">
+            <h3>Living</h3>
+            <div class="obra__par">
+              <figure class="obra__foto">
+                <img src="img/living-antes.svg" alt="Ilustración del living antes: pintura soltándose, una grieta, guardapolvo roto y alfombra manchada." width="400" height="300" loading="lazy">
+                <figcaption>Antes</figcaption>
+              </figure>
+              <figure class="obra__foto obra__foto--despues">
+                <img src="img/living-despues.svg" alt="Ilustración del living después: piso de madera, un muro pintado de azul con repisa y muros reparados." width="400" height="300" loading="lazy">
+                <figcaption>Después</figcaption>
+              </figure>
+            </div>
+            <p>Piso de madera nuevo, muros reparados y pintados, y un muro de color.</p>
+          </li>
+        </ul>
+        <p class="nota"><strong>Ilustraciones de ejemplo.</strong> En el sitio de un negocio real, aquí van fotos de sus propias obras, con permiso de cada cliente.</p>
+      </div>
+    </section>
+
+    <!-- En vez de testimonios: el proceso. Una demo no muestra opiniones
+         inventadas, y a quien va a contratar le sirve saber qué viene. -->
+    <section class="seccion" id="como-trabajamos" aria-labelledby="titulo-como">
+      <div class="contenedor">
+        <h2 id="titulo-como">Así trabajamos</h2>
+        <p class="seccion__intro">Cada paso se conversa antes de avanzar al siguiente.</p>
+        <ol class="pasos">
+          <li class="paso">
+            <h3>Nos cuentas qué quieres cambiar</h3>
+            <p>Por WhatsApp, con un par de fotos del espacio. Te respondemos para coordinar una visita.</p>
+          </li>
+          <li class="paso">
+            <h3>Visitamos y medimos</h3>
+            <p>Vemos el espacio, revisamos muros, pisos e instalaciones, y conversamos lo que necesitas.</p>
+          </li>
+          <li class="paso">
+            <h3>Presupuesto por escrito</h3>
+            <p>Dice qué incluye, qué no incluye, los materiales y un plazo estimado. Nada empieza sin tu aprobación.</p>
+          </li>
+          <li class="paso">
+            <h3>Obra con avance a la vista</h3>
+            <p>Una persona a cargo te envía fotos del avance y te avisa antes de seguir si aparece algo no previsto.</p>
+          </li>
+          <li class="paso">
+            <h3>Revisamos juntos y entregamos</h3>
+            <p>Recorremos el trabajo terminado, anotamos los detalles por corregir y los resolvemos antes de cerrar.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="banda" aria-labelledby="titulo-banda">
+      <div class="contenedor banda__fila">
+        <div>
+          <h2 id="titulo-banda">¿Tienes un espacio que quieres cambiar?</h2>
+          <p>Mándanos un par de fotos y coordinamos una visita.</p>
+        </div>
+        <a class="boton boton--principal boton--demo" href="https://hammockai.site">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+          <span class="boton__textos">
+            <span>Escribir por WhatsApp <span class="boton__marca">ejemplo</span></span>
+            <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="seccion" id="nosotros" aria-labelledby="titulo-nosotros">
+      <div class="contenedor dos-columnas">
+        <div class="texto-largo">
+          <h2 id="titulo-nosotros">Quiénes somos</h2>
+          <p>Plomada es un equipo chico dedicado a remodelaciones de interiores. Hacemos pocas obras a la vez para que cada una tenga a alguien a cargo de principio a fin.</p>
+          <p>La plomada es la herramienta que se usa para comprobar que un muro está derecho. Nos gusta el nombre porque resume cómo queremos trabajar: con orden y revisando cada paso.</p>
+        </div>
+        <div class="panel">
+          <h3>Lo que puedes esperar</h3>
+          <ul class="lista-check" role="list">
+            <li>Saber qué incluye y qué no el trabajo, antes de empezar</li>
+            <li>Pisos y muebles protegidos durante la obra</li>
+            <li>Un solo contacto para todo lo de tu obra</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion--alt" id="preguntas" aria-labelledby="titulo-preguntas">
+      <div class="contenedor">
+        <h2 id="titulo-preguntas">Preguntas frecuentes</h2>
+        <div class="preguntas">
+          <details class="pregunta">
+            <summary>¿La visita para cotizar tiene costo?</summary>
+            <div class="pregunta__respuesta">
+              <p>Depende de la zona y del tipo de trabajo. Te lo decimos por WhatsApp antes de agendar, para que no haya dudas.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Cuánto demora una remodelación?</summary>
+            <div class="pregunta__respuesta">
+              <p>Depende del tamaño y de los materiales. El plazo estimado queda escrito en el presupuesto y, si algo lo cambia, te avisamos antes de seguir.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Quién compra los materiales?</summary>
+            <div class="pregunta__respuesta">
+              <p>Como prefieras: podemos incluirlos en el presupuesto o puedes comprarlos tú con la lista que te entregamos.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Trabajan en edificios con reglamento interno?</summary>
+            <div class="pregunta__respuesta">
+              <p>Sí. Antes de empezar revisamos contigo los horarios permitidos y lo que pide la administración del edificio.</p>
+            </div>
+          </details>
+          <details class="pregunta">
+            <summary>¿Qué pasa si aparece un problema que no se veía?</summary>
+            <div class="pregunta__respuesta">
+              <p>Paramos, te mostramos con fotos lo que encontramos y te proponemos opciones con su costo. Seguimos solo con tu aprobación.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="contenedor contacto">
+        <div>
+          <h2 id="titulo-contacto">Conversemos tu proyecto</h2>
+          <p>Escríbenos por WhatsApp con un par de fotos del espacio que quieres cambiar, o llámanos en horario de atención.</p>
+          <ul class="contacto__acciones" role="list">
+            <li>
+              <a class="boton boton--principal boton--ancho boton--demo" href="https://hammockai.site">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+                <span class="boton__textos">
+                  <span>Escribir por WhatsApp <span class="boton__marca">ejemplo</span></span>
+                  <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="boton boton--secundario boton--ancho boton--demo" href="https://hammockai.site">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+                <span class="boton__textos">
+                  <span>Llamar por teléfono <span class="boton__marca">ejemplo</span></span>
+                  <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="boton boton--secundario boton--ancho boton--demo" href="https://hammockai.site">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span class="boton__textos">
+                  <span>Escribir un correo <span class="boton__marca">ejemplo</span></span>
+                  <span class="boton__destino">¿Quieres un sitio así? <span aria-hidden="true">→</span><span class="sr-only">Lleva a</span> Hammock AI</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="nota">Estos botones son de ejemplo: llevan al sitio de Hammock AI. En el sitio de un negocio real abren su WhatsApp, su teléfono y su correo.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Horario de atención</h3>
+          <dl class="horario">
+            <div><dt>Lunes a viernes</dt><dd>9:00 a 18:00</dd></div>
+            <div><dt>Sábado</dt><dd>10:00 a 14:00</dd></div>
+            <div><dt>Domingo y festivos</dt><dd>Cerrado</dd></div>
+          </dl>
+
+          <h3>Dónde trabajamos</h3>
+          <!-- Un contratista va a la casa del cliente: no hace falta mapa.
+               Si el negocio tiene local, usa el enlace de mapa de base/. -->
+          <p>Trabajamos a domicilio, dentro de la ciudad. No tenemos local de atención al público.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__grilla">
+      <div>
+        <p class="pie__nombre">Plomada</p>
+        <p>Remodelaciones de interiores.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#trabajos">Antes y después</a></li>
+          <li><a href="#como-trabajamos">Cómo trabajamos</a></li>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="pie__legal">
+        <p class="pie__aviso">Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a>. El nombre es inventado y los botones de contacto son de ejemplo: llevan a Hammock AI.</p>
+        <p>© <span data-anio>2026</span> Hammock AI. Este sitio no usa cookies ni herramientas de rastreo.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

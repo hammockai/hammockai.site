@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" width="640" height="560">
+  <!-- Portada de la demo "Zancada" (negocio ficticio): pictograma de una
+       persona haciendo una zancada sobre un panel verde inclinado.
+       Dibujo propio de Hammock AI. Solo formas, sin estilos ni scripts. -->
+  <path d="M150 40h460L500 520H40z" fill="#c6f432"/>
+  <circle cx="548" cy="104" r="48" fill="#ff6b4a"/>
+  <g fill="#5ec8ff">
+    <path d="M566 400h22l-30 120h-22z"/>
+    <path d="M604 400h22l-30 120h-22z"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="12" stroke-linecap="round">
+    <path d="M34 250h62"/>
+    <path d="M14 300h74"/>
+    <path d="M44 350h32"/>
+  </g>
+  <path d="M120 474h372" stroke="#111216" stroke-width="8" stroke-linecap="round" opacity=".18"/>
+  <g fill="none" stroke="#111216" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M318 322l112 16 6 114h40" stroke-width="38"/>
+    <path d="M318 322l-54 108-76 12" stroke-width="38"/>
+    <path d="M340 204l-22 118" stroke-width="46"/>
+    <path d="M346 214l60 46 40-44" stroke-width="28"/>
+    <path d="M338 214l-56 36-26 50" stroke-width="28"/>
+    <path d="M470 196l26-18M478 236h30M462 166l10-28" stroke-width="9"/>
+  </g>
+  <circle cx="360" cy="130" r="38" fill="#111216"/>
+</svg>
