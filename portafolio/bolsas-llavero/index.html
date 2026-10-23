@@ -3,8 +3,8 @@
   ============================================================================
   index.html · DEMO "Plic Plac" · bolsas plegables llavero · Hammock AI
   ----------------------------------------------------------------------------
-  NEGOCIO FICTICIO. Nombre inventado, correo @example.com, sin teléfono ni
-  dirección. Las imágenes son ilustraciones propias, no fotos de productos
+  NEGOCIO FICTICIO. Nombre inventado, sin teléfono, correo ni dirección.
+  Las imágenes son ilustraciones propias, no fotos de productos
   reales. El aviso "Sitio de ejemplo" es obligatorio mientras sea una demo.
 
   ALCANCE (paquete P1, landing de producto de una página)
@@ -28,9 +28,9 @@
   un negocio que no existe no debe aparecer en buscadores como si existiera.
   Por eso lleva noindex (aquí y en _headers).
 
-  BOTONES DE CONTACTO EN LA DEMO: "Pedir por WhatsApp" y "Llamar" llevan a
-  https://hammockai.site y lo dicen ("¿Quieres un sitio así?"). Nunca a un
-  número inventado: podría ser de una persona real.
+  BOTONES DE CONTACTO EN LA DEMO: WhatsApp, teléfono y correo llevan a
+  https://hammockai.site y lo dicen ("Ejemplo: ¿Quieres un sitio así?").
+  Nunca a un número o correo inventado: podría ser de una persona real.
 
   SI UN CLIENTE PARTE DE ESTA DEMO: ver docs/entrega.md, "Si partiste de
   una demo" (quitar noindex y avisos, agregar canonical, JSON-LD y sitemap,
@@ -249,7 +249,7 @@
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
               Pedir por WhatsApp
             </span>
-            <span class="boton__demo">Demo: ¿Quieres un sitio así? Ir a hammockai.site</span>
+            <span class="boton__demo">Ejemplo: ¿Quieres un sitio así? Ir a hammockai.site</span>
           </a>
         </div>
       </div>
@@ -273,7 +273,7 @@
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
             Cotizar por WhatsApp
           </span>
-          <span class="boton__demo">Demo: ¿Quieres un sitio así? Ir a hammockai.site</span>
+          <span class="boton__demo">Ejemplo: ¿Quieres un sitio así? Ir a hammockai.site</span>
         </a>
       </div>
     </section>
@@ -330,7 +330,7 @@
                   <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
                   Escribir por WhatsApp
                 </span>
-                <span class="boton__demo">Demo: ¿Quieres un sitio así? Ir a hammockai.site</span>
+                <span class="boton__demo">Ejemplo: ¿Quieres un sitio así? Ir a hammockai.site</span>
               </a>
             </li>
             <li>
@@ -340,13 +340,17 @@
                   <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
                   Llamar por teléfono
                 </span>
-                <span class="boton__demo">Demo: ¿Quieres un sitio así? Ir a hammockai.site</span>
+                <span class="boton__demo">Ejemplo: ¿Quieres un sitio así? Ir a hammockai.site</span>
               </a>
             </li>
             <li>
-              <a class="boton boton--secundario boton--ancho" href="mailto:hola@example.com?subject=Consulta%20desde%20el%20sitio%20web">
-                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                Escribir a hola@example.com
+              <!-- En un sitio real: href="mailto:<correo>?subject=Consulta%20desde%20el%20sitio%20web". -->
+              <a class="boton boton--secundario boton--ancho boton--demo" href="https://hammockai.site">
+                <span class="boton__linea">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                  Escribir un correo
+                </span>
+                <span class="boton__demo">Ejemplo: ¿Quieres un sitio así? Ir a hammockai.site</span>
               </a>
             </li>
           </ul>
@@ -382,7 +386,7 @@
         </ul>
       </nav>
       <div class="pie__legal">
-        <p class="pie__aviso">Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a>. El nombre, los precios y el correo son inventados.</p>
+        <p class="pie__aviso">Sitio de ejemplo · negocio ficticio · hecho por <a href="https://hammockai.site">Hammock AI</a>. El nombre y los precios son inventados, y los botones de contacto son de ejemplo: llevan a Hammock AI.</p>
         <p>© <span data-anio>2026</span> Hammock AI. Este sitio no usa cookies ni herramientas de rastreo.</p>
       </div>
     </div>

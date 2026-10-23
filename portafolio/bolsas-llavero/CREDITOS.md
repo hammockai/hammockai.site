@@ -10,6 +10,6 @@
 | Íconos dentro de `index.html` (mensaje, teléfono, sobre, visto bueno) | Formas simples en SVG | Dibujo propio de Hammock AI (los mismos de `base/`). |
 | Letra | Fuentes del sistema de cada dispositivo | No se descarga ninguna fuente. |
 
-**Negocio ficticio:** "Plic Plac" es un nombre inventado para esta demo. Los precios dicen "precio de ejemplo" y no son de nadie. El correo (`hola@example.com`) no corresponde a nadie: `example.com` es un dominio reservado para ejemplos. Los botones de WhatsApp y teléfono llevan a https://hammockai.site, no a un número.
+**Negocio ficticio:** "Plic Plac" es un nombre inventado para esta demo. Los precios dicen "precio de ejemplo" y no son de nadie. No hay teléfono ni correo: los botones de WhatsApp, teléfono y correo llevan a https://hammockai.site y lo dicen en el mismo botón ("Ejemplo: ¿Quieres un sitio así?"), nunca a un número o correo inventado.
 
 **Para un sitio real:** cada foto del producto, con quién la tomó y el permiso de uso. Cada dato entre `[dato del cliente: …]`, confirmado por escrito por el negocio.
