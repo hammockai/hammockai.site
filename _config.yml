@@ -12,3 +12,7 @@ exclude:
   - portafolio/mosaicos/CREDITOS.md
   - portafolio/bolsas-llavero/CREDITOS.md
   - portafolio/gimnasio/CREDITOS.md
+  # Privacy notice for businesses we contact: still a draft (brackets to
+  # fill in, professional review pending). Out of this release.
+  - es/privacidad-contacto
+  - privacy-contact
