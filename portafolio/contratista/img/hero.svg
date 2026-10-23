@@ -36,7 +36,7 @@
     <!-- piso nuevo de madera -->
     <path d="M372 380H640V520H312Z" fill="url(#tablas)"/>
     <rect x="304" y="372" width="336" height="10" fill="#ffffff"/>
-    <!-- plomada colgando de su hilo -->
+    <!-- plomo colgando de su hilo -->
     <path d="M206 0v214" stroke="#142a47" stroke-width="2.5"/>
     <rect x="197" y="212" width="18" height="9" rx="2" fill="#142a47"/>
     <path d="M194 222h24l-2.6 11L206 258l-9.4-25z" fill="#f5a524" stroke="#142a47" stroke-width="3" stroke-linejoin="round"/>

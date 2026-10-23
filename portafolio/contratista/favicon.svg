@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <!-- Logo de la demo "Plomada" (negocio ficticio): una plomada colgando de
-       su hilo. Dibujo propio de Hammock AI. Solo formas, sin estilos ni scripts. -->
+  <!-- Logo de la demo "Escantillón" (negocio ficticio): un plomo colgando
+       de su hilo. Dibujo propio de Hammock AI. Solo formas, sin estilos ni scripts. -->
   <rect width="32" height="32" rx="8" fill="#1f3b63"/>
   <path d="M16 4.5v6.5" stroke="#f7f4ef" stroke-width="2" stroke-linecap="round"/>
   <rect x="12" y="10.5" width="8" height="3.5" rx="1.2" fill="#f5a524"/>
