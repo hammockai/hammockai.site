@@ -10,6 +10,6 @@
 | `og-image.png` | Imagen para redes | Hecha por Hammock AI con las piezas de arriba (rehecha el 2026-10-22 con el nombre nuevo). |
 | Íconos dentro de `index.html` | Formas simples en SVG (servicios, contacto, visto bueno) | Dibujo propio de Hammock AI. |
 
-**Negocio ficticio:** "Escantillón" es un nombre inventado para esta demo, sin dirección, teléfono ni correo. Hasta el 2026-10-22 la demo usaba otro nombre, que coincidía con un negocio real del rubro; el logo (un plomo) viene de ese nombre anterior. Los botones de WhatsApp, teléfono y correo llevan a https://hammockai.site y lo dicen en el mismo botón (marca "ejemplo" y "¿Quieres un sitio así? → Hammock AI"), porque un número o correo inventado podría ser de una persona real.
+**Negocio ficticio:** "Escantillón" es un nombre inventado para esta demo, sin dirección, teléfono ni correo. Hasta el 2026-10-22 la demo usaba otro nombre, que coincidía con un negocio real del rubro; el logo (un plomo) viene de ese nombre anterior. Los botones de WhatsApp, teléfono y correo llevan a https://hammockai.site/es/ y lo dicen en el mismo botón (marca "ejemplo" y "¿Quieres un sitio así? → Hammock AI"), porque un número o correo inventado podría ser de una persona real.
 
 **La OFL pide:** que la licencia viaje con la fuente (por eso está en `fonts/`) y que la fuente no se venda sola. Usarla en un sitio, incluso comercial, está permitido.
