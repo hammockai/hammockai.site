@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-<!-- Logo ficticio de la demo "Mosaicos Artist": luna creciente con líneas de fragua. Dibujo propio de Hammock AI. -->
-<rect width="32" height="32" rx="7" fill="#1b2347"/>
-<path fill="#e8b03f" d="M12.4 6.3A11 11 0 1 0 25.7 19.6A9.5 9.5 0 0 1 12.4 6.3z"/>
-<path fill="none" stroke="#1b2347" stroke-width="1.1" d="M3 12.5h11M3 19h13M8 23v6M8 5v9M13 18v11M19 24v4"/>
-</svg>

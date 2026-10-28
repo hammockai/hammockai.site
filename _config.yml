@@ -9,8 +9,6 @@ exclude:
   # HTML page with no "noindex".
   - portafolio/constructor-management/CREDITOS.md
   - portafolio/therapist-management/CREDITOS.md
-  - portafolio/mosaicos-artist/CREDITOS.md
-  - portafolio/llavero-aguja/CREDITOS.md
   - portafolio/gym-management/CREDITOS.md
   # Privacy notice for businesses we contact: still a draft (brackets to
   # fill in, professional review pending). Out of this release.
