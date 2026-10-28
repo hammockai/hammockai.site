@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" width="640" height="560">
-  <!-- Portada de la demo "Zancada" (negocio ficticio): pictograma de una
-       persona haciendo una zancada sobre un panel verde inclinado.
+  <!-- Portada de la demo "Gym Management" (negocio ficticio): pictograma de una
+       persona haciendo una estocada sobre un panel verde inclinado.
        Dibujo propio de Hammock AI. Solo formas, sin estilos ni scripts. -->
   <path d="M150 40h460L500 520H40z" fill="#c6f432"/>
   <circle cx="548" cy="104" r="48" fill="#ff6b4a"/>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   style.css · DEMO "Remanso" (consulta de psicología, negocio ficticio)
+   style.css · DEMO "Therapist Management" (consulta de psicología, negocio ficticio)
    --------------------------------------------------------------------------
    Es base/style.css con OTRO TEMA: cambian los tokens de :root (colores
    calmos y cálidos, letra un poco más grande, títulos con serifa del
@@ -916,6 +916,14 @@ h2 {
 .marca {
   font-size: 1.375rem;
   line-height: 1.1;
+  flex: 1 1 0; /* celular: el nombre del template se parte en dos líneas y "Menú" queda al lado */
+  min-width: 0;
+}
+
+@media (min-width: 64em) {
+  .marca {
+    flex: 0 1 auto; /* con el menú a la vista, la marca ocupa solo lo que mide */
+  }
 }
 
 .marca__logo {

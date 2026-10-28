@@ -1,4 +1,4 @@
-# Créditos y licencias · demo "Tesela Lunar" (negocio ficticio)
+# Créditos y licencias · demo "Mosaicos Artist" (negocio ficticio)
 
 | Archivo | Qué es | Autor y licencia |
 |---|---|---|
@@ -11,6 +11,6 @@
 | Cenefa de teselas, teselas de talleres y números de los pasos | Dibujos hechos con CSS en `style.css` | Propios de Hammock AI. |
 | Letra del sitio | Fuentes del sistema de cada dispositivo | No se descarga ninguna fuente. |
 
-**Negocio ficticio:** "Tesela Lunar" es un nombre inventado para esta demo. Las piezas, medidas, técnicas y precios son de ejemplo. No hay teléfono, correo ni dirección: los botones de contacto llevan a hammockai.site.
+**Negocio ficticio:** "Mosaicos Artist" es un nombre inventado para esta demo. Las piezas, medidas, técnicas y precios son de ejemplo. No hay teléfono, correo ni dirección: los botones de contacto llevan a hammockai.site.
 
 **Ninguna imagen sale de obras de personas reales.**

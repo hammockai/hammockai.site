@@ -1,4 +1,4 @@
-# Créditos y licencias · demo "Plic Plac" (negocio ficticio)
+# Créditos y licencias · demo "Llavero Aguja" (negocio ficticio)
 
 | Archivo | Qué es | Autor y licencia |
 |---|---|---|
@@ -10,6 +10,6 @@
 | Íconos dentro de `index.html` (mensaje, teléfono, sobre, visto bueno) | Formas simples en SVG | Dibujo propio de Hammock AI (los mismos de `base/`). |
 | Letra | Fuentes del sistema de cada dispositivo | No se descarga ninguna fuente. |
 
-**Negocio ficticio:** "Plic Plac" es un nombre inventado para esta demo. Los precios dicen "precio de ejemplo" y no son de nadie. No hay teléfono ni correo: los botones de WhatsApp, teléfono y correo llevan a https://hammockai.site/es/ y lo dicen en el mismo botón ("Ejemplo: ¿Quieres un sitio así?"), nunca a un número o correo inventado.
+**Negocio ficticio:** "Llavero Aguja" es un nombre inventado para esta demo. Los precios dicen "precio de ejemplo" y no son de nadie. No hay teléfono ni correo: los botones de WhatsApp, teléfono y correo llevan a https://hammockai.site/es/ y lo dicen en el mismo botón ("Ejemplo: ¿Quieres un sitio así?"), nunca a un número o correo inventado.
 
 **Para un sitio real:** cada foto del producto, con quién la tomó y el permiso de uso. Cada dato entre `[dato del cliente: …]`, confirmado por escrito por el negocio.

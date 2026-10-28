@@ -1,5 +1,5 @@
 /* ==========================================================================
-   style.css · Demo "Zancada" (estudio de entrenamiento, NEGOCIO FICTICIO)
+   style.css · Demo "Gym Management" (estudio de entrenamiento, NEGOCIO FICTICIO)
    Hammock AI
    --------------------------------------------------------------------------
    DE DÓNDE SALE
@@ -26,7 +26,7 @@
    ========================================================================== */
 
 
-/* 1. TOKENS (tema "Zancada") ===============================================
+/* 1. TOKENS (tema "Gym Management") ===============================================
    Negro tinta + verde "voltio" + papel claro, con tres colores de apoyo
    (coral, cielo y lila) que solo marcan el tipo de clase. Alto contraste a
    propósito: se lee bien en un celular al sol y en un video grabado de la
@@ -1011,6 +1011,14 @@ h1 {
   font-size: 1.5rem;
   letter-spacing: 0.03em;
   line-height: 1;
+  flex: 1 1 0; /* celular: el nombre del template se parte en dos líneas y "Menú" queda al lado */
+  min-width: 0;
+}
+
+@media (min-width: 48em) {
+  .marca {
+    flex: 0 1 auto; /* con el menú a la vista, la marca ocupa solo lo que mide */
+  }
 }
 
 .marca__logo {

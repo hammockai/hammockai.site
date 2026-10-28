@@ -1,4 +1,4 @@
-# robots.txt · demo "Tesela Lunar" (negocio ficticio)
+# robots.txt · demo "Mosaicos Artist" (negocio ficticio)
 # Se deja revisar todo A PROPÓSITO: la orden de no indexar va en cada página
 # (<meta name="robots" content="noindex">) y en _headers (X-Robots-Tag).
 # Si aquí se bloqueara la revisión (Disallow), Google no podría leer esa
