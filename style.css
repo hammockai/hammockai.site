@@ -255,6 +255,9 @@ svg{display:block}
 .pt-36{padding-top:9rem}
 .pb-20{padding-bottom:5rem}
 .scroll-mt-32{scroll-margin-top:8rem}
+/* Sections reached from the menu: the section padding already clears the
+   fixed header, so a small margin lands the title right under it. */
+.scroll-mt-6{scroll-margin-top:1.5rem}
 .border-t{border-top-width:1px}
 .border-hair{border-color:var(--hair)}
 .bg-black{background-color:#000000}
