@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quintero — Fair prices and copy that sells · Hammock AI</title>
+<meta name="description" content="A free prompt so your AI helps you set fair prices, organize your inventory and write listings that sell, with no tricks.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hammock AI">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Quintero — Fair prices and copy that sells">
+<meta property="og:description" content="A free prompt: prices with a floor and a reason, organizes your inventory and writes honest listings.">
+<meta property="og:url" content="https://hammockai.site/quintero/en/">
+<link rel="canonical" href="https://hammockai.site/quintero/en/">
+<link rel="alternate" hreflang="es" href="https://hammockai.site/quintero/">
+<link rel="alternate" hreflang="en" href="https://hammockai.site/quintero/en/">
+<link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg">
+<style>
+@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-bold.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Archivo Black";src:url("/fonts/archivo-black.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{--ink:#0A0A0A;--coal:#0E0E0E;--surface:#141414;--snow:#FAFAFA;--mist:rgba(250,250,250,.74);--dim:rgba(250,250,250,.56);--ember:#FF6B35;--hair:rgba(255,255,255,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--snow);font-family:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:42rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+a{color:var(--ember)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:var(--ember);color:var(--ink);padding:.5rem 1rem;border-radius:9999px}
+.top{font-size:.9rem;color:var(--dim)}.top a{color:var(--mist)}
+h1,h2{font-family:"Archivo Black",ui-sans-serif,system-ui,sans-serif;font-weight:400;letter-spacing:-.02em}
+h1{font-size:clamp(2.1rem,7vw,3rem);line-height:1.05;margin:2rem 0 .75rem}
+h1 em{font-style:normal;color:var(--ember)}
+h2{font-size:1.35rem;line-height:1.2;margin:3rem 0 1rem}
+.lead{color:var(--mist);font-size:1.1rem;margin:0 0 1.5rem}
+.card{border:1px solid var(--hair);border-radius:1rem;background:var(--surface);padding:1.1rem 1.25rem;margin-bottom:1rem}
+.card p{margin:.35rem 0}
+.list{list-style:none;padding:0;margin:0}
+.list li{border:1px solid var(--hair);border-radius:1rem;background:var(--surface);padding:1rem 1.25rem;margin-bottom:.75rem}
+.list b{display:block}
+.list span{color:var(--mist)}
+.label{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:.25rem}
+.bad{color:var(--dim)}
+.good{border-left:3px solid var(--ember);padding-left:.9rem}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.btn{display:inline-block;font:inherit;font-weight:700;text-decoration:none;border:0;border-radius:9999px;padding:.75rem 1.4rem;cursor:pointer}
+.primary{background:var(--ember);color:var(--ink)}
+.ghost{background:transparent;color:var(--snow);border:1px solid rgba(255,255,255,.15)}
+.opt{display:grid;gap:1rem}
+@media(min-width:640px){.opt{grid-template-columns:1fr 1fr}}
+.opt .card{margin:0;display:flex;flex-direction:column}
+.opt .card .btns{margin-top:auto;padding-top:1rem}
+.price{font-family:"Archivo Black",sans-serif;font-size:1.6rem;margin:.25rem 0}
+.note{color:var(--dim);font-size:.85rem}
+.status{min-height:1.4em;color:var(--mist);font-size:.9rem;margin:.5rem 0 0}
+footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--hair);color:var(--dim);font-size:.85rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="wrap">
+<p class="top"><a href="/">← hammockai.site</a> · <a href="/quintero/" hreflang="es" lang="es">ES</a></p>
+
+<main id="main">
+<h1>Set good prices and <em>sell without lying.</em></h1>
+<p class="lead">Not sure what to charge, what to do with what isn't selling, or what to write in your listing? <b>Quintero, the Quartermaster</b>, is a free prompt that turns your AI into a partner that sets fair prices, organizes your inventory and writes honest copy that sells.</p>
+<div class="btns">
+  <a class="btn primary" href="#download">Download free</a>
+  <a class="btn ghost" href="#example">See an example</a>
+</div>
+
+<h2>What it does for you</h2>
+<ul class="list" role="list">
+  <li><b>Helps you price what you sell.</b><span>Listed price, floor and the reason, with the math in plain sight: materials, your time, shipping and a fair margin.</span></li>
+  <li><b>Organizes your inventory.</b><span>What to list, where and when. If something doesn't sell in 14 days, it tells you whether the problem is the price, the channel or the listing.</span></li>
+  <li><b>Writes the listing, the post or the WhatsApp message.</b><span>Three options with different angles, which one it would use and how to test which works best.</span></li>
+  <li><b>Keeps track of your sales.</b><span>How much you sold, how much was negotiated and which channel works best for you.</span></li>
+  <li><b>No tricks, nothing made up.</b><span>No fake "only 2 hours left!" and no prices that take advantage of the buyer. Flaws are always disclosed.</span></li>
+</ul>
+
+<h2 id="example">An example</h2>
+<div class="card">
+  <p class="label">The request</p>
+  <p>"I have 15 handmade ceramic mugs. Each one costs me $4 in materials and an hour of work. I want to sell them on Instagram."</p>
+  <p class="label" style="margin-top:1rem">Quintero's appraisal</p>
+  <p class="good">Real cost $17 (materials + your hour + shipping) · <b>Listed price $24</b> · <b>Floor $19</b>. "Before you list them, look up 3 similar mugs in your city to confirm the range."</p>
+  <p class="label" style="margin-top:1rem">And the copy (one of three options)</p>
+  <p class="good">"No two are alike: I make every mug myself, one by one. Glazed ceramic, 12 oz, microwave safe. This batch is 15. DM me and I'll set yours aside."</p>
+</div>
+
+<h2>Why it exists</h2>
+<p>Quintero was born from a real sale: a storage room full of stored-away things that turned into about USD 190 in 24 days, with no lies and no returns. It proved that fair pricing and telling the truth also sell. Its motto: <b>who appraises, keeps and shares fairly</b>. And it always tells you the flaws up front.</p>
+
+<h2 id="download">Take it with you</h2>
+<div class="opt">
+  <div class="card">
+    <p class="label">Free</p>
+    <p class="price">The prompt</p>
+    <p>The complete Quintero, in English. Paste it into ChatGPT, Gemini, Claude, Qwen, Kimi, DeepSeek or whichever you use, and fill in your business details at the end.</p>
+    <div class="btns">
+      <a class="btn primary" href="../quintero.en.txt" download="quintero.txt">Download</a>
+      <button class="btn ghost" type="button" id="copy">Copy</button>
+      <a class="btn ghost" href="../quintero.txt" download="quintero-es.txt" lang="es">Español</a>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </div>
+  <div class="card">
+    <p class="label">Full kit</p>
+    <p class="price">USD 3.90</p>
+    <p>The prompt, a ready-to-use inventory and sales spreadsheet, a guide to describe your business and pricing and copy examples for three types of business. As a PDF and as text to copy.</p>
+    <div class="btns">
+      <span class="btn ghost" aria-disabled="true" style="cursor:default;opacity:.7">Coming soon</span>
+    </div>
+    <p class="note">Your purchase helps us keep building these open tools. Thank you.</p>
+  </div>
+</div>
+
+<h2>And if you also need a website?</h2>
+<p>I build simple, fast websites and landing pages for solo dreamers and small businesses, with prices and copy that go through Quintero. The code and the domain stay in your name, and the price is fair.</p>
+<div class="btns">
+  <a class="btn primary" href="/brief/en/">Tell me about your project (5 min)</a>
+  <a class="btn ghost" href="/contramaestre/">Meet the Contramaestre</a>
+</div>
+</main>
+
+<footer>
+  <p>© 2026 Hammock AI · <a href="mailto:hammockai@proton.me">hammockai@proton.me</a></p>
+</footer>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', async () => {
+  const status = document.getElementById('status');
+  try {
+    const res = await fetch('../quintero.en.txt');
+    if (!res.ok) throw new Error(res.status);
+    await navigator.clipboard.writeText(await res.text());
+    status.textContent = 'Copied. Paste it as your first message or in your AI\'s instructions.';
+  } catch (e) {
+    status.textContent = 'Couldn\'t copy. Use the Download button.';
+  }
+});
+</script>
+<!-- GoatCounter: counts visits without cookies or personal data. -->
+<script data-goatcounter="https://hammockai.goatcounter.com/count" async src="/assets/js/count.js"></script>
+</body>
+</html>
