@@ -20,142 +20,170 @@
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 </head>
-<body class="bg-ink font-body text-snow antialiased">
+<body>
+<!-- Íconos propios, de trazo simple, sin dependencias. The Artist puede reemplazarlos por pixel art. -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-site" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM3 9h18M6 6.5h.5M9 6.5h.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9.3h16M4 14.7h16M10 4v16"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 5h16v15H4zM4 10h16M8 3v4M16 3v4M9 15l2 2 4-4"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 17v-6a6 6 0 0 1 12 0v6M4 17h16M10 21h4"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-scatter" viewBox="0 0 24 24"><rect x="3" y="4" width="10" height="7" transform="rotate(-12 8 7.5)"/><rect x="11" y="9" width="10" height="7" transform="rotate(10 16 12.5)"/><rect x="5" y="15" width="9" height="6" transform="rotate(-5 9.5 18)"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11h-9l-5 4v-4H4z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></symbol>
+  <symbol id="i-at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a2.5 2.5 0 0 0 5 0v-1a9 9 0 1 0-3.5 7.1"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><path d="M5 8h14v11H5zM12 4v4M9 13h.5M14.5 13h.5M9 16.5h6"/></symbol>
+  <symbol id="i-check-person" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3 21c0-4 3-7 7-7 1.5 0 3 .4 4 1.2M15 18l2.5 2.5L22 15"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h7M9 16h7"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M8 20h8M4 7h16M4 7l-3 6h6zM20 7l-3 6h6z"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2zM12 10v5M12 18h.01"/></symbol>
+  <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></symbol>
+  <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7 9.5h10M12 9.5V14M12 14l-3 4M12 14l3 4"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5h8a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H2zM22 5h-8a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h8z"/></symbol>
+  <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v14M7 11h10M4 15c0 4 4 6 8 6s8-2 8-6"/></symbol>
+</defs></svg>
+
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header fixed inset-x-0 top-0 z-50 px-4 pt-4">
-  <nav aria-label="Primary" class="pill mx-auto flex w-full max-w-5xl items-center gap-6 px-5 py-3">
-    <a class="flex shrink-0 items-center gap-3" href="#home" aria-label="Hammock AI — back to top">
-      <img class="h-9 w-9 rounded-full" src="assets/images/logo.svg" alt="Hammock AI mark: two palm trees with a hammock slung between them">
-      <span class="font-display text-lg tracking-tight">Hammock AI</span>
-    </a>
-    <ul class="ml-auto hidden items-center gap-8 md:flex" role="list">
-      <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
-      <li><a class="nav-link" href="#services">Services</a></li>
-      <li><a class="nav-link" href="crew/en/">AI Crew</a></li>
-      <li><a class="nav-link" href="#about">About us</a></li>
-    </ul>
-    <a class="lang-link ml-auto md:ml-0" href="es/" hreflang="es" lang="es" aria-label="Ver en español">ES</a>
-    <a class="btn-cta hidden md:inline-flex" href="brief/en/">Get your site</a>
-    <button class="menu-btn md:hidden" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="sr-only">Menu</span>
-      <span class="menu-bar" aria-hidden="true"></span>
-      <span class="menu-bar" aria-hidden="true"></span>
-      <span class="menu-bar" aria-hidden="true"></span>
-    </button>
+<header class="site-header">
+  <nav class="pill" aria-label="Primary">
+    <div class="bar">
+      <a class="brand" href="#home" aria-label="Hammock AI, back to top">
+        <img src="assets/images/logo.svg" width="36" height="36" alt="Hammock AI mark: two palm trees with a hammock slung between them">
+        <span class="display">Hammock AI</span>
+      </a>
+      <ul class="nav" role="list">
+        <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#how">How we work</a></li>
+        <li><a class="nav-link" href="#about">About us</a></li>
+      </ul>
+      <a class="lang-link" href="es/" hreflang="es" lang="es" aria-label="Ver en español">ES</a>
+      <a class="btn btn-head" href="brief/en/">Get your site</a>
+      <button class="menu-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Menu</span>
+        <span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span>
+      </button>
+    </div>
   </nav>
-  <div class="mobile-menu mx-auto w-full max-w-5xl md:hidden" id="mobile-menu" hidden>
+  <div class="mobile-menu" id="mobile-menu" hidden>
     <a class="mobile-link" href="#portfolio">Portfolio</a>
     <a class="mobile-link" href="#services">Services</a>
-    <a class="mobile-link" href="crew/en/">AI Crew</a>
+    <a class="mobile-link" href="#how">How we work</a>
     <a class="mobile-link" href="#about">About us</a>
-    <a class="btn-cta mt-2 w-full" href="brief/en/">Get your site</a>
+    <a class="btn" href="brief/en/">Get your site</a>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- Hero: message on the left, pixel-art island scene drawn behind (see script.js) -->
-  <section id="home" class="hero scroll-mt-32 px-6 pt-36">
+  <!-- 1 · Primera pantalla: qué hacemos, para quién, un solo botón. Fondo: la escena pixel art del sitio (script.js). -->
+  <section id="home" class="hero">
     <canvas class="hero-scene" id="hero-scene" data-scene="hero" aria-hidden="true"></canvas>
-    <div class="hero-grid hero-content mx-auto grid w-full max-w-6xl items-center gap-14">
-      <div data-reveal>
-        <h1 class="hero-title font-display text-5xl leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
-          <span class="hero-kicker mb-6 block max-w-xl text-xl leading-snug text-snow md:text-2xl">We build Websites for solo dreamers &amp; small businesses</span>
-          <span class="block">Found by your customers.</span>
-          <span class="block">Owned by you.</span>
-          <span class="block text-ember">Fast by design.</span>
-        </h1>
-        <p class="hero-lead mt-6 max-w-xl text-lg text-mist md:text-xl">We design, build and hand over simple, SEO-ready, tracker-free websites for solo dreamers and small businesses. No lock-in, no trackers, no surprises — our sovereign AI crew does the heavy lifting, and <strong class="font-bold text-snow">the time it saves us comes straight off your price.</strong></p>
-        <div class="hero-actions mt-9 flex flex-wrap items-center gap-6">
-          <a class="btn-cta btn-lg" href="mailto:hammockai@proton.me">Get a fair quote</a>
-          <a class="hero-link text-sm text-mist" href="#portfolio">See portfolio →</a>
-          <a class="hero-link text-sm text-mist" href="#crew">Meet the AI crew →</a>
-        </div>
-        <p class="hero-tagline mt-7 text-xs uppercase tracking-[0.2em] text-mist">No trackers · No lock-in · No surprises</p>
-      </div>
+    <div class="hero-content">
+      <h1 class="hero-title display"><span>We build the website</span><span class="em">for your business.</span></h1>
+      <p class="hero-lead">People find you, you own it and it loads fast. For small businesses and independent professionals, with a clear price from day one.</p>
+      <div class="hero-actions"><a class="btn btn-lg" href="brief/en/">Get your site</a></div>
     </div>
   </section>
 
-  <!-- Portfolio: example sites with fictional businesses (each one lives in /portafolio/<demo>/, noindex) -->
-  <section id="portfolio" class="scroll-mt-6 px-6 py-20 md:py-28">
-    <div class="mx-auto w-full max-w-6xl">
-      <div class="max-w-2xl" data-reveal>
-        <p class="eyebrow">Portfolio</p>
-        <h2 class="h2 mt-4 font-display">Portfolio</h2>
-        <p class="mt-4 text-lg text-mist">Three sites we built to show what you get. The businesses are fictional: names, prices and contact buttons are examples, and each site says so at the top. Open them on your phone, that's where your customers will see yours.</p>
-        <p class="mt-3 text-sm text-dim">The examples are in Spanish.</p>
+  <!-- 2 · Portafolio: la captura manda; la tarjeta entera abre la demo (cada demo vive en /portafolio/<demo>/, noindex) -->
+  <section id="portfolio" class="sec" aria-labelledby="portfolio-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="portfolio-title" class="h2 display">This is how our sites turn out</h2>
+        <p class="fine fine-lead">These are three demos with fictional businesses, and each one says so at the top. They are in Spanish. Tap one and walk through it on your phone.</p>
       </div>
-      <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" role="list">
-        <li class="card demo-card p-6" data-reveal style="--d:0ms">
-          <img class="demo-thumb" src="portafolio/constructor-management/img/hero.svg" alt="" width="640" height="520" loading="lazy">
-          <p class="mt-5 text-xs font-bold tracking-[0.2em] text-ember">CONSTRUCTOR MANAGEMENT · TEMPLATE</p>
-          <h3 class="mt-3 font-display text-xl">Constructor Management, home renovations</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Services, before-and-after projects, how the work goes step by step, FAQ and contact buttons.</p>
-          <a class="link-arrow" href="portafolio/constructor-management/" hreflang="es">View site<span class="sr-only">: Constructor Management, fictional business, site in Spanish</span> <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+      <ul class="demos" role="list">
+        <li>
+          <a class="demo" href="portafolio/constructor-management/" hreflang="es">
+            <span class="shot"><span class="frame"><span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+              <img src="assets/images/portafolio/constructor-management.webp" width="960" height="600" loading="lazy" alt="Cover of the demo: home renovations, blue background, orange accents and a drawing of a wall under construction"></span></span>
+            <span class="meta">
+              <span class="rubro">Home renovations</span>
+              <h3 class="display">Constructor Management</h3>
+              <p>Before and after, the steps of the job, and contact.</p>
+              <span class="go">View site<span class="sr-only">: demo with a fictional business, in Spanish</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
         </li>
-        <li class="card demo-card p-6" data-reveal style="--d:70ms">
-          <img class="demo-thumb" src="portafolio/gym-management/img/portada.svg" alt="" width="640" height="560" loading="lazy">
-          <p class="mt-5 text-xs font-bold tracking-[0.2em] text-ember">GYM MANAGEMENT · TEMPLATE</p>
-          <h3 class="mt-3 font-display text-xl">Gym Management, small-group training</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Classes, a weekly schedule that reads well on a phone, plans, a trial class, the team and how to get there.</p>
-          <a class="link-arrow" href="portafolio/gym-management/" hreflang="es">View site<span class="sr-only">: Gym Management, fictional business, site in Spanish</span> <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+        <li>
+          <a class="demo" href="portafolio/gym-management/" hreflang="es">
+            <span class="shot"><span class="frame"><span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+              <img src="assets/images/portafolio/gym-management.webp" width="960" height="600" loading="lazy" alt="Cover of the demo: a gym, black background with lime green and a running figure"></span></span>
+            <span class="meta">
+              <span class="rubro">Small-group gym</span>
+              <h3 class="display">Gym Management</h3>
+              <p>Classes, a weekly schedule that reads well on a phone, and a trial class.</p>
+              <span class="go">View site<span class="sr-only">: demo with a fictional business, in Spanish</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
         </li>
-        <li class="card demo-card p-6" data-reveal style="--d:140ms">
-          <img class="demo-thumb" src="portafolio/therapist-management/img/hero.svg" alt="" width="640" height="520" loading="lazy">
-          <p class="mt-5 text-xs font-bold tracking-[0.2em] text-ember">THERAPIST MANAGEMENT · TEMPLATE</p>
-          <h3 class="mt-3 font-display text-xl">Therapist Management, therapy practice</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Online or in-person sessions, what the first session is like, example fees and FAQ. No patient reviews, on purpose.</p>
-          <a class="link-arrow" href="portafolio/therapist-management/" hreflang="es">View site<span class="sr-only">: Therapist Management, fictional business, site in Spanish</span> <span class="link-arrow-icon" aria-hidden="true">→</span></a>
+        <li>
+          <a class="demo" href="portafolio/therapist-management/" hreflang="es">
+            <span class="shot"><span class="frame"><span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+              <img src="assets/images/portafolio/therapist-management.webp" width="960" height="600" loading="lazy" alt="Cover of the demo: a psychology practice, soft green tones and an armchair by a window"></span></span>
+            <span class="meta">
+              <span class="rubro">Therapy practice</span>
+              <h3 class="display">Therapist Management</h3>
+              <p>Online or in person, the first session explained, and fees in plain sight.</p>
+              <span class="go">View site<span class="sr-only">: demo with a fictional business, in Spanish</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- Services: packages, add-ons and maintenance -->
-  <section id="services" class="band scroll-mt-6 px-6 py-20 md:py-28" aria-labelledby="services-title">
-    <div class="mx-auto w-full max-w-6xl">
-      <div class="max-w-2xl" data-reveal>
-        <p class="eyebrow">Services</p>
-        <h2 id="services-title" class="h2 mt-4 font-display">Websites with a clear price</h2>
-        <p class="mt-4 text-lg text-mist">A website for your business. Before we start you know what's included, what isn't and how long it takes.</p>
-        <p class="mt-3 font-bold text-snow">The time it saves us comes straight off your price.</p>
+  <!-- 3 · Precios. El lema vive aquí: es una promesa sobre el precio. -->
+  <section id="services" class="sec band" aria-labelledby="prices-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="prices-title" class="h2 display">A clear price, a clear timeline</h2>
+      </div>
+      <div class="lema">
+        <span class="lema-glyphs" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tag"/></svg></span>
+        <p>The time it saves us comes straight off your price.</p>
       </div>
 
-      <ul class="mt-12 grid gap-5 md:grid-cols-3" role="list">
-        <li class="card plan svc-plan p-6">
-          <p class="svc-tag">P1</p>
-          <h3 class="mt-3 font-display text-xl">One page</h3>
-          <p class="mt-4"><span class="text-sm text-dim">From</span> <span class="plan-price">USD 150</span></p>
-          <p class="mt-1 text-sm text-dim">8 business days</p>
-          <p class="mt-4 text-sm leading-relaxed text-mist">A clear message and a clear way to reach you.</p>
-          <ul class="plan-list mt-4" role="list">
+      <ul class="plans" role="list">
+        <li class="plan">
+          <p class="tag">P1</p>
+          <h3 class="display">One page</h3>
+          <p class="price"><small>From</small> <b>USD 150</b></p>
+          <p class="when">8 business days</p>
+          <p class="what">A clear message and a clear way to reach you.</p>
+          <ul class="dots" role="list">
             <li>Template in your colors and logo</li>
             <li>Up to 6 sections and 8 photos</li>
             <li>WhatsApp button with your number</li>
             <li>1 round of changes</li>
           </ul>
         </li>
-        <li class="card plan svc-plan p-6">
-          <p class="svc-tag">P2</p>
-          <h3 class="mt-3 font-display text-xl">Simple website</h3>
-          <p class="mt-4"><span class="text-sm text-dim">From</span> <span class="plan-price">USD 290</span></p>
-          <p class="mt-1 text-sm text-dim">15 business days</p>
-          <p class="mt-4 text-sm leading-relaxed text-mist">Your business in a few pages: who you are, what you offer, your work and how to reach you.</p>
-          <ul class="plan-list mt-4" role="list">
+        <li class="plan">
+          <p class="tag">P2</p>
+          <h3 class="display">Simple website</h3>
+          <p class="price"><small>From</small> <b>USD 290</b></p>
+          <p class="when">15 business days</p>
+          <p class="what">Your business in a few pages: who you are, what you offer, your work and how to reach you.</p>
+          <ul class="dots" role="list">
             <li>Up to 5 pages and 20 photos</li>
-            <li>A form that reaches your email and your spreadsheet</li>
+            <li>A form to your email and spreadsheet</li>
             <li>WhatsApp button with your number</li>
             <li>2 rounds of changes</li>
           </ul>
         </li>
-        <li class="card plan svc-plan p-6">
-          <p class="svc-tag">P3</p>
-          <h3 class="mt-3 font-display text-xl">Custom website</h3>
-          <p class="mt-4"><span class="text-sm text-dim">From</span> <span class="plan-price">USD 590</span></p>
-          <p class="mt-1 text-sm text-dim">23 to 30 business days</p>
-          <p class="mt-4 text-sm leading-relaxed text-mist">Designed for you, no template. Final price once we know your project.</p>
-          <ul class="plan-list mt-4" role="list">
+        <li class="plan">
+          <p class="tag">P3</p>
+          <h3 class="display">Custom website</h3>
+          <p class="price"><small>From</small> <b>USD 590</b></p>
+          <p class="when">23 to 30 business days</p>
+          <p class="what">Your own design, no template. Final price after the brief.</p>
+          <ul class="dots" role="list">
             <li>Up to 8 pages</li>
             <li>Texts written with you</li>
             <li>A form, plus booking or a catalog</li>
@@ -163,358 +191,178 @@
           </ul>
         </li>
       </ul>
-
-      <div class="svc-autos">
-        <h3 class="font-display text-2xl">Add an extra</h3>
-        <p class="mt-2 text-mist">Everything is in your name. Email has a separate subscription with the provider.</p>
-        <ul class="svc-rows" role="list">
-          <li class="svc-row">
-            <span class="svc-n"><i>A1</i>Contact form</span>
-            <span class="svc-d">Every message reaches your email and is saved in your spreadsheet.</span>
-            <span class="svc-p"><small>From</small> USD 85</span>
-            <span class="svc-w">3 business days</span>
-          </li>
-          <li class="svc-row">
-            <span class="svc-n"><i>A2</i>Online booking</span>
-            <span class="svc-d">Your clients book on their own and get an email reminder.</span>
-            <span class="svc-p"><small>From</small> USD 110</span>
-            <span class="svc-w">5 business days</span>
-          </li>
-          <li class="svc-row">
-            <span class="svc-n"><i>A3</i>Spreadsheet catalog</span>
-            <span class="svc-d">Change products and prices in a spreadsheet and your site updates itself. Up to 20 products; +USD 25 for every 10 more.</span>
-            <span class="svc-p"><small>From</small> USD 160</span>
-            <span class="svc-w">8 business days</span>
-          </li>
-          <li class="svc-row">
-            <span class="svc-n"><i>A4</i>Basic brand identity</span>
-            <span class="svc-d">Color palette, 2 fonts, a logo made from your business name and a 1-page style guide.</span>
-            <span class="svc-p">USD 130</span>
-            <span class="svc-w">6 business days</span>
-          </li>
-          <li class="svc-row">
-            <span class="svc-n"><i>A5</i>Email on your domain</span>
-            <span class="svc-d">An address like hello@yourbusiness.com on Proton or Google, in your name. You pay the subscription (today, from about USD 7 per mailbox a month on an annual plan, plus taxes) directly to the provider, with no markup from us.</span>
-            <span class="svc-p">USD 45</span>
-            <span class="svc-w">2 business days</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="svc-notes">
-        <p class="callout"><strong class="text-snow">Optional maintenance: USD 12 a month or USD 120 a year.</strong> A monthly check, up to 30 minutes of changes and a reminder before your web address expires. If you cancel it, your site stays online.</p>
-        <p class="callout"><strong class="text-snow">In every project:</strong> built for phones first, no trackers or third-party cookies, your site online for free in your name, a security check and files that are yours. Your domain (your web address, a .com) is paid separately: about USD 11 a year.</p>
-      </div>
-
-      <div class="svc-go">
-        <a class="btn-cta" href="brief/en/">Get your site</a>
-        <p class="text-sm text-dim">Tell us what you need and you get a written quote with the final price. Something bigger? Tell us that too. Timelines count from when you send your texts and photos. Not included: a logo with a drawn symbol, photo shoot, online store with payments, blog, ads or a second language.</p>
-      </div>
+      <p class="fine">Every project includes: built for phones first, no trackers, your site online for free in your name, and files that are yours. Separate: your .com domain (about USD 11 a year). Optional maintenance: USD 12 a month or USD 120 a year.</p>
     </div>
   </section>
 
-  <!-- Process: from brief to handover -->
-  <section id="process" class="band scroll-mt-6 px-6 py-20 md:py-28">
-    <div class="mx-auto w-full max-w-6xl">
-      <div class="max-w-2xl" data-reveal>
-        <p class="eyebrow">Process</p>
-        <h2 class="h2 mt-4 font-display">From brief to handover</h2>
-        <p class="mt-4 text-lg text-mist">A clear path with no hidden steps. You know what's happening, what it costs and what you'll receive.</p>
+  <!-- 4 · Automatizaciones: cada una muestra cómo estabas (Antes) y cómo queda conectada a tu sitio (Después) -->
+  <section id="extras" class="sec" aria-labelledby="extras-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="extras-title" class="h2 display">Let your site work for you</h2>
+        <p class="lead">Extras that do repetitive tasks on their own and connect to your site. One-time payment to set it up, in your name. Email has a separate subscription with the provider.</p>
       </div>
-            <div class="pixel-frame pixel-route mt-12" data-scene="route" aria-hidden="true"></div>
-      <ol class="steps mt-6 grid gap-5 md:grid-cols-5" role="list">
-        <li class="step" data-reveal style="--d:0ms">
-          <span class="step-num">1</span>
-          <h3 class="mt-4 font-display text-lg">The brief</h3>
-          <p class="mt-2 text-sm leading-relaxed text-mist">Eleven questions, about five minutes. Your answers are assembled on your own device and you choose how to send them.</p>
+      <ul class="autos" role="list">
+
+        <li class="auto">
+          <div><p class="auto-code">A1</p><h3 class="display">Contact form</h3><p class="auto-cost"><b>From USD 85</b> · 3 business days</p></div>
+          <div class="pane pane-b">
+            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scatter"/></svg></span>
+            <div><span class="t">Before</span><p>Requests by chat, calls and scraps of paper.</p></div>
+          </div>
+          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <div class="pane pane-a">
+            <div class="row" aria-hidden="true"><span class="g src"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-form"/></svg></span><svg class="i i-arr" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></span><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sheet"/></svg></span></div>
+            <span class="t">After</span><p>Every request reaches your email and lands in your spreadsheet.</p>
+          </div>
         </li>
-        <li class="step" data-reveal style="--d:60ms">
-          <span class="step-num">2</span>
-          <h3 class="mt-4 font-display text-lg">Fair quote</h3>
-          <p class="mt-2 text-sm leading-relaxed text-mist">Scope, what's included and a clear price, agreed before any work starts.</p>
+
+        <li class="auto">
+          <div><p class="auto-code">A2</p><h3 class="display">Booking</h3><p class="auto-cost"><b>From USD 110</b> · 5 business days</p></div>
+          <div class="pane pane-b">
+            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chat"/></svg></span>
+            <div><span class="t">Before</span><p>You arrange every appointment by message.</p></div>
+          </div>
+          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <div class="pane pane-a">
+            <div class="row" aria-hidden="true"><span class="g src"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cal"/></svg></span><svg class="i i-arr" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></span><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bell"/></svg></span></div>
+            <span class="t">After</span><p>Your clients book on their own and get an email reminder.</p>
+          </div>
         </li>
-        <li class="step" data-reveal style="--d:120ms">
-          <span class="step-num">3</span>
-          <h3 class="mt-4 font-display text-lg">Build in small steps</h3>
-          <p class="mt-2 text-sm leading-relaxed text-mist">Short, verifiable chunks, so you see progress and can correct course early.</p>
+
+        <li class="auto">
+          <div><p class="auto-code">A3</p><h3 class="display">Spreadsheet catalog</h3><p class="auto-cost"><b>From USD 160</b> · 8 business days</p></div>
+          <div class="pane pane-b">
+            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-code"/></svg></span>
+            <div><span class="t">Before</span><p>Changing a price means editing the site.</p></div>
+          </div>
+          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <div class="pane pane-a">
+            <div class="row" aria-hidden="true"><span class="g src"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sheet"/></svg></span><svg class="i i-arr" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-site"/></svg></span></div>
+            <span class="t">After</span><p>You edit a spreadsheet and the site updates itself.</p>
+          </div>
+          <p class="fine">Up to 20 products; +USD 25 for every 10 more.</p>
         </li>
-        <li class="step" data-reveal style="--d:180ms">
-          <span class="step-num">4</span>
-          <h3 class="mt-4 font-display text-lg">Human review</h3>
-          <p class="mt-2 text-sm leading-relaxed text-mist">Every change is reviewed by a person and checked against our principles before it goes live.</p>
+
+        <li class="auto">
+          <div><p class="auto-code">A4</p><h3 class="display">Basic identity</h3><p class="auto-cost"><b>USD 130</b> · 6 business days</p></div>
+          <div class="pane pane-b">
+            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scatter"/></svg></span>
+            <div><span class="t">Before</span><p>Every piece has different colors and fonts.</p></div>
+          </div>
+          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <div class="pane pane-a">
+            <div class="row" aria-hidden="true"><span class="sw sw-ember"></span><span class="sw sw-snow"></span><span class="sw sw-dim"></span><span class="sw sw-surface"></span><span class="aa display">Aa</span><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-doc"/></svg></span></div>
+            <span class="t">After</span><p>A palette, 2 typefaces, a logo with your business name and a 1-page guide.</p>
+          </div>
         </li>
-        <li class="step" data-reveal style="--d:240ms">
-          <span class="step-num">5</span>
-          <h3 class="mt-4 font-display text-lg">Handover</h3>
-          <p class="mt-2 text-sm leading-relaxed text-mist">Files, domain and documentation are yours. Move your site anywhere, anytime.</p>
+
+        <li class="auto">
+          <div><p class="auto-code">A5</p><h3 class="display">Email on your domain</h3><p class="auto-cost"><b>USD 45</b> · 2 business days</p></div>
+          <div class="pane pane-b">
+            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-at"/></svg></span>
+            <div><span class="t">Before</span><p class="addr">yourbusiness@gmail.com</p></div>
+          </div>
+          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <div class="pane pane-a">
+            <div class="row" aria-hidden="true"><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></span></div>
+            <span class="t">After</span><p class="addr">hello@yourbusiness.com</p>
+          </div>
+          <p class="fine">On Proton or Google, in your name. You pay the subscription to the provider, with no markup from us.</p>
         </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5 · Cómo trabajamos -->
+  <section id="how" class="sec band" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="how-title" class="h2 display">AI agents, with rules</h2>
+        <p class="lead">Our systems and workflows are already automated: tasks go to our agents and a person reviews everything before it goes live.</p>
+      </div>
+
+      <ol class="flow" role="list">
+        <li class="node"><span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-form"/></svg></span><p>Your brief</p></li>
+        <li class="join" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></li>
+        <li class="node"><span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bot"/></svg></span><p>Our agents and automated workflows</p></li>
+        <li class="join" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></li>
+        <li class="node"><span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check-person"/></svg></span><p>A person reviews</p></li>
+        <li class="join" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></li>
+        <li class="node"><span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-site"/></svg></span><p>Your site, delivered</p></li>
       </ol>
-      <p class="mt-10" data-reveal>
-        <a class="link-arrow" href="brief/en/">Start with the brief <span class="link-arrow-icon" aria-hidden="true">→</span></a>
-      </p>
-    </div>
-  </section>
 
-  <!-- Crew: one developer, three AI agents -->
-  <section id="crew" class="scroll-mt-6 px-6 py-20 md:py-28">
-    <div class="mx-auto w-full max-w-6xl">
-      <div class="max-w-2xl" data-reveal>
-        <p class="eyebrow">How we work</p>
-        <h2 class="h2 mt-4 font-display">One developer. An AI crew. A human at the wheel.</h2>
-        <p class="mt-4 text-lg text-mist">Hammock AI is a one-person studio backed by three AI agents with clearly defined roles. The developer, the Captain, sets the goal and has the final say. Nothing ships without human review.</p>
-      </div>
-      <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" role="list">
-        <li class="card card-lead p-6" data-reveal style="--d:0ms">
-          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="captain" aria-hidden="true"></div>
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">CAPTAIN · HUMAN</p>
-          <h3 class="mt-4 font-display text-xl">The Developer</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Defines the goal and the boundaries, makes every decision and holds the final veto.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:70ms">
-          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="first" aria-hidden="true"></div>
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">FIRST MATE · AI</p>
-          <h3 class="mt-4 font-display text-xl">Contramaestre</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Challenges assumptions, maps the route and keeps the rhythm. Acts as a senior full-stack reviewer and mentor.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:140ms">
-          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="prompt" aria-hidden="true"></div>
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">NAVIGATOR · AI</p>
-          <h3 class="mt-4 font-display text-xl">Prompt Engineer</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Turns ideas into precise instructions for AI tools and keeps every message, prompt and line of copy clear.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:210ms">
-          <div class="pixel-frame pixel-crew" data-scene="crew" data-who="guardian" aria-hidden="true"></div>
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">COMPASS · AI</p>
-          <h3 class="mt-4 font-display text-xl">Guardian</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Reviews the work against the Six Pillars before deployment, names hidden risks and proposes practical fixes.</p>
-        </li>
+      <h3 class="pillars-title display">Six Pillars that guide all our agents</h3>
+      <ul class="pillars" role="list">
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scale"/></svg><h4>Balanced Sea</h4><p>Fair prices: we both win.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-warn"/></svg><h4>The Booger Rule</h4><p>If something won’t work, we tell you early.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-question"/></svg><h4>Challenge Assumptions</h4><p>We verify before we build.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-access"/></svg><h4>Accessibility First</h4><p>Plain language, readable sites.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"/></svg><h4>Open-Source Ethos</h4><p>Open, auditable knowledge.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-anchor"/></svg><h4>Sovereign Ship</h4><p>Your data, your rules.</p></li>
       </ul>
 
-      <div class="mt-14 grid gap-12 md:grid-cols-2">
-        <div data-reveal>
-          <h3 class="font-display text-2xl">The workflow</h3>
-          <ol class="flow mt-6" role="list">
-            <li><span><strong>The Captain</strong> defines the goal and the boundary.</span></li>
-            <li><span><strong>The Contramaestre</strong> checks for flaws and maps the route.</span></li>
-            <li><span><strong>The Prompt Engineer</strong> crafts a precise instruction.</span></li>
-            <li><span><strong>An AI coding tool</strong> executes it in small, verifiable chunks.</span></li>
-            <li><span><strong>The Guardian</strong> reviews the result against the Six Pillars.</span></li>
-            <li><span><strong>The Captain</strong> decides, and the crew keeps building.</span></li>
-          </ol>
-          <p class="mt-6 text-sm text-dim">We also tested a separate engineering agent and retired it: direct collaboration between the developer, the Contramaestre and focused coding tools proved faster and better aligned.</p>
-        </div>
-        <div data-reveal style="--d:80ms">
-          <h3 class="font-display text-2xl">Tools &amp; stack</h3>
-          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">The hull · code</h4>
-          <ul class="mt-3 flex flex-wrap gap-2" role="list">
-            <li class="chip">HTML</li><li class="chip">CSS</li><li class="chip">Tailwind</li><li class="chip">JavaScript</li><li class="chip">Git</li>
-          </ul>
-          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">The minds · AI models</h4>
-          <ul class="mt-3 flex flex-wrap gap-2" role="list">
-            <li class="chip">Claude</li><li class="chip">Qwen</li><li class="chip">DeepSeek</li><li class="chip">Kimi</li>
-          </ul>
-          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">The hands · AI tools</h4>
-          <ul class="mt-3 flex flex-wrap gap-2" role="list">
-            <li class="chip">Claude Code</li>
-          </ul>
-          <p class="mt-6 text-mist">We pick the right model for each job, balancing capability, cost and openness. A small stack on purpose: portable, auditable and free of anything we can't read.</p>
+      <div class="mine">
+        <p>You can have your own pillars too, or set limits (guardrails) for your own agents. We’ll help you with that.</p>
+        <div class="links">
+          <a class="link" href="brief/en/">Tell us what you need <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="link" href="crew/en/">Free prompts from our crew <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Principles: the Six Pillars, in client terms -->
-  <section id="principles" class="band scroll-mt-6 px-6 py-20 md:py-28">
-    <div class="mx-auto w-full max-w-6xl">
-      <div class="max-w-2xl" data-reveal>
-        <p class="eyebrow">Principles</p>
-        <h2 class="h2 mt-4 font-display">The Six Pillars</h2>
-        <p class="mt-4 text-lg text-mist">Every decision, prompt and line of code is filtered through six principles. Here's what they mean for you as a client.</p>
-      </div>
-      <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" role="list">
-        <li class="card p-6" data-reveal style="--d:0ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">01</p>
-          <h3 class="mt-4 font-display text-xl">Balanced Sea</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Deals that benefit both sides. Fair prices, mutual benefit over individual advantage, no zero-sum thinking.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:60ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">02</p>
-          <h3 class="mt-4 font-display text-xl">The Booger Rule</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Be the friend who points out the booger and hands a tissue. If something won't work, we say so early, and bring the fix.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:120ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">03</p>
-          <h3 class="mt-4 font-display text-xl">Challenge Assumptions</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">We make assumptions explicit and verify them before building on top of them.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:0ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">04</p>
-          <h3 class="mt-4 font-display text-xl">Accessibility First</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Plain-language docs and interfaces that don't intimidate. We explain the how and the why.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:60ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">05</p>
-          <h3 class="mt-4 font-display text-xl">Open-Source Ethos</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Knowledge should be free and improvable. We publish our prompts and workflows, and favor auditable solutions.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:120ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">06</p>
-          <h3 class="mt-4 font-display text-xl">Sovereign Ship</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Your data, your rules, your freedom. You own your work and can migrate anytime without losing what matters.</p>
-        </li>
-      </ul>
-      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-4" data-reveal>
-        <a class="link-arrow" href="https://github.com/hammockai" target="_blank" rel="noopener noreferrer">Read the full manifesto <span class="link-arrow-icon" aria-hidden="true">→</span></a>
-        <a class="link-arrow" href="https://github.com/hammockai/aiCrew/blob/main/logbook/pillars.md" target="_blank" rel="noopener noreferrer">How the pillars were born <span class="link-arrow-icon" aria-hidden="true">→</span></a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Open source: everything published on GitHub -->
-  <section id="open" class="scroll-mt-6 px-6 py-20 md:py-28">
-    <div class="mx-auto w-full max-w-6xl">
-      <div class="max-w-2xl" data-reveal>
-        <p class="eyebrow">Open source</p>
-        <h2 class="h2 mt-4 font-display">Built in the open</h2>
-        <p class="mt-4 text-lg text-mist">The system prompts that run our crew are public. Read them, adapt them and build your own crew. It's also the most direct way to see how we work before you hire us.</p>
+  <!-- 6 · Nosotros corto + preguntas -->
+  <section id="about" class="sec" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="about">
+        <div>
+          <img src="assets/images/logo.svg" alt="" width="56" height="56">
+          <h2 id="about-title" class="h2 display">Why “Hammock”?</h2>
+          <p class="lead">A hammock isn’t laziness: it’s sovereignty. We use AI to give you your time back, not to replace people.</p>
+        </div>
+        <figure class="quote">
+          <blockquote><p>“Before code I was a firefighter, a construction site manager and a hardware store manager. I know the physical grind.”</p></blockquote>
+          <figcaption>Founder, Hammock AI</figcaption>
+        </figure>
       </div>
 
-      <div class="mt-12 grid gap-5 md:grid-cols-2">
-        <article class="card p-6 md:p-8" data-reveal style="--d:0ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">REPOSITORY · CC BY-SA 4.0</p>
-          <h3 class="mt-4 font-display text-2xl">AI Crew library</h3>
-          <p class="mt-3 text-mist">The full system prompts of the crew's agents, in English and Spanish, plus the chain of command and hard boundaries for each role. Works with any capable LLM.</p>
-          <ul class="agent-links mt-6" role="list">
-            <li><span>Contramaestre</span><a href="https://github.com/hammockai/aiCrew/blob/main/agents/en/contramaestre.md" target="_blank" rel="noopener noreferrer" hreflang="en">EN</a><a href="https://github.com/hammockai/aiCrew/blob/main/agents/es/contramaestre.md" target="_blank" rel="noopener noreferrer" hreflang="es">ES</a></li>
-            <li><span>Prompt Engineer</span><a href="https://github.com/hammockai/aiCrew/blob/main/agents/en/prompt-engineer.md" target="_blank" rel="noopener noreferrer" hreflang="en">EN</a><a href="https://github.com/hammockai/aiCrew/blob/main/agents/es/prompt-engineer.md" target="_blank" rel="noopener noreferrer" hreflang="es">ES</a></li>
-            <li><span>Guardian</span><a href="https://github.com/hammockai/aiCrew/blob/main/agents/en/guardian.md" target="_blank" rel="noopener noreferrer" hreflang="en">EN</a><a href="https://github.com/hammockai/aiCrew/blob/main/agents/es/guardian.md" target="_blank" rel="noopener noreferrer" hreflang="es">ES</a></li>
-            <li><span>Quintero</span><a href="https://github.com/hammockai/aiCrew/blob/main/agents/en/quintero.md" target="_blank" rel="noopener noreferrer" hreflang="en">EN</a><a href="https://github.com/hammockai/aiCrew/blob/main/agents/es/quintero.md" target="_blank" rel="noopener noreferrer" hreflang="es">ES</a></li>
-          </ul>
-          <p class="mt-6 flex flex-wrap gap-x-8 gap-y-3">
-            <a class="link-arrow" href="https://github.com/hammockai/aiCrew" target="_blank" rel="noopener noreferrer">Browse aiCrew <span class="link-arrow-icon" aria-hidden="true">→</span></a>
-            <a class="link-arrow" href="https://github.com/hammockai/aiCrew/blob/main/CREW.md" target="_blank" rel="noopener noreferrer">Chain of command <span class="link-arrow-icon" aria-hidden="true">→</span></a>
-          </p>
-        </article>
-
-        <article class="card p-6 md:p-8" data-reveal style="--d:80ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">LOGBOOK · SINCE OCT 2025</p>
-          <h3 class="mt-4 font-display text-2xl">A year of work, documented</h3>
-          <p class="mt-3 text-mist">Dozens of versions across Claude, Kimi and Qwen. Early and retired agents (El Escribano, Cipher, El Ingeniero, El Maestro…) are published as they were, with what worked and what didn't.</p>
-          <ol class="timeline mt-6" role="list">
-            <li><span class="timeline-date">Oct – Dec 2025</span><span><strong>Claude.</strong> The crew is born: first agents and first policies.</span></li>
-            <li><span class="timeline-date">Dec 2025 – Feb 2026</span><span><strong>Claude → Qwen.</strong> Last Claude prompts run in Kimi; new agents rewritten with Qwen.</span></li>
-            <li><span class="timeline-date">2026</span><span><strong>Qwen.</strong> Site factory, Spanish-language agents and rules for coding agents. DeepSeek trials.</span></li>
-            <li><span class="timeline-date">Oct 2026</span><span><strong>The crew grows.</strong> Contramaestre, Prompt Engineer, Guardian and Quintero, plus a web crew that builds and reviews every site.</span></li>
-          </ol>
-          <p class="mt-6 flex flex-wrap gap-x-8 gap-y-3">
-            <a class="link-arrow" href="https://github.com/hammockai/aiCrew/blob/main/logbook/README.md" target="_blank" rel="noopener noreferrer">Open the logbook <span class="link-arrow-icon" aria-hidden="true">→</span></a>
-            <a class="link-arrow" href="https://github.com/hammockai/aiCrew/blob/main/logbook/pillars.md" target="_blank" rel="noopener noreferrer">4 → 7 → 6 pillars <span class="link-arrow-icon" aria-hidden="true">→</span></a>
-          </p>
-        </article>
-      </div>
-
-      <div class="table-wrap mt-10" data-reveal>
-        <table class="repo-table">
-          <caption class="sr-only">Hammock AI public repositories</caption>
-          <thead>
-            <tr><th scope="col">Repository</th><th scope="col">What's inside</th><th scope="col">License</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row"><a href="https://github.com/hammockai/aiCrew" target="_blank" rel="noopener noreferrer">aiCrew</a></th><td>The crew's system prompts (EN · ES), the logbook and the history of the pillars.</td><td>CC BY-SA 4.0</td></tr>
-            <tr><th scope="row"><a href="https://github.com/hammockai" target="_blank" rel="noopener noreferrer">Manifesto</a></th><td>Origin, the crew, the Six Pillars, tools and workflow.</td><td>CC BY-ND 4.0</td></tr>
-            <tr><th scope="row"><a href="https://github.com/hammockai/hammockai.site" target="_blank" rel="noopener noreferrer">hammockai.site</a></th><td>Source of this website. Public for hosting only.</td><td>All rights reserved</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="mt-4 text-sm text-dim">The <em>Hammock AI</em> name and logo are not covered by these licenses.</p>
-    </div>
-  </section>
-
-  <!-- About: origin story -->
-  <section id="about" class="band scroll-mt-6 px-6 py-20 md:py-28">
-    <div class="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-2">
-      <div data-reveal>
-        <p class="eyebrow">About</p>
-        <h2 class="h2 mt-4 font-display">Why “Hammock”?</h2>
-        <p class="mt-4 text-lg text-mist">A hammock isn't about laziness; it's about sovereignty. It's the symbol of working smart enough to reclaim your time.</p>
-        <p class="mt-4 text-mist">Hammock AI exists to help solo dreamers and small businesses build that same freedom, using AI not to replace people, but to give them their time back. A self-taught studio from Santiago &amp; Pichilemu, Chile.</p>
-        <div class="pixel-frame pixel-sunset mt-8" data-scene="sunset" aria-hidden="true"></div>
-      </div>
-      <figure class="quote" data-reveal style="--d:80ms">
-        <blockquote>
-          <p>“Before code, I was a firefighter, a construction manager, a hostel manager, a hardware store manager and a surfboard shaper apprentice. I know the physical grind. When the pandemic hit, I pivoted to web development. Then AI arrived, and I realized that with these new ‘brains’ you can automate the heavy lifting and build your own digital crew.”</p>
-        </blockquote>
-        <figcaption class="mt-5 text-sm text-dim">Founder, Hammock AI</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="scroll-mt-6 px-6 py-20 md:py-28">
-    <div class="mx-auto w-full max-w-3xl">
-      <div data-reveal>
-        <p class="eyebrow">FAQ</p>
-        <h2 class="h2 mt-4 font-display">Questions, answered</h2>
-      </div>
-      <div class="faq mt-10" data-reveal>
-        <details>
-          <summary>How much does a website cost?</summary>
-          <p>A one-page site starts at USD 150 and a simple website at USD 290. A custom site starts at USD 590 and is quoted once we know your project. Tell us what you need and you'll get a written quote, with what's included and what isn't, before any work begins. Nobody can honestly guarantee first place on Google, so we don't promise it.</p>
-        </details>
-        <details>
-          <summary>Who owns the website?</summary>
-          <p>You do. The source files, the domain and the content are yours, and we hand everything over with plain-language documentation.</p>
-        </details>
-        <details>
-          <summary>Can I move my site to another provider later?</summary>
-          <p>Yes. Plain HTML, CSS and JavaScript run on almost any hosting. No proprietary builder, no lock-in.</p>
-        </details>
-        <details>
-          <summary>Will my site have analytics?</summary>
-          <p>Not by default. If you need visitor numbers, we'll propose privacy-friendly, cookieless options and explain the trade-off before adding anything.</p>
-        </details>
-        <details>
-          <summary>Is AI building my site unsupervised?</summary>
-          <p>No. AI tools do the heavy lifting in small, verifiable steps, and a human reviews every change before it goes live.</p>
-        </details>
-        <details>
-          <summary>Do you work in Spanish?</summary>
-          <p>Yes, in Spanish and English. The brief is available in both languages, and your site can be in Spanish, English or both.</p>
-        </details>
+      <div id="faq" class="faq-block">
+        <h2 class="h2 display">Questions</h2>
+        <div class="faq">
+          <details><summary>How long does it take?</summary><p>One page, 8 business days; simple website, 15; custom, 23 to 30. The count starts when you send your texts and photos.</p></details>
+          <details><summary>Who owns the site?</summary><p>You do: files, domain and content, with documentation in plain language.</p></details>
+          <details><summary>What isn’t included?</summary><p>A logo with a drawn symbol, a photo shoot, an online store with payments, a blog, advertising or another language.</p></details>
+          <details><summary>Does the AI do it all on its own?</summary><p>No. The agents do the heavy lifting in small steps and a person reviews every change.</p></details>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Final call to action -->
-  <section id="contact" class="scroll-mt-6 px-6 pb-24 md:pb-32">
-    <div class="cta-panel mx-auto w-full max-w-6xl" data-reveal>
-      <h2 class="h2 font-display">Ready when you are.</h2>
-      <p class="mt-4 max-w-xl text-lg text-mist">Start with the brief: eleven questions, five minutes, and nothing stored on our side. Or write to us directly.</p>
-      <div class="mt-8 flex flex-wrap items-center gap-4">
-        <a class="btn-cta btn-lg" href="brief/en/">Start your brief</a>
-        <a class="btn-ghost btn-lg" href="mailto:hammockai@proton.me">hammockai@proton.me</a>
-      </div>
+  <!-- 7 · Cierre: el mismo botón -->
+  <section id="contact" class="close">
+    <div class="cta-panel">
+      <h2 class="h2 display">Tell us what site you need</h2>
+      <p>Answer a few questions and get a written quote.</p>
+      <a class="btn btn-lg" href="brief/en/">Get your site</a>
+      <p class="alt">Or write to <a class="link" href="mailto:hammockai@proton.me">hammockai@proton.me</a></p>
     </div>
   </section>
-
 </main>
 
-<footer class="border-t border-hair bg-black px-6 py-14">
-  <div class="mx-auto flex w-full max-w-6xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
-    <p class="font-display text-lg">Hammock AI</p>
-    <ul class="flex flex-wrap gap-x-7 gap-y-3" role="list">
-      <li><a class="foot-link" href="brief/en/">Brief</a></li>
-      <li><a class="foot-link" href="https://github.com/hammockai" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a class="foot-link" href="https://github.com/hammockai/aiCrew" target="_blank" rel="noopener noreferrer">AI Crew</a></li>
-      <li><a class="foot-link" href="https://github.com/hammockai/aiCrew/blob/main/logbook/README.md" target="_blank" rel="noopener noreferrer">Logbook</a></li>
-      <li><a class="foot-link" href="https://github.com/hammockai/.github/blob/main/profile/README.md" target="_blank" rel="noopener noreferrer">Manifesto</a></li>
-      <li><a class="foot-link" href="https://www.tiktok.com/@hammockai" target="_blank" rel="noopener noreferrer">TikTok</a></li>
-      <li><a class="foot-link" href="mailto:hammockai@proton.me">Contact</a></li>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="display foot-brand">Hammock AI</p>
+    <ul class="foot-links" role="list">
+      <li><a href="brief/en/">Brief</a></li>
+      <li><a href="crew/en/">AI Crew</a></li>
+      <li><a href="https://github.com/hammockai" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://github.com/hammockai/aiCrew/blob/main/logbook/README.md" target="_blank" rel="noopener noreferrer">Logbook</a></li>
+      <li><a href="https://github.com/hammockai/.github/blob/main/profile/README.md" target="_blank" rel="noopener noreferrer">Manifesto</a></li>
+      <li><a href="https://www.tiktok.com/@hammockai" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+      <li><a href="mailto:hammockai@proton.me">Contact</a></li>
     </ul>
-  </div>
-  <div class="mx-auto mt-10 w-full max-w-6xl">
-    <p class="text-mist">Your data, your rules, your keys.</p>
-    <p class="mt-3 text-sm text-dim">© 2026 Hammock AI · Santiago &amp; Pichilemu, Chile</p>
+    <small>Your data, your rules, your keys. · © 2026 Hammock AI</small>
   </div>
 </footer>
 

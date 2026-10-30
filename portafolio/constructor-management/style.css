@@ -867,7 +867,7 @@ address {
 
 /* 7. EXTRAS DE ESTA DEMO ==================================================== */
 
-/* --- Aviso "sitio de ejemplo" ---
+/* --- Aviso "demo" ---
    Obligatorio en toda demo: nadie debe creer que es un negocio real. */
 .aviso-demo {
   --color-foco: var(--color-texto); /* anillo oscuro sobre fondo amarillo */

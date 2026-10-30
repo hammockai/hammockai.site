@@ -907,7 +907,7 @@ h1 {
   transform: skewX(-20deg);
 }
 
-/* --- Aviso "sitio de ejemplo" ---
+/* --- Aviso "demo" ---
    Obligatorio en toda demo: nadie debe creer que es un negocio real.
    La franja de rayas (como una cinta de aviso) marca lo que es "de la
    demo" y no del negocio: aparece aquí y en el cierre de la página. */
@@ -1197,6 +1197,7 @@ h1 {
 }
 
 .tabla-scroll {
+  position: relative; /* sin esto, los textos .sr-only de las celdas escapan de la caja y ensanchan la página en el celular */
   overflow-x: auto;
   border: 1px solid var(--color-borde);
   border-radius: var(--radio);

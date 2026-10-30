@@ -10,6 +10,6 @@
 | `og-image.png` | Imagen para redes | Hecha por Hammock AI con las piezas de arriba (rehecha el 2026-10-28 con el nombre del template). |
 | Íconos dentro de `index.html` | Formas simples en SVG (servicios, contacto, visto bueno) | Dibujo propio de Hammock AI. |
 
-**Negocio ficticio:** "Constructor Management" es el nombre del template, usado como nombre de este negocio inventado (desde el 2026-10-28), sin dirección, teléfono ni correo. Antes la demo tuvo otros dos nombres; el primero coincidía con un negocio real del rubro y de él viene el logo (un plomo). Los botones de WhatsApp, teléfono y correo llevan a https://hammockai.site/es/ y lo dicen en el mismo botón (marca "ejemplo" y "¿Quieres un sitio así? → Hammock AI"), porque un número o correo inventado podría ser de una persona real.
+**Negocio ficticio:** "Constructor Management" es el nombre del template, usado como nombre de este negocio inventado (desde el 2026-10-28), sin dirección, teléfono ni correo. Antes la demo tuvo otros dos nombres; el primero coincidía con un negocio real del rubro y de él viene el logo (un plomo). Los botones de WhatsApp, teléfono y correo llevan a https://hammockai.site/es/ y lo dicen en el mismo botón (marca "demo" y "¿Quieres un sitio así? → Hammock AI"), porque un número o correo inventado podría ser de una persona real.
 
 **La OFL pide:** que la licencia viaje con la fuente (por eso está en `fonts/`) y que la fuente no se venda sola. Usarla en un sitio, incluso comercial, está permitido.
