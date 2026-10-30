@@ -113,158 +113,91 @@
   </section>
 
   <!-- Servicios: paquetes, automatizaciones y mantención -->
-  <section id="services" class="band scroll-mt-6 px-6 py-20 md:py-28">
+  <section id="services" class="band scroll-mt-6 px-6 py-20 md:py-28" aria-labelledby="services-title">
     <div class="mx-auto w-full max-w-6xl">
       <div class="max-w-2xl" data-reveal>
         <p class="eyebrow">Servicios</p>
-        <h2 class="h2 mt-4 font-display">Qué construimos</h2>
-        <p class="mt-4 text-lg text-mist">Sitios pequeños y enfocados, que cargan rápido, posicionan bien y son fáciles de entregar. Mantenemos el alcance acotado para que el precio sea justo: antes de empezar sabes qué incluye, qué no y cuánto demora.</p>
+        <h2 id="services-title" class="h2 mt-4 font-display">Sitios con precio claro</h2>
+        <p class="mt-4 text-lg text-mist">Sitios pequeños que cargan rápido. Antes de empezar sabes qué incluye, qué no y cuánto demora.</p>
+        <p class="mt-3 font-bold text-snow">El tiempo que nos ahorra se descuenta de tu precio.</p>
       </div>
+
       <ul class="mt-12 grid gap-5 md:grid-cols-3" role="list">
-        <li class="card plan p-6" data-reveal style="--d:0ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">P1 · PLANTILLA</p>
-          <h3 class="mt-4 font-display text-xl">Landing page</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Una página, un objetivo: un mensaje claro y una forma clara de contactarte. Sobre una de nuestras plantillas, adaptada a tus colores y tu logo.</p>
-          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$150.000</span> <span class="text-sm text-dim">CLP</span></p>
-          <p class="mt-1 text-sm text-dim">Plazo: 5 días hábiles*</p>
-          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">Incluye</h4>
-          <ul class="plan-list mt-3" role="list">
-            <li>1 página con hasta 6 secciones: portada, servicios, sobre ti, galería (hasta 8 fotos), preguntas frecuentes y contacto</li>
-            <li>Botones de WhatsApp y correo</li>
-            <li>Tú envías textos y fotos con una guía simple; nosotros los ordenamos y pulimos</li>
+        <li class="card plan svc-plan p-6">
+          <p class="svc-tag">P1</p>
+          <h3 class="mt-3 font-display text-xl">Una página</h3>
+          <p class="mt-4"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$150.000</span> <span class="text-sm text-dim">CLP</span></p>
+          <p class="mt-1 text-sm text-dim">5 días hábiles</p>
+          <p class="mt-4 text-sm leading-relaxed text-mist">Un mensaje claro y una forma clara de contactarte.</p>
+          <ul class="plan-list mt-4" role="list">
+            <li>Plantilla con tus colores y logo</li>
+            <li>Hasta 6 secciones y 8 fotos</li>
+            <li>Botón de WhatsApp con tu número</li>
             <li>1 ronda de cambios</li>
           </ul>
-          <h4 class="mt-5 text-xs uppercase tracking-[0.2em] text-mist">No incluye</h4>
-          <ul class="plan-list plan-list-no mt-3" role="list">
-            <li>Formulario de contacto que envía (eso es A1, más abajo)</li>
-            <li>Páginas extra ni redacción desde cero</li>
-          </ul>
         </li>
-        <li class="card plan p-6" data-reveal style="--d:70ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">P2 · PLANTILLA</p>
-          <h3 class="mt-4 font-display text-xl">Sitio web simple</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Unas pocas páginas para un emprendimiento, un pequeño negocio o una pyme: quién eres, qué ofreces, tu trabajo y cómo contactarte.</p>
-          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$290.000</span> <span class="text-sm text-dim">CLP</span></p>
-          <p class="mt-1 text-sm text-dim">Plazo: 10 días hábiles*</p>
-          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">Incluye</h4>
-          <ul class="plan-list mt-3" role="list">
-            <li>Hasta 5 páginas: inicio, servicios o precios, trabajos o galería (hasta 20 fotos), preguntas frecuentes y contacto</li>
-            <li>A1 incluida: formulario de contacto que llega a tu correo y a tu planilla</li>
-            <li>Tu ubicación como enlace al mapa, sin un mapa incrustado que siga a tus visitas</li>
+        <li class="card plan svc-plan p-6">
+          <p class="svc-tag">P2</p>
+          <h3 class="mt-3 font-display text-xl">Sitio simple</h3>
+          <p class="mt-4"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$290.000</span> <span class="text-sm text-dim">CLP</span></p>
+          <p class="mt-1 text-sm text-dim">10 días hábiles</p>
+          <p class="mt-4 text-sm leading-relaxed text-mist">Para un negocio o pyme: quién eres, qué ofreces, tu trabajo y cómo contactarte.</p>
+          <ul class="plan-list mt-4" role="list">
+            <li>Hasta 5 páginas y 20 fotos</li>
+            <li>Formulario que llega a tu correo y a tu planilla</li>
+            <li>Botón de WhatsApp con tu número</li>
             <li>2 rondas de cambios</li>
           </ul>
-          <h4 class="mt-5 text-xs uppercase tracking-[0.2em] text-mist">No incluye</h4>
-          <ul class="plan-list plan-list-no mt-3" role="list">
-            <li>Diseño ni redacción desde cero</li>
-            <li>Agenda en línea ni catálogo en planilla (A2 y A3, se suman aparte)</li>
-          </ul>
         </li>
-        <li class="card plan p-6" data-reveal style="--d:140ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">P3 · A MEDIDA</p>
-          <h3 class="mt-4 font-display text-xl">Sitio a medida</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Diseño propio, sin plantilla, para un negocio que necesita más espacio. El precio final se fija después del brief.</p>
-          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$590.000</span> <span class="text-sm text-dim">CLP</span></p>
-          <p class="mt-1 text-sm text-dim">Plazo: 15 a 20 días hábiles*</p>
-          <h4 class="mt-6 text-xs uppercase tracking-[0.2em] text-mist">Incluye</h4>
-          <ul class="plan-list mt-3" role="list">
+        <li class="card plan svc-plan p-6">
+          <p class="svc-tag">P3</p>
+          <h3 class="mt-3 font-display text-xl">Sitio a medida</h3>
+          <p class="mt-4"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$590.000</span> <span class="text-sm text-dim">CLP</span></p>
+          <p class="mt-1 text-sm text-dim">15 a 20 días hábiles</p>
+          <p class="mt-4 text-sm leading-relaxed text-mist">Diseño propio, sin plantilla. El precio final se fija después del brief.</p>
+          <ul class="plan-list mt-4" role="list">
             <li>Hasta 8 páginas</li>
-            <li>Textos escritos contigo, a partir de una entrevista de 45 minutos</li>
-            <li>A1, más A2 o A3</li>
+            <li>Textos escritos contigo</li>
+            <li>Formulario, más agenda o catálogo</li>
             <li>3 rondas de cambios</li>
-            <li>Entrega guiada de 30 minutos por videollamada</li>
-          </ul>
-          <h4 class="mt-5 text-xs uppercase tracking-[0.2em] text-mist">No incluye</h4>
-          <ul class="plan-list plan-list-no mt-3" role="list">
-            <li>Tienda con pagos en línea</li>
-            <li>Más de un idioma ni más de 8 páginas (se cotizan después del brief)</li>
           </ul>
         </li>
       </ul>
 
-      <div class="mt-16 max-w-2xl" data-reveal>
-        <h3 class="font-display text-2xl">Automatizaciones para sumar</h3>
-        <p class="mt-4 text-mist">Pago único. Funcionan en cuentas gratis a tu nombre: con la opción que te recomendamos, no pagas nada al mes.</p>
-      </div>
-      <ul class="mt-8 grid gap-5 md:grid-cols-3" role="list">
-        <li class="card plan p-6" data-reveal style="--d:0ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">A1</p>
-          <h4 class="mt-3 font-display text-lg">Formulario que llega a tu correo y a tu planilla</h4>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Cada consulta del sitio te llega al correo y queda anotada en tu propia planilla. No pierdes ninguna.</p>
-          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$85.000</span> <span class="text-sm text-dim">CLP</span></p>
-          <p class="mt-1 text-sm text-dim">Plazo: 2 días hábiles*</p>
-        </li>
-        <li class="card plan p-6" data-reveal style="--d:70ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">A2</p>
-          <h4 class="mt-3 font-display text-lg">Agenda de horas en línea con recordatorio por correo</h4>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Tus clientes reservan hora solos desde el sitio y les llega un recordatorio por correo. ¿Necesitas recordatorios por WhatsApp, cobros o fichas de clientes? Un sistema de agenda pagado puede servirte más, y te lo diremos.</p>
-          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$110.000</span> <span class="text-sm text-dim">CLP</span></p>
-          <p class="mt-1 text-sm text-dim">Plazo: 3 días hábiles*</p>
-        </li>
-        <li class="card plan p-6" data-reveal style="--d:140ms">
-          <p class="text-xs font-bold tracking-[0.2em] text-ember">A3</p>
-          <h4 class="mt-3 font-display text-lg">Catálogo que editas en una planilla</h4>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Cambias productos y precios en una planilla y el sitio se actualiza solo. Cada producto tiene su botón "Pedir por WhatsApp" con el mensaje ya escrito.</p>
-          <p class="mt-5"><span class="text-sm text-dim">Desde</span> <span class="plan-price">$160.000</span> <span class="text-sm text-dim">CLP</span></p>
-          <p class="mt-1 text-sm text-dim">Hasta 20 productos con foto; $25.000 por cada 10 más. Plazo: 5 días hábiles*</p>
-        </li>
-      </ul>
-      <p class="mt-6 text-sm text-dim" data-reveal>¿Necesitas algo más grande, como una automatización a medida o un agente de IA? Cuéntanos tu caso y te diremos con honestidad si encaja.</p>
-
-      <div class="callout mt-10" data-reveal>
-        <p><strong class="text-snow">Mantención opcional · $12.000 al mes o $120.000 al año.</strong> Una revisión mensual de que tu sitio y tu formulario funcionan, hasta 30 minutos de cambios chicos al mes (textos, fotos, precios, horario), un aviso 30 días antes de que venza tu dominio y un respaldo de tus archivos.</p>
-        <p class="mt-3">Si no la tomas o la cancelas, tu sitio sigue en línea: el hosting es gratis, y los archivos y el dominio son tuyos.</p>
-      </div>
-
-      <div class="mt-14 grid gap-10 md:grid-cols-2" data-reveal>
-        <div>
-          <h3 class="font-display text-2xl">Incluido en cada proyecto</h3>
-          <p class="mt-4 text-mist">Lo básico no se cobra aparte. Cada sitio que entregamos trae las mismas bases.</p>
-        </div>
-        <ul class="grid gap-3" role="list">
-          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Código escrito a mano, pensado primero para el celular.</strong> <span class="text-mist">HTML, CSS y JavaScript. Sin frameworks pesados, nada que no puedas leer.</span></span></li>
-          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Bases de SEO.</strong> <span class="text-mist">HTML semántico, títulos y descripciones, vista previa para redes, carga rápida.</span></span></li>
-          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Accesibilidad básica.</strong> <span class="text-mist">Tipografía legible, navegación con teclado, respeto por la preferencia de movimiento reducido.</span></span></li>
-          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Sin analítica ni trackers por defecto.</strong> <span class="text-mist">Nadie sigue a tus visitantes por internet a través de tu sitio.</span></span></li>
-          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Hosting gratis, a tu nombre.</strong> <span class="text-mist">Lo dejamos listo y conectamos tu dominio. Solo pagas el dominio, directo a quien lo registra (un .cl cuesta $9.990 al año).</span></span></li>
-          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Revisión de seguridad antes de entregar.</strong> <span class="text-mist">Revisamos tu sitio antes de publicarlo; lo que toque tus cuentas, solo con tu permiso por escrito.</span></span></li>
-          <li class="check-item"><svg class="check-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Entrega completa.</strong> <span class="text-mist">Archivos fuente, dominio a tu nombre y documentación en lenguaje simple.</span></span></li>
+      <div class="svc-autos">
+        <h3 class="font-display text-2xl">Suma una automatización</h3>
+        <p class="mt-2 text-mist">Pago único, en cuentas gratis a tu nombre.</p>
+        <ul class="svc-rows" role="list">
+          <li class="svc-row">
+            <span class="svc-n"><i>A1</i>Formulario</span>
+            <span class="svc-d">Cada consulta llega a tu correo y queda en tu planilla.</span>
+            <span class="svc-p"><small>Desde</small> $85.000</span>
+            <span class="svc-w">2 días hábiles</span>
+          </li>
+          <li class="svc-row">
+            <span class="svc-n"><i>A2</i>Agenda de horas</span>
+            <span class="svc-d">Tus clientes reservan solos y reciben un recordatorio por correo.</span>
+            <span class="svc-p"><small>Desde</small> $110.000</span>
+            <span class="svc-w">3 días hábiles</span>
+          </li>
+          <li class="svc-row">
+            <span class="svc-n"><i>A3</i>Catálogo en planilla</span>
+            <span class="svc-d">Cambias productos y precios en una planilla y el sitio se actualiza solo. Hasta 20 productos; +$25.000 por cada 10 más.</span>
+            <span class="svc-p"><small>Desde</small> $160.000</span>
+            <span class="svc-w">5 días hábiles</span>
+          </li>
         </ul>
       </div>
 
-      <p class="mt-10 text-sm text-dim" data-reveal><strong class="text-mist">Ningún paquete incluye:</strong> logo o identidad visual, sesión de fotos, tienda con pagos en línea, blog, correo con tu propio dominio, publicidad o manejo de redes, ni el costo del dominio. Nadie puede garantizar con honestidad el primer lugar en Google, así que no lo prometemos.</p>
-      <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4" data-reveal>
-        <a class="btn-cta" href="../brief/">Empieza con el brief</a>
-        <p class="max-w-xl text-sm text-dim">*Días hábiles, contados desde que nos envías textos y fotos. Cada proyecto parte con una cotización por escrito: qué incluye, qué no y el precio final.</p>
+      <div class="svc-notes">
+        <p class="callout"><strong class="text-snow">Mantención opcional: $12.000 al mes o $120.000 al año.</strong> Revisión mensual, hasta 30 minutos de cambios y aviso antes de que venza tu dominio. Si la cancelas, tu sitio sigue en línea.</p>
+        <p class="callout"><strong class="text-snow">En todos los proyectos:</strong> pensado primero para el celular, sin rastreadores ni cookies de terceros, hosting gratis a tu nombre, revisión de seguridad y archivos tuyos. El dominio se paga aparte (un .cl, $9.990 al año).</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Privacidad: por qué poca o nula telemetría es una ventaja -->
-  <section id="privacy" class="scroll-mt-6 px-6 py-20 md:py-28">
-    <div class="mx-auto w-full max-w-6xl">
-      <div class="grid items-center gap-10 md:grid-cols-2">
-        <div data-reveal>
-        <p class="eyebrow">Privacidad por defecto</p>
-        <h2 class="h2 mt-4 font-display">Poca o nula telemetría, a propósito</h2>
-        <p class="mt-4 text-lg text-mist">La mayoría de los sitios de pequeños negocios vienen con analítica, píxeles y widgets que no necesitan. Cada uno suma peso, cookies de terceros y otra empresa mirando a tus visitantes. Los dejamos fuera, salvo que tengas una razón clara para agregarlos.</p>
+      <div class="svc-go">
+        <a class="btn-cta" href="../brief/">Pide tu sitio</a>
+        <p class="text-sm text-dim">Recibes una cotización por escrito: qué incluye, qué no y el precio final. ¿Algo más grande? Cuéntalo en el brief. Plazos en días hábiles desde que envías textos y fotos.</p>
       </div>
-        <div class="pixel-frame pixel-shield" data-scene="shield" aria-hidden="true"></div>
-      </div>
-      <ul class="mt-12 grid gap-5 md:grid-cols-3" role="list">
-        <li class="card p-6" data-reveal style="--d:0ms">
-          <h3 class="font-display text-xl">Páginas más rápidas</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Menos scripts, cargas más rápidas, sobre todo con datos móviles. La velocidad ayuda a tus visitantes y a tu posicionamiento en buscadores.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:70ms">
-          <h3 class="font-display text-xl">Más confianza</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">La gente nota cuando un sitio la respeta. Sin trackers, nadie arma perfiles de tus clientes a través de tu propia web.</p>
-        </li>
-        <li class="card p-6" data-reveal style="--d:140ms">
-          <h3 class="font-display text-xl">Menos que administrar</h3>
-          <p class="mt-3 text-sm leading-relaxed text-mist">Sin cookies de rastreo hay menos avisos de consentimiento, menos políticas que actualizar y menos terceros de los que depender.</p>
-        </li>
-      </ul>
-      <p class="callout mt-10" data-reveal><strong class="text-snow">¿Necesitas números?</strong> Te proponemos analítica respetuosa y sin cookies, y te explicamos lo que implica antes de agregar cualquier cosa. Tus datos, tus reglas, tu libertad.</p>
     </div>
   </section>
 
@@ -515,7 +448,7 @@
       <div class="faq mt-10" data-reveal>
         <details>
           <summary>¿Cuánto cuesta un sitio web?</summary>
-          <p>Una landing page parte en $150.000 CLP y un sitio simple en $290.000 CLP. Un sitio a medida parte en $590.000 CLP y se cotiza después del brief. Envía el brief y recibirás una cotización por escrito, con qué incluye y qué no, antes de empezar. El tiempo que nos ahorra el flujo con IA se descuenta de tu precio.</p>
+          <p>Un sitio de una página parte en $150.000 CLP y un sitio simple en $290.000 CLP. Un sitio a medida parte en $590.000 CLP y se cotiza después del brief. Envía el brief y recibirás una cotización por escrito, con qué incluye y qué no, antes de empezar. Nadie puede garantizar con honestidad el primer lugar en Google, así que no lo prometemos.</p>
         </details>
         <details>
           <summary>¿De quién es el sitio?</summary>
