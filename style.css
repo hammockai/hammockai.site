@@ -323,3 +323,6 @@ svg{display:block}
 .crew-step:last-child{border-color:var(--ember-line)}
 @media (min-width:640px){.crew-steps{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1024px){.crew-steps{grid-template-columns:repeat(4,1fr)}}
+/* How we work: the value of the system, in three chips */
+.crew-value{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.25rem}
+.crew-value li{padding:.45rem .9rem;border:1px solid var(--ember-line);border-radius:9999px;color:var(--snow);font-weight:700;font-size:.9rem;line-height:1.35}
