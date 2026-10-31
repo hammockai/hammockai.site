@@ -290,16 +290,64 @@
         <ul class="crew-value" role="list"><li>Faster</li><li>The same checks on every site</li><li>Fewer hours, lower price: the time AI saves us comes straight off your price</li></ul>
       </div>
 
-      <ol class="crew-steps" role="list">
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">1</span><h3>Contramaestre</h3><p>On a ship, the contramaestre (the boatswain) runs the deck and hands out the work. Ours organizes your project, questions what doesn't add up and coordinates the other agents.</p><a class="link" href="contramaestre/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">2</span><h3>Quintero</h3><p>Sets a fair price and puts it in writing before we start.</p><a class="link" href="quintero/en/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">3</span><h3>El Diseñador Web and The Artist</h3><p>Propose how your site looks: colors, fonts and illustrations.</p></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">4</span><h3>El Constructor</h3><p>Builds it, phone first, fast and accessible.</p></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">5</span><h3>El Automatizador</h3><p>If your site needs it, connects your form, booking or catalog.</p></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">6</span><h3>La Cerrajera</h3><p>Checks security before delivery.</p></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">7</span><h3>Guardian</h3><p>Checks that everything is honest and follows our Six Pillars.</p><a class="link" href="crew/en/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">8</span><h3>You and the developer</h3><p>The two of you approve, and only then does it go live.</p></li>
-      </ol>
+      <ul class="map-legend" role="list">
+        <li><span class="key" aria-hidden="true"></span>AI agent: does its part on its own, in small steps</li>
+        <li><span class="key key--opt" aria-hidden="true"></span>Optional: only if your site needs it</li>
+        <li><span class="key key--human" aria-hidden="true"></span>Person: reviews and approves</li>
+      </ul>
+
+      <div class="crew-map">
+        <ol class="fmap" role="list">
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">1</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="catalejo"></canvas></span>
+            <div class="txt"><h3>Contramaestre</h3><p class="kind">AI agent</p><p class="fn-what">Organizes your project, questions what doesn’t add up and hands out the work to the others.</p><a class="link node-link" href="contramaestre/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">2</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="balanza"></canvas></span>
+            <div class="txt"><h3>Quintero</h3><p class="kind">AI agent</p><p class="fn-what">Sets a fair price and puts it in writing before we start.</p><a class="link node-link" href="quintero/en/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">3</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="paleta"></canvas></span>
+            <div class="txt"><h3>El Diseñador Web and The Artist</h3><p class="kind">AI agents</p><p class="fn-what">Propose how your site looks: colors, fonts and illustrations.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">4</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="regla"></canvas></span>
+            <div class="txt"><h3>El Constructor</h3><p class="kind">AI agent</p><p class="fn-what">Builds it, phone first, fast and accessible.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode fnode--opt">
+            <span class="fn-n" aria-hidden="true">5</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="engranaje"></canvas></span>
+            <div class="txt"><h3>El Automatizador</h3><p class="kind">AI agent</p><p class="fn-what">If your site needs it, connects your form, booking or catalog.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">6</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="candado"></canvas></span>
+            <div class="txt"><h3>La Cerrajera</h3><p class="kind">AI agent</p><p class="fn-what">Checks security before delivery.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">7</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="brujula"></canvas></span>
+            <div class="txt"><h3>Guardian</h3><p class="kind">AI agent</p><p class="fn-what">Checks that everything is honest and follows our Six Pillars.</p><a class="link node-link" href="crew/en/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode fnode--human">
+            <span class="fn-n" aria-hidden="true">8</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="timon"></canvas></span>
+            <div class="txt"><h3>You and the developer</h3><p class="kind">People</p><p class="fn-what">The two of you approve, and only then does it go live.</p></div>
+          </li>
+        </ol>
+      </div>
+      <p class="map-next"><a class="link" href="#process">After you approve: how your site goes live <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
 
       <h3 class="pillars-title display">Six Pillars that guide all our agents</h3>
       <ul class="pillars" role="list">
@@ -317,6 +365,185 @@
           <a class="link" href="brief/en/">Tell us what you need <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="link" href="crew/en/">Free prompts from our crew <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5b · Tu sitio, paso a paso -->
+  <section id="process" class="sec" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="path-wrap">
+        <div class="head">
+          <h2 id="process-title" class="h2 display">Your site, step by step</h2>
+          <p class="lead">This is what happens after you request your site and accept the quote. Tap each step to see what you do and what your package includes.</p>
+        </div>
+
+        <ol class="path" role="list">
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="hoja"></canvas><span class="step-n">1</span></span>
+            <details>
+              <summary>
+                <span class="step-t">You send your information</span>
+                <span class="step-s">You send us your texts, photos and details.</span>
+                <span class="who"><span class="tag chip--you">You</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>Send your texts, your photos (with permission to use them) and your logo, if you have one.</li>
+                      <li>Confirm your hours, address and contact details in writing.</li>
+                      <li>Start thinking about your domain: your site’s web address, like yourbusiness.com or yourbusiness.cl.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="dots" role="list">
+                      <li>The quote in writing: pages, sections and rounds of changes.</li>
+                      <li>Your timeline starts here: one page, 8 business days; simple website, 15; custom, 23 to 30.</li>
+                      <li>Nothing made up: whatever is missing is marked, and we ask you.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="engranaje"></canvas><span class="step-n">2</span></span>
+            <details>
+              <summary>
+                <span class="step-t">The crew builds</span>
+                <span class="step-s">The agents put your site together in small steps.</span>
+                <span class="who"><span class="tag">The crew</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>Nothing. If something isn’t clear, we ask you.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="dots" role="list">
+                      <li>Design with your colors and logo, phone first.</li>
+                      <li>The extras you asked for (form, booking or catalog), already connected.</li>
+                      <li>Everything is checked before delivery: security, accessibility and nothing made up.</li>
+                      <li>No trackers.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="lupa"></canvas><span class="step-n">3</span></span>
+            <details>
+              <summary>
+                <span class="step-t">You review it</span>
+                <span class="step-s">You see your site and tell us what to change.</span>
+                <span class="who"><span class="tag chip--you">You</span><span class="tag chip--you">The developer</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>Look at your site on your phone and on a computer.</li>
+                      <li>Send all your changes in one message, as a list: where it is and what it should say (a screenshot helps). Each list counts as one round.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="pill-list pill-list--flush" role="list"><li>One page: 1 round</li><li>Simple website: 2</li><li>Custom: 3</li></ul>
+                    <ul class="dots dots--after" role="list">
+                      <li>Anything outside your package is quoted separately.</li>
+                      <li>We show you your site before it’s published.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="regla"></canvas><span class="step-n">4</span></span>
+            <details>
+              <summary>
+                <span class="step-t">Final adjustments</span>
+                <span class="step-s">We apply your changes and you give the OK.</span>
+                <span class="who"><span class="tag">The crew</span><span class="tag chip--you">You</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>Check the changes and approve them in writing. Without your OK, nothing goes live.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="dots" role="list">
+                      <li>Your changes applied, plus a last check: phone, accessibility and security.</li>
+                      <li>Your files in a .zip: they’re yours.</li>
+                      <li>A short guide, in plain words, to look after your site and ask for changes.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="sitio"></canvas><span class="step-n">5</span></span>
+            <details>
+              <summary>
+                <span class="step-t">Going live</span>
+                <span class="step-s">Your site goes online, in your name.</span>
+                <span class="who"><span class="tag chip--you">You</span><span class="tag chip--you">The developer</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>Buy your domain, in your name and with your email. It’s paid separately (below).</li>
+                      <li>Create your free Cloudflare account with your email, turn on two-step security (a code on your phone) and save your recovery codes.</li>
+                      <li>Do the clicks with the developer on a video call, or invite them to your account and remove them when done. You never share your password.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="dots" role="list">
+                      <li>Your site published, with the padlock (https).</li>
+                      <li>A check together: it opens well on your phone, and a mistyped address shows a notice page.</li>
+                      <li>Your site stays online even if you don’t sign up for maintenance.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="host">
+                  <p class="mini">How free hosting works</p>
+                  <ol class="host-flow" role="list">
+                    <li><b>Your files</b><small>the .zip we hand you</small></li>
+                    <li><b>Your Cloudflare account</b><small>free plan, in your name</small></li>
+                    <li><b>Your domain</b><small>your site’s web address</small></li>
+                    <li><b>People looking for you</b><small>see your site, with the padlock</small></li>
+                  </ol>
+                  <p>Hosting is the place on the internet where your site lives, like the shop where you serve customers. We use Cloudflare Pages, which has a free plan. The account is yours, not ours: if one day you want to change provider or designer, you take your files and carry on.</p>
+                  <p>The domain is separate: it’s your site’s name. You pay for it every year to whoever sells it to you, not to us.</p>
+                  <dl class="dom"><div class="mk mk-clp"><dt>.cl</dt><dd>CLP 9,990 a year</dd></div><div class="mk mk-usd"><dt>.com</dt><dd>about USD 11 a year</dd></div></dl>
+                  <p class="fine">Reference prices: they change depending on where you buy. Turn on automatic renewal and use an email you check, so you don’t lose your domain. Connecting it can take a few hours.</p>
+                </div>
+              </div>
+            </details>
+          </li>
+        </ol>
       </div>
     </div>
   </section>

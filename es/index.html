@@ -291,16 +291,64 @@
         <ul class="crew-value" role="list"><li>Más rápido</li><li>Las mismas revisiones en cada sitio</li><li>Menos horas, menos precio: el tiempo que la IA nos ahorra se descuenta de tu precio</li></ul>
       </div>
 
-      <ol class="crew-steps" role="list">
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">1</span><h3>Contramaestre</h3><p>En un barco, el contramaestre organiza la cubierta y reparte el trabajo. El nuestro ordena tu proyecto, cuestiona lo que no cuadra y coordina a los demás agentes.</p><a class="link" href="../es/contramaestre/">Llévate su prompt gratis <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">2</span><h3>Quintero</h3><p>Pone un precio justo y lo deja por escrito antes de empezar.</p><a class="link" href="../quintero/">Llévate su prompt gratis <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">3</span><h3>El Diseñador Web y The Artist</h3><p>Proponen cómo se ve tu sitio: colores, letras e ilustraciones.</p></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">4</span><h3>El Constructor</h3><p>Lo construye, primero para el celular, rápido y accesible.</p></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">5</span><h3>El Automatizador</h3><p>Si tu sitio lo necesita, conecta tu formulario, tu agenda o tu catálogo.</p></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">6</span><h3>La Cerrajera</h3><p>Revisa la seguridad antes de entregar.</p></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">7</span><h3>Guardian</h3><p>Revisa que todo sea honesto y cumpla nuestros Seis Pilares.</p><a class="link" href="../crew/">Llévate su prompt gratis <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        <li class="crew-step"><span class="crew-n" aria-hidden="true">8</span><h3>Tú y el desarrollador</h3><p>Ustedes dos aprueban, y recién ahí se publica.</p></li>
-      </ol>
+      <ul class="map-legend" role="list">
+        <li><span class="key" aria-hidden="true"></span>Agente de IA: hace su parte solo, en pasos pequeños</li>
+        <li><span class="key key--opt" aria-hidden="true"></span>Opcional: solo si tu sitio lo necesita</li>
+        <li><span class="key key--human" aria-hidden="true"></span>Persona: revisa y aprueba</li>
+      </ul>
+
+      <div class="crew-map">
+        <ol class="fmap" role="list">
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">1</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="catalejo"></canvas></span>
+            <div class="txt"><h3>Contramaestre</h3><p class="kind">Agente de IA</p><p class="fn-what">Ordena tu proyecto, cuestiona lo que no cuadra y reparte el trabajo entre los demás.</p><a class="link node-link" href="../es/contramaestre/">Llévate su prompt gratis <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">2</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="balanza"></canvas></span>
+            <div class="txt"><h3>Quintero</h3><p class="kind">Agente de IA</p><p class="fn-what">Pone un precio justo y lo deja por escrito antes de empezar.</p><a class="link node-link" href="../quintero/">Llévate su prompt gratis <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">3</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="paleta"></canvas></span>
+            <div class="txt"><h3>El Diseñador Web y The Artist</h3><p class="kind">Agentes de IA</p><p class="fn-what">Proponen cómo se ve tu sitio: colores, letras e ilustraciones.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">4</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="regla"></canvas></span>
+            <div class="txt"><h3>El Constructor</h3><p class="kind">Agente de IA</p><p class="fn-what">Lo construye, primero para el celular, rápido y accesible.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode fnode--opt">
+            <span class="fn-n" aria-hidden="true">5</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="engranaje"></canvas></span>
+            <div class="txt"><h3>El Automatizador</h3><p class="kind">Agente de IA</p><p class="fn-what">Si tu sitio lo necesita, conecta tu formulario, tu agenda o tu catálogo.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">6</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="candado"></canvas></span>
+            <div class="txt"><h3>La Cerrajera</h3><p class="kind">Agente de IA</p><p class="fn-what">Revisa la seguridad antes de entregar.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">7</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="brujula"></canvas></span>
+            <div class="txt"><h3>Guardian</h3><p class="kind">Agente de IA</p><p class="fn-what">Revisa que todo sea honesto y cumpla nuestros Seis Pilares.</p><a class="link node-link" href="../crew/">Llévate su prompt gratis <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode fnode--human">
+            <span class="fn-n" aria-hidden="true">8</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="timon"></canvas></span>
+            <div class="txt"><h3>Tú y el desarrollador</h3><p class="kind">Personas</p><p class="fn-what">Ustedes dos aprueban, y recién ahí se publica.</p></div>
+          </li>
+        </ol>
+      </div>
+      <p class="map-next"><a class="link" href="#process">Después de aprobar: así queda en línea tu sitio <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
 
       <h3 class="pillars-title display">Seis Pilares que guían a todos nuestros agentes</h3>
       <ul class="pillars" role="list">
@@ -318,6 +366,185 @@
           <a class="link" href="../brief/">Cuéntanos qué necesitas <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="link" href="../crew/">Prompts gratis de nuestra crew <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5b · Tu sitio, paso a paso -->
+  <section id="process" class="sec" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="path-wrap">
+        <div class="head">
+          <h2 id="process-title" class="h2 display">Tu sitio, paso a paso</h2>
+          <p class="lead">Esto pasa después de que pides tu sitio y aceptas la cotización. Toca cada paso para ver qué haces tú y qué incluye tu paquete.</p>
+        </div>
+
+        <ol class="path" role="list">
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="hoja"></canvas><span class="step-n">1</span></span>
+            <details>
+              <summary>
+                <span class="step-t">Entregas tu información</span>
+                <span class="step-s">Nos mandas tus textos, tus fotos y tus datos.</span>
+                <span class="who"><span class="tag chip--you">Tú</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">Tú haces</p>
+                    <ul class="dots" role="list">
+                      <li>Mandas tus textos, tus fotos (con permiso para usarlas) y tu logo, si tienes.</li>
+                      <li>Confirmas por escrito tu horario, tu dirección y tus datos de contacto.</li>
+                      <li>Empiezas a pensar el nombre de tu dominio: la dirección de tu sitio, como tunegocio.com o tunegocio.cl.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Incluye tu paquete</p>
+                    <ul class="dots" role="list">
+                      <li>La cotización por escrito: páginas, secciones y rondas de cambios.</li>
+                      <li>Tu plazo empieza aquí: una página, 8 días hábiles; sitio simple, 15; a medida, 23 a 30.</li>
+                      <li>Nada inventado: lo que falte queda marcado y te lo preguntamos.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="engranaje"></canvas><span class="step-n">2</span></span>
+            <details>
+              <summary>
+                <span class="step-t">La crew construye</span>
+                <span class="step-s">Los agentes arman tu sitio en pasos pequeños.</span>
+                <span class="who"><span class="tag">La crew</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">Tú haces</p>
+                    <ul class="dots" role="list">
+                      <li>Nada. Si algo no queda claro, te preguntamos.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Incluye tu paquete</p>
+                    <ul class="dots" role="list">
+                      <li>Diseño con tus colores y tu logo, pensado primero para el celular.</li>
+                      <li>Los extras que pediste (formulario, agenda o catálogo), ya conectados.</li>
+                      <li>Todo se revisa antes de entregarlo: seguridad, accesibilidad y que nada sea inventado.</li>
+                      <li>Sin rastreadores.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="lupa"></canvas><span class="step-n">3</span></span>
+            <details>
+              <summary>
+                <span class="step-t">Revisión contigo</span>
+                <span class="step-s">Ves tu sitio y nos dices qué cambiar.</span>
+                <span class="who"><span class="tag chip--you">Tú</span><span class="tag chip--you">El desarrollador</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">Tú haces</p>
+                    <ul class="dots" role="list">
+                      <li>Miras tu sitio en el celular y en el computador.</li>
+                      <li>Mandas todos tus cambios en un solo mensaje, en lista: dónde está y cómo debe decir (una captura de pantalla ayuda). Cada lista cuenta como una ronda.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Incluye tu paquete</p>
+                    <ul class="pill-list pill-list--flush" role="list"><li>Una página: 1 ronda</li><li>Sitio simple: 2</li><li>A medida: 3</li></ul>
+                    <ul class="dots dots--after" role="list">
+                      <li>Lo que quede fuera de tu paquete se cotiza aparte.</li>
+                      <li>Te mostramos tu sitio antes de publicarlo.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="regla"></canvas><span class="step-n">4</span></span>
+            <details>
+              <summary>
+                <span class="step-t">Ajuste final</span>
+                <span class="step-s">Aplicamos tus cambios y tú das el visto bueno.</span>
+                <span class="who"><span class="tag">La crew</span><span class="tag chip--you">Tú</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">Tú haces</p>
+                    <ul class="dots" role="list">
+                      <li>Revisas los cambios y apruebas por escrito. Sin tu visto bueno, nada se publica.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Incluye tu paquete</p>
+                    <ul class="dots" role="list">
+                      <li>Tus cambios aplicados y una última revisión: celular, accesibilidad y seguridad.</li>
+                      <li>Tus archivos en un .zip: son tuyos.</li>
+                      <li>Una guía corta, en palabras simples, para cuidar tu sitio y pedir cambios.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="sitio"></canvas><span class="step-n">5</span></span>
+            <details>
+              <summary>
+                <span class="step-t">Publicación</span>
+                <span class="step-s">Tu sitio queda en línea, a tu nombre.</span>
+                <span class="who"><span class="tag chip--you">Tú</span><span class="tag chip--you">El desarrollador</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">Tú haces</p>
+                    <ul class="dots" role="list">
+                      <li>Compras tu dominio, a tu nombre y con tu correo. Se paga aparte (abajo).</li>
+                      <li>Creas tu cuenta gratis en Cloudflare, con tu correo. Activas el segundo paso de seguridad (un código en tu teléfono) y guardas tus códigos de recuperación.</li>
+                      <li>Haces los clics con el desarrollador en una videollamada, o lo invitas a tu cuenta y lo quitas al terminar. Nunca compartes tu contraseña.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Incluye tu paquete</p>
+                    <ul class="dots" role="list">
+                      <li>Tu sitio publicado, con candado (https).</li>
+                      <li>Una revisión juntos: abre bien en el celular y una dirección mal escrita muestra una página de aviso.</li>
+                      <li>Tu sitio sigue en línea aunque no contrates mantención.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="host">
+                  <p class="mini">Cómo funciona el alojamiento gratis</p>
+                  <ol class="host-flow" role="list">
+                    <li><b>Tus archivos</b><small>el .zip que te entregamos</small></li>
+                    <li><b>Tu cuenta de Cloudflare</b><small>plan gratis, a tu nombre</small></li>
+                    <li><b>Tu dominio</b><small>la dirección de tu sitio</small></li>
+                    <li><b>Quien te busca</b><small>ve tu sitio, con candado</small></li>
+                  </ol>
+                  <p>El alojamiento (hosting, en inglés) es el lugar de internet donde vive tu sitio, como el local donde atiendes. Usamos Cloudflare Pages, que tiene un plan gratis. La cuenta es tuya, no nuestra: si un día quieres cambiar de proveedor o de diseñador, te llevas tus archivos y sigues.</p>
+                  <p>El dominio es aparte: es el nombre de tu sitio. Se paga cada año a quien te lo vende, no a nosotros.</p>
+                  <dl class="dom"><div class="mk mk-clp"><dt>.cl</dt><dd>$9.990 al año</dd></div><div class="mk mk-usd"><dt>.com</dt><dd>unos USD 11 al año</dd></div></dl>
+                  <p class="fine">Son precios de referencia: cambian según dónde compres. Activa la renovación automática y un correo que revises, para no perder tu dominio. Conectarlo puede tardar unas horas.</p>
+                </div>
+              </div>
+            </details>
+          </li>
+        </ol>
       </div>
     </div>
   </section>

@@ -605,3 +605,222 @@
     if (make) pixelScene(el, make(el));
   });
 })();
+
+/* Mapa de la crew y camino del cliente: íconos pixel art 16×16 (filas de texto) y encendido en orden, una sola vez. */
+(function () {
+  var PAL = {o:'#3A3A3A',s:'#8A8F99',S:'#C9CED6',B:'#8A6E2F',b:'#C9A24A',L:'#FFD27A',e:'#FF6B35',w:'#FAFAFA',k:'#3B2412',p:'#EFE2BD',P:'#CDB88A',n:'#1D285E',h:'#BFE6FF',T:'#1D6F8F',c:'#2D5FA8'};
+  var SPRITES = {
+    catalejo: [
+      '................',
+      '................',
+      '................',
+      '.............ooo',
+      '.........ooooLLo',
+      '....oooooSLLLbbo',
+      'ooooSLLLLsbbbbbo',
+      'LLLLsbbbbsbbbbeo',
+      'BBBBsbbbbsbbbbeo',
+      'oooosBBBBsbbbbbo',
+      '....ooooosBBBbbo',
+      '.........ooooBBo',
+      '.............ooo',
+      '................',
+      '................',
+      '................'],
+    balanza: [
+      '................',
+      '.......LL.......',
+      '.......bb.......',
+      '..SSSSSeeSSSSS..',
+      '..sssssbbsssss..',
+      '...s...bb...s...',
+      '..s.s..bb..s.s..',
+      '.bbbbb.bb.bbbbb.',
+      '..BBB..bb..BBB..',
+      '.......bb.......',
+      '.......bb.......',
+      '.......bb.......',
+      '....bbbbbbbb....',
+      '....BBBBBBBB....',
+      '....oooooooo....',
+      '................'],
+    paleta: [
+      '................',
+      '................',
+      '................',
+      '....kkkkkkkk....',
+      '..kkPPPPPPPPkk..',
+      '.kPPbbPPPPeePPk.',
+      'kPPPbbPPPPeePPPk',
+      'kPTTPPPPPPPPPPPk',
+      'kPTTPPPPPPPccPPk',
+      'kPPPPPPPPPPccPPk',
+      '.kPPPPPPPPPPPPk.',
+      '..kkPPPPPPPPkk..',
+      '....kkkkkkkk....',
+      '................',
+      '................',
+      '................'],
+    regla: [
+      '................',
+      '..LbLbLbLbLbLb..',
+      '..bbbbbbbbbbbb..',
+      '..BBBBBBBBBBBB..',
+      '............Ss..',
+      '............ss..',
+      '..LbLbLbLbLbLb..',
+      '..bbbbbbbbbbbb..',
+      '..BBBBBBBBBBBB..',
+      '..Ss............',
+      '..ss............',
+      '..LbLbLbLb......',
+      '..bbbbbbbbee....',
+      '..BBBBBBBB......',
+      '................',
+      '................'],
+    engranaje: [
+      '................',
+      '......SSSS......',
+      '..SS..ssss..SS..',
+      '..ssSSSSSSSSss..',
+      '...Ssssssssso...',
+      '..Ssssssssssso..',
+      'SSSsssoooosssoSS',
+      'ssSsssoeeosssoss',
+      'ssSsssoeeosssoss',
+      'ssSsssoooosssooo',
+      '..ssssssssssso..',
+      '...ssssssssso...',
+      '..ssooooooooss..',
+      '..oo..ssss..oo..',
+      '......oooo......',
+      '................'],
+    candado: [
+      '................',
+      '....SSSSSSSS....',
+      '....SS....ss....',
+      '....SS....ss....',
+      '....SS....ss....',
+      '....SS....ss....',
+      '....SS....ss....',
+      '...oooooooooo...',
+      '...oLLLLLLLLo...',
+      '...obbbbbbbbo...',
+      '...obbbeebbbo...',
+      '...obbbkkbbbo...',
+      '...obbbkkbbbo...',
+      '...oBBBBBBBBo...',
+      '...oooooooooo...',
+      '................'],
+    brujula: [
+      '................',
+      '.....LLLLLL.....',
+      '...LLnnnnnnbb...',
+      '..Lnnnnbbnnnnb..',
+      '..Lnnnnnnnnnnb..',
+      '.Lnnnnneennnnnb.',
+      '.Lnnnnneennnnnb.',
+      '.Lbnnnneennnnbb.',
+      '.LbnnnnSSnnnnbb.',
+      '.LnnnnnSSnnnnnb.',
+      '.LnnnnnSSnnnnnb.',
+      '..bnnnnnnnnnnB..',
+      '..bnnnnbbnnnnB..',
+      '...bbnnnnnnBB...',
+      '.....BBBBBB.....',
+      '................'],
+    timon: [
+      '.......LL.......',
+      '.......bb.......',
+      '..L...bbbb...L..',
+      '...Lbb.BB.bbL...',
+      '...bB..BB..Bb...',
+      '...b.B.BB.B.b...',
+      '..b...BBBB...b..',
+      'LLbBBBBLbBBBBbLL',
+      'LLbBBBBbeBBBBbLL',
+      '..b...BBBB...b..',
+      '...b.B.BB.B.b...',
+      '...bB..BB..Bb...',
+      '...Lbb.BB.bbL...',
+      '..L...bbbb...L..',
+      '.......bb.......',
+      '.......LL.......'],
+    hoja: [
+      '................',
+      '...oooooooooo...',
+      '...oppppppppo...',
+      '...opsssssspo...',
+      '...oppppppppo...',
+      '...opsssssspo...',
+      '...oppppppppo...',
+      '...opsssspppo...',
+      '...oppppppppo...',
+      '...opsssssspo...',
+      '...oppppppppo...',
+      '...opsssspppo...',
+      '...oppppppppo...',
+      '...opppppeepo...',
+      '...oooooooooo...',
+      '................'],
+    lupa: [
+      '................',
+      '....LLLL........',
+      '...Lhhhhb.......',
+      '..Lhhhhhhb......',
+      '.Lwwhhhhhhb.....',
+      '.Lwhhhhhhhb.....',
+      '.bhhhhhhhhB.....',
+      '.bhhhhhhhhB.....',
+      '..bhhhhhhB......',
+      '...bhhhhB.SS....',
+      '....BBBB..ss....',
+      '............SS..',
+      '............ss..',
+      '..............bb',
+      '..............BB',
+      '................'],
+    sitio: [
+      '................',
+      '................',
+      '.ssssssssssssss.',
+      '.sSeSbSsSSSSSSs.',
+      '.sSSSSSSSSSSSSs.',
+      '.ssssssssssssss.',
+      '.snnnnnnnnnnnns.',
+      '.snSSSSSSnnnnns.',
+      '.snnnnnnnnnnnns.',
+      '.snssssnneeeens.',
+      '.snssssnneeeens.',
+      '.snnnnnnnnnnnns.',
+      '.snssssssssnnns.',
+      '.ssssssssssssss.',
+      '................',
+      '................']
+  };
+
+  document.querySelectorAll('canvas[data-sprite]').forEach(function (cv) {
+    var rows = SPRITES[cv.getAttribute('data-sprite')];
+    if (!rows) return;
+    var ctx = cv.getContext('2d');
+    rows.forEach(function (row, y) {
+      for (var x = 0; x < 16 && x < row.length; x++) {
+        var color = PAL[row.charAt(x)];
+        if (color) { ctx.fillStyle = color; ctx.fillRect(x, y, 1, 1); }
+      }
+    });
+  });
+
+  /* El único momento de movimiento del mapa: los nodos se encienden en orden, una vez, al entrar a la vista.
+     Con "menos movimiento" no se arma nada: todo se ve encendido desde el principio. */
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var maps = document.querySelectorAll('.crew-map');
+  if (!calm && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-lit'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.1 });
+    maps.forEach(function (m) { m.classList.add('is-armed'); io.observe(m); });
+  }
+})();
