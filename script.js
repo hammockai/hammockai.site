@@ -582,6 +582,23 @@
     };
   };
 
+  /* Precios por mercado (/es/): los botones eligen la lista; sin JavaScript se ven ambas. Sin cookies ni almacenamiento. */
+  const root = doc.documentElement;
+  const picks = doc.querySelectorAll('.market-pick');
+  if (picks.length) {
+    const names = { usd: 'Resto del mundo (USD)', clp: 'Chile (CLP)' };
+    const chips = doc.querySelectorAll('.market-pick .chip');
+    const setMarket = (m, announce) => {
+      root.dataset.market = m;
+      chips.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.market === m)));
+      if (announce) doc.querySelectorAll('[data-market-status]').forEach((p) => { p.textContent = 'Mostrando precios: ' + names[m]; });
+    };
+    root.classList.add('mk-on');
+    picks.forEach((p) => { p.hidden = false; });
+    chips.forEach((b) => b.addEventListener('click', () => setMarket(b.dataset.market, true)));
+    setMarket('usd', false);
+  }
+
   doc.querySelectorAll('[data-scene]').forEach((el) => {
     const make = SCENES[el.dataset.scene];
     if (make) pixelScene(el, make(el));

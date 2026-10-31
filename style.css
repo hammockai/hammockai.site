@@ -166,6 +166,19 @@ svg{display:block}
 .dots li::before{content:"";position:absolute;left:0;top:.6em;width:.4rem;height:.4rem;border-radius:9999px;background:var(--ember)}
 @media (min-width:768px){.plans{grid-template-columns:repeat(3,1fr)}}
 
+/* Precios por mercado (solo /es/): sin JavaScript se ven las dos listas; con JavaScript, un selector muestra una */
+.market{margin-top:1.5rem}
+.market-note{font-size:.9375rem;font-weight:700;color:var(--snow)}
+.market-pick{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:.75rem}
+.market-pick[hidden]{display:none}
+.market-l{font-size:.875rem;color:var(--dim)}
+.chip{min-height:44px;padding:.5rem 1.1rem;border:1px solid var(--pill-line);border-radius:9999px;background:transparent;color:var(--mist);font:inherit;font-size:.9375rem;font-weight:700;cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--ember);background:var(--ember-line);color:var(--snow)}
+.mk{display:block}
+.mk-lab{color:var(--dim);font-weight:400}
+.mk-on .mk-lab{display:none}
+.mk-on[data-market="usd"] .mk-clp,.mk-on[data-market="clp"] .mk-usd{display:none}
+
 /* 4. Automatizaciones: Antes / Después con mini-ilustraciones */
 .autos{display:grid;gap:1.25rem;margin-top:2.5rem}
 .auto{display:flex;flex-direction:column;gap:.75rem;padding:1.25rem;background:var(--surface);border:1px solid var(--hair);border-radius:1.1rem}
