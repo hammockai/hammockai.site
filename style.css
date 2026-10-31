@@ -306,3 +306,9 @@ svg{display:block}
 .tracking-tight{letter-spacing:-.02em}
 .rounded-full{border-radius:9999px}
 .antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+/* About: pixel-art sunset with someone reading in the hammock (script.js, SCENES.sunset) */
+.pixel-frame{position:relative;overflow:hidden;width:100%}
+.pixel-frame canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+.pixel-sunset{height:200px;margin-top:2rem;border:1px solid var(--hair);border-radius:1.1rem}
+@media (max-width:767px){.pixel-sunset{height:180px}}

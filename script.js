@@ -300,6 +300,26 @@
     }
   };
 
+  const sprite = (c, rows, x, y, pal, flip = false) => {
+    rows.forEach((row, j) => {
+      for (let i = 0; i < row.length; i += 1) {
+        const key = row[flip ? row.length - 1 - i : i];
+        if (key !== '.' && pal[key]) rect(c, x + i, y + j, 1, 1, pal[key]);
+      }
+    });
+  };
+
+  const drawGlints = (c, list, W, t, colors) => {
+    list.forEach((g) => {
+      if (Math.sin(t * g.speed + g.phase) < 0) return;
+      const x = (g.x + t * (2 + g.depth * 6)) % (W + 6) - 3;
+      const color = g.depth < 0.25 ? colors[0] : (g.phase > 5.6 ? colors[2] : colors[1]);
+      rect(c, x, g.y, g.len, 1, color);
+    });
+  };
+
+  const frameSize = (el, mobilePx = 3) => () => ({ w: el.clientWidth, h: el.clientHeight, px: desktop.matches ? 4 : mobilePx });
+
   const SCENES = {};
 
   /* Hero: night sea, the Hammock island, a pirate ship and a surfer */
@@ -494,6 +514,71 @@
         const waveT = 24 + (W * (L.wide ? 0.4 : 0.75)) / Math.max(14, W / 16) - 6;
         render(3, shipT, waveT);
       }
+    };
+  };
+
+  /* About: hammock time at sunset, someone reading, a seagull passing by */
+  const GULL = [['w...w', '.w.w.', '..w..'], ['.....', 'ww.ww', '..w..']];
+  SCENES.sunset = (el) => (ctx) => {
+    let W = 0, H = 0, bg = null, glints = [], horizon = 0, sunX = 0, island = null, clouds = [];
+
+    const draw = (t) => {
+      ctx.drawImage(bg, 0, 0);
+      // retro sun: stripes slide down through the lower half
+      const r = Math.max(8, Math.round(H * 0.14));
+      for (let dy = -r; dy <= 0; dy += 1) {
+        const half = Math.round(Math.sqrt(r * r - dy * dy));
+        const stripe = dy > -r / 2 && ((dy + Math.floor(t * 2)) % 4 === 0);
+        if (!stripe) rect(ctx, sunX - half, horizon + dy, half * 2, 1, dy < -r * 0.6 ? C.sunCore : C.sun);
+      }
+      clouds.forEach((c) => {
+        const x = ((c.x + t * c.speed) % (W + c.w * 2)) - c.w;
+        rect(ctx, x, c.y, c.w, 1, C.cloud);
+        rect(ctx, x + 3, c.y - 1, c.w - 8, 1, C.cloud);
+      });
+      drawGlints(ctx, glints, W, t, ['#a8425a', C.sunGlint, C.sunCore]);
+      // gull crosses every ~14 s
+      const gx = ((t * W) / 10) % (W * 1.4) - 6;
+      const gy = Math.round(H * 0.22 + Math.sin(t * 1.5) * 2);
+      sprite(ctx, GULL[Math.floor(t * 4) % 2], gx, gy, { w: C.white });
+
+      const o = desktop.matches ? { rx: 36, gap: 21, th: 26, hy: 10, sag: 4 } : { rx: 30, gap: 18, th: 22, hy: 9, sag: 4 };
+      const h = drawIsland(ctx, island.x, island.y, t, o);
+      // someone in the hammock, reading; the page turns now and then
+      const from = Math.round(h.ax + (h.bx - h.ax) * 0.18), to = Math.round(h.bx - (h.bx - h.ax) * 0.12);
+      for (let x = from; x <= to; x += 1) {
+        const u = (x - from) / (to - from);
+        const yy = h.curve(x) - 1;
+        const color = u < 0.1 ? C.hair : u < 0.2 ? C.skin : u < 0.55 ? C.ember : u < 0.9 ? C.white : C.skin;
+        rect(ctx, x, yy - (u < 0.2 ? 2 : 1), 1, u < 0.2 ? 3 : 2, color);
+      }
+      // an open book held over the chest; a page turns every few seconds
+      const bx = Math.round(from + (to - from) * 0.3);
+      const by = h.curve(bx) - 5;
+      rect(ctx, bx, by, 4, 2, C.white);
+      rect(ctx, bx + 2, by, 1, 2, C.parchDark);
+      if (t % 5 < 0.4) rect(ctx, bx + 1, by - 1, 2, 1, C.white);
+      rect(ctx, bx + 1, by + 2, 1, 2, C.skin);
+    };
+
+    return {
+      size: frameSize(el, 3),
+      setup: (w, h) => {
+        W = w;
+        H = h;
+        horizon = Math.round(H * 0.6);
+        sunX = Math.round(W * 0.7);
+        island = { x: Math.round(W * 0.34), y: horizon + Math.round((H - horizon) * 0.5) };
+        const rand = rng(2026);
+        glints = makeGlints(rand, W, horizon, H, 26);
+        clouds = [0, 1, 2].map((i) => ({ x: rand() * W, y: Math.round(horizon * (0.2 + i * 0.2)), w: 12 + Math.round(rand() * 14), speed: 0.6 + rand() }));
+        bg = backdrop(W, H, (b) => {
+          bands(b, C.dusk, 0, horizon, W);
+          bands(b, C.duskSea, horizon, H, W);
+        });
+      },
+      draw,
+      still: () => draw(1)
     };
   };
 
