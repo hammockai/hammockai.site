@@ -177,6 +177,7 @@ svg{display:block}
 .mk{display:block}
 .mk-lab{color:var(--dim);font-weight:400}
 .mk-on .mk-lab{display:none}
+.mk-on .auto-cost .mk{display:inline}
 .mk-on[data-market="usd"] .mk-clp,.mk-on[data-market="clp"] .mk-usd{display:none}
 
 /* 4. Automatizaciones: Antes / Después con mini-ilustraciones */
