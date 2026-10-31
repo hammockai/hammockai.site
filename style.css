@@ -312,3 +312,14 @@ svg{display:block}
 .pixel-frame canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges}
 .pixel-sunset{height:200px;margin-top:2rem;border:1px solid var(--hair);border-radius:1.1rem}
 @media (max-width:767px){.pixel-sunset{height:180px}}
+
+/* How we work: the crew, in order of work (each card links only if there's a public prompt) */
+.crew-steps{display:grid;gap:1rem;margin-top:2.5rem;counter-reset:none}
+.crew-step{position:relative;display:flex;flex-direction:column;padding:1.25rem 1.1rem 1.1rem;border:1px solid var(--hair);border-radius:1.1rem;background:var(--surface)}
+.crew-n{display:inline-grid;place-items:center;width:2rem;height:2rem;border:1px solid var(--ember-line);border-radius:9999px;color:var(--ember);font-weight:700;font-size:.9rem}
+.crew-step h3{margin:.75rem 0 0;font-family:"Archivo Black",ui-sans-serif,system-ui,sans-serif;font-weight:400;font-size:1.05rem;line-height:1.2}
+.crew-step p{margin-top:.4rem;font-size:.9rem;line-height:1.5;color:var(--mist)}
+.crew-step .link{margin-top:auto;padding-top:.5rem;font-size:.9rem}
+.crew-step:last-child{border-color:var(--ember-line)}
+@media (min-width:640px){.crew-steps{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.crew-steps{grid-template-columns:repeat(4,1fr)}}
