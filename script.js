@@ -608,7 +608,7 @@
 
 /* Mapa de la crew y camino del cliente: íconos pixel art 16×16 (filas de texto) y encendido en orden, una sola vez. */
 (function () {
-  var PAL = {o:'#3A3A3A',s:'#8A8F99',S:'#C9CED6',B:'#8A6E2F',b:'#C9A24A',L:'#FFD27A',e:'#FF6B35',w:'#FAFAFA',k:'#3B2412',p:'#EFE2BD',P:'#CDB88A',n:'#1D285E',h:'#BFE6FF',T:'#1D6F8F',c:'#2D5FA8'};
+  var PAL = {o:'#3A3A3A',s:'#8A8F99',S:'#C9CED6',B:'#8A6E2F',b:'#C9A24A',L:'#FFD27A',e:'#FF6B35',w:'#FAFAFA',k:'#3B2412',p:'#EFE2BD',P:'#CDB88A',n:'#1D285E',h:'#BFE6FF',T:'#1D6F8F',c:'#2D5FA8',q:'#7CC4F0'};
   var SPRITES = {
     catalejo: [
       '................',
@@ -660,6 +660,57 @@
       '....kkkkkkkk....',
       '................',
       '................',
+      '................'],
+    contramaestre: [
+      '.......L........',
+      '.......b........',
+      '..cccccccccccc..',
+      '.cqqqqqqqqqqqqc.',
+      '.cqhhqqqqqqqqqc.',
+      '.cqbLbqqqqqqqqc.',
+      'bcqbebqqqqooqqcb',
+      'bcqbbbqqqqooqqcb',
+      '.cbBbBbBbBbBbBc.',
+      '..cqqqqqqqqqqc..',
+      '...cccccccccc...',
+      '......ssss......',
+      '..cnnnnnnnnnnc..',
+      '.cnnnnnbbnnnnnc.',
+      '.cnnnnnnnnnnnnc.',
+      '................'],
+    guardian: [
+      '................',
+      '....wwwwwwww....',
+      '..wwwwwwwwwwww..',
+      '.wwSwwwwwwwwSww.',
+      '.wSwppppppppwSw.',
+      '.wSwpooppoopwSw.',
+      '.wSwpoppppopwSw.',
+      '.wSwpppoopppwSw.',
+      '..wwwppppppwww..',
+      '..ssssswwsssss..',
+      '.sooooowwooooos.',
+      '.soooooSSooooos.',
+      '.soooooooooooos.',
+      '.soooboooooooos.',
+      '.ssssssssssssss.',
+      '................'],
+    constructor: [
+      '................',
+      '.....LLLbbb.....',
+      '....LbbbbbbB....',
+      '.LLbbbbbbbbbbBB.',
+      '.BBBBBBBBBBBBBB.',
+      '..SSSSSSSSSSSS..',
+      '..soooooooooos..',
+      '..soohoooohoos..',
+      '..soohoooohoos..',
+      '..soooooooooos..',
+      '..soooowooooos..',
+      '..sooooooooees..',
+      '..ssssssssssss..',
+      '......ssss......',
+      '...ssssssssss...',
       '................'],
     regla: [
       '................',
