@@ -128,9 +128,11 @@ svg{display:block}
 
 /* 2. Portafolio: la tarjeta ENTERA es el enlace */
 .demos{display:grid;gap:1.25rem;margin-top:2.5rem}
-.demo{display:flex;flex-direction:column;height:100%;border:1px solid var(--hair);border-radius:1.1rem;background:var(--surface);overflow:hidden;transition:border-color .2s ease}
-.demo:hover{border-color:var(--ember-line)}
-.demo:focus-visible{outline-offset:4px;border-radius:1.1rem}
+.demos>li{display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:1.1rem;background:var(--surface);overflow:hidden;transition:border-color .2s ease}
+.demos>li:hover,.demos>li:focus-within{border-color:var(--ember-line)}
+.demo{display:flex;flex-direction:column;flex:1}
+.demo:focus-visible{outline-offset:-4px;border-radius:1.1rem}
+.demos .tech{margin:0 1.5rem;border-bottom:0}
 .shot{display:block;padding:.75rem .75rem 0;background:var(--coal)}
 .frame{display:block;border:1px solid var(--pill-line);border-bottom:0;border-radius:.8rem .8rem 0 0;overflow:hidden;background:var(--ink)}
 .chrome{display:flex;gap:.3rem;padding:.45rem .65rem;border-bottom:1px solid var(--hair);background:var(--ink)}
