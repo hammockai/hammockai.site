@@ -166,6 +166,29 @@ svg{display:block}
 .dots li::before{content:"";position:absolute;left:0;top:.6em;width:.4rem;height:.4rem;border-radius:9999px;background:var(--ember)}
 @media (min-width:768px){.plans{grid-template-columns:repeat(3,1fr)}}
 
+/* Qué hay por dentro, pagos, detalle técnico y ejemplos (bajo los planes) */
+.inside,.pay-block{margin-top:3rem}
+.inside>h3,.pay-block>h3{font-size:1.4rem;line-height:1.2}
+.inside>.dots,.pay-block .plans{margin-top:1.25rem}
+.pay{margin-top:1.25rem}
+.pay .plan h4{font-size:1.15rem}
+.pay-block>.fine{margin-top:1.25rem}
+.more{margin-top:auto;padding-top:.9rem}
+.tech{margin-top:1.1rem;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.tech summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:44px;font-weight:700;font-size:.9375rem;cursor:pointer;list-style:none}
+.tech summary::-webkit-details-marker{display:none}
+.tech summary::after{content:"+";flex-shrink:0;color:var(--ember);font-size:1.3rem;line-height:1;transition:transform .2s ease}
+.tech[open] summary::after{transform:rotate(45deg)}
+.tech .dots{margin-top:.2rem;padding-bottom:1rem}
+.tech code{font-size:.85em;overflow-wrap:anywhere}
+.tech li,.inside .dots li{overflow-wrap:anywhere}
+.inside .dots li{font-size:.9375rem}
+.inside .dots b,.pay .dots b,.tech .dots b{color:var(--snow)}
+.plan>h3:first-child,.auto>div>h3:first-child{margin-top:0}
+.plan .tech{margin-top:1.1rem}
+.auto .tech{margin-top:.25rem}
+@media (prefers-reduced-motion:reduce){.tech summary::after{transition:none}}
+
 /* Precios por mercado (solo /es/): sin JavaScript se ven las dos listas; con JavaScript, un selector muestra una */
 .market{margin-top:1.5rem}
 .market-note{font-size:.9375rem;font-weight:700;color:var(--snow)}
@@ -178,6 +201,7 @@ svg{display:block}
 .mk-lab{color:var(--dim);font-weight:400}
 .mk-on .mk-lab{display:none}
 .mk-on .auto-cost .mk{display:inline}
+.mk-on .pay .mk{display:inline}
 .mk-on[data-market="usd"] .mk-clp,.mk-on[data-market="clp"] .mk-usd{display:none}
 
 /* 4. Automatizaciones: Antes / Después con mini-ilustraciones */

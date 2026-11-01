@@ -101,7 +101,7 @@
       </div>
       <ul class="demos" role="list">
         <li>
-          <a class="demo" href="../portafolio/constructor-management/" target="_blank" rel="noopener">
+          <a class="demo" href="../portafolio/constructor-management/" target="_blank" rel="noopener noreferrer">
             <span class="shot"><span class="frame"><span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
               <img src="../assets/images/portafolio/constructor-management.webp" width="960" height="600" loading="lazy" alt="Portada de la demo: remodelaciones, fondo azul, naranja y un dibujo de una pared en obra"></span></span>
             <span class="meta">
@@ -113,7 +113,7 @@
           </a>
         </li>
         <li>
-          <a class="demo" href="../portafolio/gym-management/" target="_blank" rel="noopener">
+          <a class="demo" href="../portafolio/gym-management/" target="_blank" rel="noopener noreferrer">
             <span class="shot"><span class="frame"><span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
               <img src="../assets/images/portafolio/gym-management.webp" width="960" height="600" loading="lazy" alt="Portada de la demo: gimnasio, fondo negro con verde lima y una figura corriendo"></span></span>
             <span class="meta">
@@ -125,7 +125,7 @@
           </a>
         </li>
         <li>
-          <a class="demo" href="../portafolio/therapist-management/" target="_blank" rel="noopener">
+          <a class="demo" href="../portafolio/therapist-management/" target="_blank" rel="noopener noreferrer">
             <span class="shot"><span class="frame"><span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
               <img src="../assets/images/portafolio/therapist-management.webp" width="960" height="600" loading="lazy" alt="Portada de la demo: consulta de psicología, tonos verdes suaves y un sillón junto a una ventana"></span></span>
             <span class="meta">
@@ -154,7 +154,6 @@
       <div class="market"><p class="market-note">El precio sigue al país del negocio que paga.</p><div class="market-pick" role="group" aria-labelledby="mk-l1" hidden><span id="mk-l1" class="market-l">Ver precios de:</span><button type="button" class="chip" data-market="usd" aria-pressed="true">Resto del mundo (USD)</button><button type="button" class="chip" data-market="clp" aria-pressed="false">Chile (CLP)</button></div><p class="sr-only" role="status" data-market-status></p></div>
       <ul class="plans" role="list">
         <li class="plan">
-          <p class="tag">P1</p>
           <h3 class="display">Una página</h3>
           <p class="price"><span class="mk mk-usd"><small class="mk-lab">Resto del mundo:</small> <b>USD 450</b></span><span class="mk mk-clp"><small class="mk-lab">Chile:</small> <small>Desde</small> <b>$150.000</b> <small>CLP</small></span></p>
           <p class="when">10 días hábiles</p>
@@ -163,11 +162,21 @@
             <li>Plantilla con tus colores y logo</li>
             <li>Hasta 6 secciones y 8 fotos</li>
             <li>Botón de WhatsApp con tu número</li>
+            <li>Formulario a tu correo y planilla, incluido para empezar</li>
             <li>1 ronda de cambios</li>
           </ul>
+          <details class="tech">
+            <summary>Detalle técnico</summary>
+            <ul class="dots" role="list">
+              <li>Una página sobre una de las plantillas del portafolio, adaptada con tus colores (variables en <code>:root</code>) y tu logo. Contacto sin servidor: enlaces <code>wa.me</code> con el mensaje escrito, <code>tel:</code> y <code>mailto:</code>.</li>
+              <li>Tú entregas los textos y las fotos con un formulario guía; los ordenamos y pulimos. Sin redacción desde cero.</li>
+              <li>Las consultas llegan por WhatsApp, llamada, correo o el formulario (incluido): lo que se guarda, dónde y a nombre de quién está en el detalle técnico del formulario, más abajo. La CSP del sitio se abre solo a la URL exacta del script de Google (<code>form-action</code> y <code>connect-src</code>).</li>
+              <li>Todo lo común (hosting, seguridad, accesibilidad, buscadores, imágenes) está en "Qué hay por dentro".</li>
+            </ul>
+          </details>
+          <p class="more"><a class="link" target="_blank" rel="noopener noreferrer" href="../portafolio/gym-management/">Mira un ejemplo<span class="sr-only">: demo de un estudio de entrenamiento ficticio (se abre en otra pestaña)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
         </li>
         <li class="plan">
-          <p class="tag">P2</p>
           <h3 class="display">Sitio simple</h3>
           <p class="price"><span class="mk mk-usd"><small class="mk-lab">Resto del mundo:</small> <b>USD 990</b></span><span class="mk mk-clp"><small class="mk-lab">Chile:</small> <small>Desde</small> <b>$290.000</b> <small>CLP</small></span></p>
           <p class="when">20 días hábiles</p>
@@ -178,27 +187,119 @@
             <li>Botón de WhatsApp con tu número</li>
             <li>2 rondas de cambios</li>
           </ul>
+          <details class="tech">
+            <summary>Detalle técnico</summary>
+            <ul class="dots" role="list">
+              <li>Hasta 5 páginas (inicio, servicios o precios, trabajos o galería de hasta 20 fotos, preguntas frecuentes, contacto) sobre una plantilla adaptada. El mapa va como enlace, sin mapa incrustado que rastree.</li>
+              <li>Incluye el formulario: lo que se guarda, dónde y a nombre de quién está en el detalle técnico del formulario, más abajo. La CSP del sitio se abre solo a la URL exacta del script de Google (<code>form-action</code> y <code>connect-src</code>).</li>
+              <li>Todo lo común (hosting, seguridad, accesibilidad, buscadores, imágenes) está en "Qué hay por dentro".</li>
+            </ul>
+          </details>
+          <p class="more"><a class="link" target="_blank" rel="noopener noreferrer" href="../portafolio/therapist-management/">Mira un ejemplo<span class="sr-only">: demo de una consulta de psicología ficticia (se abre en otra pestaña)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
         </li>
         <li class="plan">
-          <p class="tag">P3</p>
           <h3 class="display">Sitio a medida</h3>
           <p class="price"><span class="mk mk-usd"><small class="mk-lab">Resto del mundo:</small> <small>Desde</small> <b>USD 2.500</b></span><span class="mk mk-clp"><small class="mk-lab">Chile:</small> <small>Desde</small> <b>$690.000</b> <small>CLP</small></span></p>
           <p class="when">30 días hábiles</p>
-          <p class="what">Diseño propio, sin plantilla. Precio final cuando conozcamos tu proyecto.</p>
+          <p class="what">Diseño propio, sin plantilla, hecho a partir de tu marca. Precio final cuando conozcamos tu proyecto.</p>
           <ul class="dots" role="list">
-            <li>Hasta 8 páginas</li>
-            <li>Textos escritos contigo</li>
-            <li>Formulario, más agenda o catálogo</li>
-            <li>3 rondas de cambios</li>
+            <li>Diagnóstico: qué funciona hoy, qué falta y qué decir primero (de tu negocio y de tu sitio actual, si tienes uno)</li>
+            <li>Ficha de estilo y maqueta que apruebas antes de construir</li>
+            <li>Diseño propio desde tu marca, sin plantilla</li>
+            <li>Hasta 8 páginas, con textos escritos contigo en una entrevista de 45 minutos</li>
+            <li>Formulario a tu correo y planilla, más una agenda de horas o un catálogo con "Pedir por WhatsApp" (tú eliges)</li>
+            <li>3 rondas de cambios y una entrega guiada de 30 minutos por videollamada</li>
           </ul>
+          <details class="tech">
+            <summary>Detalle técnico</summary>
+            <ul class="dots" role="list">
+              <li><b>Proceso:</b> (1) diagnóstico: lectura de tu sitio actual como visitante (qué funciona, contacto desde el celular, confianza, búsqueda local, lenguaje), marcando qué está verificado y qué no; (2) ficha de estilo: qué ofreces y a quién, acción principal, qué es fijo (nombre, logo, textos tuyos) y qué es libre (paleta, letras, composición), idioma y qué falta; (3) maqueta en HTML para que apruebes; (4) recién entonces se construye. Sobre la misma base técnica de "Qué hay por dentro": sin frameworks, CSP estricta, revisión automática y manual.</li>
+              <li><b>Diseño propio:</b> sin plantilla; colores y letras salen de tu marca. Las fuentes con licencia abierta (OFL) se alojan en el propio sitio, nunca desde Google Fonts.</li>
+              <li><b>Hasta 8 páginas</b>, textos escritos contigo, 3 rondas de cambios (cada lista de cambios en un solo mensaje cuenta como una ronda).</li>
+              <li><b>Automatizaciones incluidas:</b> el formulario (→ correo + planilla) y una de estas dos: la agenda con recordatorio o el catálogo con "Pedir por WhatsApp". Servicio, cuenta, datos y costos de terceros están en el detalle técnico de cada extra. El catálogo con más de 20 productos con foto suma un tramo.</li>
+              <li><b>Entrevista y entrega:</b> una entrevista de 45 minutos para escribir los textos contigo y, al final, una entrega guiada de 30 minutos por videollamada.</li>
+            </ul>
+          </details>
+          <p class="more"><a class="link" target="_blank" rel="noopener noreferrer" href="../portafolio/constructor-management/">Mira un ejemplo<span class="sr-only">: demo de un negocio de remodelaciones ficticio (se abre en otra pestaña)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+          <p class="fine">Los ejemplos parten de una plantilla. En este plan, tu diseño parte de cero.</p>
         </li>
       </ul>
-      <p class="fine">Todos incluyen: pensado primero para el celular, sin rastreadores, sitio en línea gratis a tu nombre y archivos tuyos.</p>
-      <p class="fine mk mk-usd">Resto del mundo: precios en dólares (USD). Tu sitio viene en español e inglés, incluido. Aparte: tu dominio .com (unos USD 11 al año).</p>
-      <p class="fine mk mk-clp">Chile: precios en pesos chilenos (CLP). Aparte: tu dominio .cl ($9.990 al año). Otro idioma no está incluido.</p>
-      <p class="fine mk mk-usd"><b>Mantención opcional:</b> USD 39 al mes o USD 390 al año. Sin permanencia.</p>
-      <p class="fine mk mk-clp"><b>Mantención opcional:</b> $12.000 al mes o $120.000 al año. Sin permanencia.</p>
-      <p class="fine">La mantención incluye una revisión mensual del sitio, hasta 30 minutos de cambios chicos al mes (no se acumulan), un aviso con 30 días de anticipación para renovar tu dominio y una copia de tus archivos cuando la pidas. Lo que pase de 30 minutos se cotiza antes de hacerlo.</p>
+      <div class="inside">
+        <h3 class="display">Qué hay por dentro de cada sitio</h3>
+        <p class="fine fine-lead">Esto incluye todo sitio nuestro, aunque no se vea a simple vista: se revisa antes de entregártelo. Vale para todos los planes.</p>
+        <ul class="dots" role="list">
+          <li><b>Revisado antes de entregarlo.</b> Pasamos tu sitio por una lista de seguridad y por una herramienta que lo lee archivo por archivo, y corregimos lo que aparezca. Es una revisión, no una garantía: miramos las puertas más comunes.</li>
+          <li><b>Fácil de leer y de usar para más gente.</b> Revisamos que el texto tenga buen contraste, que las fotos tengan su descripción, que se pueda usar solo con teclado y que la letra se pueda agrandar (con una lista basada en la guía internacional de accesibilidad web, WCAG 2.2 nivel AA). Así tu sitio lo puede usar más gente, también quien usa un lector de pantalla.</li>
+          <li><b>Lo básico para que Google te entienda.</b> Cada página lleva su título y su descripción con tu rubro y tu ciudad, tus datos de contacto en un formato que Google lee y un mapa del sitio. Nadie puede prometer el primer lugar: depende también de tu ficha de Google, de tus reseñas, de la competencia y del tiempo.</li>
+          <li><b>Pensado para el celular.</b> Se diseña primero para el celular: los botones se tocan bien con el pulgar, nada se corta ni se mueve hacia el lado, y el botón de WhatsApp abre con tu mensaje ya escrito. Las fotos se achican para que carguen más rápido.</li>
+          <li><b>A tu nombre y sin rastreadores.</b> Tu dominio y la cuenta donde vive el sitio quedan a tu nombre y con tu correo. El sitio no lleva rastreadores ni piezas de otros sitios que avisen de cada visita. Y sigue en línea aunque no contrates mantención.</li>
+          <li><b>Una guía para usarlo.</b> Te entregamos los archivos en un .zip (son tuyos) y una guía corta, en palabras simples: cómo cuidar tus cuentas, cómo pedir cambios y qué hacer si algo falla. Si un día quieres cambiar de proveedor, puedes.</li>
+        </ul>
+
+        <details class="tech">
+          <summary>Detalle técnico</summary>
+          <ul class="dots" role="list">
+            <li><b>Código:</b> HTML5 semántico, CSS escrito a mano (colores y medidas como variables en <code>:root</code>) y JavaScript sin frameworks (la base trae ~2,6 KB). Sin CDN, sin paso de compilación y sin dependencias.</li>
+            <li><b>Hosting:</b> Cloudflare Pages (plan gratis), en una cuenta a nombre del cliente, con segundo factor activado. Se publica subiendo la carpeta del sitio. Dominio a nombre del cliente. HTTPS: se comprueba al publicar que <code>http://</code> y <code>www</code> lleven a <code>https://</code>.</li>
+            <li><b>Cabeceras de seguridad:</b> archivo <code>_headers</code> con Content-Security-Policy estricta (sin <code>'unsafe-inline'</code> ni <code>'unsafe-eval'</code>, <code>frame-ancestors 'none'</code>), <code>X-Content-Type-Options: nosniff</code>, <code>Referrer-Policy: strict-origin-when-cross-origin</code>, <code>Permissions-Policy</code> y <code>X-Frame-Options: DENY</code>. La misma CSP va en un <code>&lt;meta&gt;</code> de cada página. Que las cabeceras reales del sitio publicado coincidan con <code>_headers</code> se comprueba en vivo.</li>
+            <li><b>Revisión de seguridad:</b> un script propio en Node puro, sin dependencias ni red, que lee los archivos y busca secretos, scripts en línea, recursos de otros dominios, código de rastreo y cabeceras faltantes. Para entregar tiene que salir con 0 críticos y 0 altos. Después, una revisión manual de La Cerrajera (agente de seguridad de la crew), solo sobre lo que el cliente autoriza por escrito. No es una prueba de intrusión: no ve el sitio publicado, la cuenta ni el DNS.</li>
+            <li><b>Accesibilidad:</b> WCAG 2.2 AA revisado a mano con una lista: <code>lang</code>, un solo <code>h1</code> y títulos en orden, <code>alt</code> en las imágenes, contraste 4,5:1 (3:1 en texto grande), uso solo con teclado con foco visible, <code>prefers-reduced-motion</code> y zoom al 200 %. Para Lighthouse móvil nos ponemos como metas rendimiento ≥ 90 y accesibilidad ≥ 95: son metas, no mediciones hechas en clientes.</li>
+            <li><b>Buscadores:</b> <code>&lt;title&gt;</code>, meta description y <code>h1</code> únicos por página, con rubro y ciudad; <code>canonical</code>, Open Graph (<code>og:image</code> 1200×630), <code>sitemap.xml</code> y <code>robots.txt</code>; datos estructurados <code>LocalBusiness</code> (JSON-LD) solo con datos confirmados por el cliente, revisados en validator.schema.org. Google Business Profile: si el cliente ya tiene ficha, se revisa que nombre, dirección y teléfono coincidan con el sitio.</li>
+            <li><b>Imágenes y peso:</b> WebP de ~1200 px, con <code>width</code> y <code>height</code> y <code>loading="lazy"</code> (menos la primera visible). Metas: foto ≤ 200 KB y primera carga ≤ 500 KB; son metas, no mediciones hechas en clientes.</li>
+            <li><b>Cookies y rastreo:</b> ni cookies ni rastreadores en los archivos del sitio (revisado en la base y en las demos); sin fuentes, mapas ni videos incrustados de otros dominios. Eso vale para los archivos del sitio; lo que la red de Cloudflare agregue por su cuenta no lo controlamos.</li>
+            <li><b>Entrega:</b> carpeta completa en un .zip, guía para el cliente, lista de entrega recorrida completa (cero marcadores pendientes, fotos con permiso, créditos de fotos y letras).</li>
+          </ul>
+        </details>
+      </div>
+      <div class="pay-block">
+        <h3 class="display">Qué pagas, cuándo y a quién</h3>
+        <p class="fine fine-lead">Esto es todo lo que se paga, sin sorpresas. Tu plan se paga una sola vez; lo demás va a tu nombre o es opcional.</p>
+        <ul class="plans pay" role="list">
+          <li class="plan">
+            <p class="tag">Pago único</p>
+            <h4 class="display">Tu plan</h4>
+            <ul class="dots" role="list">
+              <li>El precio de tu plan, que ves por escrito antes de empezar</li>
+              <li>50 % para empezar y el resto al entregar</li>
+              <li>Se paga a Hammock AI</li>
+              <li>Lo que viene en tu plan no se cobra otra vez. Los extras que pidas (agenda, catálogo, identidad, correos) también son pago único, con su precio en la cotización</li>
+            </ul>
+      </li>
+          <li class="plan">
+            <p class="tag">Cada año</p>
+            <h4 class="display">Tu dominio</h4>
+            <ul class="dots" role="list">
+              <li><span class="mk mk-usd">Dominio .com: unos USD 11 al año</span><span class="mk mk-clp">Dominio .cl: $9.990 al año</span></li>
+              <li>Lo pagas tú, a tu nombre y con tu correo, a donde lo compres (el registrador)</li>
+              <li>Conviene dejar activada la renovación automática, para que no venza</li>
+            </ul>
+      </li>
+          <li class="plan">
+            <p class="tag">Cada mes</p>
+            <h4 class="display">Opcionales</h4>
+            <ul class="dots" role="list">
+              <li><b>Mantención:</b> <span class="mk mk-usd">USD 39 al mes o USD 390 al año</span><span class="mk mk-clp">$12.000 al mes o $120.000 al año</span>, sin permanencia. Se paga a Hammock AI</li>
+              <li>Incluye una revisión mensual, hasta 30 minutos de cambios chicos al mes (no se acumulan), un aviso con 30 días de anticipación para renovar tu dominio y una copia de tus archivos cuando la pidas</li>
+              <li>Si no la tomas, tu sitio sigue en línea</li>
+              <li><b>Correo con tu dominio</b> (solo si pides ese extra): una suscripción al proveedor (Proton o Google), a tu nombre y sin recargo nuestro. El monto lo fija el proveedor</li>
+            </ul>
+      </li>
+        </ul>
+        <p class="fine"><b>$0 al mes, con los planes gratis de hoy:</b> el lugar donde vive tu sitio (tu cuenta gratis de Cloudflare) y el formulario, la agenda y el catálogo (en tus cuentas gratis de Google y Cloudflare).</p>
+
+        <details class="tech">
+          <summary>Detalle técnico</summary>
+          <ul class="dots" role="list">
+            <li><b>Hosting a $0:</b> Cloudflare Pages, plan gratis, en tu cuenta. Límites hoy de ese plan: 500 publicaciones al mes, 20.000 archivos por sitio y 25 MiB por archivo; no indica un límite de visitas para archivos estáticos. Los planes y límites gratis de Cloudflare y Google pueden cambiar.</li>
+            <li><b>Formulario y agenda a $0:</b> cuenta de Google gratis; los correos que mandan salen de tu cuenta, con un límite de 100 destinatarios al día (se comparte entre ambos). No pagas una suscripción de correo por ellos.</li>
+            <li><b>Catálogo a $0:</b> Google Sheets y un Worker de Cloudflare en tu cuenta, plan gratis (100.000 solicitudes al día).</li>
+            <li><b>Dominio:</b> se compra a tu nombre; si lo compras en Cloudflare Registrar, la renovación automática viene activada por defecto (a precio de lista); en otro registrador, se revisa en su panel. Sin renovación, el sitio y el correo con ese dominio dejan de funcionar.</li>
+            <li><b>Mantención:</b> opcional y sin permanencia; lo que pase de 30 minutos al mes se cotiza antes de hacerlo. Si la cancelas, el sitio, los archivos y el dominio siguen siendo tuyos.</li>
+          </ul>
+        </details>
+      </div>
+      <p class="fine mk mk-usd">Resto del mundo: precios en dólares (USD). Tu sitio viene en español e inglés, incluido.</p>
+      <p class="fine mk mk-clp">Chile: precios en pesos chilenos (CLP), para un sitio en un idioma.</p>
     </div>
   </section>
 
@@ -208,12 +309,13 @@
       <div class="head">
         <h2 id="extras-title" class="h2 display">Que tu sitio trabaje por ti</h2>
         <p class="lead">Extras que hacen solos las tareas repetidas y se conectan a tu sitio. Pago único por armarlo, a tu nombre. Los correos tienen una suscripción aparte con el proveedor.</p>
+        <p class="fine">Son automatizaciones nuevas: sus piezas están probadas por separado, y antes de entregártelas las probamos completas con cuentas reales.</p>
       </div>
       <div class="market"><p class="market-note">El precio sigue al país del negocio que paga.</p><div class="market-pick" role="group" aria-labelledby="mk-l2" hidden><span id="mk-l2" class="market-l">Ver precios de:</span><button type="button" class="chip" data-market="usd" aria-pressed="true">Resto del mundo (USD)</button><button type="button" class="chip" data-market="clp" aria-pressed="false">Chile (CLP)</button></div><p class="sr-only" role="status" data-market-status></p></div>
       <ul class="autos" role="list">
 
         <li class="auto">
-          <div><p class="auto-code">A1</p><h3 class="display">Formulario</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>Desde USD 150</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>Desde $85.000</span></b> · 3 días hábiles</p></div>
+          <div><h3 class="display">Formulario</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>Desde USD 150</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>Desde $85.000</span></b> · 3 días hábiles</p></div>
           <div class="pane pane-b">
             <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scatter"/></svg></span>
             <div><span class="t">Antes</span><p>Consultas por chat, llamadas y papelitos.</p></div>
@@ -223,10 +325,23 @@
             <div class="row" aria-hidden="true"><span class="g src"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-form"/></svg></span><svg class="i i-arr" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></span><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sheet"/></svg></span></div>
             <span class="t">Después</span><p>Cada consulta llega a tu correo y queda en tu planilla.</p>
           </div>
+          <details class="tech">
+            <summary>Detalle técnico</summary>
+            <ul class="dots" role="list">
+              <li><b>Incluido en los tres planes.</b> Si lo pides aparte, es un pago único.</li>
+              <li><b>Qué usa:</b> una planilla de Google Sheets con un script de Google Apps Script, en tu cuenta de Google. El sitio envía el formulario a la URL exacta de ese script. Sin servidor nuestro.</li>
+              <li><b>Dónde quedan los datos:</b> nombre, correo o teléfono y mensaje de quien escribe quedan en la pestaña "Consultas" de tu planilla (tu Drive) y en el aviso que llega a tu correo. Pasan por Google, que ya es tu proveedor: no se suma ningún tercero nuevo. Nosotros vemos la planilla solo mientras tengamos acceso de editor, y lo retiramos al entregar (si contratas mantención, mientras dure).</li>
+              <li><b>De quién es la cuenta:</b> tuya. La instalación la haces tú con tu sesión, guiada por nosotros. Nadie pide ni anota tu contraseña.</li>
+              <li><b>Costo de terceros:</b> $0 al mes con una cuenta de Google gratis. Límite de Google: 100 destinatarios de correo por día por cuenta, compartidos con la agenda (el formulario deja 30 libres para los recordatorios); Google puede cambiar estos límites sin aviso.</li>
+              <li><b>Protecciones:</b> campo trampa contra robots, freno si llegan más de 20 consultas completas en una hora (te avisa y la gente ve el botón de WhatsApp), protección contra fórmulas maliciosas en la planilla, permisos mínimos (solo esa planilla y enviarte el aviso) y un interruptor para apagarlo.</li>
+              <li><b>Si falla:</b> el sitio le dice a la persona que escriba por WhatsApp, y el botón de WhatsApp y el correo siguen en el sitio.</li>
+              <li><b>Qué datos pide:</b> los mínimos para responder (nombre, contacto y mensaje). No es para datos sensibles (salud, RUT, tarjetas, claves); para eso se escribe por otro canal.</li>
+            </ul>
+          </details>
         </li>
 
         <li class="auto">
-          <div><p class="auto-code">A2</p><h3 class="display">Agenda de horas</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>Desde USD 220</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>Desde $110.000</span></b> · 5 días hábiles</p></div>
+          <div><h3 class="display">Agenda de horas</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>Desde USD 220</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>Desde $110.000</span></b> · 5 días hábiles</p></div>
           <div class="pane pane-b">
             <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chat"/></svg></span>
             <div><span class="t">Antes</span><p>Coordinas cada hora por mensajes.</p></div>
@@ -236,10 +351,23 @@
             <div class="row" aria-hidden="true"><span class="g src"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cal"/></svg></span><svg class="i i-arr" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></span><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bell"/></svg></span></div>
             <span class="t">Después</span><p>Tus clientes reservan solos y reciben un recordatorio por correo.</p>
           </div>
+          <details class="tech">
+            <summary>Detalle técnico</summary>
+            <ul class="dots" role="list">
+              <li><b>Qué usa:</b> la página de reservas gratis de Google Calendar (una por cuenta personal) más un script de Google Apps Script que, cada día hacia las 18:00, manda un correo de recordatorio a quien tiene hora al día siguiente. El sitio enlaza la página de reservas (no la incrusta).</li>
+              <li><b>Por qué un script y no el recordatorio de Google:</b> el recordatorio automático nativo de Google Calendar es una función de pago (Google One Premium, Workspace Individual y planes superiores). El script lo reemplaza con tu cuenta gratis.</li>
+              <li><b>Dónde quedan los datos:</b> la cita queda en tu Google Calendar, con nombre y correo de quien reserva. El script guarda en su "Registro" solo el correo tapado (ju***@…) y se borra a los 60 días. Los datos no pasan por ningún otro tercero.</li>
+              <li><b>De quién es la cuenta:</b> tuya; la instalas con tu sesión, guiada por nosotros. Nadie pide tu contraseña.</li>
+              <li><b>Costo de terceros:</b> $0 al mes con cuentas gratis. Límites de Google: 100 destinatarios de correo por día (compartidos con el formulario) y 90 minutos al día de disparadores; pueden cambiar sin aviso.</li>
+              <li><b>Protecciones:</b> solo se recuerdan citas que creaste tú, con hasta 3 invitados; permisos mínimos (leer el calendario, escribir en esa planilla, enviar correos) e interruptor para apagar los recordatorios.</li>
+              <li><b>Para qué sirve:</b> reservar horas y recordarlas por correo. Pide solo nombre y correo; no es para datos de salud ni motivos de consulta (si necesitas ficha clínica, cobros o recordatorios por WhatsApp, hace falta un sistema hecho para eso, y conviene orientación profesional). El correo de quien reserva no se verifica.</li>
+              <li><b>Si falla:</b> Google te avisa y el script te escribe "Revisa tus recordatorios de mañana"; el plan B es avisar a mano por WhatsApp.</li>
+            </ul>
+          </details>
         </li>
 
         <li class="auto">
-          <div><p class="auto-code">A3</p><h3 class="display">Catálogo en planilla</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>Desde USD 320</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>Desde $160.000</span></b> · 8 días hábiles</p></div>
+          <div><h3 class="display">Catálogo en planilla</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>Desde USD 320</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>Desde $160.000</span></b> · 8 días hábiles</p></div>
           <div class="pane pane-b">
             <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-code"/></svg></span>
             <div><span class="t">Antes</span><p>Cambiar un precio exige editar el sitio.</p></div>
@@ -250,10 +378,23 @@
             <span class="t">Después</span><p>Editas una planilla y el sitio se actualiza solo.</p>
           </div>
           <p class="fine">Hasta 20 productos; <span class="mk-usd"><span class="mk-lab">resto del mundo: </span>+USD 40</span><span class="mk-clp"><span class="mk-lab"> · Chile: </span>+$25.000</span> por cada 10 más.</p>
+          <details class="tech">
+            <summary>Detalle técnico</summary>
+            <ul class="dots" role="list">
+              <li><b>Qué usa:</b> una planilla de Google Sheets con una pestaña "Catalogo" publicada en la web → un Worker de Cloudflare (en la cuenta de Cloudflare del sitio, que es tuya) que lee, limpia y guarda 5 minutos el catálogo → el sitio arma las tarjetas. Cada producto lleva un botón que abre <code>wa.me</code> con el producto y el precio escritos; la persona decide si envía.</li>
+              <li><b>Dónde quedan los datos:</b> solo el catálogo (producto, descripción, precio, disponible, foto, categoría), que es público. No toca datos de clientes: el pedido ocurre en tu WhatsApp y la persona escribe primero. Quien visita tu sitio no le habla a Google. Lo privado va en otra planilla, nunca en la publicada.</li>
+              <li><b>De quién es la cuenta:</b> tuya (Google y Cloudflare). La planilla la instalas con tu sesión de Google; el Worker, con tu sesión de Cloudflare o invitándonos como miembro de tu cuenta, y nos quitas al terminar.</li>
+              <li><b>Costo de terceros:</b> $0 al mes. Cloudflare Workers gratis: 100.000 solicitudes al día y 10 ms de CPU por solicitud; el Worker lee hasta 120 filas. Si alguien gasta las solicitudes del día, el catálogo vuelve a la medianoche UTC y mientras tanto se ve el bloque de WhatsApp. Google y Cloudflare pueden cambiar estos límites.</li>
+              <li><b>Límites del paquete:</b> hasta 20 productos con foto (más, por tramos de 10). Los cambios de la planilla tardan unos minutos en verse. Las fotos nuevas hay que subirlas al sitio (con la mantención o una hora extra).</li>
+              <li><b>Un "vigía"</b> (otro script de Google) te escribe si el catálogo no carga o llega recortado.</li>
+              <li><b>Para qué sirve:</b> mostrar tus productos y recibir pedidos por WhatsApp. "Agotado" lo marcas tú en la planilla, y el pago lo acuerdas con tu cliente por WhatsApp.</li>
+              <li><b>Si falla:</b> el sitio muestra "No pudimos cargar el catálogo… escríbenos por WhatsApp"; si Google falla un rato, muestra la última copia (hasta 6 horas, marcada como respaldo).</li>
+            </ul>
+          </details>
         </li>
 
         <li class="auto">
-          <div><p class="auto-code">A4</p><h3 class="display">Identidad básica</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>USD 350</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>$130.000</span></b> · 6 días hábiles</p></div>
+          <div><h3 class="display">Identidad básica</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>USD 350</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>$130.000</span></b> · 6 días hábiles</p></div>
           <div class="pane pane-b">
             <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scatter"/></svg></span>
             <div><span class="t">Antes</span><p>Cada pieza con colores y letras distintos.</p></div>
@@ -266,7 +407,7 @@
         </li>
 
         <li class="auto">
-          <div><p class="auto-code">A5</p><h3 class="display">Correos con tu dominio</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>USD 75</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>$45.000</span></b> · 2 días hábiles</p></div>
+          <div><h3 class="display">Correos con tu dominio</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Resto del mundo: </span>USD 75</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>$45.000</span></b> · 2 días hábiles</p></div>
           <div class="pane pane-b">
             <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-at"/></svg></span>
             <div><span class="t">Antes</span><p class="addr">tunegocio@gmail.com</p></div>
@@ -573,6 +714,7 @@
           <details><summary>¿Qué no incluye?</summary><p>Logo con símbolo dibujado, sesión de fotos, tienda con pagos, blog ni publicidad. Otro idioma tampoco, salvo en la lista de resto del mundo, que ya incluye español e inglés.</p></details>
           <details><summary>¿La IA lo hace sola?</summary><p>No. Los agentes hacen el trabajo pesado en pasos pequeños y el desarrollador lo revisa contigo antes de entregarlo.</p></details>
           <details><summary>¿Qué IA usan?</summary><p>Nuestros agentes funcionan sobre modelos de IA de terceros, como Claude. No es magia: con esos mismos modelos tú también puedes crear agentes así. Varios de nuestros agentes tienen su prompt abierto y gratis en <a href="../crew/">la página de la crew</a>.</p></details>
+          <details><summary>¿Y si lo armo yo con IA?</summary><p>Se puede, y para una página simple puede bastar. Lo que suele quedar fuera es el resto del camino: decidir qué decir y cómo mostrarlo, publicarlo a tu nombre, revisar la seguridad y la accesibilidad, ayudar a que Google entienda de qué zona eres y, si quieres, mantenerlo al día. Eso es lo que hacemos por ti, para que tu tiempo se quede en tu negocio.</p></details>
         </div>
       </div>
     </div>
