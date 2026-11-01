@@ -582,6 +582,48 @@
     };
   };
 
+  /* Footer: farewell strip. The island from the logo (two palms and the hammock) at night,
+     small and calm. Same runner as the others, so it pauses off screen and stays still with
+     reduced motion. Without JavaScript the empty div stays hidden (no gap). */
+  SCENES.foot = (el) => (ctx) => {
+    el.classList.add('is-on'); // shows the strip; done before sizing, because a hidden box measures 0
+    let W = 0, H = 0, bg = null, stars = [], glints = [], horizon = 0, cx = 0, cy = 0;
+
+    const draw = (t) => {
+      ctx.drawImage(bg, 0, 0);
+      stars.forEach((s) => {
+        const on = Math.sin(t * s.speed + s.phase);
+        if (on > -0.5) rect(ctx, s.x, s.y, 1, 1, on > 0.3 ? C.star : C.starDim);
+      });
+      drawGlints(ctx, glints, W, t, [C.glintFar, C.glint, C.glintHi]);
+      drawIsland(ctx, cx, cy, t, { rx: 30, gap: 16, th: 22, hy: 9, sag: 4 });
+    };
+
+    return {
+      size: frameSize(el, 3),
+      setup: (w, h) => {
+        W = w;
+        H = h;
+        horizon = H - 19;
+        cy = H - 10;
+        cx = Math.round(W * (desktop.matches ? 0.5 : 0.5));
+        const rand = rng(2027);
+        stars = [];
+        for (let i = 0; i < Math.round((W * horizon) / 160); i += 1) {
+          stars.push({ x: Math.floor(rand() * W), y: Math.floor(rand() * (horizon - 3)), speed: 0.6 + rand() * 2, phase: rand() * 6.3 });
+        }
+        glints = makeGlints(rand, W, horizon, H, 30);
+        bg = backdrop(W, H, (b) => {
+          bands(b, C.sky, 0, horizon, W);
+          bands(b, C.sea, horizon, H, W);
+          rect(b, 0, horizon, W, 1, '#2e66a8');
+        });
+      },
+      draw,
+      still: () => draw(1)
+    };
+  };
+
   /* Precios por mercado (/es/ y /): los botones eligen la lista; sin JavaScript se ven ambas. Sin cookies ni almacenamiento. */
   const root = doc.documentElement;
   const picks = doc.querySelectorAll('.market-pick');

@@ -301,13 +301,24 @@ svg{display:block}
 @media (min-width:768px){.close{padding-bottom:8rem}.cta-panel{padding:3.5rem}}
 
 /* Pie */
-.foot{border-top:1px solid var(--hair);padding:3.5rem 1.5rem}
-.foot-in{max-width:72rem;margin-inline:auto}
-.foot-brand{font-size:1.125rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:.25rem 1.75rem;margin-top:1rem}
-.foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--mist);font-size:.95rem;transition:color .2s ease}
-.foot-links a:hover{color:var(--ember)}
-.foot small{display:block;margin-top:1.25rem;font-size:.875rem;color:var(--dim)}
+.foot{border-top:1px solid var(--hair);padding:0 0 2rem;background:var(--coal)}
+.foot-in{max-width:72rem;margin-inline:auto;padding:2.5rem 1.5rem 0}
+.foot-scene{display:none;height:150px;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 35%);mask-image:linear-gradient(to bottom,transparent 0,#000 35%)}
+.foot-scene.is-on{display:flex;justify-content:center}
+.foot-scene canvas{display:block;-webkit-mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);image-rendering:pixelated;image-rendering:crisp-edges;flex:none}
+.foot-top{display:grid;gap:2.5rem}
+.foot-logo{display:inline-flex;align-items:center;gap:.75rem;min-height:48px}
+.foot-brand{font-size:1.5rem}
+.foot-what{margin-top:1rem;color:var(--mist);max-width:26rem}
+.foot-motto{margin-top:.5rem;font-size:.875rem;font-weight:700;letter-spacing:.04em;color:var(--ember)}
+.foot-id .btn{margin-top:1.5rem}
+.foot-cols{display:grid;gap:1.5rem 2rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+.foot-h{font-family:inherit;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 .25rem}
+.foot-cols a{display:inline-flex;align-items:center;min-height:44px;color:var(--mist);font-size:.95rem;transition:color .2s ease}
+.foot-cols a:hover{color:var(--ember)}
+.foot-bar{height:6px;margin-top:2.5rem;background:repeating-linear-gradient(90deg,var(--ember) 0 6px,transparent 6px 18px);opacity:.55;-webkit-mask-image:linear-gradient(90deg,#000,transparent 70%);mask-image:linear-gradient(90deg,#000,transparent 70%)}
+.foot-legal{margin-top:1.25rem;font-size:.875rem;color:var(--dim)}
+@media (min-width:768px){.foot-scene{height:184px}.foot-in{padding-top:3rem}.foot-top{grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr);gap:3rem}.foot-cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 /* 4. Utilidades (solo las que usan las páginas de privacidad) ------------ */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
