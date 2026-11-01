@@ -472,3 +472,4 @@ svg{display:block}
 /* How we work: the value of the system, in three chips */
 .crew-value{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.25rem}
 .crew-value li{padding:.45rem .9rem;border:1px solid var(--ember-line);border-radius:9999px;color:var(--snow);font-weight:700;font-size:.9rem;line-height:1.35}
+.plan-eq{font-size:.85rem;color:var(--dim);margin-top:.35rem}
