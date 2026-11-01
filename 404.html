@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+  404.html · pagina "no encontrada" (EN + ES).
+  Cloudflare Pages la sirve sola cuando la direccion no existe. Sin este archivo,
+  Pages supone una app de una sola pagina y muestra el inicio en cualquier
+  direccion ("soft 404", malo para SEO). Fuente: developers.cloudflare.com/pages/
+  configuration/serving-pages/ (consultada 2026-11-01).
+  Las rutas empiezan con "/" porque esta pagina aparece en cualquier direccion
+  (ej. /a/b/c); abierta con doble clic se ve sin estilos, es normal.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+<title>Page not found · Página no encontrada — Hammock AI</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content · Saltar al contenido</a>
+<main id="main" class="wrap px-6 py-20">
+  <section lang="en">
+    <h1>We couldn&rsquo;t find that page</h1>
+    <p class="lead">The address may be misspelled, or the page may have moved.</p>
+    <p class="mt-4"><a class="btn" href="/">Go to the home page</a></p>
+  </section>
+  <section lang="es" class="mt-12">
+    <h2>No encontramos esa p&aacute;gina</h2>
+    <p class="lead">Puede que la direcci&oacute;n est&eacute; mal escrita o que la p&aacute;gina se haya movido.</p>
+    <p class="mt-4"><a class="btn" href="/es/">Ir a la portada en espa&ntilde;ol</a></p>
+  </section>
+</main>
+</body>
+</html>
