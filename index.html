@@ -289,7 +289,7 @@
             <li><b>Code:</b> semantic HTML5, hand-written CSS (colors and sizes as variables in <code>:root</code>) and framework-free JavaScript (the base ships ~2.6 KB). No CDNs, no build step, no dependencies.</li>
             <li><b>Hosting:</b> Cloudflare Pages (free plan), on an account in the client’s name, with two-factor authentication on. Published by uploading the site folder. The domain is registered in the client’s name. HTTPS: after publishing we check that <code>http://</code> and <code>www</code> redirect to <code>https://</code>.</li>
             <li><b>Security headers:</b> a <code>_headers</code> file with a strict Content-Security-Policy (no <code>'unsafe-inline'</code> or <code>'unsafe-eval'</code>, <code>frame-ancestors 'none'</code>), <code>X-Content-Type-Options: nosniff</code>, <code>Referrer-Policy: strict-origin-when-cross-origin</code>, <code>Permissions-Policy</code> and <code>X-Frame-Options: DENY</code>. The same CSP goes in a <code>&lt;meta&gt;</code> on every page. We check live that the real headers match <code>_headers</code>.</li>
-            <li><b>Security review:</b> our own plain Node script, with no dependencies and no network access, reads the files and looks for secrets, inline scripts, resources from other domains, tracking code and missing headers. To hand over, it must exit with 0 critical and 0 high findings. Then a manual review by La Cerrajera (the crew’s security agent), only on what the client authorizes in writing. It is not a penetration test: it doesn’t look at the live site, the account or DNS.</li>
+            <li><b>Security review:</b> our own plain Node script, with no dependencies and no network access, reads the files and looks for secrets, inline scripts, resources from other domains, tracking code and missing headers. To hand over, it must exit with 0 critical and 0 high findings. Then a manual review by Security (the crew’s security agent), only on what the client authorizes in writing. It is not a penetration test: it doesn’t look at the live site, the account or DNS.</li>
             <li><b>Accessibility:</b> WCAG 2.2 AA checked by hand against a checklist: <code>lang</code>, a single <code>h1</code> and headings in order, <code>alt</code> on images, 4.5:1 contrast (3:1 for large text), keyboard-only use with a visible focus ring, <code>prefers-reduced-motion</code> and 200% zoom. For mobile Lighthouse we aim for performance ≥ 90 and accessibility ≥ 95: those are targets, not measurements taken on clients.</li>
             <li><b>Search:</b> unique <code>&lt;title&gt;</code>, meta description and <code>h1</code> per page, with trade and town; <code>canonical</code>, Open Graph (<code>og:image</code> 1200×630), <code>sitemap.xml</code> and <code>robots.txt</code>; <code>LocalBusiness</code> structured data (JSON-LD) using only details the client confirmed, checked at validator.schema.org. Google Business Profile: if the client already has one, we check that name, address and phone match the site.</li>
             <li><b>Images and weight:</b> WebP at ~1200 px, with <code>width</code> and <code>height</code> and <code>loading="lazy"</code> (except the first visible one). Targets: photo ≤ 200 KB and first load ≤ 500 KB; they are targets, not measurements taken on clients.</li>
@@ -520,7 +520,7 @@
           <li class="fnode">
             <span class="fn-n" aria-hidden="true">6</span>
             <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="candado"></canvas></span>
-            <div class="txt"><h3>La Cerrajera</h3><p class="kind">AI agent</p><p class="fn-what">Checks security before delivery.</p></div>
+            <div class="txt"><h3>Security</h3><p class="kind">AI agent</p><p class="fn-what">Checks security before delivery.</p></div>
             <span class="wire" aria-hidden="true"></span>
           </li>
           <li class="fnode">
@@ -783,7 +783,7 @@
   <div class="foot-in">
     <div class="foot-top">
       <div class="foot-id">
-        <a class="foot-logo" href="#home" aria-label="Hammock AI, back to top">
+        <a class="foot-logo" href="#home" aria-label="Hammock AI, back to top">
           <span class="display foot-brand">Hammock AI</span>
         </a>
         <p class="foot-what">We build the website for your business.</p>
