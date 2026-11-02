@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://hammockai.goatcounter.com; font-src 'self'; connect-src https://hammockai.goatcounter.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Crew: how we work — Hammock AI</title>
+<meta name="description" content="Who builds your site and how: a coordinator, specialists by studio, a Guardian that enforces the house rules and rounds of review until you approve.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hammock AI">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="AI Crew: how we work — Hammock AI">
+<meta property="og:description" content="Who builds your site and how: a coordinator, specialists by studio, a Guardian that enforces the house rules and rounds of review until you approve.">
+<meta property="og:url" content="https://hammockai.site/ai-crew/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://hammockai.site/ai-crew/">
+<link rel="alternate" hreflang="en" href="https://hammockai.site/ai-crew/">
+<link rel="alternate" hreflang="es" href="https://hammockai.site/es/ai-crew/">
+<link rel="alternate" hreflang="x-default" href="https://hammockai.site/ai-crew/">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg">
+</head>
+<body>
+<!-- Íconos propios, de trazo simple, sin dependencias. -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-site" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM3 9h18M6 6.5h.5M9 6.5h.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9.3h16M4 14.7h16M10 4v16"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 5h16v15H4zM4 10h16M8 3v4M16 3v4M9 15l2 2 4-4"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 17v-6a6 6 0 0 1 12 0v6M4 17h16M10 21h4"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-scatter" viewBox="0 0 24 24"><rect x="3" y="4" width="10" height="7" transform="rotate(-12 8 7.5)"/><rect x="11" y="9" width="10" height="7" transform="rotate(10 16 12.5)"/><rect x="5" y="15" width="9" height="6" transform="rotate(-5 9.5 18)"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11h-9l-5 4v-4H4z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></symbol>
+  <symbol id="i-at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a2.5 2.5 0 0 0 5 0v-1a9 9 0 1 0-3.5 7.1"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><path d="M5 8h14v11H5zM12 4v4M9 13h.5M14.5 13h.5M9 16.5h6"/></symbol>
+  <symbol id="i-check-person" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3 21c0-4 3-7 7-7 1.5 0 3 .4 4 1.2M15 18l2.5 2.5L22 15"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h7M9 16h7"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M8 20h8M4 7h16M4 7l-3 6h6zM20 7l-3 6h6z"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2zM12 10v5M12 18h.01"/></symbol>
+  <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></symbol>
+  <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7 9.5h10M12 9.5V14M12 14l-3 4M12 14l3 4"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5h8a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H2zM22 5h-8a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h8z"/></symbol>
+  <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v14M7 11h10M4 15c0 4 4 6 8 6s8-2 8-6"/></symbol>
+
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"/></symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M18 3v4h-4M20 12a8 8 0 0 1-14 5.3M6 21v-4h4"/></symbol>
+</defs></svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="pill" aria-label="Primary">
+    <div class="bar">
+      <a class="brand" href="/" aria-label="Hammock AI, home">
+        <img src="/assets/images/logo.svg" width="36" height="36" alt="Hammock AI mark: two palm trees with a hammock slung between them">
+        <span class="display">Hammock AI</span>
+      </a>
+      <ul class="nav" role="list">
+        <li><a class="nav-link" href="/services/">Services</a></li>
+        <li><a class="nav-link" href="/ai-crew/" aria-current="page">AI Crew</a></li>
+        <li><a class="nav-link" href="/docs/">Docs</a></li>
+      </ul>
+      <a class="lang-link" href="/es/ai-crew/" hreflang="es" lang="es" aria-label="Ver en español">ES</a>
+      <a class="btn btn-head" href="/brief/en/">Get your site</a>
+      <button class="menu-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Menu</span>
+        <span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a class="mobile-link" href="/services/">Services</a>
+    <a class="mobile-link" href="/ai-crew/" aria-current="page">AI Crew</a>
+    <a class="mobile-link" href="/docs/">Docs</a>
+    <a class="btn" href="/brief/en/">Get your site</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-top" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="head">
+<h1 id="how-title" class="h2 display">Who builds your site</h1>
+        <p class="lead">Your site is built by a system of AI agents and workflows we designed. Each agent has its own craft and its own rules, and the developer approves everything with you.</p>
+        <ul class="crew-value" role="list"><li>Faster</li><li>The same checks on every site</li><li>Fewer hours, lower price: the time AI saves us comes straight off your price</li></ul>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- borrador: textos nuevos del diagrama (Prompt Engineer los afina; Guardian los revisa). Fuente: diseno-web/hammockai-site/diagrama-crew-estudios.md -->
+  <section id="studios" class="sec band" aria-labelledby="studios-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="studios-title" class="h2 display">The crew, by studios</h2>
+        <p class="lead">One coordinator, specialists grouped in studios, and a Guardian who enforces the house rules. The work isn’t a straight line: ideas go back and forth, with reviews, until you approve.</p>
+      </div>
+      <div class="st">
+        <p class="st-you"><span class="face face--sm" aria-hidden="true"><canvas width="16" height="16" data-sprite="timon"></canvas></span>You: the idea</p>
+        <span class="st-arrow" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <div class="st-core">
+          <div class="st-card st-card--guard"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="guardian"></canvas></span><div><h3>Guardian</h3><p>Enforces the house rules (our Six Pillars): checks that everything is honest before it goes out.</p></div></div>
+          <span class="st-sw st-sw--a" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-swap"/></svg></span>
+          <div class="st-card st-card--main"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="contramaestre"></canvas></span><div><h3>Contramaestre</h3><p>Coordinates, questions what doesn’t add up and hands out the work.</p></div></div>
+          <span class="st-sw st-sw--b" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-swap"/></svg></span>
+          <div class="st-card st-card--pe"><span class="face" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chat"/></svg></span><div><h3>Prompt Engineer</h3><p>Sharpens the instructions and the texts that go out, when a prompt or a text needs it.</p></div></div>
+        </div>
+        <p class="st-cap">Guardian + Prompt Engineer: at its side</p>
+        <div class="st-between" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-swap"/></svg></div>
+        <p class="st-between-t">Assigns the work ↓ · Returns it reviewed ↑</p>
+        <ul class="st-studios" role="list" aria-label="Studios">
+          <li class="st-studio"><h3>Web studio</h3><ul role="list"><li class="st-ag"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="paleta"></canvas></span><div><b>El Diseñador Web</b><span>Proposes how your site looks.</span></div></li><li class="st-ag"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="paleta"></canvas></span><div><b>The Artist</b><span>Illustrations.</span></div></li><li class="st-ag"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="constructor"></canvas></span><div><b>The Builder</b><span>Builds it, phone first, fast and accessible.</span></div></li><li class="st-ag"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="candado"></canvas></span><div><b>Security</b><span>Checks security before delivery.</span></div></li></ul></li>
+          <li class="st-studio"><h3>Automation studio</h3><ul role="list"><li class="st-ag"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="engranaje"></canvas></span><div><b>El Automatizador</b><span>If your site needs it, connects your form, booking or catalog.</span></div></li></ul></li>
+          <li class="st-studio"><h3>Content studio (TikTok)</h3><ul role="list"><li class="st-ag"><span class="face" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tag"/></svg></span><div><b>La Marketera</b><span>Plans the content.</span></div></li><li class="st-ag"><span class="face" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg></span><div><b>El Director</b><span>Directs the videos.</span></div></li><li class="st-ag"><span class="face" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"/></svg></span><div><b>The Professor</b><span>Writes guides and lessons.</span></div></li><li class="st-ag"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="paleta"></canvas></span><div><b>The Artist</b><span>Illustrations.</span></div></li></ul></li>
+        </ul>
+        <p class="st-join"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-swap"/></svg>The studios work together</p>
+        <div class="st-loop">
+          <h3><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-loop"/></svg>Not a straight line: rounds of review</h3>
+          <ol class="st-steps" role="list">
+            <li><b>Proposal</b> a studio puts something forward.</li>
+            <li><b>Review</b> Guardian, Security and you check it.</li>
+            <li><b>Adjustment</b> it is fixed and sent back to review.</li>
+            <li><b>Another round</b> until you approve.</li>
+          </ol>
+          <p class="st-back"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-loop"/></svg>Fixed and sent back to review</p>
+        </div>
+        <div class="st-card st-card--opt st-card--wide"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="catalejo"></canvas></span><div><p class="kind">Transversal</p><h3>El Ñoño</h3><p>Across every studio: researches your business, your field and your competitors before we design.</p></div></div>
+        <span class="st-arrow" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <div class="st-end">
+          <div class="st-card"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="balanza"></canvas></span><div><h3>Quintero</h3><p>At the end: reviews everything we put together and sets a fair price, in writing.</p></div></div>
+          <span class="st-arrow st-arrow--h" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <div class="st-card st-card--human"><span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="timon"></canvas></span><div><h3>You and the developer</h3><p>The two of you approve, and only then does it go live.</p></div></div>
+        </div>
+      </div>
+      <p class="fine">To be exact: today the Contramaestre writes the assignment for each agent, and the Prompt Engineer steps in when a prompt has to be forged or a text that goes out needs polishing.</p>
+    </div>
+  </section>
+
+  <!-- borrador: título y bajada del recorrido -->
+  <section id="how" class="sec" aria-labelledby="flow-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="flow-title" class="h2 display">Your site, in order</h2>
+        <p class="lead">This is the route your project follows through the crew, from the first question to your approval.</p>
+      </div>
+      <ul class="map-legend" role="list">
+        <li><span class="key" aria-hidden="true"></span>AI agent: does its part on its own, in small steps</li>
+        <li><span class="key key--opt" aria-hidden="true"></span>Optional: only if your site needs it</li>
+        <li><span class="key key--human" aria-hidden="true"></span>Person: reviews and approves</li>
+      </ul>
+
+      <div class="crew-map">
+        <ol class="fmap" role="list">
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">1</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="contramaestre"></canvas></span>
+            <div class="txt"><h3>Contramaestre</h3><p class="kind">AI agent</p><p class="fn-what">Organizes your project, questions what doesn’t add up and hands out the work to the others.</p><a class="link node-link" href="/contramaestre/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">2</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="catalejo"></canvas></span>
+            <div class="txt"><h3>El Ñoño</h3><p class="kind">AI agent</p><p class="fn-what">Researches your business, your field and your competitors before we design.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">3</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="paleta"></canvas></span>
+            <div class="txt"><h3>El Diseñador Web and The Artist</h3><p class="kind">AI agents</p><p class="fn-what">Propose how your site looks: colors, fonts and illustrations.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">4</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="constructor"></canvas></span>
+            <div class="txt"><h3>The Builder</h3><p class="kind">AI agent</p><p class="fn-what">Builds it, phone first, fast and accessible.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode fnode--opt">
+            <span class="fn-n" aria-hidden="true">5</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="engranaje"></canvas></span>
+            <div class="txt"><h3>El Automatizador</h3><p class="kind">AI agent</p><p class="fn-what">If your site needs it, connects your form, booking or catalog.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">6</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="candado"></canvas></span>
+            <div class="txt"><h3>Security</h3><p class="kind">AI agent</p><p class="fn-what">Checks security before delivery.</p></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">7</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="guardian"></canvas></span>
+            <div class="txt"><h3>Guardian</h3><p class="kind">AI agent</p><p class="fn-what">Enforces the house rules (our Six Pillars): checks that everything is honest before it goes out.</p><a class="link node-link" href="/docs/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode">
+            <span class="fn-n" aria-hidden="true">8</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="balanza"></canvas></span>
+            <div class="txt"><h3>Quintero</h3><p class="kind">AI agent</p><p class="fn-what">Reviews everything we put together for you and sets a fair price, in writing.</p><a class="link node-link" href="/quintero/en/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <span class="wire" aria-hidden="true"></span>
+          </li>
+          <li class="fnode fnode--human">
+            <span class="fn-n" aria-hidden="true">9</span>
+            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="timon"></canvas></span>
+            <div class="txt"><h3>You and the developer</h3><p class="kind">People</p><p class="fn-what">The two of you approve, and only then does it go live.</p></div>
+          </li>
+        </ol>
+      </div>
+      <p class="map-next"><a class="link" href="#process">After you approve: how your site goes live <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+
+
+    </div>
+  </section>
+
+  <section id="pillars" class="sec band" aria-labelledby="pillars-title">
+    <div class="wrap">
+      <h2 id="pillars-title" class="h2 display">Six Pillars that guide all our agents</h2>
+      <p class="lead">These are the house rules. The Guardian makes sure they are followed.</p>
+      <ul class="pillars" role="list">
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scale"/></svg><h4>Balanced Sea</h4><p>Fair prices: we both win.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-warn"/></svg><h4>The Booger Rule</h4><p>If something won’t work, we tell you early.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-question"/></svg><h4>Challenge Assumptions</h4><p>We verify before we build.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-access"/></svg><h4>Accessibility First</h4><p>Plain language, readable sites.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"/></svg><h4>Open-Source Ethos</h4><p>Open, auditable knowledge.</p></li>
+        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-anchor"/></svg><h4>Sovereign Ship</h4><p>Your data, your rules.</p></li>
+      </ul>
+
+      <div class="mine">
+        <div class="links">
+          <a class="link" href="/brief/en/">Tell us what you need <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="link" href="/docs/">Free prompts from our crew <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section id="process" class="sec" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="path-wrap">
+        <div class="head">
+          <h2 id="process-title" class="h2 display">Your site, step by step</h2>
+          <p class="lead">This is what happens after you request your site and accept the quote. Tap each step to see what you do and what your package includes.</p>
+        </div>
+
+        <ol class="path" role="list">
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="hoja"></canvas><span class="step-n">1</span></span>
+            <details>
+              <summary>
+                <span class="step-t">You send your information</span>
+                <span class="step-s">You send us your texts, photos and details.</span>
+                <span class="who"><span class="tag chip--you">You</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>Send your texts, your photos (with permission to use them) and your logo, if you have one.</li>
+                      <li>Confirm your hours, address and contact details in writing.</li>
+                      <li>Start thinking about your domain: your site’s web address, like yourbusiness.com or yourbusiness.cl.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="dots" role="list">
+                      <li>The quote in writing: pages, sections and rounds of changes.</li>
+                      <li>Your timeline starts here: one page, 10 business days; simple website, 20; custom, 30.</li>
+                      <li>Nothing made up: whatever is missing is marked, and we ask you.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="engranaje"></canvas><span class="step-n">2</span></span>
+            <details>
+              <summary>
+                <span class="step-t">The crew builds</span>
+                <span class="step-s">The agents put your site together in small steps.</span>
+                <span class="who"><span class="tag">The crew</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>Nothing. If something isn’t clear, we ask you.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="dots" role="list">
+                      <li>Design with your colors and logo, phone first.</li>
+                      <li>The extras you asked for (form, booking or catalog), already connected.</li>
+                      <li>Everything is checked before delivery: security, accessibility and nothing made up.</li>
+                      <li>No trackers.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="lupa"></canvas><span class="step-n">3</span></span>
+            <details>
+              <summary>
+                <span class="step-t">You review it</span>
+                <span class="step-s">You see your site and tell us what to change.</span>
+                <span class="who"><span class="tag chip--you">You</span><span class="tag chip--you">The developer</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>You review your site with the developer, on a video call or with phone and computer screenshots.</li>
+                      <li>Send all your changes in one message, as a list: where it is and what it should say (a screenshot helps). Each list counts as one round.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="pill-list pill-list--flush" role="list"><li>One page: 1 round</li><li>Simple website: 2</li><li>Custom: 3</li></ul>
+                    <ul class="dots dots--after" role="list">
+                      <li>Anything outside your package is quoted separately.</li>
+                      <li>We show you your site before it’s published.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="ajuste"></canvas><span class="step-n">4</span></span>
+            <details>
+              <summary>
+                <span class="step-t">Final adjustments</span>
+                <span class="step-s">We apply your changes and you give the OK.</span>
+                <span class="who"><span class="tag">The crew</span><span class="tag chip--you">You</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>Check the changes and approve them in writing. Without your OK, nothing goes live.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="dots" role="list">
+                      <li>Your changes applied, plus a last check: phone, accessibility and security.</li>
+                      <li>Your files in a compressed folder (.zip): they’re yours.</li>
+                      <li>A short guide, in plain words, to look after your site and ask for changes.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+
+          <li class="step">
+            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="sitio"></canvas><span class="step-n">5</span></span>
+            <details>
+              <summary>
+                <span class="step-t">Going live</span>
+                <span class="step-s">Your site goes online, in your name.</span>
+                <span class="who"><span class="tag chip--you">You</span><span class="tag chip--you">The developer</span></span>
+              </summary>
+              <div class="step-body">
+                <div class="cols">
+                  <div>
+                    <p class="mini">You do</p>
+                    <ul class="dots" role="list">
+                      <li>Buy your domain, in your name and with your email. It’s paid separately (below).</li>
+                      <li>Create your free Cloudflare account with your email, turn on two-step security (a code on your phone) and save your recovery codes.</li>
+                      <li>Do the clicks with the developer on a video call, or invite them to your account and remove them when done. You never share your password.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="mini">Your package includes</p>
+                    <ul class="dots" role="list">
+                      <li>Your site published, with the padlock (https).</li>
+                      <li>A check together: it opens well on your phone, and a mistyped address shows a notice page.</li>
+                      <li>Your site stays online even if you don’t sign up for maintenance.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="host">
+                  <p class="mini">How free hosting works</p>
+                  <ol class="host-flow" role="list">
+                    <li><b>Your files</b><small>the .zip we hand you</small></li>
+                    <li><b>Your Cloudflare account</b><small>free plan, in your name</small></li>
+                    <li><b>Your domain</b><small>your site’s web address</small></li>
+                    <li><b>People looking for you</b><small>see your site, with the padlock</small></li>
+                  </ol>
+                  <p>Hosting is the place on the internet where your site lives, like the shop where you serve customers. We use Cloudflare Pages, which has a free plan. The account is yours, not ours: if one day you want to change provider or designer, you take your files and carry on.</p>
+                  <p>The domain is separate: it’s your site’s name. You pay for it every year to whoever sells it to you, not to us.</p>
+                  <dl class="dom"><div class="mk mk-clp"><dt>.cl</dt><dd>CLP 9,990 a year</dd></div><div class="mk mk-usd"><dt>.com</dt><dd>about USD 11 a year</dd></div></dl>
+                  <p class="fine">Reference prices: they change depending on where you buy. Turn on automatic renewal and use an email you check, so you don’t lose your domain. Connecting it can take a few hours.</p>
+                </div>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+<section id="contact" class="close">
+    <div class="cta-panel">
+      <h2 class="h2 display">Tell us what site you need</h2>
+      <p>Answer a few questions and get a written quote.</p>
+      <a class="btn btn-lg" href="/brief/en/">Get your site</a>
+      <p class="alt">Or write to <a class="link" href="mailto:hammockai@proton.me">hammockai@proton.me</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-scene" data-scene="foot" aria-hidden="true"></div>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-id">
+        <a class="foot-logo" href="/" aria-label="Hammock AI, home">
+          <span class="display foot-brand">Hammock AI</span>
+        </a>
+        <p class="foot-what">We build the website for your business.</p>
+        <p class="foot-motto">Your data, your rules, your keys.</p>
+        <a class="btn" href="/brief/en/">Get your site</a>
+      </div>
+      <div class="foot-cols">
+        <nav aria-label="Services">
+          <h2 class="foot-h">Services</h2>
+          <ul role="list">
+            <li><a href="/brief/en/">Get your site</a></li>
+            <li><a href="/services/#portfolio">Portfolio</a></li>
+            <li><a href="/services/#plans">Prices</a></li>
+            <li><a href="/services/#extras">Automations</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Hammock">
+          <h2 class="foot-h">Hammock</h2>
+          <ul role="list">
+            <li><a href="/ai-crew/">AI Crew</a></li>
+            <li><a href="/docs/">Docs</a></li>
+            <li><a href="https://github.com/hammockai/.github/blob/main/profile/README.md" target="_blank" rel="noopener noreferrer">Manifesto<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a href="https://github.com/hammockai/aiCrew/blob/main/logbook/README.md" target="_blank" rel="noopener noreferrer">Logbook<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Follow us">
+          <h2 class="foot-h">Follow us</h2>
+          <ul role="list">
+            <li><a href="https://github.com/hammockai" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.tiktok.com/@hammockai" target="_blank" rel="noopener noreferrer">TikTok<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a href="mailto:hammockai@proton.me">Email us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="foot-bar" aria-hidden="true"></div>
+    <p class="foot-legal">© 2026 Hammock AI</p>
+  </div>
+</footer>
+
+<script src="/script.js" defer></script>
+<!-- GoatCounter: cuenta visitas sin cookies ni datos personales. -->
+<script data-goatcounter="https://hammockai.goatcounter.com/count" async src="/assets/js/count.js"></script>
+</body>
+</html>

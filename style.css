@@ -75,7 +75,8 @@ svg{display:block}
 .nav{display:none;margin-left:auto;align-items:center;gap:1.5rem}
 .nav-link{white-space:nowrap;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);transition:color .2s ease}
 .nav-link:hover{color:var(--snow)}
-.nav-link[aria-current="true"]{color:var(--ember)}
+.nav-link[aria-current]{color:var(--ember);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}
+.mobile-link[aria-current]{color:var(--ember);font-weight:700}
 .site-header .lang-link{margin-left:auto}
 .site-header .btn-head{display:none}
 .menu-btn{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:44px;min-height:44px;border-radius:.9rem}
@@ -487,3 +488,75 @@ svg{display:block}
 .crew-value{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.25rem}
 .crew-value li{padding:.45rem .9rem;border:1px solid var(--ember-line);border-radius:9999px;color:var(--snow);font-weight:700;font-size:.9rem;line-height:1.35}
 .plan-eq{font-size:.85rem;color:var(--dim);margin-top:.35rem}
+
+/* 5. Páginas internas (servicios, AI Crew, docs) y diagrama por estudios ---- */
+.page-top{padding:8rem 1.5rem 1rem}
+@media (min-width:768px){.page-top{padding-top:10rem}}
+.subnav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.75rem;max-width:48rem}
+.subnav a{display:inline-flex;align-items:center;min-height:44px;padding:.5rem 1.1rem;border:1px solid var(--pill-line);border-radius:9999px;font-size:.9375rem;font-weight:700;color:var(--mist)}
+.subnav a:hover{color:var(--snow);border-color:var(--ember)}
+.more-link{margin-top:1.75rem}
+.plan .what{margin-top:.6rem;color:var(--mist)}
+.plan .more{margin-top:auto;padding-top:1rem}
+@media (min-width:768px){.plans.docs{grid-template-columns:repeat(2,1fr)}}
+.dl-row{display:flex;flex-wrap:wrap;gap:.1rem 1.5rem;margin-top:auto;padding-top:1rem}
+.dots--steps{margin-top:1.25rem;gap:.8rem}
+.dots--steps li{font-size:1rem}
+.dots--steps b{color:var(--snow)}
+.docs-h3{margin-top:2.5rem;font-size:1.25rem}
+.faq-sec .faq-block{margin-top:0}
+
+/* Diagrama por estudios (página AI Crew): HTML y CSS, sin JavaScript */
+.st{display:flex;flex-direction:column;align-items:center;gap:1rem;max-width:60rem;margin-top:2.5rem}
+.st>*{width:100%}
+.st-you{display:flex;align-items:center;justify-content:center;gap:.7rem;width:auto;padding:.4rem 1.2rem .4rem .5rem;border:2px solid var(--ember);border-radius:9999px;font-weight:700}
+.face--sm{--face:44px}
+.face--sm canvas{width:32px;height:32px}
+.st-arrow{display:flex;justify-content:center;width:auto;color:var(--ember)}
+.st-arrow .i{width:28px;height:28px;transform:rotate(90deg)}
+.st-core{display:grid;gap:1rem}
+.st-sw{display:none}
+.st-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.9rem;align-items:start;padding:1rem;border:1px solid var(--hair);border-radius:1.1rem;background:var(--surface)}
+.st-card h3{font-family:"Archivo Black",ui-sans-serif,system-ui,sans-serif;font-weight:400;font-size:1.05rem;line-height:1.2;letter-spacing:-.015em}
+.st-card p{margin-top:.4rem;font-size:.9375rem;line-height:1.5;color:var(--mist)}
+.st-card p.kind{margin-top:0;color:var(--mist)}
+.st-card--main{order:-1;border:2px solid var(--ember)}
+.st-card--opt{border-style:dashed;border-color:var(--pill-line)}
+.st-card--human{border:2px solid var(--ember);background:var(--ink)}
+.st .face{--face:52px}
+.st .face canvas{width:40px;height:40px}
+.st .face .i{width:28px;height:28px;color:var(--mist)}
+.st-cap{text-align:center;font-size:.875rem;color:var(--dim)}
+.st-between{display:flex;justify-content:center;width:auto;color:var(--ember)}
+.st-between .i{width:28px;height:28px;transform:rotate(90deg)}
+.st-between-t{margin-top:-.4rem;text-align:center;font-size:.875rem;font-weight:700;color:var(--mist)}
+.st-studios{display:grid;gap:1rem}
+.st-studio{padding:1.1rem;border:1px solid var(--pill-line);border-radius:1.2rem;background:var(--coal)}
+.st-studio h3{font-family:"Archivo Black",ui-sans-serif,system-ui,sans-serif;font-weight:400;font-size:1.1rem;letter-spacing:-.015em;color:var(--ember)}
+.st-ag{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.8rem;align-items:center;padding:.7rem 0;border-top:1px solid var(--hair)}
+.st-studio h3+ul{margin-top:.7rem}
+.st-ag b{display:block;font-size:.9375rem}
+.st-ag span:not(.face){display:block;font-size:.875rem;line-height:1.45;color:var(--mist)}
+.st-join{display:flex;align-items:center;justify-content:center;gap:.6rem;width:auto;font-weight:700;color:var(--mist)}
+.st-join .i{width:22px;height:22px;color:var(--ember);transform:rotate(90deg)}
+.st-loop{display:grid;gap:.9rem;padding:1.25rem;border:1px dashed var(--ember-line);border-radius:1.2rem}
+.st-loop h3{display:flex;align-items:center;gap:.6rem;font-family:"Archivo Black",ui-sans-serif,system-ui,sans-serif;font-weight:400;font-size:1.1rem;line-height:1.2}
+.st-loop h3 .i,.st-back .i{width:24px;height:24px;flex-shrink:0;color:var(--ember)}
+.st-steps{display:grid;gap:.6rem}
+.st-steps li{padding:.75rem .9rem;border:1px solid var(--hair);border-radius:.9rem;background:var(--surface);font-size:.9375rem;line-height:1.45;color:var(--mist)}
+.st-steps b{display:block;color:var(--snow)}
+.st-back{display:flex;align-items:center;gap:.6rem;font-size:.9375rem;font-weight:700;color:var(--ember)}
+.st-end{display:grid;gap:.5rem;justify-items:center}
+.st-end>.st-card{width:100%}
+@media (min-width:768px){
+  .st-core{grid-template-columns:minmax(0,1fr) auto minmax(0,1.15fr) auto minmax(0,1fr);align-items:stretch}
+  .st-card--main{order:0}
+  .st-sw{display:flex;align-items:center;color:var(--ember)}
+  .st-sw .i{width:26px;height:26px}
+  .st-card{grid-template-columns:1fr}
+  .st-card--wide{grid-template-columns:auto minmax(0,1fr)}
+  .st-studios{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+  .st-steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .st-end{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center}
+  .st-arrow--h .i{transform:none}
+}
