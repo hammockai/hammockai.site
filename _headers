@@ -6,12 +6,15 @@
 # CSP en modo SOLO-AVISO (fase 1, decision D8): no bloquea nada, los avisos salen
 # en la consola del navegador. Las paginas crew, quintero, contramaestre y brief
 # aun llevan <style>/<script> en linea. Pasa a obligatoria en la fase 4.
-# img-src/connect-src abren solo el contador de visitas (count.js).
+# img-src/connect-src abren el contador de visitas (count.js) y, para el formulario
+# de /brief/, script.google.com y script.googleusercontent.com (script A1; Google
+# responde con una redireccion a googleusercontent). Al tener la URL /exec real, se
+# puede afinar a la ruta exacta.
 # HSTS: NO activo. Agregarlo solo cuando https:// con y sin www funcionen:
 #   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 /*
-  Content-Security-Policy-Report-Only: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://hammockai.goatcounter.com; font-src 'self'; connect-src https://hammockai.goatcounter.com; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy-Report-Only: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://hammockai.goatcounter.com; font-src 'self'; connect-src https://hammockai.goatcounter.com https://script.google.com https://script.googleusercontent.com; base-uri 'self'; form-action 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
