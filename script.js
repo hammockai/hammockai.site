@@ -639,7 +639,7 @@
     root.classList.add('mk-on');
     picks.forEach((p) => { p.hidden = false; });
     chips.forEach((b) => b.addEventListener('click', () => setMarket(b.dataset.market, true)));
-    setMarket('usd', false);
+    setMarket('clp', false);
   }
 
   doc.querySelectorAll('[data-scene]').forEach((el) => {
