@@ -1,0 +1,50 @@
+# _headers · Cloudflare Pages (solo se lee este, el de la RAIZ; los de
+# portafolio/*/_headers NO funcionan). Fuente: developers.cloudflare.com/pages/
+# configuration/headers/ (consultada 2026-11-01). Max 100 reglas, 2.000 car./linea.
+# Las cabeceras de reglas que coinciden se SUMAN: no repetir una en dos bloques.
+#
+# CSP en modo SOLO-AVISO (fase 1, decision D8): no bloquea nada, los avisos salen
+# en la consola del navegador. Las paginas crew, quintero, contramaestre y brief
+# aun llevan <style>/<script> en linea. Pasa a obligatoria en la fase 4.
+# img-src/connect-src abren solo el contador de visitas (count.js).
+# HSTS: NO activo. Agregarlo solo cuando https:// con y sin www funcionen:
+#   Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/*
+  Content-Security-Policy-Report-Only: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://hammockai.goatcounter.com; font-src 'self'; connect-src https://hammockai.goatcounter.com; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# Fuentes: los nombres no cambian, cache larga.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Demos (negocios ficticios): noindex + su CSP estricta y obligatoria (traida de
+# sus _headers, que Cloudflare ignora). Sin otras cabeceras: ya vienen de /*.
+/portafolio/*
+  X-Robots-Tag: noindex
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+
+# Archivos sueltos del repo que Cloudflare tambien publica (decision D5): noindex.
+/README.md
+  X-Robots-Tag: noindex
+/AGENTS.md
+  X-Robots-Tag: noindex
+/LICENSE
+  X-Robots-Tag: noindex
+/CNAME
+  X-Robots-Tag: noindex
+/_config.yml
+  X-Robots-Tag: noindex
+/404.html
+  X-Robots-Tag: noindex
+
+# La direccion de prueba y las vistas previas no compiten con el dominio propio.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
