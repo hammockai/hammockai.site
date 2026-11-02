@@ -2,50 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://hammockai.goatcounter.com; font-src 'self'; connect-src https://hammockai.goatcounter.com https://script.google.com https://script.googleusercontent.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cuéntanos de tu negocio — Hammock AI</title>
 <meta name="description" content="Cuéntanos de tu negocio en un minuto y te respondemos con una propuesta.">
 <meta name="theme-color" content="#0A0A0A">
-<style>
-@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-regular.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-bold.woff2") format("woff2");font-weight:700;font-display:swap}
-:root{--ink:#0A0A0A;--coal:#0E0E0E;--surface:#141414;--snow:#FAFAFA;--mist:rgba(250,250,250,.74);--dim:rgba(250,250,250,.56);--ember:#FF6B35;--hair:rgba(255,255,255,.08)}
-*{box-sizing:border-box}
-[hidden]{display:none!important}
-body{margin:0;background:var(--ink);color:var(--snow);font-family:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
-.wrap{max-width:42rem;margin:0 auto;padding:1.5rem 1rem 3rem}
-a{color:var(--ember)}
-.top a{display:inline-block;padding:.6rem .25rem}
-h1{font-size:1.75rem;line-height:1.15;margin:.5rem 0 .5rem}
-h2{font-size:1.25rem;line-height:1.25;margin:1.5rem 0 .5rem}
-.sub{color:var(--mist);margin:0 0 1.5rem}
-.campo{border:1px solid var(--hair);border-radius:1rem;background:var(--surface);padding:1rem;margin:0 0 .85rem;min-inline-size:0}
-.campo>label,legend{font-weight:700;display:block;margin-bottom:.35rem;padding:0}
-legend{float:left;width:100%}legend+.ayuda{clear:both}
-.req{color:var(--ember)}
-.ayuda{color:var(--mist);font-size:.95rem;margin:0 0 .6rem}
-input[type=text],input[type=email],textarea{width:100%;min-height:2.75rem;background:var(--coal);color:var(--snow);border:1px solid rgba(250,250,250,.45);border-radius:.6rem;padding:.6rem .75rem;font:inherit}
-textarea{resize:vertical}
-[aria-invalid=true]{border-color:#FFB199;outline:2px solid #FFB199}
-.err{color:#FFB199;font-weight:700;margin:.5rem 0 0}.err:empty{display:none}
-.op{display:flex;align-items:center;gap:.75rem;min-height:2.75rem}
-.op label{flex:1;color:var(--mist);padding:.4rem 0;font-weight:400;margin:0}
-.op input{flex:none;width:1.4rem;height:1.4rem;accent-color:var(--ember);margin:0}
-:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
-.boton{display:block;width:100%;min-height:2.75rem;font:inherit;font-weight:700;border:0;border-radius:9999px;padding:.7rem 1.3rem;cursor:pointer;background:var(--ember);color:var(--ink);margin-top:.75rem}
-.boton--sec{background:transparent;color:var(--snow);border:1px solid rgba(250,250,250,.45)}
-.boton[disabled]{opacity:.6;cursor:wait}
-.mas{border:1px solid var(--hair);border-radius:1rem;background:var(--surface);padding:1rem;margin:1.25rem 0 0}
-.mas p{margin:0 0 .5rem;font-weight:700}
-.estado{margin:1rem 0 0;font-weight:700}
-.estado:empty{display:none}
-.estado.es-error{color:#FFB199}
-.hecho{border:1px solid var(--ember);border-radius:1rem;background:var(--surface);padding:1.25rem;font-size:1.25rem;font-weight:700}
-.priv{color:var(--mist);font-size:.9rem;margin:.9rem 0 0}
-.note{color:var(--dim);font-size:.85rem;margin-top:1.5rem}
-.campo-trampa{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
-@media(min-width:40rem){.wrap{padding:2.5rem 1.25rem 4rem}h1{font-size:2rem}.botones{display:flex;gap:.75rem}.botones .boton{flex:1}}
-</style>
+<link rel="stylesheet" href="/brief/brief.css">
 <script src="/brief/form-brief.js" defer></script>
 </head>
 <body>
