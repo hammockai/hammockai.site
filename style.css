@@ -392,7 +392,7 @@ svg{display:block}
 .wire{position:absolute;pointer-events:none;left:calc(1rem + var(--face)/2 - 1px);top:calc(100% + 1px);width:2px;height:var(--gap)}
 .wire::before{content:"";position:absolute;inset:0;background:var(--wire)}
 .wire::after{content:"";position:absolute;left:-5px;top:calc(50% - 4px);border:6px solid transparent;border-top:8px solid var(--wire);border-bottom:0}
-.fnode:nth-child(7) .wire{--wire:var(--ember)}
+.fnode:nth-child(8) .wire{--wire:var(--ember)}
 
 @media (min-width:1024px){
   .fmap{max-width:none;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--gap);row-gap:var(--rgap)}
@@ -402,18 +402,18 @@ svg{display:block}
   /* cable horizontal entre columnas */
   .wire{left:calc(100% + 1px);top:var(--wy);width:var(--gap);height:2px;margin-top:-1px}
   .wire::after{left:calc(50% - 4px);top:-5px;border:6px solid transparent;border-left:8px solid var(--wire);border-right:0}
-  /* del nodo 4 al 5: baja, vuelve a la izquierda y baja otra vez (como en n8n) */
-  .fnode:nth-child(4) .wire{left:auto;right:calc(50% - 1px);top:calc(100% + 1px);width:calc(300% + 3*var(--gap) + 8px);height:var(--rgap);margin-top:0}
-  .fnode:nth-child(4) .wire::before{inset:0;background:linear-gradient(var(--wire),var(--wire)) right 0 top 0/2px 50% no-repeat,linear-gradient(var(--wire),var(--wire)) 0 50%/100% 2px no-repeat,linear-gradient(var(--wire),var(--wire)) left 0 bottom 0/2px 50% no-repeat}
-  .fnode:nth-child(4) .wire::after{left:50%;top:calc(50% - 5px);border:6px solid transparent;border-right:8px solid var(--wire);border-left:0}
+  /* del nodo 4 al 5 (y del 8 al 9): baja, vuelve a la izquierda y baja otra vez (como en n8n) */
+  .fnode:nth-child(4) .wire,.fnode:nth-child(8) .wire{left:auto;right:calc(50% - 1px);top:calc(100% + 1px);width:calc(300% + 3*var(--gap) + 8px);height:var(--rgap);margin-top:0}
+  .fnode:nth-child(4) .wire::before,.fnode:nth-child(8) .wire::before{inset:0;background:linear-gradient(var(--wire),var(--wire)) right 0 top 0/2px 50% no-repeat,linear-gradient(var(--wire),var(--wire)) 0 50%/100% 2px no-repeat,linear-gradient(var(--wire),var(--wire)) left 0 bottom 0/2px 50% no-repeat}
+  .fnode:nth-child(4) .wire::after,.fnode:nth-child(8) .wire::after{left:50%;top:calc(50% - 5px);border:6px solid transparent;border-right:8px solid var(--wire);border-left:0}
   /* puertos de entrada y salida */
   .fnode::before,.fnode::after{content:"";position:absolute;z-index:2;width:10px;height:10px;border:2px solid var(--wire);border-radius:9999px;background:var(--ink)}
   .fnode::before{left:-6px;top:calc(var(--wy) - 5px)}
   .fnode::after{right:-6px;top:calc(var(--wy) - 5px)}
   .fnode:nth-child(1)::before,.fnode:last-child::after{display:none}
-  .fnode:nth-child(4)::after{right:auto;left:calc(50% - 5px);top:auto;bottom:-6px}
-  .fnode:nth-child(5)::before{left:calc(50% - 5px);top:-6px}
-  .fnode:nth-child(7)::after,.fnode--human::before{border-color:var(--ember)}
+  .fnode:nth-child(4)::after,.fnode:nth-child(8)::after{right:auto;left:calc(50% - 5px);top:auto;bottom:-6px}
+  .fnode:nth-child(5)::before,.fnode:nth-child(9)::before{left:calc(50% - 5px);top:-6px}
+  .fnode:nth-child(8)::after,.fnode--human::before{border-color:var(--ember)}
 }
 
 /* El único momento de movimiento del diagrama: los nodos se encienden en orden, una sola vez (script.js agrega .is-armed y .is-lit) */
@@ -426,6 +426,7 @@ svg{display:block}
 .crew-map.is-lit .fnode:nth-child(6){transition-delay:1s}
 .crew-map.is-lit .fnode:nth-child(7){transition-delay:1.2s}
 .crew-map.is-lit .fnode:nth-child(8){transition-delay:1.4s}
+.crew-map.is-lit .fnode:nth-child(9){transition-delay:1.6s}
 @media (prefers-reduced-motion:reduce){.crew-map.is-armed .fnode{opacity:1}}
 
 /* Diagrama 2 · Camino del cliente (nodos que se abren) ------------------------------ */
