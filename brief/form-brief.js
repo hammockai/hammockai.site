@@ -43,6 +43,10 @@
       revisa: 'Falta algo o hay un dato por corregir. Revisa lo marcado.',
       sinEndpoint: 'El envío directo todavía no está activo, así que no se envió nada. Escríbenos a ' + CORREO + ' y te respondemos.',
       ok: function (n) { return 'Listo, ' + n + '. Te escribimos dentro de 1 día hábil.'; },
+      // Textos del dialogo: borrador; los puede pulir el Prompt Engineer.
+      dlgTitulo: function (n) { return '¡Listo, ' + n + '!'; },
+      dlgPlazo: 'Te escribimos dentro de 1 día hábil.',
+      dlgCalido: 'Mientras, date una vuelta por el sitio.',
       inicio: '/es/',
       volver: 'Volver al inicio',
       cerrar: 'Cerrar',
@@ -61,6 +65,10 @@
       revisa: 'Something is missing or needs fixing. Please check the marked fields.',
       sinEndpoint: 'Direct sending is not active yet, so nothing was sent. Write to us at ' + CORREO + ' and we will reply.',
       ok: function (n) { return 'Done, ' + n + '. We will write to you within 1 business day.'; },
+      // Dialog copy: draft; the Prompt Engineer may polish it.
+      dlgTitulo: function (n) { return 'Done, ' + n + '!'; },
+      dlgPlazo: "We'll write to you within 1 business day.",
+      dlgCalido: 'Meanwhile, have a look around.',
       inicio: '/',
       volver: 'Back to home',
       cerrar: 'Close',
@@ -135,6 +143,7 @@
 
     dlg.className = 'dlg';
     dlg.setAttribute('aria-labelledby', 'dlg-t');
+    dlg.setAttribute('aria-describedby', 'dlg-d');
     const x = document.createElement('button');
     x.type = 'button';
     x.className = 'dlg-x';
@@ -144,12 +153,26 @@
     titulo.id = 'dlg-t';
     titulo.className = 'dlg-t';
     titulo.tabIndex = -1;
-    titulo.textContent = T.ok(nombre);
+    titulo.textContent = T.dlgTitulo(nombre);
+    const logo = document.createElement('img');
+    logo.className = 'dlg-logo';
+    logo.src = '/assets/images/logo.svg';
+    logo.alt = ''; // decorativo: el nombre ya esta en el texto
+    logo.width = 72;
+    logo.height = 64;
+    const texto = document.createElement('div');
+    texto.id = 'dlg-d';
+    [T.dlgPlazo, T.dlgCalido].forEach(function (s, i) {
+      const p = document.createElement('p');
+      p.className = i ? 'dlg-calido' : 'dlg-plazo';
+      p.textContent = s;
+      texto.append(p);
+    });
     const volver = document.createElement('a');
     volver.className = 'boton';
     volver.href = T.inicio;
     volver.textContent = T.volver;
-    dlg.append(x, titulo, volver);
+    dlg.append(x, logo, titulo, texto, volver);
     document.body.append(dlg);
     // Se limpia en el momento (sin esperar el evento close, que llega despues).
     let cerrado = false;

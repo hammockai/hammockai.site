@@ -1,6 +1,6 @@
 @font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-regular.woff2") format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-bold.woff2") format("woff2");font-weight:700;font-display:swap}
-:root{--ink:#0A0A0A;--coal:#0E0E0E;--surface:#141414;--snow:#FAFAFA;--mist:rgba(250,250,250,.74);--dim:rgba(250,250,250,.56);--ember:#FF6B35;--hair:rgba(255,255,255,.08)}
+:root{--ink:#0A0A0A;--coal:#0E0E0E;--surface:#141414;--snow:#FAFAFA;--mist:rgba(250,250,250,.74);--dim:rgba(250,250,250,.56);--ember:#FF6B35;--hair:rgba(255,255,255,.08);--ember-line:rgba(255,107,53,.45)}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{margin:0;background:var(--ink);color:var(--snow);font-family:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
@@ -36,13 +36,18 @@ textarea{resize:vertical}
 .note{color:var(--dim);font-size:.85rem;margin-top:1.5rem}
 .campo-trampa{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 @media(min-width:40rem){.wrap{padding:2.5rem 1.25rem 4rem}h1{font-size:2rem}.botones{display:flex;gap:.75rem}.botones .boton{flex:1}}
-.dlg{width:min(30rem,calc(100% - 2rem));border:1px solid var(--ember);border-radius:1rem;background:var(--surface);color:var(--snow);padding:2.25rem 1.25rem 1.25rem;position:relative}
-.dlg::backdrop{background:rgba(0,0,0,.75)}
-.dlg-t{margin:0 0 .75rem;font-size:1.3rem}
+@font-face{font-family:"Archivo Black";src:url("/fonts/archivo-black.woff2") format("woff2");font-weight:400;font-display:swap}
+.dlg{width:min(26rem,calc(100% - 2rem));border:1px solid var(--ember-line);border-radius:1.5rem;background:var(--surface);color:var(--snow);padding:2.5rem 1.5rem 1.5rem;position:relative;text-align:center;box-shadow:0 1.5rem 4rem rgba(0,0,0,.6),0 0 0 1px rgba(255,107,53,.08)}
+.dlg::backdrop{background:rgba(10,10,10,.8)}
+.dlg-logo{display:block;width:72px;height:auto;margin:0 auto 1rem;border-radius:1rem}
+.dlg-t{font-family:"Archivo Black",ui-sans-serif,system-ui,sans-serif;font-weight:400;font-size:clamp(1.6rem,6vw,2rem);line-height:1.15;margin:0 0 .75rem;overflow-wrap:anywhere}
 .dlg-t:focus{outline:none}
-.dlg-x{position:absolute;top:.4rem;right:.4rem;width:2.75rem;height:2.75rem;border:0;border-radius:9999px;background:transparent;color:var(--snow);font:inherit;font-size:1.5rem;line-height:1;cursor:pointer}
+.dlg-plazo{margin:0 0 .25rem;font-size:1.1rem}
+.dlg-calido{margin:0 0 1rem;color:var(--mist)}
+.dlg .boton{margin-top:.5rem}
+.dlg-x{position:absolute;top:.5rem;right:.5rem;width:2.75rem;height:2.75rem;border:0;border-radius:9999px;background:transparent;color:var(--snow);font:inherit;font-size:1.5rem;line-height:1;cursor:pointer}
 .dlg-x:hover{background:var(--hair)}
 a.boton{text-align:center;text-decoration:none}
 .dlg[open]{animation:dlg-in .2s ease-out}
-@keyframes dlg-in{from{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:none}}
+@keyframes dlg-in{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.dlg[open]{animation:none}}
