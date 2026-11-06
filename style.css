@@ -118,6 +118,7 @@ svg{display:block}
 .hero-title .em{color:var(--ember)}
 .hero-lead{margin-top:1.25rem;max-width:30rem;font-size:1.125rem;color:var(--mist)}
 .hero-actions{margin-top:1.75rem}
+.hero-note{margin-top:.6rem;font-size:.9375rem;color:var(--mist)}
 .hero-scene{display:block;order:2;align-self:flex-start;margin:2.5rem -1.5rem 0;height:300px;image-rendering:pixelated;image-rendering:crisp-edges;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%,#000 80%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%,#000 80%,transparent 100%)}
 @media (min-width:768px){
   .hero{justify-content:center;min-height:min(100svh,940px);padding:6.5rem 1.5rem 3rem}
