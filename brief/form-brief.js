@@ -5,6 +5,8 @@
   - Paso 1 (basico) siempre visible. Al final: "¿Quieres contarnos un poco mas?"
     -> Si: muestra el paso 2 (5 preguntas cortas) / No: envia lo que hay.
   - Envia con POST (fetch) al script A1 (Google Apps Script), SIN abrir la app de correo.
+  - Si A1 responde ok: dialogo modal con la confirmacion y "Volver al inicio"; al cerrarlo
+    (X o Esc) el formulario queda limpio. Los errores siguen saliendo en la pagina.
   - Si el endpoint no esta configurado, lo dice con honestidad y muestra el correo de
     respaldo como texto (no abre ningun mailto).
 
@@ -41,6 +43,9 @@
       revisa: 'Falta algo o hay un dato por corregir. Revisa lo marcado.',
       sinEndpoint: 'El envío directo todavía no está activo, así que no se envió nada. Escríbenos a ' + CORREO + ' y te respondemos.',
       ok: function (n) { return 'Listo, ' + n + '. Te escribimos dentro de 1 día hábil.'; },
+      inicio: '/es/',
+      volver: 'Volver al inicio',
+      cerrar: 'Cerrar',
       limite: 'Llegaron muchas consultas en poco tiempo. Intenta en un rato o escríbenos a ' + CORREO + '.',
       pausado: 'El formulario está en pausa. Escríbenos a ' + CORREO + '.',
       largo: 'Alguno de tus textos es demasiado largo. Acórtalo un poco.',
@@ -56,6 +61,9 @@
       revisa: 'Something is missing or needs fixing. Please check the marked fields.',
       sinEndpoint: 'Direct sending is not active yet, so nothing was sent. Write to us at ' + CORREO + ' and we will reply.',
       ok: function (n) { return 'Done, ' + n + '. We will write to you within 1 business day.'; },
+      inicio: '/',
+      volver: 'Back to home',
+      cerrar: 'Close',
       limite: 'We received many messages in a short time. Try again in a while or write to us at ' + CORREO + '.',
       pausado: 'The form is paused. Please write to us at ' + CORREO + '.',
       largo: 'One of your texts is too long. Please shorten it a little.',
@@ -108,6 +116,57 @@
     form.querySelectorAll('[type="submit"], #btn-si').forEach(function (b) { b.disabled = si; });
   }
 
+  // Confirmacion en un dialogo modal con un boton "Volver al inicio". Cerrarlo (Esc o la X)
+  // deja el formulario limpio y el aviso en la pagina. Sin soporte de <dialog>: solo el
+  // aviso en la pagina, como antes.
+  function confirmar(nombre) {
+    const hecho = document.getElementById('hecho');
+    hecho.textContent = T.ok(nombre);
+    hecho.hidden = false;
+    const dlg = document.createElement('dialog');
+    if (typeof dlg.showModal !== 'function') { form.hidden = true; hecho.focus(); return; }
+    // Formulario limpio: vuelve al paso 1, sin errores ni estado.
+    form.reset();
+    limpiarErrores();
+    mostrar('', false);
+    paso2.hidden = true;
+    pregunta.hidden = false;
+    campoPaso.value = '1';
+
+    dlg.className = 'dlg';
+    dlg.setAttribute('aria-labelledby', 'dlg-t');
+    const x = document.createElement('button');
+    x.type = 'button';
+    x.className = 'dlg-x';
+    x.setAttribute('aria-label', T.cerrar);
+    x.textContent = '×';
+    const titulo = document.createElement('h2');
+    titulo.id = 'dlg-t';
+    titulo.className = 'dlg-t';
+    titulo.tabIndex = -1;
+    titulo.textContent = T.ok(nombre);
+    const volver = document.createElement('a');
+    volver.className = 'boton';
+    volver.href = T.inicio;
+    volver.textContent = T.volver;
+    dlg.append(x, titulo, volver);
+    document.body.append(dlg);
+    // Se limpia en el momento (sin esperar el evento close, que llega despues).
+    let cerrado = false;
+    function cerrar() {
+      if (cerrado) return;
+      cerrado = true;
+      if (dlg.open) dlg.close();
+      dlg.remove();
+      hecho.focus();
+    }
+    x.addEventListener('click', cerrar);
+    dlg.addEventListener('cancel', function (ev) { ev.preventDefault(); cerrar(); }); // Esc
+    dlg.addEventListener('close', cerrar);
+    dlg.showModal();
+    titulo.focus();
+  }
+
   let enviando = false;
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
@@ -151,11 +210,7 @@
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (j) {
         if (j && j.ok === true) {
-          const hecho = document.getElementById('hecho');
-          form.hidden = true;
-          hecho.textContent = T.ok(nombre);
-          hecho.hidden = false;
-          hecho.focus();
+          confirmar(nombre);
         } else {
           const c = j && j.codigo;
           mostrar(c === 'limite' ? T.limite : c === 'pausado' ? T.pausado :

@@ -36,3 +36,13 @@ textarea{resize:vertical}
 .note{color:var(--dim);font-size:.85rem;margin-top:1.5rem}
 .campo-trampa{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 @media(min-width:40rem){.wrap{padding:2.5rem 1.25rem 4rem}h1{font-size:2rem}.botones{display:flex;gap:.75rem}.botones .boton{flex:1}}
+.dlg{width:min(30rem,calc(100% - 2rem));border:1px solid var(--ember);border-radius:1rem;background:var(--surface);color:var(--snow);padding:2.25rem 1.25rem 1.25rem;position:relative}
+.dlg::backdrop{background:rgba(0,0,0,.75)}
+.dlg-t{margin:0 0 .75rem;font-size:1.3rem}
+.dlg-t:focus{outline:none}
+.dlg-x{position:absolute;top:.4rem;right:.4rem;width:2.75rem;height:2.75rem;border:0;border-radius:9999px;background:transparent;color:var(--snow);font:inherit;font-size:1.5rem;line-height:1;cursor:pointer}
+.dlg-x:hover{background:var(--hair)}
+a.boton{text-align:center;text-decoration:none}
+.dlg[open]{animation:dlg-in .2s ease-out}
+@keyframes dlg-in{from{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.dlg[open]{animation:none}}
