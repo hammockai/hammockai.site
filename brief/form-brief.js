@@ -42,11 +42,11 @@
       negocio: 'Cuéntanos en pocas palabras de qué se trata tu negocio.',
       revisa: 'Falta algo o hay un dato por corregir. Revisa lo marcado.',
       sinEndpoint: 'El envío directo todavía no está activo, así que no se envió nada. Escríbenos a ' + CORREO + ' y te respondemos.',
-      ok: function (n) { return 'Listo, ' + n + '. Te escribimos dentro de 1 día hábil.'; },
-      // Textos del dialogo: borrador; los puede pulir el Prompt Engineer.
-      dlgTitulo: function (n) { return '¡Listo, ' + n + '!'; },
+      ok: function (n) { return 'Gracias, ' + n + '. Te escribimos dentro de 1 día hábil.'; },
+      // Textos del dialogo (finales, 2026-11-06).
+      dlgTitulo: function (n) { return '¡Gracias, ' + n + '!'; },
       dlgPlazo: 'Te escribimos dentro de 1 día hábil.',
-      dlgCalido: 'Mientras, date una vuelta por el sitio.',
+      dlgCalido: 'Mientras tanto, acomódate en la hamaca y recorre el sitio.',
       inicio: '/es/',
       volver: 'Volver al inicio',
       cerrar: 'Cerrar',
@@ -64,11 +64,11 @@
       negocio: 'Tell us in a few words what your business is about.',
       revisa: 'Something is missing or needs fixing. Please check the marked fields.',
       sinEndpoint: 'Direct sending is not active yet, so nothing was sent. Write to us at ' + CORREO + ' and we will reply.',
-      ok: function (n) { return 'Done, ' + n + '. We will write to you within 1 business day.'; },
-      // Dialog copy: draft; the Prompt Engineer may polish it.
-      dlgTitulo: function (n) { return 'Done, ' + n + '!'; },
+      ok: function (n) { return 'Thank you, ' + n + '. We will write to you within 1 business day.'; },
+      // Dialog copy (final, 2026-11-06).
+      dlgTitulo: function (n) { return 'Thank you, ' + n + '!'; },
       dlgPlazo: "We'll write to you within 1 business day.",
-      dlgCalido: 'Meanwhile, have a look around.',
+      dlgCalido: 'Meanwhile, settle into the hammock and look around the site.',
       inicio: '/',
       volver: 'Back to home',
       cerrar: 'Close',
