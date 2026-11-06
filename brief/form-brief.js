@@ -15,9 +15,7 @@
   'use strict';
 
   // ---- CONFIGURACION --------------------------------------------------------
-  // PLACEHOLDER: reemplazar por la URL /exec del despliegue de A1, p. ej.
-  // 'https://script.google.com/macros/s/XXXXXXXX/exec'. Mientras tenga este valor
-  // el formulario NO envia y muestra el correo de respaldo.
+  // URL real del despliegue A1 v1.2 (2026-11-06).
   const A1_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxYgWZgNeL4zvHWgcj0bN9R_JaY71e82s551kqfpGX1Xqqym8x3l7HGmSTlajaNU1FQBQ/exec';
   const CORREO = 'hammockai@proton.me'; // correo de respaldo (se muestra como texto)
   // ---------------------------------------------------------------------------

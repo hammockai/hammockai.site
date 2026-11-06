@@ -29,7 +29,7 @@
 # sus _headers, que Cloudflare ignora). Sin otras cabeceras: ya vienen de /*.
 /portafolio/*
   X-Robots-Tag: noindex
-  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self' https://script.google.com/macros/s/AKfycbxYgWZgNeL4zvHWgcj0bN9R_JaY71e82s551kqfpGX1Xqqym8x3l7HGmSTlajaNU1FQBQ/exec; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
 
 # Archivos sueltos del repo que Cloudflare tambien publica (decision D5): noindex.
 /README.md
