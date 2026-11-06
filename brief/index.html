@@ -2,85 +2,64 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://hammockai.goatcounter.com; font-src 'self'; connect-src https://hammockai.goatcounter.com https://script.google.com/macros/s/AKfycbxYgWZgNeL4zvHWgcj0bN9R_JaY71e82s551kqfpGX1Xqqym8x3l7HGmSTlajaNU1FQBQ/exec https://script.googleusercontent.com; base-uri 'self'; form-action 'self' https://script.google.com/macros/s/AKfycbxYgWZgNeL4zvHWgcj0bN9R_JaY71e82s551kqfpGX1Xqqym8x3l7HGmSTlajaNU1FQBQ/exec; object-src 'none'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>El Brief — Hammock AI</title>
-<meta name="description" content="Once preguntas, cinco minutos. Tu sitio empieza aquí.">
+<title>Cuéntanos de tu negocio — Hammock AI</title>
+<meta name="description" content="Cuéntanos de tu negocio y recibe gratis una propuesta: una muestra de tu sitio, un informe con ideas y un presupuesto sin compromiso.">
 <meta name="theme-color" content="#0A0A0A">
-<style>
-@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-regular.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Atkinson Hyperlegible";src:url("/fonts/atkinson-hyperlegible-bold.woff2") format("woff2");font-weight:700;font-display:swap}
-:root{--ink:#0A0A0A;--coal:#0E0E0E;--surface:#141414;--snow:#FAFAFA;--mist:rgba(250,250,250,.74);--dim:rgba(250,250,250,.56);--ember:#FF6B35;--hair:rgba(255,255,255,.08)}
-*{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--snow);font-family:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
-.wrap{max-width:42rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}a{color:var(--ember)}
-h1{font-size:2rem;line-height:1.15;margin:0 0 .5rem}.sub{color:var(--mist);margin:0 0 2rem}
-.f{border:1px solid var(--hair);border-radius:1rem;background:var(--surface);padding:1.1rem 1.25rem;margin-bottom:1rem}
-.q{font-weight:700;display:block;margin-bottom:.5rem}.req{color:var(--ember)}
-.hint{color:var(--dim);font-size:.85rem;display:block;margin:-.25rem 0 .5rem}
-input[type=text],textarea{width:100%;background:var(--coal);color:var(--snow);border:1px solid var(--hair);border-radius:.6rem;padding:.6rem .75rem;font:inherit}
-textarea{resize:vertical}.checks label{display:flex;gap:.5rem;align-items:center;margin:.35rem 0;color:var(--mist);font-size:.95rem}
-input[type=checkbox],input[type=radio]{accent-color:var(--ember);width:1rem;height:1rem}
-.sub-in{margin-top:.6rem}.sub-in span{color:var(--dim);font-size:.8rem;display:block}
-.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}button{font:inherit;font-weight:700;border:0;border-radius:9999px;padding:.7rem 1.3rem;cursor:pointer}
-.primary{background:var(--ember);color:var(--ink)}.ghost{background:transparent;color:var(--mist);border:1px solid var(--hair)}
-.note{color:var(--dim);font-size:.85rem;margin-top:1.25rem}.miss{border-color:var(--ember)!important}
-#preciosWrap{display:none;margin-top:.6rem}
-</style>
+<link rel="canonical" href="https://hammockai.site/brief/">
+<link rel="alternate" hreflang="es" href="https://hammockai.site/brief/">
+<link rel="alternate" hreflang="en" href="https://hammockai.site/brief/en/">
+<link rel="alternate" hreflang="x-default" href="https://hammockai.site/brief/en/">
+<link rel="stylesheet" href="/brief/brief.css">
+<script src="/brief/form-brief.js" defer></script>
 </head>
 <body>
-<main class="wrap">
-<p><a href="../es/">← hammockai.site</a> · <a href="en/" hreflang="en" lang="en">English</a></p>
-<h1>El Brief</h1>
-<p class="sub">Once preguntas, cinco minutos. Con esto tu sitio deja de ser una idea y empieza a ser un plano. Nada de lo que escribas aquí viaja solo: el resumen se arma en tu dispositivo y tú eliges cómo enviarlo.</p>
-<form id="brief" novalidate>
-<div class="f"><label class="q" for="f1">1. Nombre de tu marca, exactamente como debe aparecer <span class="req">*</span></label><input type="text" id="f1"></div>
-<div class="f"><label class="q" for="f2">2. En una frase: ¿qué haces o vendes? <span class="req">*</span></label><span class="hint">ej.: "Mosaicos hechos a mano para personas que visten sus hogares." (no "una página bonita")</span><input type="text" id="f2"></div>
-<div class="f"><label class="q" for="f3">3. ¿Para quién es el sitio? Tu clienta o cliente ideal, en una frase</label><span class="hint">ej.: "Personas que valoran lo hecho a mano y buscan piezas con historia."</span><input type="text" id="f3"></div>
-<div class="f"><label class="q" for="f4">4. Ciudad y país <span class="req">*</span></label><input type="text" id="f4" placeholder="Pichilemu, Chile"><span class="q" style="margin-top:.75rem">Idioma del sitio <span class="req">*</span></span><div class="checks"><label><input type="radio" name="lang" value="Español" checked> Español</label><label><input type="radio" name="lang" value="Inglés"> Inglés</label><label><input type="radio" name="lang" value="Ambos"> Ambos</label></div></div>
-<div class="f"><label class="q" for="f5">5. Tres palabras que describen tu trabajo <span class="req">*</span></label><span class="hint">ej.: color, paciencia, memoria</span><input type="text" id="f5"></div>
-<div class="f"><span class="q">6. ¿Qué debe poder hacer quien visite tu sitio? (al menos una) <span class="req">*</span></span><div class="checks" id="g6"><label><input type="checkbox" value="Ver mi obra"> Ver mi obra</label><label><input type="checkbox" value="Escribirme por WhatsApp"> Escribirme por WhatsApp</label><label><input type="checkbox" value="Reservar"> Reservar</label><label><input type="checkbox" value="Comprar"> Comprar</label><label><input type="checkbox" value="Ver precios" id="ckPrecios"> Ver precios</label><label><input type="checkbox" value="Conocer mi historia"> Conocer mi historia</label><label><input type="checkbox" value="Otra"> Otra:</label><input type="text" id="f6o" placeholder="cuéntanos en pocas palabras"></div>
-<div id="preciosWrap"><span class="hint">Si marcaste "Ver precios":</span><div class="checks"><label><input type="radio" name="precios" value="precios visibles"> Precios visibles</label><label><input type="radio" name="precios" value="precios a conversación"> Precios a conversación</label></div></div></div>
-<div class="f"><span class="q">7. ¿Qué canales y materiales tienes hoy? (al menos uno) <span class="req">*</span></span><div class="checks" id="g7"><label><input type="checkbox" value="WhatsApp" id="ckWa"> WhatsApp</label><label><input type="checkbox" value="Email" id="ckMail"> Email</label><label><input type="checkbox" value="Instagram" id="ckIg"> Instagram</label><label><input type="checkbox" value="Facebook" id="ckFb"> Facebook</label><label><input type="checkbox" value="Fotos de tu obra"> Fotos de tu obra</label><label><input type="checkbox" value="Logo"> Logo</label><label><input type="checkbox" value="Aún nada (te guiamos)"> Aún nada (te guiamos)</label></div>
-<div class="sub-in"><span>Escribe solo los que marcaste arriba:</span>
-<input type="text" id="f7wa" class="miss-off" placeholder="WhatsApp: +56 9 …" style="margin-top:.4rem">
-<input type="text" id="f7mail" placeholder="Email: …" style="margin-top:.4rem">
-<input type="text" id="f7ig" placeholder="Instagram: @…" style="margin-top:.4rem">
-<input type="text" id="f7fb" placeholder="Facebook: https://…" style="margin-top:.4rem"></div></div>
-<div class="f"><label class="q" for="f8">8. Uno a tres sitios que te gusten, y una línea de por qué</label><span class="hint">máx. 3 sitios, una línea cada uno · ej.: https://… — me gusta porque…</span><textarea id="f8" rows="3"></textarea></div>
-<div class="f"><label class="q" for="f9">9. Qué NO debe ser o decir tu sitio, nunca</label><span class="hint">ej.: "nada de colores fríos, nada de lenguaje corporativo"</span><textarea id="f9" rows="2"></textarea></div>
-<div class="f"><label class="q" for="f10">10. Tu nombre y cómo te respondemos <span class="req">*</span></label><input type="text" id="f10" placeholder="Nombre + WhatsApp o email"></div>
-<div class="f"><label class="q" for="f11">11. Tu historia en tres líneas: cómo empezaste</label><span class="hint">ej.: "Después de años en el derecho, encontré en el mosaico mi otra voz…"</span><textarea id="f11" rows="3" maxlength="300"></textarea></div>
+<main class="wrap" id="main">
+<p class="top"><a href="../es/">← hammockai.site</a> · <a href="en/" hreflang="en" lang="en">English</a></p>
+<h1>Cuéntanos de tu negocio</h1>
+<p class="sub">Tu propuesta es gratis e incluye una muestra de cómo se vería tu sitio y un informe con ideas y un presupuesto sin compromiso. La muestra no es el sitio terminado: puedes usarla por tu cuenta con una IA o, si prefieres, con nosotros.</p>
+<p class="sub">Cuéntanos lo básico en 1 a 2 minutos: tu nombre, un correo y de qué se trata tu negocio. Te respondemos dentro de 1 día hábil. Si tu proyecto está fuera de lo que hacemos, te lo decimos y te orientamos.</p>
+<p class="hecho" id="hecho" role="status" tabindex="-1" hidden></p>
+<!-- El envio lo hace form-brief.js con POST a A1 (constante A1_ENDPOINT, al inicio de ese archivo). Sin action: no hay envio nativo ni mailto. -->
+<form id="contacto" method="post" accept-charset="utf-8" novalidate>
+<div class="campo"><label for="c-nombre">Tu nombre <span class="req" aria-hidden="true">*</span></label><input id="c-nombre" name="nombre" type="text" autocomplete="name" maxlength="80" required aria-describedby="c-nombre-err"><p class="err" id="c-nombre-err"></p></div>
+<div class="campo"><label for="c-correo">Tu correo <span class="req" aria-hidden="true">*</span></label><p class="ayuda" id="c-correo-ayuda">Aquí te respondemos.</p><input id="c-correo" name="correo" type="email" autocomplete="email" maxlength="120" required aria-describedby="c-correo-ayuda c-correo-err"><p class="err" id="c-correo-err"></p></div>
+<div class="campo"><label for="c-negocio">De qué se trata tu negocio <span class="req" aria-hidden="true">*</span></label><p class="ayuda" id="c-negocio-ayuda">Cuéntalo como se lo contarías a un amigo: qué haces o vendes, para quién y dónde. Ejemplos: «Soy nutricionista en Concepción; atiendo adultos online y presencial.» · «Hago mosaicos a mano y los vendo a personas que quieren decorar su casa.»</p><textarea id="c-negocio" name="negocio" rows="5" maxlength="1000" required aria-describedby="c-negocio-ayuda c-negocio-err"></textarea><p class="err" id="c-negocio-err"></p></div>
+<div class="campo"><label for="c-referencias">Sitios o referencias que te gusten (opcional)</label><p class="ayuda" id="c-referencias-ayuda">Pega enlaces de páginas que te gusten, tuyas o de otros, y una línea de por qué. Si no tienes, déjalo en blanco.</p><textarea id="c-referencias" name="referencias" rows="3" maxlength="600" aria-describedby="c-referencias-ayuda"></textarea></div>
+
+<section class="mas" id="mas" aria-labelledby="mas-p">
+<p id="mas-p">¿Quieres contarnos un poco más para mandarte una mejor propuesta?</p>
+<div class="botones"><button class="boton" type="button" id="btn-si">Sí</button><button class="boton boton--sec" type="submit" id="btn-no">No, enviar lo que tengo</button></div>
+</section>
+
+<section id="paso2" aria-labelledby="paso2-titulo">
+<h2 id="paso2-titulo" tabindex="-1">Un poco más (5 preguntas cortas)</h2>
+<div class="campo"><label for="c-publico">Para quién es tu sitio (opcional)</label><p class="ayuda" id="c-publico-ayuda">Tus clientes ideales, en una frase. Ej.: «Personas que valoran lo hecho a mano.»</p><input id="c-publico" name="publico" type="text" maxlength="200" aria-describedby="c-publico-ayuda"></div>
+<fieldset class="campo"><legend>¿Qué debería poder hacer quien lo visite? (opcional)</legend><p class="ayuda">Marca las que quieras.</p>
+<div class="op"><input id="c-que-ver-trabajo" type="checkbox" name="que_hacer" value="ver-trabajo"><label for="c-que-ver-trabajo">Ver mi trabajo</label></div>
+<div class="op"><input id="c-que-whatsapp" type="checkbox" name="que_hacer" value="whatsapp"><label for="c-que-whatsapp">Escribirme por WhatsApp</label></div>
+<div class="op"><input id="c-que-reservar" type="checkbox" name="que_hacer" value="reservar"><label for="c-que-reservar">Reservar una hora</label></div>
+<div class="op"><input id="c-que-comprar" type="checkbox" name="que_hacer" value="comprar"><label for="c-que-comprar">Comprar</label></div>
+<div class="op"><input id="c-que-precios" type="checkbox" name="que_hacer" value="precios"><label for="c-que-precios">Ver precios</label></div>
+<div class="op"><input id="c-que-historia" type="checkbox" name="que_hacer" value="historia"><label for="c-que-historia">Conocer mi historia</label></div>
+<div class="op"><input id="c-que-no-se" type="checkbox" name="que_hacer" value="no-se"><label for="c-que-no-se">No sé todavía</label></div>
+</fieldset>
+<div class="campo"><label for="c-palabras">Tres palabras que describan tu trabajo (opcional)</label><p class="ayuda" id="c-palabras-ayuda">Ej.: color, paciencia, memoria.</p><input id="c-palabras" name="palabras" type="text" maxlength="100" aria-describedby="c-palabras-ayuda"></div>
+<div class="campo"><label for="c-evitar">Qué NO debe ser ni decir tu sitio (opcional)</label><p class="ayuda" id="c-evitar-ayuda">Ej.: «nada de colores fríos, nada de lenguaje corporativo».</p><textarea id="c-evitar" name="evitar" rows="2" maxlength="300" aria-describedby="c-evitar-ayuda"></textarea></div>
+<div class="campo"><label for="c-enlaces">Tu sitio actual, redes o logo, si tienes (opcional)</label><p class="ayuda" id="c-enlaces-ayuda">Enlaces, uno por línea. Solo los que quieras compartir.</p><textarea id="c-enlaces" name="enlaces" rows="3" maxlength="600" aria-describedby="c-enlaces-ayuda"></textarea></div>
+<button class="boton" type="submit">Enviar</button>
+</section>
+
+<input type="hidden" name="paso" value="1">
+<input type="hidden" name="idioma" value="es">
+<div class="campo-trampa" aria-hidden="true"><label for="c-campo-x7">Do not fill this field</label><input id="c-campo-x7" name="campo_x7" type="text" tabindex="-1" autocomplete="off"></div>
+<p class="estado" id="estado" role="status" aria-live="polite"></p>
+<p class="priv">Usamos tus datos solo para responderte y prepararte una propuesta. Para eso, un asistente de IA (Claude, de Anthropic) lee lo que escribes y revisa la información pública de tu negocio. No busca tu nombre ni tu correo, y una persona revisa todo antes de escribirte. El envío pasa por un servicio de Google (Apps Script). Si no trabajamos juntos, borramos tus datos y lo que preparamos a los 12 meses; si quieres que los borremos antes, avísanos.</p>
+<noscript><p class="priv">Este formulario necesita JavaScript para enviarse. Si no puedes usarlo, escríbenos a hammockai@proton.me.</p></noscript>
 </form>
-<div class="btns"><button type="button" class="primary" id="copy">Copiar mi brief</button><button type="button" class="ghost" id="mail">Enviar por email</button><button type="button" class="ghost" id="dl">Descargar .txt</button></div>
-<p class="note" id="status"></p>
-<p class="note">Tus respuestas no salen de tu dispositivo hasta que eliges enviarlas. © 2026 Hammock AI</p>
+<p class="note">© 2026 Hammock AI</p>
 </main>
-<script>
-(()=>{'use strict';const $=id=>document.getElementById(id);const status=$('status');
-const ticked=g=>Array.from(document.querySelectorAll('#'+g+' input[type=checkbox]:checked')).map(c=>c.value==='Otra'?($('f6o').value.trim()||'Otra'):c.value);
-$('ckPrecios').addEventListener('change',e=>{$('preciosWrap').style.display=e.target.checked?'block':'none';});
-const compose=()=>{const miss=[];const v=id=>$(id).value.trim();status.textContent="";
-if(!v('f1'))miss.push('f1');if(!v('f2'))miss.push('f2');if(!v('f4'))miss.push('f4');
-const w5=v('f5').split(/\s+/).filter(Boolean);if(w5.length!==3){miss.push('f5');status.textContent='El campo 5 pide exactamente tres palabras 😉';}
-const a6=ticked('g6');if(!a6.length)miss.push('g6');
-let precios='';if($('ckPrecios').checked){const r=document.querySelector('input[name=precios]:checked');if(!r){miss.push('g6');status.textContent='Marcaste "Ver precios": elige visibles o a conversación.';}else precios=r.value;}
-const a7=ticked('g7');if(!a7.length)miss.push('g7');
-const chan=[];
-if($('ckWa').checked){if(!v('f7wa'))miss.push('f7wa');else chan.push('WhatsApp '+v('f7wa'));}
-if($('ckMail').checked){if(!v('f7mail'))miss.push('f7mail');else chan.push('Email '+v('f7mail'));}
-if($('ckIg').checked){if(!v('f7ig'))miss.push('f7ig');else chan.push('Instagram '+v('f7ig'));}
-if($('ckFb').checked){if(!v('f7fb'))miss.push('f7fb');else chan.push('Facebook '+v('f7fb'));}
-if(!v('f10'))miss.push('f10');
-document.querySelectorAll('.miss').forEach(e=>e.classList.remove('miss'));
-if(miss.length){miss.forEach(id=>$(id).classList.add('miss'));if(!status.textContent)status.textContent='Faltan los campos marcados en naranjo. Sin prisa, sin culpa.';return null;}
-const lang=document.querySelector('input[name=lang]:checked').value;
-const L=['BRIEF — '+v('f1'),'1 Marca: '+v('f1'),'2 Hace/vende: '+v('f2'),'3 Para quién: '+(v('f3')||'—'),'4 Lugar: '+v('f4')+' | Idioma: '+lang,'5 Palabras: '+w5.join(', '),'6 Debe permitir: '+a6.join(' · ')+(precios?' | Precios: '+precios:''),'7 Tiene hoy: '+a7.join(' · '),'7b Canales: '+(chan.join(' · ')||'—'),'8 Le gustan: '+(v('f8')||'—'),'9 Nunca: '+(v('f9')||'—'),'10 Responder a: '+v('f10'),'11 Historia: '+(v('f11')||'—')];
-status.textContent='';return L.join('\n');};
-$('copy').addEventListener('click',()=>{const b=compose();if(!b)return;navigator.clipboard.writeText(b).then(()=>status.textContent='¡Copiado! Pégalo donde quieras.');});
-$('mail').addEventListener('click',()=>{const b=compose();if(!b)return;location.href='mailto:hammockai@proton.me?subject='+encodeURIComponent('Brief — '+$('f1').value.trim())+'&body='+encodeURIComponent(b);});
-$('dl').addEventListener('click',()=>{const b=compose();if(!b)return;const slug=$('f1').value.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');const u=URL.createObjectURL(new Blob([b],{type:'text/plain'}));const a=document.createElement('a');a.href=u;a.download='brief-'+slug+'.txt';a.click();URL.revokeObjectURL(u);status.textContent='Descargado. Tu brief viaja contigo.');});
-})();
-</script>
-<!-- GoatCounter: cuenta visitas sin cookies ni datos personales. Cambiar "hammockai" si el código de la cuenta es otro. -->
 <script data-goatcounter="https://hammockai.goatcounter.com/count" async src="/assets/js/count.js"></script>
 </body>
 </html>

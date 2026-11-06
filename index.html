@@ -2,26 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://hammockai.goatcounter.com; font-src 'self'; connect-src https://hammockai.goatcounter.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hammock AI — Fast, private websites and landing pages you own</title>
-<meta name="description" content="Hammock AI designs and builds simple, fast, SEO-ready websites and landing pages for independent professionals and small businesses. No trackers, no lock-in: you own the code, the domain and the docs.">
+<title>Hammock AI — Websites for small businesses you own</title>
+<meta name="description" content="Simple, fast websites for small businesses and independent professionals. A clear price, and you own the domain and the files.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hammock AI">
-<meta property="og:title" content="Hammock AI — Fast, private websites and landing pages you own">
-<meta property="og:description" content="Simple, SEO-ready websites and landing pages for small businesses. No trackers, no lock-in, fair prices. Built by one developer and an AI crew.">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Hammock AI — Websites for small businesses you own">
+<meta property="og:description" content="Simple, fast websites for small businesses and independent professionals. A clear price, and you own the domain and the files.">
 <meta property="og:url" content="https://hammockai.site/">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://hammockai.site/">
 <link rel="alternate" hreflang="en" href="https://hammockai.site/">
 <link rel="alternate" hreflang="es" href="https://hammockai.site/es/">
 <link rel="alternate" hreflang="x-default" href="https://hammockai.site/">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg">
 </head>
 <body>
-<!-- Íconos propios, de trazo simple, sin dependencias. The Artist puede reemplazarlos por pixel art. -->
+<!-- Íconos propios, de trazo simple, sin dependencias. -->
 <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><defs>
   <symbol id="i-site" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM3 9h18M6 6.5h.5M9 6.5h.5"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></symbol>
@@ -45,6 +47,9 @@
   <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7 9.5h10M12 9.5V14M12 14l-3 4M12 14l3 4"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5h8a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H2zM22 5h-8a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h8z"/></symbol>
   <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v14M7 11h10M4 15c0 4 4 6 8 6s8-2 8-6"/></symbol>
+
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"/></symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M18 3v4h-4M20 12a8 8 0 0 1-14 5.3M6 21v-4h4"/></symbol>
 </defs></svg>
 
 <a class="skip-link" href="#main">Skip to content</a>
@@ -52,18 +57,17 @@
 <header class="site-header">
   <nav class="pill" aria-label="Primary">
     <div class="bar">
-      <a class="brand" href="#home" aria-label="Hammock AI, back to top">
-        <img src="assets/images/logo.svg" width="36" height="36" alt="Hammock AI mark: two palm trees with a hammock slung between them">
+      <a class="brand" href="/" aria-label="Hammock AI, home">
+        <img src="/assets/images/logo.svg" width="36" height="36" alt="Hammock AI mark: two palm trees with a hammock slung between them">
         <span class="display">Hammock AI</span>
       </a>
       <ul class="nav" role="list">
-        <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
-        <li><a class="nav-link" href="#services">Services</a></li>
-        <li><a class="nav-link" href="#how">How we work</a></li>
-        <li><a class="nav-link" href="#about">About us</a></li>
+        <li><a class="nav-link" href="/services/">Services</a></li>
+        <li><a class="nav-link" href="/ai-crew/">AI Crew</a></li>
+        <li><a class="nav-link" href="/docs/">Docs</a></li>
       </ul>
-      <a class="lang-link" href="es/" hreflang="es" lang="es" aria-label="Ver en español">ES</a>
-      <a class="btn btn-head" href="brief/en/">Get your site</a>
+      <a class="lang-link" href="/es/" hreflang="es" lang="es" aria-label="Ver en español">ES</a>
+      <a class="btn btn-head" href="/brief/en/">My proposal</a>
       <button class="menu-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Menu</span>
         <span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span>
@@ -71,133 +75,85 @@
     </div>
   </nav>
   <div class="mobile-menu" id="mobile-menu" hidden>
-    <a class="mobile-link" href="#portfolio">Portfolio</a>
-    <a class="mobile-link" href="#services">Services</a>
-    <a class="mobile-link" href="#how">How we work</a>
-    <a class="mobile-link" href="#about">About us</a>
-    <a class="btn" href="brief/en/">Get your site</a>
+    <a class="mobile-link" href="/services/">Services</a>
+    <a class="mobile-link" href="/ai-crew/">AI Crew</a>
+    <a class="mobile-link" href="/docs/">Docs</a>
+    <a class="btn" href="/brief/en/">My proposal</a>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- 1 · Primera pantalla: qué hacemos, para quién, un solo botón. Fondo: la escena pixel art del sitio (script.js). -->
-  <section id="home" class="hero">
+<section id="home" class="hero">
     <canvas class="hero-scene" id="hero-scene" data-scene="hero" aria-hidden="true"></canvas>
     <div class="hero-content">
-      <h1 class="hero-title display"><span>We build the website</span><span class="em">for your business.</span></h1>
-      <p class="hero-lead">People find you, you own it and it loads fast. For small businesses and independent professionals, with a clear price from day one.</p>
-      <div class="hero-actions"><a class="btn btn-lg" href="brief/en/">Get your site</a></div>
+      <h1 class="hero-title display"><span>Get a free proposal</span><span class="em">of how your site could look.</span></h1>
+      <p class="hero-lead">Do it yourself with an AI, or let us do it for you.</p>
+      <div class="hero-actions"><a class="btn btn-lg" href="/brief/en/">I want my proposal</a><p class="hero-note">The form takes 1 to 2 minutes.</p></div>
     </div>
   </section>
 
-  <!-- 2 · Portafolio: la captura manda; la tarjeta entera abre la demo (cada demo vive en /portafolio/<demo>/, noindex) -->
-  <section id="portfolio" class="sec" aria-labelledby="portfolio-title">
+<section id="portfolio" class="sec" aria-labelledby="portfolio-title">
     <div class="wrap">
       <div class="head">
         <h2 id="portfolio-title" class="h2 display">This is how our sites turn out</h2>
         <p class="fine fine-lead">These are three demos with fictional businesses, and each one says so at the top. They are in Spanish. Tap one and walk through it on your phone.</p>
       </div>
+      <div class="market"><p class="market-note">Price follows the country of the paying business.</p><div class="market-pick" role="group" aria-labelledby="mk-l0" hidden><span id="mk-l0" class="market-l">See prices for:</span><button type="button" class="chip" data-market="usd" aria-pressed="false">Rest of the world (USD)</button><button type="button" class="chip" data-market="clp" aria-pressed="true">Chile (CLP)</button></div></div>
       <ul class="demos" role="list">
         <li>
-          <a class="demo" href="portafolio/constructor-management/" hreflang="es" target="_blank" rel="noopener noreferrer">
+          <a class="demo" href="/portafolio/constructor-management/" hreflang="es" target="_blank" rel="noopener noreferrer">
             <span class="shot"><span class="frame"><span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
-              <img src="assets/images/portafolio/constructor-management.webp" width="960" height="600" loading="lazy" alt="Cover of the demo: home renovations, blue background, orange accents and a drawing of a wall under construction"></span></span>
+              <img src="/assets/images/portafolio/constructor-management.webp" width="960" height="600" loading="lazy" alt="Cover of the demo: home renovations, blue background, orange accents and a drawing of a wall under construction"></span></span>
             <span class="meta">
               <span class="rubro">Home renovations</span>
               <h3 class="display">Constructor Management</h3>
               <p>Before and after, the steps of the job, and contact.</p>
-              <p class="plan-eq">Matches the <b>One page</b> plan. It has the WhatsApp button; the contact form comes with the plan but isn’t shown in this demo.</p>
+              <p class="plan-eq">Matches the <b>One page</b> plan · <b><span class="mk mk-usd"><span class="mk-lab">Rest of the world: </span>USD 450</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>From CLP 150,000</span></b></p>
+              <p class="plan-eq">1 page, 8 sections · WhatsApp button · contact form included in the plan · about 129 KB</p>
               <span class="go">View site<span class="sr-only">: demo with a fictional business, in Spanish (opens in a new tab)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
             </span>
           </a>
-          <details class="tech">
-            <summary>Technical details</summary>
-            <ul class="dots" role="list">
-              <li>A single page with 8 sections: home, what we do, before and after, how we work, a call to get in touch, about us, FAQ and contact.</li>
-              <li>WhatsApp button with the message already written (“Hola, quiero pedir una visita.”, in Spanish). In the demo it leads to this site; on a real site it opens the business’s WhatsApp.</li>
-              <li>Everything on one page, with no menus that send you to others.</li>
-              <li>Designed phone-first and adapted to larger screens.</li>
-              <li>It has a skip-to-content link, a visible focus ring for keyboard use, and it respects people who ask for less motion.</li>
-              <li>No trackers and no resources from other domains: everything loads from the same site.</li>
-              <li>Weighs about 129 KB uncompressed (text, styles, code and images).</li>
-              <li>Its own fonts (Archivo Black and Atkinson Hyperlegible), included in the site.</li>
-              <li>It is a demo with a fictional business, and the page itself says so.</li>
-              <li>Matches the <b>One page</b> plan. The plan adds the contact form.</li>
-            </ul>
-          </details>
         </li>
         <li>
-          <a class="demo" href="portafolio/gym-management/" hreflang="es" target="_blank" rel="noopener noreferrer">
+          <a class="demo" href="/portafolio/gym-management/" hreflang="es" target="_blank" rel="noopener noreferrer">
             <span class="shot"><span class="frame"><span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
-              <img src="assets/images/portafolio/gym-management.webp" width="960" height="600" loading="lazy" alt="Cover of the demo: a gym, black background with lime green and a running figure"></span></span>
+              <img src="/assets/images/portafolio/gym-management.webp" width="960" height="600" loading="lazy" alt="Cover of the demo: a gym, black background with lime green and a running figure"></span></span>
             <span class="meta">
               <span class="rubro">Small-group gym</span>
               <h3 class="display">Gym Management</h3>
               <p>Classes, a weekly schedule that reads well on a phone, and a trial class.</p>
-              <p class="plan-eq">Matches the <b>One page</b> plan. It has the WhatsApp button; the contact form comes with the plan but isn’t shown in this demo.</p>
+              <p class="plan-eq">Matches the <b>One page</b> plan · <b><span class="mk mk-usd"><span class="mk-lab">Rest of the world: </span>USD 450</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>From CLP 150,000</span></b></p>
+              <p class="plan-eq">1 page, 9 sections · WhatsApp button · contact form included in the plan · about 79 KB</p>
               <span class="go">View site<span class="sr-only">: demo with a fictional business, in Spanish (opens in a new tab)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
             </span>
           </a>
-          <details class="tech">
-            <summary>Technical details</summary>
-            <ul class="dots" role="list">
-              <li>A single page with 9 sections: home, classes, weekly schedule, plans, trial class, team, FAQ, how to get there and contact.</li>
-              <li>WhatsApp button with the message already written (“Hola, quiero agendar mi clase de prueba.”, in Spanish). In the demo it leads to this site; on a real site it opens the business’s WhatsApp.</li>
-              <li>Everything on one page, with no menus that send you to others.</li>
-              <li>Designed phone-first and adapted to larger screens.</li>
-              <li>It has a skip-to-content link, a visible focus ring for keyboard use, and it respects people who ask for less motion.</li>
-              <li>No trackers and no resources from other domains: everything loads from the same site.</li>
-              <li>Weighs about 79 KB uncompressed (text, styles, code and images).</li>
-              <li>Uses the device’s fonts: it downloads none.</li>
-              <li>It is a demo with a fictional business, and the page itself says so.</li>
-              <li>Matches the <b>One page</b> plan. The plan adds the contact form.</li>
-            </ul>
-          </details>
         </li>
         <li>
-          <a class="demo" href="portafolio/therapist-management/" hreflang="es" target="_blank" rel="noopener noreferrer">
+          <a class="demo" href="/portafolio/therapist-management/" hreflang="es" target="_blank" rel="noopener noreferrer">
             <span class="shot"><span class="frame"><span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
-              <img src="assets/images/portafolio/therapist-management.webp" width="960" height="600" loading="lazy" alt="Cover of the demo: a psychology practice, soft green tones and an armchair by a window"></span></span>
+              <img src="/assets/images/portafolio/therapist-management.webp" width="960" height="600" loading="lazy" alt="Cover of the demo: a psychology practice, soft green tones and an armchair by a window"></span></span>
             <span class="meta">
               <span class="rubro">Therapy practice</span>
               <h3 class="display">Therapist Management</h3>
               <p>Online or in person, the first session explained, and fees in plain sight.</p>
-              <p class="plan-eq">Matches the <b>One page</b> plan. It has the WhatsApp button; the contact form comes with the plan but isn’t shown in this demo.</p>
+              <p class="plan-eq">Matches the <b>One page</b> plan · <b><span class="mk mk-usd"><span class="mk-lab">Rest of the world: </span>USD 450</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>From CLP 150,000</span></b></p>
+              <p class="plan-eq">1 page, 8 sections · WhatsApp button · contact form included in the plan · about 65 KB</p>
               <span class="go">View site<span class="sr-only">: demo with a fictional business, in Spanish (opens in a new tab)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
             </span>
           </a>
-          <details class="tech">
-            <summary>Technical details</summary>
-            <ul class="dots" role="list">
-              <li>A single page with 8 sections: home, who I see, online or in person, first session, about me, values, FAQ and booking.</li>
-              <li>WhatsApp button with the message already written (“Hola, quiero agendar una hora.”, in Spanish). In the demo it leads to this site; on a real site it opens the business’s WhatsApp.</li>
-              <li>Everything on one page, with no menus that send you to others.</li>
-              <li>Designed phone-first and adapted to larger screens.</li>
-              <li>It has a skip-to-content link, a visible focus ring for keyboard use, and it respects people who ask for less motion.</li>
-              <li>No trackers and no resources from other domains: everything loads from the same site.</li>
-              <li>Weighs about 65 KB uncompressed (text, styles, code and images).</li>
-              <li>Uses the device’s fonts: it downloads none.</li>
-              <li>It is a demo with a fictional business, and the page itself says so.</li>
-              <li>Matches the <b>One page</b> plan. The plan adds the contact form.</li>
-            </ul>
-          </details>
         </li>
       </ul>
+    <p class="more-link"><a class="link" href="/services/#portfolio">See each demo in detail <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
     </div>
   </section>
 
-  <!-- 3 · Precios. El lema vive aquí: es una promesa sobre el precio. -->
-  <section id="services" class="sec band" aria-labelledby="prices-title">
+  <section id="services" class="sec band" aria-labelledby="services-title">
     <div class="wrap">
       <div class="head">
-        <h2 id="prices-title" class="h2 display">A clear price, a clear timeline</h2>
+        <h2 id="services-title" class="h2 display">Websites with a clear price, and what they include</h2>
+        <p class="lead">Pick a plan and see what each one includes. The price is written down before we start.</p>
       </div>
-      <div class="lema">
-        <span class="lema-glyphs" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tag"/></svg></span>
-        <p>The time AI saves us comes straight off your price.</p>
-      </div>
-
       <div class="market"><p class="market-note">Price follows the country of the paying business.</p><div class="market-pick" role="group" aria-labelledby="mk-l1" hidden><span id="mk-l1" class="market-l">See prices for:</span><button type="button" class="chip" data-market="usd" aria-pressed="false">Rest of the world (USD)</button><button type="button" class="chip" data-market="clp" aria-pressed="true">Chile (CLP)</button></div><p class="sr-only" role="status" data-market-status></p></div>
       <ul class="plans" role="list">
         <li class="plan">
@@ -212,6 +168,7 @@
             <li>A form to your email and spreadsheet, included to get you started</li>
             <li>1 round of changes</li>
           </ul>
+          <p class="fine">One page gathers everything in one place. If you’d rather give each service its own page, so each one can show up in searches for that service, that comes with the Simple website.</p>
           <details class="tech">
             <summary>Technical details</summary>
             <ul class="dots" role="list">
@@ -219,9 +176,10 @@
               <li>You send the texts and photos with a guide form; we organize and polish them. No writing from scratch.</li>
               <li>Inquiries arrive by WhatsApp, phone, email or the form (included): what is stored, where, and in whose name is in the form’s technical details, further down. The site’s CSP opens only to the exact Google script URL (<code>form-action</code> and <code>connect-src</code>).</li>
               <li>Everything shared (hosting, security, accessibility, search, images) is under “What’s inside”.</li>
+              <li><b>Search:</b> a single page has one title, one address and one topic, so it can match fewer searches. In the Simple website each page gets its own title, address and topic (for example, one per service). Nobody can promise a position on Google: it also depends on your Google listing, reviews and competition.</li>
             </ul>
           </details>
-          <p class="more"><a class="link" target="_blank" rel="noopener noreferrer" href="portafolio/gym-management/">See an example<span class="sr-only">: demo of a made-up training studio (opens in a new tab)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+          <p class="more"><a class="link" target="_blank" rel="noopener noreferrer" href="/portafolio/gym-management/">See an example<span class="sr-only">: demo of a made-up training studio (opens in a new tab)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
         </li>
         <li class="plan">
           <h3 class="display">Simple website</h3>
@@ -242,7 +200,7 @@
               <li>Everything shared (hosting, security, accessibility, search, images) is under “What’s inside”.</li>
             </ul>
           </details>
-          <p class="more"><a class="link" target="_blank" rel="noopener noreferrer" href="portafolio/therapist-management/">See an example<span class="sr-only">: demo of a made-up psychology practice (opens in a new tab)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+          <p class="more"><a class="link" target="_blank" rel="noopener noreferrer" href="/portafolio/therapist-management/">See an example<span class="sr-only">: demo of a made-up psychology practice (opens in a new tab)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
         </li>
         <li class="plan">
           <h3 class="display">Custom website</h3>
@@ -267,482 +225,68 @@
               <li><b>Interview and handover:</b> a 45-minute interview to write the texts with you and, at the end, a 30-minute guided handover by video call.</li>
             </ul>
           </details>
-          <p class="more"><a class="link" target="_blank" rel="noopener noreferrer" href="portafolio/constructor-management/">See an example<span class="sr-only">: demo of a made-up remodeling business (opens in a new tab)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+          <p class="more"><a class="link" target="_blank" rel="noopener noreferrer" href="/portafolio/constructor-management/">See an example<span class="sr-only">: demo of a made-up remodeling business (opens in a new tab)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
           <p class="fine">The examples start from a template. In this plan, your design starts from scratch.</p>
         </li>
       </ul>
-      <div class="inside">
-        <h3 class="display">What’s inside every site</h3>
-        <p class="fine fine-lead">This comes with every site we build, even if you can’t see it at a glance: we check it before handing your site over. It applies to every plan.</p>
-        <ul class="dots" role="list">
-          <li><b>Checked before we hand it over.</b> We run your site through a security checklist and a tool that reads it file by file, and we fix what turns up. It’s a check, not a guarantee: we look at the most common weak spots.</li>
-          <li><b>Easy to read and use for more people.</b> We check that text has good contrast, photos have a description, everything works with just a keyboard, and the text can be enlarged (using a checklist based on the international web accessibility guidelines, WCAG 2.2 level AA). That way more people can use your site, including people who use a screen reader.</li>
-          <li><b>The basics for Google to understand you.</b> Each page gets its own title and description with your trade and your town, your contact details in a format Google can read, and a site map. Nobody can promise first place: it also depends on your Google listing, your reviews, your competition and time.</li>
-          <li><b>Built for phones.</b> It’s designed for phones first: buttons are easy to tap with a thumb, nothing gets cut off or slides sideways, and the WhatsApp button opens with your message already written. Photos are resized so they load faster.</li>
-          <li><b>In your name, with no trackers.</b> Your domain and the account where your site lives are in your name and your email. The site has no trackers and no pieces from other sites that report every visit. And it stays online even if you don’t sign up for maintenance.</li>
-          <li><b>A guide to use it.</b> You get your files in a .zip (they’re yours) and a short guide in plain words: how to protect your accounts, how to ask for changes and what to do if something breaks. If you ever want to switch providers, you can.</li>
-        </ul>
-
-        <details class="tech">
-          <summary>Technical details</summary>
-          <ul class="dots" role="list">
-            <li><b>Code:</b> semantic HTML5, hand-written CSS (colors and sizes as variables in <code>:root</code>) and framework-free JavaScript (the base ships ~2.6 KB). No CDNs, no build step, no dependencies.</li>
-            <li><b>Hosting:</b> Cloudflare Pages (free plan), on an account in the client’s name, with two-factor authentication on. Published by uploading the site folder. The domain is registered in the client’s name. HTTPS: after publishing we check that <code>http://</code> and <code>www</code> redirect to <code>https://</code>.</li>
-            <li><b>Security headers:</b> a <code>_headers</code> file with a strict Content-Security-Policy (no <code>'unsafe-inline'</code> or <code>'unsafe-eval'</code>, <code>frame-ancestors 'none'</code>), <code>X-Content-Type-Options: nosniff</code>, <code>Referrer-Policy: strict-origin-when-cross-origin</code>, <code>Permissions-Policy</code> and <code>X-Frame-Options: DENY</code>. The same CSP goes in a <code>&lt;meta&gt;</code> on every page. We check live that the real headers match <code>_headers</code>.</li>
-            <li><b>Security review:</b> our own plain Node script, with no dependencies and no network access, reads the files and looks for secrets, inline scripts, resources from other domains, tracking code and missing headers. To hand over, it must exit with 0 critical and 0 high findings. Then a manual review by Security (the crew’s security agent), only on what the client authorizes in writing. It is not a penetration test: it doesn’t look at the live site, the account or DNS.</li>
-            <li><b>Accessibility:</b> WCAG 2.2 AA checked by hand against a checklist: <code>lang</code>, a single <code>h1</code> and headings in order, <code>alt</code> on images, 4.5:1 contrast (3:1 for large text), keyboard-only use with a visible focus ring, <code>prefers-reduced-motion</code> and 200% zoom. For mobile Lighthouse we aim for performance ≥ 90 and accessibility ≥ 95: those are targets, not measurements taken on clients.</li>
-            <li><b>Search:</b> unique <code>&lt;title&gt;</code>, meta description and <code>h1</code> per page, with trade and town; <code>canonical</code>, Open Graph (<code>og:image</code> 1200×630), <code>sitemap.xml</code> and <code>robots.txt</code>; <code>LocalBusiness</code> structured data (JSON-LD) using only details the client confirmed, checked at validator.schema.org. Google Business Profile: if the client already has one, we check that name, address and phone match the site.</li>
-            <li><b>Images and weight:</b> WebP at ~1200 px, with <code>width</code> and <code>height</code> and <code>loading="lazy"</code> (except the first visible one). Targets: photo ≤ 200 KB and first load ≤ 500 KB; they are targets, not measurements taken on clients.</li>
-            <li><b>Cookies and tracking:</b> no cookies and no trackers in the site’s files (checked on the base and the demos); no fonts, maps or videos embedded from other domains. That applies to the site’s files; what Cloudflare’s network adds on its own is outside our control.</li>
-            <li><b>Handover:</b> the full folder in a .zip, a client guide, and a delivery checklist run in full (zero pending placeholders, photos with permission, photo and font credits).</li>
-          </ul>
-        </details>
-      </div>
-      <div class="pay-block">
-        <h3 class="display">What you pay, when, and to whom</h3>
-        <p class="fine fine-lead">This is everything you pay, with no surprises. Your plan is paid once; everything else is in your name or optional.</p>
-        <ul class="plans pay" role="list">
-          <li class="plan">
-            <p class="tag">One-time</p>
-            <h4 class="display">Your plan</h4>
-            <ul class="dots" role="list">
-              <li>The price of your plan, which you see in writing before we start</li>
-              <li>50% to start and the rest on delivery</li>
-              <li>Paid to Hammock AI</li>
-              <li>What comes with your plan isn’t charged again. Add-ons you ask for (booking, catalog, identity, email) are also a one-time payment, priced in your quote</li>
-            </ul>
-      </li>
-          <li class="plan">
-            <p class="tag">Every year</p>
-            <h4 class="display">Your domain</h4>
-            <ul class="dots" role="list">
-              <li><span class="mk mk-usd">A .com domain: about USD 11 a year</span><span class="mk mk-clp">A .cl domain: CLP 9,990 a year</span></li>
-              <li>You pay it, in your own name and with your email, wherever you buy it (the registrar)</li>
-              <li>It’s a good idea to keep auto-renewal on so it doesn’t expire</li>
-            </ul>
-      </li>
-          <li class="plan">
-            <p class="tag">Every month</p>
-            <h4 class="display">Optional</h4>
-            <ul class="dots" role="list">
-              <li><b>Maintenance:</b> <span class="mk mk-usd">USD 39 a month or USD 390 a year</span><span class="mk mk-clp">CLP 12,000 a month or CLP 120,000 a year</span>, no lock-in. Paid to Hammock AI</li>
-              <li>Includes a monthly check of your site, up to 30 minutes of small changes a month (they don’t carry over), a heads-up 30 days before your domain renews, and a copy of your files whenever you ask</li>
-              <li>If you don’t take it, your site stays online</li>
-              <li><b>Email with your domain</b> (only if you ask for that add-on): a subscription with the provider (Proton or Google), in your name and with no markup from us. The provider sets the price</li>
-            </ul>
-      </li>
-        </ul>
-        <p class="fine"><b>$0 a month on today’s free plans:</b> the place your site lives (your free Cloudflare account) and the form, booking and catalog (on your free Google and Cloudflare accounts).</p>
-
-        <details class="tech">
-          <summary>Technical details</summary>
-          <ul class="dots" role="list">
-            <li><b>Hosting at $0:</b> Cloudflare Pages, free plan, on your account. That plan’s limits today: 500 deployments a month, 20,000 files per site and 25 MiB per file; it states no visitor limit for static files. Free plans and limits at Cloudflare and Google can change.</li>
-            <li><b>Form and booking at $0:</b> a free Google account; the emails they send go out from your account, with a limit of 100 recipients a day (shared between both). You don’t pay an email subscription for them.</li>
-            <li><b>Catalog at $0:</b> Google Sheets and a Cloudflare Worker on your account, free plan (100,000 requests a day).</li>
-            <li><b>Domain:</b> bought in your name; if you buy it at Cloudflare Registrar, auto-renewal is on by default (at list price); at another registrar, we check it in its dashboard. Without renewal, the site and any email on that domain stop working.</li>
-            <li><b>Maintenance:</b> optional with no lock-in; anything beyond 30 minutes a month is quoted before we do it. If you cancel, the site, the files and the domain remain yours.</li>
-          </ul>
-        </details>
-      </div>
-      <p class="fine mk mk-usd">Rest of the world: prices in US dollars. Your site comes in English and Spanish, included.</p>
-      <p class="fine mk mk-clp">Chile: prices in Chilean pesos (CLP). Your site comes in Spanish and English, included.</p>
+      <p class="more-link"><a class="link" href="/services/#plans">See everything that’s included <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      <p class="fine">This site is an example of the Simple website plan: 5 pages and a contact form. The pixel animations are an extra.</p>
     </div>
   </section>
 
-  <!-- 4 · Automatizaciones: cada una muestra cómo estabas (Antes) y cómo queda conectada a tu sitio (Después) -->
-  <section id="extras" class="sec" aria-labelledby="extras-title">
+  <section id="how" class="sec" aria-labelledby="crew-title">
     <div class="wrap">
       <div class="head">
-        <h2 id="extras-title" class="h2 display">Let your site work for you</h2>
-        <p class="lead">Extras that do repetitive tasks on their own and connect to your site. One-time payment to set it up, in your name. Email has a separate subscription with the provider.</p>
-        <p class="fine">These are new automations: their parts are tested separately, and before we hand them over we test them end to end with real accounts.</p>
+        <h2 id="crew-title" class="h2 display">Who builds your site</h2>
+        <p class="lead">A crew of AI agents that follow rules, and a developer who reviews everything with you before it goes live.</p>
       </div>
-      <div class="market"><p class="market-note">Price follows the country of the paying business.</p><div class="market-pick" role="group" aria-labelledby="mk-l2" hidden><span id="mk-l2" class="market-l">See prices for:</span><button type="button" class="chip" data-market="usd" aria-pressed="false">Rest of the world (USD)</button><button type="button" class="chip" data-market="clp" aria-pressed="true">Chile (CLP)</button></div><p class="sr-only" role="status" data-market-status></p></div>
-      <ul class="autos" role="list">
-
-        <li class="auto">
-          <div><h3 class="display">Contact form</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Rest of the world: </span>From USD 150</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>From CLP 85,000</span></b> · 3 business days</p></div>
-          <div class="pane pane-b">
-            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scatter"/></svg></span>
-            <div><span class="t">Before</span><p>Requests by chat, calls and scraps of paper.</p></div>
-          </div>
-          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          <div class="pane pane-a">
-            <div class="row" aria-hidden="true"><span class="g src"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-form"/></svg></span><svg class="i i-arr" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></span><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sheet"/></svg></span></div>
-            <span class="t">After</span><p>Every request reaches your email and lands in your spreadsheet.</p>
-          </div>
-          <details class="tech">
-            <summary>Technical details</summary>
-            <ul class="dots" role="list">
-              <li><b>Included in all three plans.</b> If you ask for it on its own, it’s a one-time payment.</li>
-              <li><b>What it uses:</b> a Google Sheets spreadsheet with a Google Apps Script, in your Google account. The site posts the form to that script’s exact URL. No server of ours.</li>
-              <li><b>Where the data lives:</b> the sender’s name, email or phone and message land in the “Consultas” tab of your spreadsheet (your Drive) and in the alert sent to your inbox. They pass through Google, which is already your provider: no new third party is added. We can see the spreadsheet only while we hold editor access, and we remove it at handover (if you sign up for maintenance, for as long as it lasts).</li>
-              <li><b>Whose account:</b> yours. You do the install with your own login, guided by us. Nobody asks for or writes down your password.</li>
-              <li><b>Third-party cost:</b> $0 a month on a free Google account. Google’s limit: 100 email recipients a day per account, shared with booking (the form leaves 30 free for reminders); Google can change these limits without notice.</li>
-              <li><b>Safeguards:</b> a honeypot field against bots, a brake if more than 20 complete inquiries arrive in an hour (it alerts you and visitors see the WhatsApp button), protection against malicious spreadsheet formulas, minimal permissions (only that spreadsheet and sending you the alert) and an off switch.</li>
-              <li><b>If it fails:</b> the site tells the person to write on WhatsApp, and the WhatsApp button and email stay on the site.</li>
-              <li><b>What data it asks for:</b> the minimum needed to reply (name, contact and message). It isn’t meant for sensitive data (health, ID numbers, cards, passwords); use another channel for that.</li>
-            </ul>
-          </details>
-        </li>
-
-        <li class="auto">
-          <div><h3 class="display">Booking</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Rest of the world: </span>From USD 220</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>From CLP 110,000</span></b> · 5 business days</p></div>
-          <div class="pane pane-b">
-            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chat"/></svg></span>
-            <div><span class="t">Before</span><p>You arrange every appointment by message.</p></div>
-          </div>
-          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          <div class="pane pane-a">
-            <div class="row" aria-hidden="true"><span class="g src"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cal"/></svg></span><svg class="i i-arr" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></span><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bell"/></svg></span></div>
-            <span class="t">After</span><p>Your clients book on their own and get an email reminder.</p>
-          </div>
-          <details class="tech">
-            <summary>Technical details</summary>
-            <ul class="dots" role="list">
-              <li><b>What it uses:</b> Google Calendar’s free booking page (one per personal account) plus a Google Apps Script that, around 6 pm each day, emails a reminder to whoever has an appointment the next day. The site links to the booking page (it doesn’t embed it).</li>
-              <li><b>Why a script and not Google’s own reminder:</b> Google Calendar’s native automatic email reminder is a paid feature (Google One Premium, Workspace Individual and higher plans). The script replaces it on your free account.</li>
-              <li><b>Where the data lives:</b> the appointment sits in your Google Calendar, with the booker’s name and email. The script keeps only the masked email (ju***@…) in its “Registro” tab, which clears itself after 60 days. The data doesn’t pass through any other third party.</li>
-              <li><b>Whose account:</b> yours; you install it with your own login, guided by us. Nobody asks for your password.</li>
-              <li><b>Third-party cost:</b> $0 a month on free accounts. Google’s limits: 100 email recipients a day (shared with the form) and 90 minutes a day of triggers; they can change without notice.</li>
-              <li><b>Safeguards:</b> only appointments you created are reminded, with up to 3 guests; minimal permissions (read the calendar, write to that spreadsheet, send email) and an off switch for reminders.</li>
-              <li><b>What it’s for:</b> booking appointments and reminding people by email. It asks only for name and email; it isn’t meant for health data or reasons for a visit (if you need clinical records, payments or WhatsApp reminders, you need a system built for that, and professional advice is wise). The booker’s email is not verified.</li>
-              <li><b>If it fails:</b> Google alerts you and the script emails “Check tomorrow’s reminders”; the fallback is to notify people by WhatsApp by hand.</li>
-            </ul>
-          </details>
-        </li>
-
-        <li class="auto">
-          <div><h3 class="display">Spreadsheet catalog</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Rest of the world: </span>From USD 320</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>From CLP 160,000</span></b> · 8 business days</p></div>
-          <div class="pane pane-b">
-            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-code"/></svg></span>
-            <div><span class="t">Before</span><p>Changing a price means editing the site.</p></div>
-          </div>
-          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          <div class="pane pane-a">
-            <div class="row" aria-hidden="true"><span class="g src"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sheet"/></svg></span><svg class="i i-arr" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-site"/></svg></span></div>
-            <span class="t">After</span><p>You edit a spreadsheet and the site updates itself.</p>
-          </div>
-          <p class="fine">Up to 20 products; <span class="mk-usd"><span class="mk-lab">rest of the world: </span>+USD 40</span><span class="mk-clp"><span class="mk-lab"> · Chile: </span>+CLP 25,000</span> for every 10 more.</p>
-          <details class="tech">
-            <summary>Technical details</summary>
-            <ul class="dots" role="list">
-              <li><b>What it uses:</b> a Google Sheets spreadsheet with a “Catalogo” tab published to the web → a Cloudflare Worker (in the site’s Cloudflare account, which is yours) that reads, cleans and caches the catalog for 5 minutes → the site builds the product cards. Each product has a button that opens <code>wa.me</code> with the product and price already written; the person decides whether to send.</li>
-              <li><b>Where the data lives:</b> only the catalog (product, description, price, availability, photo, category), which is public. It doesn’t touch customer data: the order happens in your WhatsApp and the person writes first. Visitors to your site never talk to Google. Private data goes in a different spreadsheet, never in the published one.</li>
-              <li><b>Whose account:</b> yours (Google and Cloudflare). You set up the spreadsheet with your Google login; the Worker, with your Cloudflare login or by inviting us as a member of your account, and you remove us when we’re done.</li>
-              <li><b>Third-party cost:</b> $0 a month. Cloudflare Workers free plan: 100,000 requests a day and 10 ms of CPU per request; the Worker reads up to 120 rows. If someone uses up the day’s requests, the catalog comes back at midnight UTC and meanwhile the WhatsApp block shows. Google and Cloudflare can change these limits.</li>
-              <li><b>Package limits:</b> up to 20 products with photos (more, in tiers of 10). Spreadsheet changes take a few minutes to show. New photos must be uploaded to the site (with maintenance or an extra hour).</li>
-              <li><b>A “watchdog”</b> (another Google script) emails you if the catalog doesn’t load or arrives truncated.</li>
-              <li><b>What it’s for:</b> showing your products and receiving orders on WhatsApp. You mark “sold out” yourself in the spreadsheet, and you agree on payment with your customer on WhatsApp.</li>
-              <li><b>If it fails:</b> the site shows “We couldn’t load the catalog… write to us on WhatsApp”; if Google fails for a while, it shows the last copy (up to 6 hours, labeled as a backup).</li>
-            </ul>
-          </details>
-        </li>
-
-        <li class="auto">
-          <div><h3 class="display">Basic identity</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Rest of the world: </span>USD 350</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>CLP 130,000</span></b> · 6 business days</p></div>
-          <div class="pane pane-b">
-            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scatter"/></svg></span>
-            <div><span class="t">Before</span><p>Every piece has different colors and fonts.</p></div>
-          </div>
-          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          <div class="pane pane-a">
-            <div class="row" aria-hidden="true"><span class="sw sw-ember"></span><span class="sw sw-snow"></span><span class="sw sw-dim"></span><span class="sw sw-surface"></span><span class="aa display">Aa</span><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-doc"/></svg></span></div>
-            <span class="t">After</span><p>A palette, 2 typefaces, a logo with your business name and a 1-page guide.</p>
-          </div>
-        </li>
-
-        <li class="auto">
-          <div><h3 class="display">Email on your domain</h3><p class="auto-cost"><b><span class="mk mk-usd"><span class="mk-lab">Rest of the world: </span>USD 75</span><span class="mk mk-clp"><span class="mk-lab">Chile: </span>CLP 45,000</span></b> · 2 business days</p></div>
-          <div class="pane pane-b">
-            <span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-at"/></svg></span>
-            <div><span class="t">Before</span><p class="addr">yourbusiness@gmail.com</p></div>
-          </div>
-          <span class="down" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          <div class="pane pane-a">
-            <div class="row" aria-hidden="true"><span class="g"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></span></div>
-            <span class="t">After</span><p class="addr">hello@yourbusiness.com</p>
-          </div>
-          <p class="fine">On Proton or Google, in your name. You pay the subscription to the provider, with no markup from us.</p>
-        </li>
-      </ul>
+      <ol class="mini-flow" role="list" aria-label="How the work moves">
+        <li class="mf-node"><span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-anchor"/></svg></span><b>Contramaestre</b><span>Coordinates and hands out the work</span></li>
+        <li class="mf-node"><span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-swap"/></svg></span><b>Studios</b><span>Web · Automation · Content</span></li>
+        <li class="mf-node mf-human"><span class="g" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check-person"/></svg></span><b>You and the developer</b><span>Approve, and only then it goes live</span></li>
+      </ol>
+      <p class="fine">Plus a Guardian that enforces the house rules, and rounds of review until you approve.</p>
+      <p class="more-link"><a class="link" href="/ai-crew/">See how we work <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
     </div>
   </section>
 
-  <!-- 5 · Cómo trabajamos -->
-  <section id="how" class="sec band" aria-labelledby="how-title">
+  <section id="docs" class="sec band" aria-labelledby="docs-title">
     <div class="wrap">
       <div class="head">
-        <h2 id="how-title" class="h2 display">Who builds your site</h2>
-        <p class="lead">Your site is built by a system of AI agents and workflows we designed. Each agent has its own craft and its own rules, and the developer approves everything with you.</p>
-        <ul class="crew-value" role="list"><li>Faster</li><li>The same checks on every site</li><li>Fewer hours, lower price: the time AI saves us comes straight off your price</li></ul>
+        <h2 id="docs-title" class="h2 display">Prompts from our crew, free</h2>
+        <p class="lead">Download an agent and paste it into the AI you use.</p>
       </div>
-
-      <ul class="map-legend" role="list">
-        <li><span class="key" aria-hidden="true"></span>AI agent: does its part on its own, in small steps</li>
-        <li><span class="key key--opt" aria-hidden="true"></span>Optional: only if your site needs it</li>
-        <li><span class="key key--human" aria-hidden="true"></span>Person: reviews and approves</li>
+      <ul class="plans mini" role="list">
+        <li class="plan">
+          <p class="tag">Free</p>
+          <h3 class="display">Contramaestre</h3>
+          <p class="what">The AI that tells you the truth and gives you the next action.</p>
+        </li>
+        <li class="plan">
+          <p class="tag">Free</p>
+          <h3 class="display">Quintero</h3>
+          <p class="what">Fair prices and copy that sells without lying.</p>
+        </li>
+        <li class="plan">
+          <p class="tag">Free</p>
+          <h3 class="display">Prompt Engineer</h3>
+          <p class="what">Turns vague ideas into precise instructions, and teaches you to write them.</p>
+        </li>
+        <li class="plan">
+          <p class="tag">Free</p>
+          <h3 class="display">Guardian</h3>
+          <p class="what">Reviews your decisions and texts before you publish them.</p>
+        </li>
       </ul>
-
-      <div class="crew-map">
-        <ol class="fmap" role="list">
-          <li class="fnode">
-            <span class="fn-n" aria-hidden="true">1</span>
-            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="contramaestre"></canvas></span>
-            <div class="txt"><h3>Contramaestre</h3><p class="kind">AI agent</p><p class="fn-what">Organizes your project, questions what doesn’t add up and hands out the work to the others.</p><a class="link node-link" href="contramaestre/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-            <span class="wire" aria-hidden="true"></span>
-          </li>
-          <li class="fnode">
-            <span class="fn-n" aria-hidden="true">2</span>
-            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="balanza"></canvas></span>
-            <div class="txt"><h3>Quintero</h3><p class="kind">AI agent</p><p class="fn-what">Sets a fair price and puts it in writing before we start.</p><a class="link node-link" href="quintero/en/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-            <span class="wire" aria-hidden="true"></span>
-          </li>
-          <li class="fnode">
-            <span class="fn-n" aria-hidden="true">3</span>
-            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="paleta"></canvas></span>
-            <div class="txt"><h3>El Diseñador Web and The Artist</h3><p class="kind">AI agents</p><p class="fn-what">Propose how your site looks: colors, fonts and illustrations.</p></div>
-            <span class="wire" aria-hidden="true"></span>
-          </li>
-          <li class="fnode">
-            <span class="fn-n" aria-hidden="true">4</span>
-            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="constructor"></canvas></span>
-            <div class="txt"><h3>The Builder</h3><p class="kind">AI agent</p><p class="fn-what">Builds it, phone first, fast and accessible.</p></div>
-            <span class="wire" aria-hidden="true"></span>
-          </li>
-          <li class="fnode fnode--opt">
-            <span class="fn-n" aria-hidden="true">5</span>
-            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="engranaje"></canvas></span>
-            <div class="txt"><h3>El Automatizador</h3><p class="kind">AI agent</p><p class="fn-what">If your site needs it, connects your form, booking or catalog.</p></div>
-            <span class="wire" aria-hidden="true"></span>
-          </li>
-          <li class="fnode">
-            <span class="fn-n" aria-hidden="true">6</span>
-            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="candado"></canvas></span>
-            <div class="txt"><h3>Security</h3><p class="kind">AI agent</p><p class="fn-what">Checks security before delivery.</p></div>
-            <span class="wire" aria-hidden="true"></span>
-          </li>
-          <li class="fnode">
-            <span class="fn-n" aria-hidden="true">7</span>
-            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="guardian"></canvas></span>
-            <div class="txt"><h3>Guardian</h3><p class="kind">AI agent</p><p class="fn-what">Checks that everything is honest and follows our Six Pillars.</p><a class="link node-link" href="crew/en/">Get its prompt for free <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-            <span class="wire" aria-hidden="true"></span>
-          </li>
-          <li class="fnode fnode--human">
-            <span class="fn-n" aria-hidden="true">8</span>
-            <span class="face" aria-hidden="true"><canvas width="16" height="16" data-sprite="timon"></canvas></span>
-            <div class="txt"><h3>You and the developer</h3><p class="kind">People</p><p class="fn-what">The two of you approve, and only then does it go live.</p></div>
-          </li>
-        </ol>
-      </div>
-      <p class="map-next"><a class="link" href="#process">After you approve: how your site goes live <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-
-      <h3 class="pillars-title display">Six Pillars that guide all our agents</h3>
-      <ul class="pillars" role="list">
-        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scale"/></svg><h4>Balanced Sea</h4><p>Fair prices: we both win.</p></li>
-        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-warn"/></svg><h4>The Booger Rule</h4><p>If something won’t work, we tell you early.</p></li>
-        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-question"/></svg><h4>Challenge Assumptions</h4><p>We verify before we build.</p></li>
-        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-access"/></svg><h4>Accessibility First</h4><p>Plain language, readable sites.</p></li>
-        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"/></svg><h4>Open-Source Ethos</h4><p>Open, auditable knowledge.</p></li>
-        <li class="pil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-anchor"/></svg><h4>Sovereign Ship</h4><p>Your data, your rules.</p></li>
-      </ul>
-
-      <div class="mine">
-        <p>You can have your own pillars too, or set limits (guardrails) for your own agents. We’ll help you with that.</p>
-        <div class="links">
-          <a class="link" href="brief/en/">Tell us what you need <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="link" href="crew/en/">Free prompts from our crew <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-      </div>
+      <p class="more-link"><a class="link" href="/docs/">See Docs <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
     </div>
   </section>
 
-  <!-- 5b · Tu sitio, paso a paso -->
-  <section id="process" class="sec" aria-labelledby="process-title">
-    <div class="wrap">
-      <div class="path-wrap">
-        <div class="head">
-          <h2 id="process-title" class="h2 display">Your site, step by step</h2>
-          <p class="lead">This is what happens after you request your site and accept the quote. Tap each step to see what you do and what your package includes.</p>
-        </div>
-
-        <ol class="path" role="list">
-          <li class="step">
-            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="hoja"></canvas><span class="step-n">1</span></span>
-            <details>
-              <summary>
-                <span class="step-t">You send your information</span>
-                <span class="step-s">You send us your texts, photos and details.</span>
-                <span class="who"><span class="tag chip--you">You</span></span>
-              </summary>
-              <div class="step-body">
-                <div class="cols">
-                  <div>
-                    <p class="mini">You do</p>
-                    <ul class="dots" role="list">
-                      <li>Send your texts, your photos (with permission to use them) and your logo, if you have one.</li>
-                      <li>Confirm your hours, address and contact details in writing.</li>
-                      <li>Start thinking about your domain: your site’s web address, like yourbusiness.com or yourbusiness.cl.</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="mini">Your package includes</p>
-                    <ul class="dots" role="list">
-                      <li>The quote in writing: pages, sections and rounds of changes.</li>
-                      <li>Your timeline starts here: one page, 10 business days; simple website, 20; custom, 30.</li>
-                      <li>Nothing made up: whatever is missing is marked, and we ask you.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </details>
-          </li>
-
-          <li class="step">
-            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="engranaje"></canvas><span class="step-n">2</span></span>
-            <details>
-              <summary>
-                <span class="step-t">The crew builds</span>
-                <span class="step-s">The agents put your site together in small steps.</span>
-                <span class="who"><span class="tag">The crew</span></span>
-              </summary>
-              <div class="step-body">
-                <div class="cols">
-                  <div>
-                    <p class="mini">You do</p>
-                    <ul class="dots" role="list">
-                      <li>Nothing. If something isn’t clear, we ask you.</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="mini">Your package includes</p>
-                    <ul class="dots" role="list">
-                      <li>Design with your colors and logo, phone first.</li>
-                      <li>The extras you asked for (form, booking or catalog), already connected.</li>
-                      <li>Everything is checked before delivery: security, accessibility and nothing made up.</li>
-                      <li>No trackers.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </details>
-          </li>
-
-          <li class="step">
-            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="lupa"></canvas><span class="step-n">3</span></span>
-            <details>
-              <summary>
-                <span class="step-t">You review it</span>
-                <span class="step-s">You see your site and tell us what to change.</span>
-                <span class="who"><span class="tag chip--you">You</span><span class="tag chip--you">The developer</span></span>
-              </summary>
-              <div class="step-body">
-                <div class="cols">
-                  <div>
-                    <p class="mini">You do</p>
-                    <ul class="dots" role="list">
-                      <li>You review your site with the developer, on a video call or with phone and computer screenshots.</li>
-                      <li>Send all your changes in one message, as a list: where it is and what it should say (a screenshot helps). Each list counts as one round.</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="mini">Your package includes</p>
-                    <ul class="pill-list pill-list--flush" role="list"><li>One page: 1 round</li><li>Simple website: 2</li><li>Custom: 3</li></ul>
-                    <ul class="dots dots--after" role="list">
-                      <li>Anything outside your package is quoted separately.</li>
-                      <li>We show you your site before it’s published.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </details>
-          </li>
-
-          <li class="step">
-            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="ajuste"></canvas><span class="step-n">4</span></span>
-            <details>
-              <summary>
-                <span class="step-t">Final adjustments</span>
-                <span class="step-s">We apply your changes and you give the OK.</span>
-                <span class="who"><span class="tag">The crew</span><span class="tag chip--you">You</span></span>
-              </summary>
-              <div class="step-body">
-                <div class="cols">
-                  <div>
-                    <p class="mini">You do</p>
-                    <ul class="dots" role="list">
-                      <li>Check the changes and approve them in writing. Without your OK, nothing goes live.</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="mini">Your package includes</p>
-                    <ul class="dots" role="list">
-                      <li>Your changes applied, plus a last check: phone, accessibility and security.</li>
-                      <li>Your files in a compressed folder (.zip): they’re yours.</li>
-                      <li>A short guide, in plain words, to look after your site and ask for changes.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </details>
-          </li>
-
-          <li class="step">
-            <span class="step-face" aria-hidden="true"><canvas width="16" height="16" data-sprite="sitio"></canvas><span class="step-n">5</span></span>
-            <details>
-              <summary>
-                <span class="step-t">Going live</span>
-                <span class="step-s">Your site goes online, in your name.</span>
-                <span class="who"><span class="tag chip--you">You</span><span class="tag chip--you">The developer</span></span>
-              </summary>
-              <div class="step-body">
-                <div class="cols">
-                  <div>
-                    <p class="mini">You do</p>
-                    <ul class="dots" role="list">
-                      <li>Buy your domain, in your name and with your email. It’s paid separately (below).</li>
-                      <li>Create your free Cloudflare account with your email, turn on two-step security (a code on your phone) and save your recovery codes.</li>
-                      <li>Do the clicks with the developer on a video call, or invite them to your account and remove them when done. You never share your password.</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="mini">Your package includes</p>
-                    <ul class="dots" role="list">
-                      <li>Your site published, with the padlock (https).</li>
-                      <li>A check together: it opens well on your phone, and a mistyped address shows a notice page.</li>
-                      <li>Your site stays online even if you don’t sign up for maintenance.</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="host">
-                  <p class="mini">How free hosting works</p>
-                  <ol class="host-flow" role="list">
-                    <li><b>Your files</b><small>the .zip we hand you</small></li>
-                    <li><b>Your Cloudflare account</b><small>free plan, in your name</small></li>
-                    <li><b>Your domain</b><small>your site’s web address</small></li>
-                    <li><b>People looking for you</b><small>see your site, with the padlock</small></li>
-                  </ol>
-                  <p>Hosting is the place on the internet where your site lives, like the shop where you serve customers. We use Cloudflare Pages, which has a free plan. The account is yours, not ours: if one day you want to change provider or designer, you take your files and carry on.</p>
-                  <p>The domain is separate: it’s your site’s name. You pay for it every year to whoever sells it to you, not to us.</p>
-                  <dl class="dom"><div class="mk mk-clp"><dt>.cl</dt><dd>CLP 9,990 a year</dd></div><div class="mk mk-usd"><dt>.com</dt><dd>about USD 11 a year</dd></div></dl>
-                  <p class="fine">Reference prices: they change depending on where you buy. Turn on automatic renewal and use an email you check, so you don’t lose your domain. Connecting it can take a few hours.</p>
-                </div>
-              </div>
-            </details>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6 · Nosotros corto + preguntas -->
-  <section id="about" class="sec" aria-labelledby="about-title">
+<section id="about" class="sec" aria-labelledby="about-title">
     <div class="wrap">
       <div class="about">
         <div>
-          <img src="assets/images/logo.svg" alt="" width="56" height="56">
+          <img src="/assets/images/logo.svg" alt="" width="56" height="56">
           <h2 id="about-title" class="h2 display">Why “Hammock”?</h2>
           <p class="lead">A hammock isn’t laziness: it’s sovereignty. We use AI to give you your time back, not to replace people.</p>
         </div>
@@ -752,27 +296,14 @@
         </figure>
       </div>
       <div class="pixel-frame pixel-sunset" data-scene="sunset" role="img" aria-label="Pixel art: at sunset, someone reads a book in a hammock between two palm trees on a small island."></div>
-
-      <div id="faq" class="faq-block">
-        <h2 class="h2 display">Questions</h2>
-        <div class="faq">
-          <details><summary>How long does it take?</summary><p>One page, 10 business days; simple website, 20; custom, 30. The count starts when you send your texts and photos.</p></details>
-          <details><summary>Who owns the site?</summary><p>You do: files, domain and content, with documentation in plain language.</p></details>
-          <details><summary>What isn’t included?</summary><p>A logo with a drawn symbol, a photo shoot, an online store with payments, a blog or advertising.</p></details>
-          <details><summary>Does the AI do it all on its own?</summary><p>No. The agents do the heavy lifting in small steps and the developer reviews it with you before it's delivered.</p></details>
-          <details><summary>Which AI do you use?</summary><p>Our agents run on third-party AI models such as Claude. It isn't magic: with those same models you can build agents like these too. Several of our agents' prompts are open and free on <a href="crew/en/">our crew page</a>.</p></details>
-          <details><summary>What if I build it myself with AI?</summary><p>You can, and for a simple page that may be enough. What usually gets left out is the rest of the road: deciding what to say and how to show it, publishing it in your name, checking security and accessibility, helping Google understand where you work, and, if you want, keeping it up to date. That’s what we do for you, so your time stays with your business.</p></details>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- 7 · Cierre: el mismo botón -->
-  <section id="contact" class="close">
+<section id="contact" class="close">
     <div class="cta-panel">
       <h2 class="h2 display">Tell us what site you need</h2>
       <p>Answer a few questions and get a written quote.</p>
-      <a class="btn btn-lg" href="brief/en/">Get your site</a>
+      <a class="btn btn-lg" href="/brief/en/">My proposal</a>
       <p class="alt">Or write to <a class="link" href="mailto:hammockai@proton.me">hammockai@proton.me</a></p>
     </div>
   </section>
@@ -783,26 +314,28 @@
   <div class="foot-in">
     <div class="foot-top">
       <div class="foot-id">
-        <a class="foot-logo" href="#home" aria-label="Hammock AI, back to top">
+        <a class="foot-logo" href="/" aria-label="Hammock AI, home">
           <span class="display foot-brand">Hammock AI</span>
         </a>
         <p class="foot-what">We build the website for your business.</p>
         <p class="foot-motto">Your data, your rules, your keys.</p>
-        <a class="btn" href="brief/en/">Get your site</a>
+        <a class="btn" href="/brief/en/">My proposal</a>
       </div>
       <div class="foot-cols">
         <nav aria-label="Services">
           <h2 class="foot-h">Services</h2>
           <ul role="list">
-            <li><a href="brief/en/">Get your site</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#services">Prices</a></li>
+            <li><a href="/brief/en/">My proposal</a></li>
+            <li><a href="/services/#portfolio">Portfolio</a></li>
+            <li><a href="/services/#plans">Prices</a></li>
+            <li><a href="/services/#extras">Automations</a></li>
           </ul>
         </nav>
         <nav aria-label="Hammock">
           <h2 class="foot-h">Hammock</h2>
           <ul role="list">
-            <li><a href="crew/en/">AI Crew</a></li>
+            <li><a href="/ai-crew/">AI Crew</a></li>
+            <li><a href="/docs/">Docs</a></li>
             <li><a href="https://github.com/hammockai/.github/blob/main/profile/README.md" target="_blank" rel="noopener noreferrer">Manifesto<span class="sr-only"> (opens in a new tab)</span></a></li>
             <li><a href="https://github.com/hammockai/aiCrew/blob/main/logbook/README.md" target="_blank" rel="noopener noreferrer">Logbook<span class="sr-only"> (opens in a new tab)</span></a></li>
           </ul>
@@ -822,8 +355,8 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
-<!-- GoatCounter: cuenta visitas sin cookies ni datos personales. Cambiar "hammockai" si el código de la cuenta es otro. -->
+<script src="/script.js" defer></script>
+<!-- GoatCounter: cuenta visitas sin cookies ni datos personales. -->
 <script data-goatcounter="https://hammockai.goatcounter.com/count" async src="/assets/js/count.js"></script>
 </body>
 </html>

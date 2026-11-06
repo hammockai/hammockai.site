@@ -1,4 +1,4 @@
-/* script.js · Por qué existe: HTML y CSS no alcanzan para tres cosas: abrir y cerrar el menú del celular, marcar la sección activa en el menú y dibujar la escena pixel art del hero. Sin dependencias, sin llamadas a otros sitios. */
+/* script.js · Por qué existe: HTML y CSS no alcanzan para tres cosas: abrir y cerrar el menú del celular y dibujar la escena pixel art del hero. Sin dependencias, sin llamadas a otros sitios. */
 (() => {
   'use strict';
 
@@ -46,29 +46,6 @@
       if (event.matches) setMenu(false);
     });
   }
-
-  /* Current section highlighted in the pill nav */
-  const navLinks = Array.from(doc.querySelectorAll('.nav-link'));
-  const sections = navLinks
-    .map((link) => doc.getElementById(link.getAttribute('href').slice(1)))
-    .filter(Boolean);
-
-  if ('IntersectionObserver' in window && sections.length) {
-    const spy = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach((link) => {
-          if (link.getAttribute('href') === '#' + entry.target.id) {
-            link.setAttribute('aria-current', 'true');
-          } else {
-            link.removeAttribute('aria-current');
-          }
-        });
-      });
-    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-    sections.forEach((section) => spy.observe(section));
-  }
-
 
   /* Pixel scenes: 90s pixel art drawn on tiny canvases and scaled up.
      Everything is drawn with fillRect on a low-res grid (1 "pixel" = px css px),

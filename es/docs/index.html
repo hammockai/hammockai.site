@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://hammockai.goatcounter.com; font-src 'self'; connect-src https://hammockai.goatcounter.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docs: agentes de IA gratis y cómo usarlos — Hammock AI</title>
+<meta name="description" content="Cuatro agentes de IA gratis para descargar y pegar en el chat de IA que uses (ChatGPT, Claude, Gemini y más), y una guía corta para empezar.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hammock AI">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Docs: agentes de IA gratis y cómo usarlos — Hammock AI">
+<meta property="og:description" content="Cuatro agentes de IA gratis para descargar y pegar en el chat de IA que uses (ChatGPT, Claude, Gemini y más), y una guía corta para empezar.">
+<meta property="og:url" content="https://hammockai.site/es/docs/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://hammockai.site/es/docs/">
+<link rel="alternate" hreflang="en" href="https://hammockai.site/docs/">
+<link rel="alternate" hreflang="es" href="https://hammockai.site/es/docs/">
+<link rel="alternate" hreflang="x-default" href="https://hammockai.site/docs/">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg">
+</head>
+<body>
+<!-- Íconos propios, de trazo simple, sin dependencias. -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-site" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM3 9h18M6 6.5h.5M9 6.5h.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9.3h16M4 14.7h16M10 4v16"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 5h16v15H4zM4 10h16M8 3v4M16 3v4M9 15l2 2 4-4"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 17v-6a6 6 0 0 1 12 0v6M4 17h16M10 21h4"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-scatter" viewBox="0 0 24 24"><rect x="3" y="4" width="10" height="7" transform="rotate(-12 8 7.5)"/><rect x="11" y="9" width="10" height="7" transform="rotate(10 16 12.5)"/><rect x="5" y="15" width="9" height="6" transform="rotate(-5 9.5 18)"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11h-9l-5 4v-4H4z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></symbol>
+  <symbol id="i-at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a2.5 2.5 0 0 0 5 0v-1a9 9 0 1 0-3.5 7.1"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><path d="M5 8h14v11H5zM12 4v4M9 13h.5M14.5 13h.5M9 16.5h6"/></symbol>
+  <symbol id="i-check-person" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3 21c0-4 3-7 7-7 1.5 0 3 .4 4 1.2M15 18l2.5 2.5L22 15"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h7M9 16h7"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M8 20h8M4 7h16M4 7l-3 6h6zM20 7l-3 6h6z"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2zM12 10v5M12 18h.01"/></symbol>
+  <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></symbol>
+  <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7 9.5h10M12 9.5V14M12 14l-3 4M12 14l3 4"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5h8a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H2zM22 5h-8a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h8z"/></symbol>
+  <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v14M7 11h10M4 15c0 4 4 6 8 6s8-2 8-6"/></symbol>
+
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"/></symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M18 3v4h-4M20 12a8 8 0 0 1-14 5.3M6 21v-4h4"/></symbol>
+</defs></svg>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="site-header">
+  <nav class="pill" aria-label="Principal">
+    <div class="bar">
+      <a class="brand" href="/es/" aria-label="Hammock AI, inicio">
+        <img src="/assets/images/logo.svg" width="36" height="36" alt="Logo de Hammock AI: dos palmeras con una hamaca entre ellas">
+        <span class="display">Hammock AI</span>
+      </a>
+      <ul class="nav" role="list">
+        <li><a class="nav-link" href="/es/servicios/">Servicios</a></li>
+        <li><a class="nav-link" href="/es/ai-crew/">AI Crew</a></li>
+        <li><a class="nav-link" href="/es/docs/" aria-current="page">Docs</a></li>
+      </ul>
+      <a class="lang-link" href="/docs/" hreflang="en" lang="en" aria-label="View in English">EN</a>
+      <a class="btn btn-head" href="/brief/">Mi propuesta</a>
+      <button class="menu-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Menú</span>
+        <span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a class="mobile-link" href="/es/servicios/">Servicios</a>
+    <a class="mobile-link" href="/es/ai-crew/">AI Crew</a>
+    <a class="mobile-link" href="/es/docs/" aria-current="page">Docs</a>
+    <a class="btn" href="/brief/">Mi propuesta</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-top" aria-labelledby="page-title">
+    <div class="wrap">
+      <div class="head">
+        <h1 id="page-title" class="h2 display">Docs: agentes de IA gratis y cómo usarlos</h1>
+        <p class="lead">Todo lo de esta página es gratis: cuatro agentes de IA para descargar y pegar en ChatGPT, Claude, Gemini o la IA que uses, y una guía corta para empezar. Son los que usamos en nuestro propio trabajo, para recuperar tiempo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="prompts" class="sec" aria-labelledby="agents-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="agents-title" class="h2 display">Los agentes</h2>
+        <p class="fine fine-lead">Un agente es una IA con instrucciones ya escritas para un trabajo concreto. Descarga uno y pégalo en la IA que uses. Probados en ChatGPT, Gemini, Claude, Qwen, Kimi y DeepSeek.</p>
+      </div>
+      <ul class="plans docs" role="list">
+        <li class="plan">
+          <p class="tag">Primer oficial</p>
+          <h3 class="display">Contramaestre</h3>
+          <p class="what">La IA que te dice la verdad. Te señala el error con su solución, cuestiona lo que asumes y te da la siguiente acción. Se vuelve experto en tu rubro.</p>
+          <div class="dl-row">
+            <a class="link" href="/es/contramaestre/contramaestre.txt" download>Descargar<span class="sr-only"> Contramaestre</span></a>
+            <a class="link" href="/contramaestre/contramaestre.txt" download lang="en">English<span class="sr-only"> (Contramaestre)</span></a>
+            <a class="link" href="/es/contramaestre/">Ver más<span class="sr-only">: Contramaestre</span></a>
+          </div>
+        </li>
+        <li class="plan">
+          <p class="tag">Cuartelmaster</p>
+          <h3 class="display">Quintero</h3>
+          <p class="what">Precios justos, inventario ordenado y textos que venden sin mentir. Tasa con piso y razón, y escribe tus avisos en tres opciones.</p>
+          <div class="dl-row">
+            <a class="link" href="/quintero/quintero.txt" download>Descargar<span class="sr-only"> Quintero</span></a>
+            <a class="link" href="/quintero/quintero.en.txt" download lang="en">English<span class="sr-only"> (Quintero)</span></a>
+            <a class="link" href="/quintero/">Ver más<span class="sr-only">: Quintero</span></a>
+          </div>
+        </li>
+        <li class="plan">
+          <p class="tag">Navegante</p>
+          <h3 class="display">Prompt Engineer</h3>
+          <p class="what">Convierte tus ideas vagas en instrucciones precisas para cualquier IA, y te enseña a escribirlas tú, para que no dependas de él.</p>
+          <div class="dl-row">
+            <a class="link" href="/crew/prompt-engineer.txt" download>Descargar<span class="sr-only"> Prompt Engineer</span></a>
+            <a class="link" href="/crew/prompt-engineer.en.txt" download lang="en">English<span class="sr-only"> (Prompt Engineer)</span></a>
+          </div>
+        </li>
+        <li class="plan">
+          <p class="tag">Brújula</p>
+          <h3 class="display">Guardian</h3>
+          <p class="what">Revisa tus decisiones, herramientas y textos antes de publicarlos: nombra los riesgos ocultos y te propone un camino práctico.</p>
+          <div class="dl-row">
+            <a class="link" href="/crew/guardian.txt" download>Descargar<span class="sr-only"> Guardian</span></a>
+            <a class="link" href="/crew/guardian.en.txt" download lang="en">English<span class="sr-only"> (Guardian)</span></a>
+          </div>
+        </li>
+      </ul>
+      <p class="more-link"><a class="link" href="/crew/">Los mismos cuatro agentes, en su propia página <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </section>
+
+  <section id="use" class="sec band" aria-labelledby="use-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="use-title" class="h2 display">Cómo usarlos</h2>
+        <ul class="dots dots--steps" role="list">
+          <li><b>1. Elige un agente.</b> Uno por chat. Si quieres al Contramaestre para tu trabajo y a Quintero para vender, usa dos chats o dos proyectos.</li>
+          <li><b>2. Pégalo al empezar.</b> Como primer mensaje de un chat nuevo, o en las instrucciones de un Proyecto (Claude, ChatGPT) o de un Gem (Gemini).</li>
+          <li><b>3. Llena tu contexto.</b> Al final de cada prompt hay un bloque con tus datos: proyecto, rubro, meta. Es lo que lo vuelve tuyo.</li>
+        </ul>
+        <h3 class="display docs-h3">¿Quieres sacarle más provecho al Contramaestre?</h3>
+        <p class="fine fine-lead">Tiene una guía para dejarlo funcionando: instalación paso a paso en cada plataforma, situaciones de ejemplo y casos de antes y después. Por ahora está en inglés; tú pones el precio, desde $0.</p>
+        <p class="more-link"><a class="link" href="https://hammockai.gumroad.com/l/contramaestre" lang="en" target="_blank" rel="noopener noreferrer">Contramaestre guide<span class="sr-only"> (se abre en pestaña nueva)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lessons" class="sec" aria-labelledby="lessons-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="lessons-title" class="h2 display">Todo el recorrido, a la vista</h2>
+        <p class="lead">Todo el recorrido de la crew está en GitHub: cómo empezó, qué probamos, qué salió bien y qué no. Lo publicamos para que cualquiera aprenda con nosotros.</p>
+        <p class="more-link"><a class="link" href="https://github.com/hammockai/aiCrew/blob/main/logbook/README.es.md" target="_blank" rel="noopener noreferrer">Leer la bitácora<span class="sr-only"> (se abre en pestaña nueva)</span> <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </div>
+    </div>
+  </section>
+
+<section id="contact" class="close">
+    <div class="cta-panel">
+      <h2 class="h2 display">Cuéntanos qué sitio necesitas</h2>
+      <p>Responde unas preguntas y recibe una cotización por escrito.</p>
+      <a class="btn btn-lg" href="/brief/">Mi propuesta</a>
+      <p class="alt">O escribe a <a class="link" href="mailto:hammockai@proton.me">hammockai@proton.me</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-scene" data-scene="foot" aria-hidden="true"></div>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-id">
+        <a class="foot-logo" href="/es/" aria-label="Hammock AI, inicio">
+          <span class="display foot-brand">Hammock AI</span>
+        </a>
+        <p class="foot-what">Hacemos el sitio web de tu negocio.</p>
+        <p class="foot-motto">Tus datos, tus reglas, tus llaves.</p>
+        <a class="btn" href="/brief/">Mi propuesta</a>
+      </div>
+      <div class="foot-cols">
+        <nav aria-label="Servicios">
+          <h2 class="foot-h">Servicios</h2>
+          <ul role="list">
+            <li><a href="/brief/">Mi propuesta</a></li>
+            <li><a href="/es/servicios/#portfolio">Portafolio</a></li>
+            <li><a href="/es/servicios/#plans">Precios</a></li>
+            <li><a href="/es/servicios/#extras">Automatizaciones</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Hammock">
+          <h2 class="foot-h">Hammock</h2>
+          <ul role="list">
+            <li><a href="/es/ai-crew/">AI Crew</a></li>
+            <li><a href="/es/docs/">Docs</a></li>
+            <li><a href="https://github.com/hammockai/.github/blob/main/profile/README.es.md" target="_blank" rel="noopener noreferrer">Manifiesto<span class="sr-only"> (se abre en pestaña nueva)</span></a></li>
+            <li><a href="https://github.com/hammockai/aiCrew/blob/main/logbook/README.es.md" target="_blank" rel="noopener noreferrer">Bitácora<span class="sr-only"> (se abre en pestaña nueva)</span></a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Síguenos">
+          <h2 class="foot-h">Síguenos</h2>
+          <ul role="list">
+            <li><a href="https://github.com/hammockai" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (se abre en pestaña nueva)</span></a></li>
+            <li><a href="https://www.tiktok.com/@hammockai" target="_blank" rel="noopener noreferrer">TikTok<span class="sr-only"> (se abre en pestaña nueva)</span></a></li>
+            <li><a href="mailto:hammockai@proton.me">Escríbenos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="foot-bar" aria-hidden="true"></div>
+    <p class="foot-legal">© 2026 Hammock AI</p>
+  </div>
+</footer>
+
+<script src="/script.js" defer></script>
+<!-- GoatCounter: cuenta visitas sin cookies ni datos personales. -->
+<script data-goatcounter="https://hammockai.goatcounter.com/count" async src="/assets/js/count.js"></script>
+</body>
+</html>
